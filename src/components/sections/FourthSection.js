@@ -57,15 +57,15 @@ const TextWrapper = styled.div`
 `;
 
 const Title = styled(H2)`
-  color: ${themes.light.text1};
-
+  /* color: ${themes.light.text1}; */
+color: white;
   @media (max-width: 450px) {
     font-size: 48px;
   }
 `;
 
 const Description = styled(MediumText)`
-  color: black;
+  color: white;
 `;
 const Intro = styled(Caption2)`
   color: gray;

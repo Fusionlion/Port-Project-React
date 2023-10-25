@@ -33,14 +33,14 @@ const Wrapper = styled.div`
   width: 597px;
   height: 400px;
   padding: 20px;
-  background: rgba(15, 14, 71, 0.3);
-  border: 0.5px solid rgba(255, 255, 255, 0.2);
-  box-sizing: border-box;
-  box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(40px);
+  /* border: 0.5px solid rgba(255, 255, 255, 0.2); */
+
+  background: #040314;
+  box-shadow: 5px 5px 5px #020108, -5px -5px 5px #060520;
+
   /* Note: backdrop-filter has minimal browser support */
 
-  border-radius: 20px;
+  border-radius: 15px;
 
   *,
   & {

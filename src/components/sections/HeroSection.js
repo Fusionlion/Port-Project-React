@@ -4,24 +4,29 @@ import { themes } from "../styles/ColorStyles";
 import { H1, MediumText, SmallText } from "../styles/TextStyles";
 import GetStartedButton from "../buttons/GetStartedButton";
 
+
 function HeroSection() {
   return (
     <Wrapper>
+      <Wave />
       {/* <WaveBackground /> */}
       <ContentWrapper>
         <TextWrapper>
           <Title>
-            Discover
-            <br /> and <span>Stream</span> your shows
+            Welcome
+            <br /> to my <span>Portfolio</span> your shows
           </Title>
           <Description>
-            Discover new TV shows and series, films, and more with MediaPro.
-            From award-winning shows and movies to your favorite sports.
+            What everyone said was true. You cannot learn how to code by
+            reading, listening or watching someone else do it. You have to get
+            your hands dirty! I am a software developer building interfaces and
+            accessible applications. Welcome to my personal slice of the
+            internet.I'm glad you're here!
           </Description>
           <GetStartedButton />
           <Access>
-            Get access to 30 premium shows, movies and sport channels. Over 280
-            hours of content, comentary and priority support.
+            Learn the best tools and platforms.Make your code efficient and
+            learn new methodologies in programming.
           </Access>
         </TextWrapper>
       </ContentWrapper>
@@ -35,7 +40,19 @@ const Wrapper = styled.div`
   overflow: hidden;
   
 `;
+const Wave = styled.div`
+position:absolute ;
+ height: 800px ;
+  background-image: url("/images/my-svg/first.svg");
+  background-repeat: repeat ;
+  background-size: contain ;
 
+ z-index: -1 ;
+
+  /* @media (min-width: 1440px) {
+    width: 100%;
+  } */
+`;
 const ContentWrapper = styled.div`
   max-width: 1234px;
   margin: 0 auto;
@@ -51,7 +68,7 @@ const ContentWrapper = styled.div`
 `;
 
 const TextWrapper = styled.div`
-  max-width: 360px;
+  width: 460px;
   display: grid;
   gap: 30px;
 `;

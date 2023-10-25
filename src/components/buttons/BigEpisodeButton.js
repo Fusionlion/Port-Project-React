@@ -66,7 +66,7 @@ const Subtitle = styled(SmallText)`
 const Icon = styled.img`
   width: 210px;
   height: 280px;
-  border-radius: 30px;
+  border-radius: 12px;
 `;
 
 const ContentWrapper = styled.div`

@@ -36,44 +36,56 @@ export default function Header() {
   }, []);
 
   return (
-    <Wrapper>
-      <Link to="/">
-        <img src="/images/logos/framer-logo.svg" alt="Logo" />
-      </Link>
-      <MenuWrapper count={menuData.length} ref={ref}>
-        {menuData.map((item, index) =>
-          item.link === "/account" ? (
+    <Center>
+      <Wrapper>
+        <Link to="/">
+          <img src="/images/logos/framer-logo.svg" alt="Logo" />
+        </Link>
+        <MenuWrapper count={menuData.length} ref={ref}>
+          {menuData.map((item, index) =>
+            item.link === "/account" ? (
+              <MenuButton
+                item={item}
+                key={index}
+                onClick={(event) => handleClick(event)}
+              />
+            ) : (
+              <MenuButton item={item} key={index} />
+            )
+          )}
+          <HamburgerWrapper>
             <MenuButton
-              item={item}
-              key={index}
+              item={{
+                title: "",
+                icon: "/images/icons/hamburger.svg",
+                link: "/",
+              }}
               onClick={(event) => handleClick(event)}
             />
-          ) : (
-            <MenuButton item={item} key={index} />
-          )
-        )}
-        <HamburgerWrapper>
-          <MenuButton
-            item={{ title: "", icon: "/images/icons/hamburger.svg", link: "/" }}
-            onClick={(event) => handleClick(event)}
-          />
-        </HamburgerWrapper>
-      </MenuWrapper>
-      <div ref={tooltipRef}>
-        <MenuTooltip isOpen={isOpen} />
-      </div>
-    </Wrapper>
+          </HamburgerWrapper>
+        </MenuWrapper>
+        <div ref={tooltipRef}>
+          <MenuTooltip isOpen={isOpen} />
+        </div>
+      </Wrapper>
+    </Center>
   );
 }
-
+const Center = styled.div`
+  display: flex;
+  justify-content: center;
+  
+ 
+`;
 const Wrapper = styled.div`
   position: absolute;
   top: 60px;
   display: grid;
   grid-template-columns: 44px auto;
-  width: 100%;
+  width: 1234px;
   justify-content: space-between;
-  padding: 0 30px;
+  
+  padding: 0 15px;
   align-items: center;
 
   @media (max-width: 768px) {
