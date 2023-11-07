@@ -44,7 +44,7 @@ const Wrapper = styled.div`
 
   *,
   & {
-    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: 1s linear;
   }
 
   :hover {
@@ -54,7 +54,7 @@ const Wrapper = styled.div`
     transform: translateY(-5px);
 
     .icon {
-      transform: scale(1.05);
+      /* transform: scale(1.02); */
     }
   }
 `;

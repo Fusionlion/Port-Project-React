@@ -34,16 +34,7 @@ const Wrapper = styled.div`
   border-radius: 20px;
   text-align: center;
   /* Inside auto layout */
-
-  align-self: flex-start;
-
-  filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.05))
-    drop-shadow(0px 20px 40px rgba(127, 96, 228, 0.3));
-
-  *,
-  & {
-    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-  }
+ 
 `;
 
 const TextWrapper = styled.div`

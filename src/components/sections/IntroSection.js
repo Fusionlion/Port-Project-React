@@ -6,6 +6,7 @@ import { Caption2, H2, MediumText } from "../styles/TextStyles";
 function IntroSection() {
   return (
     <Wrapper>
+      <Background />
       <ContentWrapper>
         <TextWrapper>
           <Intro>WHO'S BEHIND</Intro>
@@ -22,6 +23,19 @@ function IntroSection() {
 
 export default IntroSection;
 
+
+const Background = styled.div`
+  background-image: url("/images/my-svg/sea-animals.svg");
+  background-repeat: repeat-x;
+  background-size: cover;
+  background-position: top left;
+  transform: scaleX(-1);
+  height: 800px;
+  width: 100%;
+  position: absolute;
+  mix-blend-mode: normal;
+  z-index: -1;
+`;
 const Wrapper = styled.div`
   overflow: hidden;
   /* background-color: #f2f6ff; */

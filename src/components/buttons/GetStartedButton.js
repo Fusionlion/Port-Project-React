@@ -10,11 +10,11 @@ export default function GetStartedButton(props) {
       <Wrapper>
         <IconWrapper>
           <Icon src="/images/icons/code.svg" className="icon" />
-          <Ring src="/images/icons/icon-ring.svg" />
+       
         </IconWrapper>
         <TextWrapper>
           <Title>{title || "Get Started"}</Title>
-          <Subtitle>{subtitle || "Let's find your show"}</Subtitle>
+          <Subtitle>{subtitle || "Let's get to work :)"}</Subtitle>
         </TextWrapper>
       </Wrapper>
     </Link>
@@ -23,15 +23,16 @@ export default function GetStartedButton(props) {
 
 const Wrapper = styled.div`
   width: 280px;
-  height: 77px;
+  height: 70px;
   padding: 12px;
-  background: linear-gradient(180deg, #ffffff 0%, #d9dfff 100%);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
-    0px 20px 40px rgba(23, 0, 102, 0.2),
-    inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
+  background-color: #968c8e3b;
+  /* box-shadow: 0px 1px 3px rgba(0,0,0,0.1), 0px 20px 40px rgba(23,0,102,0.2), inset 0px 0px 0px 0.5px rgba(255,255,255,0.5); */
+  border-radius: 12px;
   display: grid;
   grid-template-columns: 53px auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 20px;
 
@@ -47,7 +48,7 @@ const Wrapper = styled.div`
     transform: translateY(-5px);
 
     .icon {
-      transform: scale(1.2);
+      transform: scale(1.1) rotate(150deg);
     }
   }
 `;
@@ -58,11 +59,11 @@ const TextWrapper = styled.div`
 `;
 
 const Title = styled(Caption2)`
-  color: black;
+  color: white;
 `;
 
 const Subtitle = styled(SmallText)`
-  color: black;
+  color: white;
   opacity: 0.7;
 `;
 
@@ -71,15 +72,7 @@ const Icon = styled.img`
   height: 29px;
 `;
 
-const Ring = styled.img`
-  position: absolute;
-  top: -15px;
-  left: -16px;
 
-  ${Wrapper}:hover & {
-    transform: rotate(30deg) scale(1.2) translate(1px, 1px);
-  }
-`;
 
 const IconWrapper = styled.div`
   width: 45px;
@@ -93,6 +86,6 @@ const IconWrapper = styled.div`
   position: relative;
 
   ${Wrapper}:hover & {
-    filter: hue-rotate(10deg) brightness(150%) saturate(120%);
+    filter: hue-rotate(1deg) brightness(150%) saturate(120%);
   }
 `;

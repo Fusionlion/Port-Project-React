@@ -32,7 +32,7 @@ const Wrapper = styled.div`
   height: 400px;
   padding: 20px;
   /* border: 0.5px solid rgba(255, 255, 255, 0.2); */
-  
+
   background: #040314;
   box-shadow: 5px 5px 5px #020108, -5px -5px 5px #060520;
 
@@ -42,17 +42,19 @@ const Wrapper = styled.div`
 
   *,
   & {
-    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: 1s linear;
   }
 
-  :hover {
+    :hover {
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
       0px 30px 60px rgba(23, 0, 102, 0.5),
       inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
     transform: translateY(-5px);
+   
+   
 
     .icon {
-      transform: scale(1.05);
+      /* transform: scale(1.02); */
     }
   }
 `;

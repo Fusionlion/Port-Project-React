@@ -1,20 +1,20 @@
 import React from "react";
 import styled from "styled-components";
-import BigEpisodeButton from "../buttons/BigEpisodeButton";
 import { themes } from "../styles/ColorStyles";
 import { Caption2, H2, MediumText } from "../styles/TextStyles";
-import SecondWaves from "../backgrounds/SecondWaves";
+
 function SecondSection() {
   return (
     <Wrapper>
-     <SecondWaves />
+      <Background />
       <ContentWrapper>
         <TextWrapper>
-          <Intro>Recommended</Intro>
-          <Title>Trending shows you would like</Title>
+          <Intro>Experience</Intro>
+          <Title>Solutions Stack ⚔</Title>
           <Description>
-            Discover new TV shows and series, films, and more with MediaPro.
-            From award-winning shows and movies to your favorite sports.
+            We have extensive experience in coding for all languages (Java,
+            Javascript, Apex, Salesforce), as well as designing graphics on
+            various platforms including HTML and CSS.
           </Description>
         </TextWrapper>
         {/* <BigEpisodeButton title="" /> */}
@@ -25,6 +25,18 @@ function SecondSection() {
 
 export default SecondSection;
 
+const Background = styled.div`
+  background-image: url("/images/my-svg/falling-rocks.svg");
+  background-repeat: repeat;
+  background-size: contain;
+  background-position: bottom right;
+  height: 600px;
+  width: 100%;
+  position: absolute;
+  mix-blend-mode: normal;
+  top:680px;
+  z-index: -1;
+`;
 const Wrapper = styled.div`
   overflow: hidden;
 /* background-color: #f2f6ff;  */
@@ -37,6 +49,7 @@ const ContentWrapper = styled.div`
   display: flex;
   gap: 50px;
   grid-template-columns: 390px auto;
+  
 
   @media (max-width: 450px) {
     grid-template-columns: auto;

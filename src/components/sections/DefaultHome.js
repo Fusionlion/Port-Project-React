@@ -5,17 +5,17 @@ import { H1, MediumText, SmallText } from "../styles/TextStyles";
 import GetStartedButton from "../buttons/GetStartedButton";
 import "../styles/Font.css";
 
-
-function HeroSection() {
+function DefaultHome() {
   return (
     <Wrapper>
-   
       <Wave />
       {/* <WaveBackground /> */}
       <ContentWrapper>
         <TextWrapper>
-          <Name>ZABLON CHARLES</Name>
-          <Title>PORTFOLIO</Title>
+          <Title>
+            Welcome
+            <br /> to my <span>Portfolio</span> your shows
+          </Title>
           <Description>
             What everyone said was true. You cannot learn how to code by
             reading, listening or watching someone else do it. You have to get
@@ -34,15 +34,8 @@ function HeroSection() {
   );
 }
 
-export default HeroSection;
-const Name = styled.div`
-  color: white;
-  background-color: orangered;
-  padding: 10px 15px;
-  border-radius: 7px;
-  width: 199px;
-  font-size: 1.2rem;
-`;
+export default DefaultHome;
+
 const Wrapper = styled.div`
   overflow: hidden;
 `;
@@ -75,21 +68,27 @@ const ContentWrapper = styled.div`
 `;
 
 const TextWrapper = styled.div`
- width: 617px;
+  width: 460px;
   display: grid;
   gap: 30px;
   padding-top: 80px;
 `;
 
 const Title = styled(H1)`
-  font-size: 72px;
-  background: -webkit-linear-gradient(rgb(255 255 255), rgb(255 97 0));
+  color: ${themes.dark.text1};
+  background: linear-gradient(180deg, #730040 0%, #301cbe 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   /* font-family: "Cisnero", sans-serif; */
   font-family: "Cisnero";
-  padding-top: 10px;
+
+  span {
+    background: linear-gradient(180deg, #ffd7ff 0%, #ffb6ff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
 
   @media (max-width: 450px) {
     font-size: 48px;

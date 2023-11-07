@@ -39,7 +39,6 @@ const Wrapper = styled.div`
   background: rgba(255, 255, 255, 0.1);
   background-blend-mode: overlay;
   mix-blend-mode: normal;
-  box-shadow: inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.2);
   border-radius: 10px;
 
   /* Inside auto layout */
@@ -86,12 +85,12 @@ const TextWrapper = styled.div`
 `;
 
 const Title = styled(Caption2)`
-  color: black;
+  color: white;
 `;
 
 const Subtitle = styled(SmallText)`
-  color: black;
-  opacity: 0.7;
+  color: white;
+  opacity: 0.3;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;

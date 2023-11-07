@@ -8,6 +8,10 @@ import HeroSection from "../components/sections/HeroSection";
 import SecondSection from "../components/sections/SecondSection";
 import ThirdSection from "../components/sections/ThirdSection";
 import IntroSection from "../components/sections/IntroSection";
+import BioSection from "../components/sections/BioSection";
+import FooterSection from "../components/sections/FooterSection";
+import ProjectSection from "../components/sections/ProjectSection";
+import CertificateButton from "../components/buttons/CertificateButton";
 
 function IndexPage() {
   return (
@@ -16,10 +20,14 @@ function IndexPage() {
 
       <HeroSection />
       <SecondSection />
+      <BioSection />
       <ThirdSection />
       <IntroSection />
+      <ProjectSection />
       <FourthSection />
       <FifthSection />
+    
+      <FooterSection/>
     </Layout>
   );
 }

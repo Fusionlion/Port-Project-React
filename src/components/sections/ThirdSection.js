@@ -20,24 +20,24 @@ export default ThirdSection;
 
 const Wrapper = styled.div`
   /* background-color: #f2f6ff; */
-  max-width: 1234px;
-  margin: 0 auto;
-  padding: 60px 30px;
-  display: grid;
-  grid-template-columns: 30px auto;
+
+  background-image: url("/images/my-svg/bubbles.svg");
+  background-repeat: repeat-x;
+  background-size: cover;
 `;
 
 const ContentWrapper = styled.div`
-  max-width: vw;
+  max-width: 1234px;
   margin: 0 auto;
   padding: 100px 30px;
-  display: grid;
-  grid-template-columns: auto auto;
+  display: flex;
+  justify-content:center ;
+  
   gap: 20px;
 
-  @media (max-width: 450px) {
+  /* @media (max-width: 450px) {
     grid-template-columns: auto;
     gap: 60px;
     padding: 150px 20px 250px;
-  }
+  } */
 `;
