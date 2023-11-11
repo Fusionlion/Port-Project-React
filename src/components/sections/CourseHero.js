@@ -5,13 +5,11 @@ import { H1, MediumText, SmallText } from "../styles/TextStyles";
 import GetStartedButton from "../buttons/GetStartedButton";
 import "../styles/Font.css";
 import { useState } from "react";
-function CourseHero(props) {
-    const [activeTab, setActiveTab] = useState(props.active);
-
-    const handleTabClick = (tabName) => {
-      setActiveTab(tabName);
-      console.log("handleTabClick");
-    };
+function CourseHero({ setActiveTab }) {
+  const handleTabClick = (tabName) => {
+    setActiveTab(tabName);
+    console.log("clicked - " + tabName);
+  };
   return (
     <Wrapper>
       <Wave />
@@ -45,16 +43,14 @@ function CourseHero(props) {
         </div>
 
         <div className="right-text-and-line">
-          <div className="right-btn" onClick={() => handleTabClick("Projects")}>
+          <div className="right-btn" onClick={() => handleTabClick("React")}>
             React
           </div>
           <div className="right-line-inactive"></div>
         </div>
 
         <div className="right-text-and-line">
-          <div className="right-btn" onClick={props.changeCourse}>
-            Java
-          </div>
+          <div className="right-btn">Java</div>
           <div className="right-line-inactive"></div>
         </div>
       </FloatingTextRight>

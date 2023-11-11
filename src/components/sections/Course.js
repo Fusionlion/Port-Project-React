@@ -3,21 +3,19 @@ import { useState } from "react";
 import styled from "styled-components";
 import CourseHero from "./CourseHero";
 import CourseIde from "./CourseIde";
-import FourthSection from "./FourthSection";
+import FifthSection from "./FifthSection";
 
 export default function Course() {
-    const [activeTab, setActiveTab] = useState("Data");
+  const [activeTab, setActiveTab] = useState("Data");
 
-    const handleTabClick = (tabName) => {
-      setActiveTab(tabName);
-    };
-  const handleChildClick = (data) => {
-     console.log("Received data in parent:", data);
+  const handleTabClick = (tabName) => {
+    console.log("the name is " + tabName);
+    setActiveTab(tabName);
   };
   return (
     <Wrapper>
       <Background />
-      <CourseHero active={handleTabClick} />
+      <CourseHero setActiveTab={handleTabClick} />
 
       <div
         className={`tab-content-item ${
@@ -31,7 +29,7 @@ export default function Course() {
           activeTab === "React" ? "fade-in" : "fade-out"
         }`}
       >
-        <FourthSection />
+        <FifthSection />
       </div>
     </Wrapper>
   );
@@ -43,6 +41,19 @@ const Wrapper = styled.div`
   position: relative;
   overflow: scroll;
   margin-bottom: 300px;
+  .tab-content-item {
+  
+    transition: all 3s ease-in-out; /* Adjust the transition timing function as needed */
+  }
+
+  .fade-in {
+    opacity: 1;
+    transition: opacity 0.7s ease-in-out;
+  }
+  .fade-out {
+    transition: opacity 0.7s ease-in-out;
+    opacity: 0;
+  }
 `;
 
 const Background = styled.div`
