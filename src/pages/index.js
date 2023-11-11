@@ -12,12 +12,14 @@ import BioSection from "../components/sections/BioSection";
 import FooterSection from "../components/sections/FooterSection";
 import ProjectSection from "../components/sections/ProjectSection";
 import CertificateButton from "../components/buttons/CertificateButton";
+import CustomModal from "../components/sections/Modal";
+
+
 
 function IndexPage() {
   return (
     <Layout>
       <SEO title="Fusion | Find you favorite shows & movies" />
-
       <HeroSection />
       <SecondSection />
       <BioSection />
@@ -26,8 +28,7 @@ function IndexPage() {
       <ProjectSection />
       <FourthSection />
       <FifthSection />
-    
-      <FooterSection/>
+      <FooterSection />
     </Layout>
   );
 }

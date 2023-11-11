@@ -1,14 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
+
 function ProjectCard(props) {
+ 
   return (
     <Card>
       <Blur src={props.imageSrc} />
       <ProjectImage src={props.imageSrc} />
       <div className="title">{props.title}</div>
       <div className="desc">{props.desc}</div>
-      <div className="start">Start</div>
+      <div onClick={props.tap} className="start">Start</div>
     </Card>
   );
 }

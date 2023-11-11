@@ -156,13 +156,14 @@ export default BioSection;
 const BioWrapper = styled.div`
   backdrop-filter: blur(21px);
   border-radius: 18px;
-  border: 1px #ffffff12 solid;
-  height: 500px;
+  /* border: 1px #ffffff12 solid; */
+  height: 100vh;
+  width: 100%;
   border-radius: 14px;
   padding: 10px 15px;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1234px;
+
   display: flex;
   overflow: hidden;
 `;
@@ -261,6 +262,7 @@ const Wrapper = styled.div`
   gap: 50px;
   flex: 1;
   border-radius: 14px;
+  
 `;
 
 const Parallaxworldofugg = styled.div`

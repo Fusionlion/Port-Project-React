@@ -5,11 +5,9 @@ import { H1, MediumText, SmallText } from "../styles/TextStyles";
 import GetStartedButton from "../buttons/GetStartedButton";
 import "../styles/Font.css";
 
-
 function HeroSection() {
   return (
     <Wrapper>
-   
       <Wave />
       {/* <WaveBackground /> */}
       <ContentWrapper>
@@ -75,7 +73,7 @@ const ContentWrapper = styled.div`
 `;
 
 const TextWrapper = styled.div`
- width: 617px;
+  width: 617px;
   display: grid;
   gap: 30px;
   padding-top: 80px;
