@@ -30,9 +30,8 @@ function SecondPage() {
               onClick={() => handleTabClick("Home")}
             >
               <div
-                className={`tab ${
-                  activeTab === "Home" ? "middle-btn" : "middle-btn-inactive"
-                }`}
+                className={`tab ${activeTab === "Home" ? "middle-btn" : "middle-btn-inactive"
+                  }`}
               >
                 {" "}
                 Home
@@ -44,11 +43,10 @@ function SecondPage() {
               onClick={() => handleTabClick("Projects")}
             >
               <div
-                className={`tab ${
-                  activeTab === "Projects"
-                    ? "middle-btn"
-                    : "middle-btn-inactive"
-                }`}
+                className={`tab ${activeTab === "Projects"
+                  ? "middle-btn"
+                  : "middle-btn-inactive"
+                  }`}
               >
                 {" "}
                 Projects
@@ -61,9 +59,8 @@ function SecondPage() {
               onClick={() => handleTabClick("Course")}
             >
               <div
-                className={`tab ${
-                  activeTab === "Course" ? "middle-btn" : "middle-btn-inactive"
-                }`}
+                className={`tab ${activeTab === "Course" ? "middle-btn" : "middle-btn-inactive"
+                  }`}
               >
                 {" "}
                 Course
@@ -76,9 +73,8 @@ function SecondPage() {
           </div>
         </div>
         <div
-          className={`tab-content-item ${
-            activeTab === "Home" ? "fade-in" : "fade-out"
-          }`}
+          className={`tab-content-item ${activeTab === "Home" ? "fade-in" : "fade-out"
+            }`}
         >
           <div className="character"></div>
           <div className="body-behind">
@@ -192,9 +188,8 @@ function SecondPage() {
         </div>
         {/* content starts */}
         <div
-          className={`tab-content-item ${
-            activeTab === "Projects" ? "fade-in" : "fade-out"
-          }`}
+          className={`tab-content-item ${activeTab === "Projects" ? "fade-in" : "fade-out"
+            }`}
         >
           <ProjectBios />
         </div>
@@ -202,9 +197,8 @@ function SecondPage() {
 
         {/* content starts */}
         <div
-          className={`tab-content-item ${
-            activeTab === "Course" ? "fade-in" : "fade-out"
-          }`}
+          className={`tab-content-item ${activeTab === "Course" ? "fade-in" : "fade-out"
+            }`}
         >
           <Course />
         </div>

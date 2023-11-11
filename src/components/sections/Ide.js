@@ -34,9 +34,12 @@ const Ide = ({ data }) => {
 export default Ide;
 
 const Wrapper = styled.div`
-  background-color: #0b0b0b;
+  background-color: #000000;
   color: white;
   border-radius: 17px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   height: 482px;
   width: 658px;
@@ -44,6 +47,7 @@ const Wrapper = styled.div`
   font-size: 20px;
   font-family: "Spline Sans Mono", sans-serif;
   position: relative;
+  border: 1px #3f3939 solid;
 
   .next-ide-btn {
     padding: 10px;

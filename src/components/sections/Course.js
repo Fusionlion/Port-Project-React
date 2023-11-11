@@ -1,13 +1,38 @@
 import React from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import CourseHero from "./CourseHero";
 import CourseIde from "./CourseIde";
+import FourthSection from "./FourthSection";
+
 export default function Course() {
+    const [activeTab, setActiveTab] = useState("Data");
+
+    const handleTabClick = (tabName) => {
+      setActiveTab(tabName);
+    };
+  const handleChildClick = (data) => {
+     console.log("Received data in parent:", data);
+  };
   return (
     <Wrapper>
       <Background />
-      <CourseHero />
-      <CourseIde />
+      <CourseHero active={handleTabClick} />
+
+      <div
+        className={`tab-content-item ${
+          activeTab === "Data" ? "fade-in" : "fade-out"
+        }`}
+      >
+        <CourseIde />
+      </div>
+      <div
+        className={`tab-content-item ${
+          activeTab === "React" ? "fade-in" : "fade-out"
+        }`}
+      >
+        <FourthSection />
+      </div>
     </Wrapper>
   );
 }
@@ -21,7 +46,7 @@ const Wrapper = styled.div`
 `;
 
 const Background = styled.div`
-  background-image: linear-gradient(to top, #05040514, #000, #000);
+  background-image: linear-gradient(to top, #000000, #040315, #000);
   width: 100%;
   height: 100%;
   z-index: -1;

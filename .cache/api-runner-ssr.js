@@ -1,8 +1,8 @@
 var plugins = [{
-      plugin: require('/Users/zabloncharles/Desktop/Project-Zero-master/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
+      plugin: require('/Users/zabloncharles/Library/CloudStorage/GoogleDrive-zab.charles@gmail.com/Other computers/My Laptop/Cloud/Project-Zero-master/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
     },{
-      plugin: require('/Users/zabloncharles/Desktop/Project-Zero-master/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
+      plugin: require('/Users/zabloncharles/Library/CloudStorage/GoogleDrive-zab.charles@gmail.com/Other computers/My Laptop/Cloud/Project-Zero-master/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
       options: {"plugins":[],"displayName":true,"fileName":true,"minify":true,"transpileTemplateLiterals":true,"pure":false},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
