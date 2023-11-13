@@ -6,8 +6,10 @@ import GetStartedButton from "../buttons/GetStartedButton";
 import "../styles/Font.css";
 import { useState } from "react";
 function CourseHero({ setActiveTab }) {
+    const [activeCourse, setActiveCourse] = useState("Data");
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);
+    setActiveCourse(tabName);
     console.log("clicked - " + tabName);
   };
   return (
@@ -39,19 +41,33 @@ function CourseHero({ setActiveTab }) {
           <div className="right-btn" onClick={() => handleTabClick("Data")}>
             Data Structures
           </div>
-          <div className="right-line"></div>
+          <div
+            className={
+              activeCourse === "Data" ? "right-line" : "right-line-inactive"
+            }
+          ></div>
         </div>
 
         <div className="right-text-and-line">
           <div className="right-btn" onClick={() => handleTabClick("React")}>
             React
           </div>
-          <div className="right-line-inactive"></div>
+          <div
+            className={
+              activeCourse === "React" ? "right-line" : "right-line-inactive"
+            }
+          ></div>
         </div>
 
         <div className="right-text-and-line">
-          <div className="right-btn">Java</div>
-          <div className="right-line-inactive"></div>
+          <div className="right-btn" onClick={() => handleTabClick("Java")}>
+            Java
+          </div>
+          <div
+            className={` ${
+              activeCourse == "Java" ? "right-line" : "right-line-inactive"
+            }`}
+          ></div>
         </div>
       </FloatingTextRight>
       <FloatingDescRight>
@@ -119,11 +135,18 @@ const FloatingTextRight = styled.div`
     width: 50px;
     height: 2px;
     background-color: #ca4741;
+    transition: all 1s ease;
+  }
+  .right-line-active {
+    width: 50px; /* Expand to 50px width when active */
+    height: 2px;
+    background-color: #ca4741;
   }
   .right-line-inactive {
     width: 30px;
     height: 2px;
     opacity: 0.1px;
+    transform: scaleX(1.5);
   }
 `;
 const Wrapper = styled.div`

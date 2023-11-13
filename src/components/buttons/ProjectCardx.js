@@ -50,6 +50,7 @@ const ProjectCardStyle = styled.div`
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-family: "Spline Sans Mono", sans-serif;
   }
   .icon-and-desc {
     display: flex;

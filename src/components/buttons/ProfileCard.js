@@ -74,6 +74,7 @@ const Wrapper = styled.div`
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: scroll;
+    font-family: "Spline Sans Mono", sans-serif;
   }
   .topicsocialgrid {
     display: flex;

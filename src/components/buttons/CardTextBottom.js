@@ -60,6 +60,7 @@ const Card = styled.div`
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-family: "Spline Sans Mono", sans-serif;
   }
   .icon-and-desc {
     display: flex;
@@ -98,10 +99,11 @@ const ProjectCardStyle = styled.div`
     position: absolute;
     font-size: 24px;
     backdrop-filter: blur(10px);
-    backdrop-filter: contrast(0.5);
-    color: orange;
+    /* backdrop-filter: contrast(0.9); */
+    background-color: black ;
+    color: white;
     border-radius: 60px;
-
+    font-family: "Spline Sans Mono", sans-serif;
     left: 0;
     margin: 10px;
   }

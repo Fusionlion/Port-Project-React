@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import ProfileCard from "../buttons/ProfileCard";
 import CardTextBottom from "../buttons/CardTextBottom";
+import ProjectBioCard from "../buttons/CourseCard";
 import { useState } from "react";
 
 function ProjectBios() {
@@ -13,25 +14,37 @@ function ProjectBios() {
   return (
     <BioWrapper>
       <ProjectsColumn>
-        <CardTextBottom
+        <div className="Project-column-desc">
+          As a software engineer, I've successfully delivered a diverse range of
+          impactful projects, demonstrating proficiency in various technologies
+          and a proven track record of project excellence.
+        </div>
+
+        <ProjectBioCard
+          title="MyHealth+"
+          desc="I developed an iOS application using Xcode, which serves as a sophisticated platform for meticulously monitoring fertility windows, as well as seamlessly facilitating appointments with healthcare professionals, thereby delivering a holistic solution for the management of reproductive health. This app empowers users with the ability to autonomously manage their fertility, while ensuring effortless access to specialized medical consultations when requisite."
+          imageSrc="https://remezcla.com/wp-content/uploads/2022/10/GettyImages-1430670718-1424x1068.jpg"
+          num="1"
+          tapped={() => handleTabClick("Showcase")}
+        />
+        <ProjectBioCard
           title="MyHealth+"
           imageSrc="https://remezcla.com/wp-content/uploads/2022/10/GettyImages-1430670718-1424x1068.jpg"
           desc="I developed an iOS application using Xcode, which serves as a sophisticated platform for meticulously monitoring fertility windows, as well as seamlessly facilitating appointments with healthcare professionals, thereby delivering a holistic solution for the management of reproductive health. This app empowers users with the ability to autonomously manage their fertility, while ensuring effortless access to specialized medical consultations when requisite."
           tapped={() => handleTabClick("Showcase")}
         />
-        <CardTextBottom
+        <ProjectBioCard
           title="Fuze"
           imageSrc="/images/my-svg/stock-app.png"
           desc="I engineered an iOS application through Xcode that provides a cutting-edge interface for users to engage in the intricate world of stock trading, offering real-time market data, advanced analysis tools, and seamless trade execution capabilities, thereby enabling individuals to participate in the dynamic and complex realm of financial markets with agility and sophistication. This app empowers users with the tools and insights needed to navigate the intricate landscape of stock trading, fostering informed decision-making and facilitating efficient execution of investment strategies."
           tapped={() => handleTabClick("Mathis")}
         />
-        <ProfileCard
+        <ProjectBioCard
           title="Showcase"
           imageSrc="/images/my-svg/showcase.png"
           desc="I developed a Salesforce product showcase page using Apex, HTML, and CSS, creating a compelling and visually engaging platform within the Salesforce ecosystem. This page empowers businesses to effectively present their products, enhancing their sales and marketing strategies with a rich and dynamic user experience."
         />
-        <ProfileCard />
-        <ProfileCard />
+       
       </ProjectsColumn>
       {/* THE info and description of project in detail */}
       <Wrapper>
@@ -182,6 +195,18 @@ const ProjectsColumn = styled.div`
   padding-right: 20px;
   padding-top: 10px;
   padding-bottom: 139px;
+  width: 290px;
+
+  .project-column-desc {
+    font-family: "Spline Sans Mono", sans-serif;
+    text-align: end;
+    line-height: 23px;
+    background-clip: text;
+    background: linear-gradient(to right, rgb(255 255 255), rgb(146 73 107));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
 `;
 const BioWrapper = styled.div`
   backdrop-filter: blur(21px);
@@ -219,7 +244,7 @@ const Wrapper = styled.div`
   .fade-out {
     transform: translateX(-150%);
     opacity: 0;
-    display: none;
+    
   }
 `;
 
@@ -235,7 +260,7 @@ const Parallaxworldofugg = styled.div`
   }
 
   h1 {
-    font-family: "Oswald", sans-serif;
+    font-family: "Spline Sans Mono", sans-serif;
     font-size: 24px;
     font-weight: 400;
     text-transform: uppercase;
@@ -245,7 +270,7 @@ const Parallaxworldofugg = styled.div`
   }
 
   h2 {
-    font-family: "Oswald", sans-serif;
+    font-family: "Pixel12x10", sans-serif;
     font-size: 70px;
     letter-spacing: 10px;
     text-align: center;
@@ -257,7 +282,7 @@ const Parallaxworldofugg = styled.div`
   }
 
   h3 {
-    font-family: "Oswald", sans-serif;
+    font-family: "Spline Sans Mono", sans-serif;
     font-size: 14px;
     font-weight: 400;
     letter-spacing: 8px;
@@ -266,7 +291,7 @@ const Parallaxworldofugg = styled.div`
   }
 
   p {
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: "Spline Sans Mono", sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 24px;
@@ -278,10 +303,12 @@ const Parallaxworldofugg = styled.div`
     text-align: center;
     font-size: 35px;
     letter-spacing: 8px;
+    font-family: "Spline Sans Mono", sans-serif;
   }
   .title h1 {
     font-size: 35px;
     letter-spacing: 8px;
+    font-family: "Spline Sans Mono", sans-serif;
   }
   .block-gray {
     background: #f2f2f2;

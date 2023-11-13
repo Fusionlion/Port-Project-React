@@ -36,7 +36,7 @@ const Card = styled.div`
 
   &:hover {
     /* Define your hover effect styles here */
-overflow: visible ;
+    overflow: visible;
   }
 
   .title {
@@ -55,6 +55,7 @@ overflow: visible ;
     overflow: hidden;
     text-overflow: ellipsis;
     color: white;
+    font-family: "Spline Sans Mono", sans-serif;
   }
   .start {
     align-self: center;
