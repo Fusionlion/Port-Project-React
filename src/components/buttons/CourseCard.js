@@ -70,7 +70,7 @@ const Card = styled.div`
     height: 100%;
     width: 100%;
     z-index: 2;
-    background-image: linear-gradient(#ff000000, #0000009c, #242420);
+    background-image: linear-gradient(#ff000000, #000000, #242420);
     border-radius: 17px;
   }
   .icon-and-title {

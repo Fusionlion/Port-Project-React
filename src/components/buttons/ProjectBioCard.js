@@ -42,6 +42,7 @@ const Content = styled.div`
     padding: 10px 0px;
     cursor: pointer;
     transition: linear 0.2s;
+    font-family: "Spline Sans Mono", sans-serif;
   }
   .start-btn:hover {
     background-color: black;
@@ -51,15 +52,17 @@ const Content = styled.div`
   .start-and-end {
     display: flex;
     justify-content: space-between;
+    font-family: "Spline Sans Mono", sans-serif;
   }
   .start {
     color: white;
     padding: 10px;
     transition: linear 0.2s;
+    font-family: "Spline Sans Mono", sans-serif;
   }
 `;
 const Card = styled.div`
-  width: 270px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   text-align: start;
@@ -72,7 +75,7 @@ const Card = styled.div`
     height: 100%;
     width: 100%;
     z-index: 2;
-    background-image: linear-gradient(#00000000, #060606, #370f20);
+    background-image: linear-gradient(#ff000000, #000000, #242420);
     border-radius: 17px;
   }
   .icon-and-title {
@@ -84,12 +87,13 @@ const Card = styled.div`
 
   .title {
     font-size: 18px;
-    background: linear-gradient(to right, rgb(255 255 255), rgb(146 73 107));
+    background: linear-gradient(to right, rgb(91 161 207), rgb(255 255 255));
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     text-transform: uppercase;
     margin-top: 10px;
+    font-family: "Pixel12x10", sans-serif;
   }
   .desc {
     font-size: 10px;
@@ -101,6 +105,7 @@ const Card = styled.div`
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-family: "Spline Sans Mono", sans-serif;
   }
   .icon-and-desc {
     display: flex;
@@ -111,7 +116,7 @@ const Card = styled.div`
 `;
 const ProjectCardStyle = styled.div`
   background-color: black;
-  /* width: 250px; */
+  width: 100%;
   height: 360px;
   border-radius: 12px;
   background-image: url("/images/my-svg/falling-rocks.svg");

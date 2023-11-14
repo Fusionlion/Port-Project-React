@@ -1,4 +1,5 @@
 import React from "react";
+import SEO from "../components/layout/seo";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import "../components/styles/Font.css";
@@ -7,9 +8,11 @@ import { useState } from "react";
 import ProjectBios from "../components/sections/ProjectBios";
 import Course from "../components/sections/Course";
 import AboutMeSection from "../components/sections/AboutMeSection";
+import HeroSection from "../components/sections/HeroSection";
+import PortfolioHero from "../components/sections/PortfolioHero";
 
 function SecondPage() {
-  const [activeTab, setActiveTab] = useState("Home");
+  const [activeTab, setActiveTab] = useState("Portfolio");
 
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);
@@ -17,21 +20,26 @@ function SecondPage() {
 
   return (
     <AboutMe>
+      <SEO title="Fusion | Welcome to my portfolio" />
       <Backdrop>
         <div className="header">
           <div className="left-section">
             <div className="logo"></div>
-            <div className="title">Portfolio</div>
+            <div className="title" onClick={() => handleTabClick("Portfolio")}>
+              Portfolio
+            </div>
           </div>
           <div className="middle-section">
             {/* Tab bar for home starts here */}
             <div
-              className={`tab ${activeTab === "Home" ? "active" : ""}`}
-              onClick={() => handleTabClick("Home")}
+              className={`tab ${activeTab === "Portfolio" ? "active" : ""}`}
+              onClick={() => handleTabClick("Portfolio")}
             >
               <div
                 className={`tab ${
-                  activeTab === "Home" ? "middle-btn" : "middle-btn-inactive"
+                  activeTab === "Portfolio"
+                    ? "middle-btn"
+                    : "middle-btn-inactive"
                 }`}
               >
                 {" "}
@@ -99,19 +107,15 @@ function SecondPage() {
           <div className="body-behind">
             <div className="left-behind">
               <div className="pt-and-title">
-                <div className="left-pt"></div>
+                <SmallImage src="https://pngimg.com/d/robot_PNG40.png"></SmallImage>
                 <div className="pt-title">
                   Software <br />
                   Engineer
                 </div>
               </div>
 
-              <div className="left-pt"></div>
-              <div className="left-pt"></div>
-              <div className="left-pt"></div>
-              <div className="left-pt"></div>
-              <div className="left-pt"></div>
-              <div className="left-pt"></div>
+              <SmallImage src="https://cdn.dribbble.com/userupload/4090463/file/original-a9e1688848511656a0ba71886a53665d.png?resize=1504x1128"></SmallImage>
+              <SmallImage src="https://cdn.dribbble.com/userupload/4087783/file/original-dbebf5699aad9099c9ce35e80a99b165.png?resize=1504x1128"></SmallImage>
             </div>
             <div className="right-social-behind">
               <div className="social-text">
@@ -234,6 +238,15 @@ function SecondPage() {
           <AboutMeSection />
         </div>
         {/* content ends */}
+        {/* content starts */}
+        <div
+          className={`tab-content-item ${
+            activeTab === "Portfolio" ? "fade-in" : "fade-out"
+          }`}
+        >
+          <PortfolioHero tapped={() => handleTabClick("About")}/>
+        </div>
+        {/* content ends */}
       </Backdrop>
     </AboutMe>
   );
@@ -241,35 +254,60 @@ function SecondPage() {
 
 export default SecondPage;
 
+
+const SmallImage = styled.div`
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-color: black;
+  height: 70px;
+  width: 70px;
+  border-radius: 60px;
+  background-image: url(${(props) => props.src});
+  cursor: pointer;
+  transition: linear 0.2s;
+  z-index: 999;
+  &:hover {
+    transition: linear 0.2s;
+    transform: scale(1.02);
+  }
+`; 
 const AboutMe = styled.div`
   height: 100vh;
   width: 100vw;
   overflow: hidden;
   background: linear-gradient(to top, #000000, #000, #000000);
+
+  .title {
+    color: white;
+    font-family: "Spline Sans Mono", sans-serif;
+    cursor: pointer;
+  }
 `;
 const Backdrop = styled.div`
   height: 100vh;
   width: 100vw;
   padding: 20px;
   /* background-color: blue; */
-  background-image: url(/images/my-svg/sea-animals.svg);
+  background-image: url(/images/my-svg/first.svg);
   background-size: cover;
   background-repeat: repeat-x;
-  background-position: top left;
+  background-position: top right;
   overflow: hidden;
   position: relative;
 
   .character {
     background-image: url(/images/my-svg/exploded_mockup.png);
-    top: 0;
-    bottom: 0;
-    left: 0;
+    top: -125px;
+    bottom: 230px;
+    left: -22px;
     right: 0;
     border-radius: 12px;
     position: absolute;
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    height: 100vh;
   }
   .is-flex {
     display: flex;
@@ -328,17 +366,19 @@ const Backdrop = styled.div`
   }
   .middle-btn {
     font-size: 17px;
-
+    background-color: #fffbf6;
     color: #db3939;
-    border-bottom: white solid 2px;
+
     padding-bottom: 33px;
     border-radius: -1px;
+    transition: all 0.5s ease-in-out;
   }
   .middle-btn-inactive {
     font-size: 17px;
     color: #bdbdc1;
     padding-bottom: 33px;
     border-radius: -1px;
+    transition: all 0.5s ease-in-out;
   }
 
   .body-behind {
@@ -351,6 +391,8 @@ const Backdrop = styled.div`
     overflow: hidden;
   }
   .left-behind {
+    position: absolute;
+    left: 0;
     font-size: 34px;
     gap: 37px;
     display: flex;
@@ -384,6 +426,8 @@ const Backdrop = styled.div`
     padding: 14px;
   }
   .right-social-behind {
+    position: absolute;
+    right: 0;
     font-size: 15px;
     display: flex;
     flex-direction: column;
@@ -420,6 +464,11 @@ const Backdrop = styled.div`
   }
   .tab {
     cursor: pointer;
+    font-family: "Spline Sans Mono", sans-serif;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    /* background-color: #774a0b; */
+    border-radius: 6px;
   }
   .tab-content-item {
     transition: transform 0.3s ease-in-out;

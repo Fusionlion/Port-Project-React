@@ -212,6 +212,9 @@ const Wrapper = styled.div`
   background-size: cover;
   background-position: top;
   padding: 20px;
+  transform: translateY(50px);
+  transition: all 1s linear;
+
   .left-and-right-sections {
     display: flex;
     gap: 40px;
@@ -371,10 +374,7 @@ const Wrapper = styled.div`
     transform: translateY(0);
     transition: all 1s linear;
   }
-  .fade-out {
-    transition: all 1s ease-in-out;
-    transform: translateY(20px);
-  }
+ 
 `;
 
 // const Background = styled.div`

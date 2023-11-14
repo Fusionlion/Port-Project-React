@@ -10,6 +10,7 @@ function Layout({ children }) {
       <Header />
       <main>{children}</main>
       <meta name="viewport" content="width=device-width"></meta>
+     
     </>
   );
 }

@@ -6,18 +6,17 @@ import { Caption2, SmallText } from "../styles/TextStyles";
 export default function GetStartedButton(props) {
   const { title, subtitle } = props;
   return (
-    <Link to="/page-2">
-      <Wrapper>
-        <IconWrapper>
-          <Icon src="/images/icons/code.svg" className="icon" />
-       
-        </IconWrapper>
-        <TextWrapper>
-          <Title>{title || "Get Started"}</Title>
-          <Subtitle>{subtitle || "Let's get to work :)"}</Subtitle>
-        </TextWrapper>
-      </Wrapper>
-    </Link>
+    // <Link to="/page-2">
+    <Wrapper onClick={props.tapped}>
+      <IconWrapper>
+        <Icon src="/images/icons/code.svg" className="icon" />
+      </IconWrapper>
+      <TextWrapper>
+        <Title>{title || "Get Started"}</Title>
+        <Subtitle>{subtitle || "Let's get to work :)"}</Subtitle>
+      </TextWrapper>
+    </Wrapper>
+    // </Link>
   );
 }
 
