@@ -64,8 +64,8 @@ function CourseHero({ setActiveTab }) {
             Java
           </div>
           <div
-            className={` ${
-              activeCourse == "Java" ? "right-line" : "right-line-inactive"
+            className={`right-line-inactive ${
+              activeCourse == "Java" ? "right-line" : ""
             }`}
           ></div>
         </div>

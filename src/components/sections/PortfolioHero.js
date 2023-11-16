@@ -4,13 +4,16 @@ import { themes } from "../styles/ColorStyles";
 import { H1, MediumText, SmallText } from "../styles/TextStyles";
 import GetStartedButton from "../buttons/GetStartedButton";
 import "../styles/Font.css";
-import { useState } from "react";
+import BirdsLottie from "./BirdsLottie";
+
+
 
 function PortfolioHero(props) {
   return (
     <Wrapper>
       <Wave />
       {/* <WaveBackground /> */}
+      <BirdsLottie />
       <ContentWrapper>
         <TextWrapper>
           <Name>ZABLON CHARLES</Name>
@@ -27,8 +30,8 @@ function PortfolioHero(props) {
           </Description>
           <GetStartedButton tapped={props.tapped} />
           <Access>
-            Learn the best tools and platforms.Make your code efficient and
-            learn new methodologies in programming.
+            I'd love to discuss the projects I've developed over the years and
+            share the story of how it all began.
           </Access>
         </TextWrapper>
       </ContentWrapper>
@@ -45,11 +48,12 @@ function PortfolioHero(props) {
         </div>
       </FloatingTextRight>
       <FloatingDescRight>
-        What everyone said was true. You cannot learn how to code by reading,
-        listening or watching someone else do it. You have to get your hands
-        dirty! I am a software developer building interfaces and accessible
-        applications. Welcome to my personal slice of the internet.I'm glad
-        you're here!
+        Writing code is an art form where precision meets creativity, and like a
+        well-crafted joke, the beauty of code is often in its elegance and
+        efficiency. When code is expressive and clear, it communicates its
+        purpose effortlessly. Much like humor, the best code requires no
+        explanation; it simply works seamlessly, conveying its brilliance to
+        those who appreciate the craftsmanship behind it.
       </FloatingDescRight>
 
       {/* The timeline  */}
@@ -253,3 +257,5 @@ const Access = styled(SmallText)`
   color: #fff;
   font-family: "Spline Sans Mono", sans-serif;
 `;
+
+
