@@ -10,17 +10,26 @@ import Course from "../components/sections/Course";
 import AboutMeSection from "../components/sections/AboutMeSection";
 import HeroSection from "../components/sections/HeroSection";
 import PortfolioHero from "../components/sections/PortfolioHero";
+import MenuOptions from "../components/buttons/MenuOptions";
 
 function SecondPage() {
   const [activeTab, setActiveTab] = useState("Portfolio");
-
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);
+  };
+
+  const [isToggled, setToggled] = useState(false);
+
+  const handleClick = () => {
+    setToggled(!isToggled);
   };
 
   return (
     <AboutMe>
       <SEO title="Fusion | Welcome to my portfolio" />
+      <Bubbles />
+      <Lines />
+
       <Backdrop>
         <div className="header">
           <div className="left-section">
@@ -95,9 +104,16 @@ function SecondPage() {
           </div>
           <div className="right-section">
             <div className="right-section-icon"></div>
-            <div className="right-section-drop-down"></div>
+            <div
+              className={`right-section-drop-down ${
+                isToggled ? "right-section-drop-down-active" : ""
+              }`}
+              onClick={handleClick}
+            ></div>
           </div>
         </div>
+
+        {/* Home content */}
         <div
           className={`tab-content-item ${
             activeTab === "Home" ? "fade-in" : "fade-out"
@@ -209,7 +225,7 @@ function SecondPage() {
             </div>
           </ForeGround>
         </div>
-        {/* content starts */}
+        {/* Projects starts */}
         <div
           className={`tab-content-item ${
             activeTab === "Projects" ? "fade-in" : "fade-out"
@@ -244,17 +260,41 @@ function SecondPage() {
             activeTab === "Portfolio" ? "fade-in" : "fade-out"
           }`}
         >
-          <PortfolioHero tapped={() => handleTabClick("About")}/>
+          <PortfolioHero tapped={() => handleTabClick("About")} />
         </div>
         {/* content ends */}
       </Backdrop>
+      {/* Menu item shown here */}
+      <div className={`${isToggled ? "menu-appear" : "disappear"}`}>
+        <MenuOptions setActiveTab={handleTabClick} />
+      </div>
     </AboutMe>
   );
 }
 
 export default SecondPage;
 
-
+const Lines = styled.div`
+  height: 100vh;
+  width: 100vw;
+  padding: 20px;
+  background-image: url(/images/my-svg/lines.svg);
+  background-size: contain;
+  background-repeat: repeat-x;
+  background-position: top right;
+  position: absolute;
+`;
+const Bubbles = styled.div`
+  height: 100vh;
+  width: 100vw;
+  bottom: 10px;
+  background-image: url(/images/my-svg/undersea.svg);
+  background-size: contain;
+  background-repeat: repeat-x;
+  background-position: bottom;
+  position: absolute;
+  filter: hue-rotate(7deg);
+`;
 const SmallImage = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
@@ -271,30 +311,45 @@ const SmallImage = styled.div`
     transition: linear 0.2s;
     transform: scale(1.02);
   }
-`; 
+`;
 const AboutMe = styled.div`
   height: 100vh;
   width: 100vw;
   overflow: hidden;
   background: linear-gradient(to top, #000000, #000, #000000);
-
+  position: relative;
   .title {
     color: white;
     font-family: "Spline Sans Mono", sans-serif;
     cursor: pointer;
+  }
+  .menu-appear {
+    top: 106px;
+    opacity:1;
+    transition: opacity 1s ease-in-out;
+  }
+  .disappear {
+   
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
   }
 `;
 const Backdrop = styled.div`
   height: 100vh;
   width: 100vw;
   padding: 20px;
-  /* background-color: blue; */
-  background-image: url(/images/my-svg/first.svg);
-  background-size: cover;
+
+  background-image: url(/images/my-svg/lines.svg);
+  background-image: url(/images/my-svg/bubbles.svg);
+  background-size: contain;
   background-repeat: repeat-x;
   background-position: top right;
   overflow: hidden;
   position: relative;
+
+  @media (max-width: 1000px) {
+    overflow: scroll;
+  }
 
   .character {
     background-image: url(/images/my-svg/exploded_mockup.png);
@@ -336,6 +391,10 @@ const Backdrop = styled.div`
     display: flex;
     gap: 10px;
     z-index: 999;
+    @media screen and (max-width: 1000px) {
+    display:none ;
+    
+    }
   }
   .left-section {
     display: flex;
@@ -354,6 +413,7 @@ const Backdrop = styled.div`
     background-image: url(https://ei7cr2pn3uw.exactdn.com/wp-content/uploads/2019/04/Mark-Twain-Portrait.jpg?strip=all&lossy=1&ssl=1);
     background-size: cover;
     background-position: center;
+    cursor: pointer;
   }
   .right-section-drop-down {
     height: 30px;
@@ -363,6 +423,20 @@ const Backdrop = styled.div`
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0.6;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+  .right-section-drop-down-active {
+    height: 30px;
+    width: 30px;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+    cursor: pointer;
+    transform: rotate(180deg);
+    transition: transform 0.3s ease-in-out;
   }
   .middle-btn {
     font-size: 17px;

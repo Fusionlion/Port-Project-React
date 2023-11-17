@@ -6,15 +6,10 @@ import GetStartedButton from "../buttons/GetStartedButton";
 import "../styles/Font.css";
 import BirdsLottie from "./BirdsLottie";
 
-
-
 function PortfolioHero(props) {
   return (
     <Wrapper>
-      <Wave />
-      {/* <WaveBackground /> */}
-      <BirdsLottie />
-      <ContentWrapper>
+      <div className="top-left-and-right">
         <TextWrapper>
           <Name>ZABLON CHARLES</Name>
           <Title>
@@ -34,27 +29,33 @@ function PortfolioHero(props) {
             share the story of how it all began.
           </Access>
         </TextWrapper>
-      </ContentWrapper>
-      <FloatingTextRight>
-        <div className="right-social-behind">
-          <div className="social-text">
-            Read the <br />
-            biagraphy
+
+        <TopRightContent>
+          <Bust />
+
+          <div className="icons-and-desc">
+            <div className="social-icons">
+              <div className="social-text">
+                Read the <br />
+                biagraphy
+              </div>
+              <div className="social-app-1"></div>
+              <div className="social-app-2"></div>
+              <div className="social-app-3"></div>
+              <div className="social-app-4"></div>
+            </div>
+            <div className="after-social-desc">
+              Writing code is an art form where precision meets creativity, and
+              like a well-crafted joke, the beauty of code is often in its
+              elegance and efficiency. When code is expressive and clear, it
+              communicates its purpose effortlessly. Much like humor, the best
+              code requires no explanation; it simply works seamlessly,
+              conveying its brilliance to those who appreciate the craftsmanship
+              behind it.
+            </div>
           </div>
-          <div className="social-app-1"></div>
-          <div className="social-app-2"></div>
-          <div className="social-app-3"></div>
-          <div className="social-app-4"></div>
-        </div>
-      </FloatingTextRight>
-      <FloatingDescRight>
-        Writing code is an art form where precision meets creativity, and like a
-        well-crafted joke, the beauty of code is often in its elegance and
-        efficiency. When code is expressive and clear, it communicates its
-        purpose effortlessly. Much like humor, the best code requires no
-        explanation; it simply works seamlessly, conveying its brilliance to
-        those who appreciate the craftsmanship behind it.
-      </FloatingDescRight>
+        </TopRightContent>
+      </div>
 
       {/* The timeline  */}
       <div className="bottom">
@@ -88,85 +89,108 @@ const Name = styled.div`
   font-size: 1.2rem;
   font-family: "Spline Sans Mono", sans-serif;
 `;
-const FloatingDescRight = styled(MediumText)`
-  color: #fff;
-  font-size: 12px;
-  font-family: "Spline Sans Mono", sans-serif;
-  position: absolute;
-  width: 300px;
 
-  padding: 20px;
-  top: 372px;
-  right: 20px;
+const TopRightContent = styled.div`
   justify-content: center;
   display: flex;
-  justify-content: center;
-  text-align: end;
-`;
-const FloatingTextRight = styled.div`
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: end;
-  flex-direction: column;
-  gap: 20px;
-  top: 20px;
-  right: 20px;
-  /* background-color: red; */
-  .right-text-and-line {
-    display: flex;
-    gap: 5px;
+  flex: 1;
+  position: relative;
+
+  @media screen and (max-width: 1000px) {
+    justify-content: space-between;
     align-items: center;
+    height: 400px;
+    flex: none;
+  }
+  .icons-and-desc {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: 1000px) {
+      flex: 1;
+      justify-content: end;
+      align-items: end;
+    }
+  }
+  .social-icons {
+    position: absolute;
+    padding: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    flex-direction: column;
+    gap: 20px;
+
+    top: 69px;
+    @media screen and (max-width: 1000px) {
+      right: 52px;
+      position: relative;
+      flex-direction: row;
+      top: 0;
+    }
+  }
+  .after-social-desc {
+    color: #fff;
+    font-size: 12px;
     font-family: "Spline Sans Mono", sans-serif;
-  }
-  .right-btn {
-    color: white;
-    background-color: #0b0b0b;
-    padding: 10px 20px;
-    border-radius: 10px;
-    border: white 1px dotted;
-    cursor: pointer;
-  }
-  .right-btn:hover {
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
-      0px 30px 60px rgba(23, 0, 102, 0.5),
-      inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
-    transform: translateY(-5px);
-    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-  }
-  .right-line {
-    width: 50px;
-    height: 2px;
-    background-color: #ca4741;
-    transition: all 1s ease;
-  }
-  .right-line-active {
-    width: 50px; /* Expand to 50px width when active */
-    height: 2px;
-    background-color: #ca4741;
-  }
-  .right-line-inactive {
-    width: 30px;
-    height: 2px;
-    opacity: 0.1px;
-    transform: scaleX(1.5);
+    position: absolute;
+    width: 300px;
+
+    padding: 20px;
+    top: 372px;
+    right: 20px;
+    justify-content: center;
+    display: flex;
+    justify-content: center;
+    text-align: end;
+    @media screen and (max-width: 1000px) {
+      position: relative;
+      flex-direction: row;
+      top: 0;
+    }
   }
 `;
 const Wrapper = styled.div`
-  cursor: pointer;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  @media screen and (max-width: 1000px) {
+    overflow: visible;
+
+    height: 120%;
+   
+  }
+  .top-left-and-right {
+    display: flex;
+
+    justify-content: space-between;
+
+    @media screen and (max-width: 1000px) {
+      /* Your styles for screens with a maximum width of 430 pixels go here */
+      flex-direction: column;
+    }
+  }
   .bottom {
     background: #31323a;
-    width: 100%;
     height: 1px;
-    margin: 40px 0px;
+    margin: -40px 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    align-self: bottom;
     color: white;
+    bottom: 0;
+    width: 100%;
+    font-family: "Spline Sans Mono", sans-serif;
+    @media screen and (max-width: 1000px) {
+      width: 90%;
+      overflow: hide;
+    }
   }
   .split-and-desc {
     display: flex;
@@ -190,38 +214,43 @@ const Wrapper = styled.div`
     text-transform: uppercase;
   }
 `;
-const Wave = styled.div`
-  position: absolute;
-  height: 800px;
-  background-image: url("/images/my-svg/falling-rocks.svg");
-  background-repeat: repeat;
-  background-size: contain;
+const Bust = styled.div`
+  display: flex;
+  flex: 1;
+  height: 100%;
   width: 100%;
+  right: 122px;
+  position: absolute;
+  background-image: url(/images/my-svg/merilios.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: hue-rotate(198deg);
+  /* filter: drop-shadow(10px 19px 22px #3f0f444f); */
 
-  z-index: -1;
-
-  @media (min-width: 1440px) {
+  @media screen and (max-width: 1000px) {
+    background-position: right;
+    position: relative;
+    flex: 1;
+    height: 300px;
     width: 100%;
-  }
-`;
-const ContentWrapper = styled.div`
-  margin: 0 auto;
-  padding: 200px 30px;
-  display: grid;
-  grid-template-columns: 360px auto;
-
-  @media (max-width: 450px) {
-    grid-template-columns: auto;
-    gap: 60px;
-    padding: 150px 20px 250px;
+    right: 0px;
   }
 `;
 
 const TextWrapper = styled.div`
-  width: 560px;
-  display: grid;
+  width: 690px;
+  display: flex;
+  flex-direction: column;
   gap: 30px;
-  padding-top: 80px;
+
+  margin: 0 auto;
+  padding: 200px 30px;
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+    padding-right: 150px;
+    padding: 45px 30px;
+  }
 `;
 
 const Title = styled.div`
@@ -257,5 +286,3 @@ const Access = styled(SmallText)`
   color: #fff;
   font-family: "Spline Sans Mono", sans-serif;
 `;
-
-
