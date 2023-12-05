@@ -133,7 +133,7 @@ var plugins = [{
     "include_favicon": true,
     "legacy": true,
     "theme_color_in_head": true,
-    "cacheDigest": null
+    "cacheDigest": "5782ee6af923248f75d90a2be9f0f214"
   }
 }]; // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [

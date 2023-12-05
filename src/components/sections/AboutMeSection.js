@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import CardTextBottom from "../buttons/CardTextBottom";
-import { useState } from "react";
+import { themes } from "../styles/ColorStyles";
+import { H1, MediumText, SmallText } from "../styles/TextStyles";
+import GetStartedButton from "../buttons/GetStartedButton";
+import "../styles/Font.css";
 import BookCard from "../buttons/BookCard";
 import BookWorkCard from "../buttons/BookWorkCard";
 import TimeLine from "./TimeLine";
@@ -11,205 +13,250 @@ import EducationSection from "./EducationSection";
 import ContactMeSection from "./ContactMeSection";
 import LocationSection from "./LocationSection";
 import CertificationSection from "./CertificationSection";
-
-export default function AboutMeSection() {
+import { useState } from "react";
+import ParallaxSection from "./ParallaxSection";
+import CourseIde from "./CourseIde";
+import AboutMeIde from "./AboutMeIde";
+import FifthSection from "./FifthSection";
+function AboutMeSection() {
   const [activeTab, setActiveTab] = useState("AboutMe");
-
+  const [activeCourse, setCourseTab] = useState("AboutMe");
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);
   };
   return (
     <Wrapper>
-      <div className="left-and-right-sections">
-        <div className="left">
-          <div className="first-section">
-            <div className="hero-image">
-              <div className="hero-title">Poets of the 19th century</div>
-              <hr></hr>
-              <div className="hero-title-desc">
-                This section provides insights into who I am. Explore details
-                about my background, achievements in various projects,
-                professional experience, and discover what activities bring me
-                joy during my leisure time.
+      <Wave />
+      {/* <WaveBackground /> */}
+
+      <div className="left-and-right-box">
+        <div className="left-box">
+          <BoxWrapper>
+            <div className="left">
+              <div className="first-section">
+                <ContentWrapper>
+                  <TextWrapper>
+                    <Title>
+                      Welcome
+                      <br /> to my <span>World</span>
+                    </Title>
+                    <Description>
+                      What everyone said was true. You cannot learn how to code
+                      by reading, listening or watching someone else do it. You
+                      have to get your hands dirty! I am a software developer
+                      building interfaces and accessible applications. Welcome
+                      to my personal slice of the internet.I'm glad you're here!
+                    </Description>
+
+                    <div className="second-section">
+                      <div
+                        className="image-and-text"
+                        onClick={() => handleTabClick("AboutMe")}
+                      >
+                        <div className="image"></div>
+
+                        <div
+                          className={`image-text ${
+                            activeTab === "AboutMe" ? "image-text-active" : ""
+                          }`}
+                        >
+                          Zablon <br />
+                          Charles
+                        </div>
+                      </div>
+
+                      <div
+                        className="image-and-text"
+                        onClick={() => handleTabClick("Education")}
+                      >
+                        <div className="image-2"></div>
+                        <div
+                          className={`image-text ${
+                            activeTab === "Education" ? "image-text-active" : ""
+                          }`}
+                        >
+                          Education <br />
+                          Level
+                        </div>
+                      </div>
+                      <div
+                        className="image-and-text"
+                        onClick={() => handleTabClick("Experience")}
+                      >
+                        <div className="image-3"></div>
+                        <div
+                          className={`image-text ${
+                            activeTab === "Experience"
+                              ? "image-text-active"
+                              : ""
+                          }`}
+                        >
+                          Professional <br />
+                          Experience
+                        </div>
+                      </div>
+
+                      {/* certs */}
+                      <div
+                        className="image-and-text"
+                        onClick={() => handleTabClick("Certifications")}
+                      >
+                        <div className="image-4"></div>
+                        <div
+                          className={`image-text ${
+                            activeTab === "Certifications"
+                              ? "image-text-active"
+                              : ""
+                          }`}
+                        >
+                          Certifications <br />
+                          Etc
+                        </div>
+                      </div>
+                    </div>
+                  </TextWrapper>
+                </ContentWrapper>
+              </div>
+
+              {/* Description starts here */}
+              <div className="third-section">
+                {/* Experience level */}
+                <div
+                  className={`tab-content-item ${
+                    activeTab === "Experience" ? "fade-in" : "fade-out"
+                  }`}
+                >
+                  <CareerSection />
+                </div>
+                {/* Education level */}
+                <div
+                  className={`tab-content-item ${
+                    activeTab === "Education" ? "fade-in" : "fade-out"
+                  }`}
+                >
+                  <EducationSection />
+                </div>
+                {/* Education level */}
+                <div
+                  className={`tab-content-item ${
+                    activeTab === "Contact" ? "fade-in" : "fade-out"
+                  }`}
+                >
+                  <ContactMeSection />
+                </div>
+
+                {/* Certs*/}
+                <div
+                  className={`tab-content-item ${
+                    activeTab === "Certifications" ? "fade-in" : "fade-out"
+                  }`}
+                >
+                  <CertificationSection />
+                </div>
               </div>
             </div>
-          </div>
-          <div className="second-section">
-            <div
-              className="image-and-text"
-              onClick={() => handleTabClick("AboutMe")}
-            >
-              <div className="image"></div>
-
-              <div
-                className={`image-text ${
-                  activeTab === "AboutMe" ? "image-text-active" : ""
-                }`}
-              >
-                Zablon <br />
-                Charles
-              </div>
-            </div>
-
-            <div
-              className="image-and-text"
-              onClick={() => handleTabClick("Education")}
-            >
-              <div className="image-2"></div>
-              <div
-                className={`image-text ${
-                  activeTab === "Education" ? "image-text-active" : ""
-                }`}
-              >
-                Education <br />
-                Level
-              </div>
-            </div>
-            <div
-              className="image-and-text"
-              onClick={() => handleTabClick("Experience")}
-            >
-              <div className="image-3"></div>
-              <div
-                className={`image-text ${
-                  activeTab === "Experience" ? "image-text-active" : ""
-                }`}
-              >
-                Professional <br />
-                Experience
-              </div>
-            </div>
-
-            {/* certs */}
-            <div
-              className="image-and-text"
-              onClick={() => handleTabClick("Certifications")}
-            >
-              <div className="image-4"></div>
-              <div
-                className={`image-text ${
-                  activeTab === "Certifications" ? "image-text-active" : ""
-                }`}
-              >
-                Certifications <br />
-                Etc
-              </div>
-            </div>
-          </div>
-          {/* Description starts here */}
-          <div className="third-section">
-            <div
-              className={`tab-content-item ${
-                activeTab === "AboutMe" ? "fade-in" : "fade-out"
-              }`}
-            >
-              <MagazineArtice />
-            </div>
-
-            {activeTab === "AboutMe" && (
-              <LocationSection location="New York | Minnesota" />
-            )}
-            {activeTab === "Education" && (
-              <LocationSection location="New Jersey" />
-            )}
-            {/* Experience level */}
-            <div
-              className={`tab-content-item ${
-                activeTab === "Experience" ? "fade-in" : "fade-out"
-              }`}
-            >
-              <CareerSection />
-            </div>
-            {/* Education level */}
-            <div
-              className={`tab-content-item ${
-                activeTab === "Education" ? "fade-in" : "fade-out"
-              }`}
-            >
-              <EducationSection />
-            </div>
-            {/* Education level */}
-            <div
-              className={`tab-content-item ${
-                activeTab === "Contact" ? "fade-in" : "fade-out"
-              }`}
-            >
-              <ContactMeSection />
-            </div>
-
-            {/* Certs*/}
-            <div
-              className={`tab-content-item ${
-                activeTab === "Certifications" ? "fade-in" : "fade-out"
-              }`}
-            >
-              <CertificationSection />
-            </div>
-          </div>
+          </BoxWrapper>
         </div>
 
-        <div className="right">
-          <div className="right-first-section">
-            <div className="right-first-title">Popular works</div>
-            <div className="right-first-cards">
-              {/* Cards start here of the stuff ive written */}
-              <BookCard
-                title="Intro to Java"
-                imageSrc="https://remezcla.com/wp-content/uploads/2022/10/GettyImages-1430670718-1424x1068.jpg"
-                desc="312 pages 5 reviews."
-                tapped={() => handleTabClick("Java")}
-              />
-              <BookCard
-                title="Intro to Java"
-                imageSrc="https://remezcla.com/wp-content/uploads/2022/10/GettyImages-1430670718-1424x1068.jpg"
-                desc="312 pages 5 reviews."
-                tapped={() => handleTabClick("Java")}
-              />
-              <BookCard
-                title="Intro to Java"
-                imageSrc="https://remezcla.com/wp-content/uploads/2022/10/GettyImages-1430670718-1424x1068.jpg"
-                desc="312 pages 5 reviews."
-                tapped={() => handleTabClick("Java")}
-              />
+        <div className="right-box">
+          <FloatingTextRight>
+            <div className="right-text-and-line">
+              <div className="right-btn" onClick={() => handleTabClick("Data")}>
+                Data Structures
+              </div>
+              <div
+                className={
+                  activeCourse === "Data" ? "right-line" : "right-line-inactive"
+                }
+              ></div>
             </div>
-          </div>
-          <div className="right-first-title">Popular works</div>
-          <div className="my-projects-section">
-            {/* Cards start here of the stuff ive written */}
-            <BookWorkCard
-              title="Intro to Java"
-              imageSrc="https://remezcla.com/wp-content/uploads/2022/10/GettyImages-1430670718-1424x1068.jpg"
-              desc="312 pages 5 reviews."
-              tapped={() => handleTabClick("Java")}
-            />
-            <BookWorkCard
-              title="Intro to Java"
-              imageSrc="https://remezcla.com/wp-content/uploads/2022/10/GettyImages-1430670718-1424x1068.jpg"
-              desc="312 pages 5 reviews."
-              tapped={() => handleTabClick("Java")}
-            />
-            <BookWorkCard
-              title="Intro to Java"
-              imageSrc="https://remezcla.com/wp-content/uploads/2022/10/GettyImages-1430670718-1424x1068.jpg"
-              desc="312 pages 5 reviews."
-              tapped={() => handleTabClick("Java")}
-            />
-          </div>
+
+            <div className="right-text-and-line">
+              <div
+                className="right-btn"
+                onClick={() => handleTabClick("React")}
+              >
+                React
+              </div>
+              <div
+                className={
+                  activeCourse === "React"
+                    ? "right-line"
+                    : "right-line-inactive"
+                }
+              ></div>
+            </div>
+
+            <div className="right-text-and-line">
+              <div className="right-btn" onClick={() => handleTabClick("Java")}>
+                Java
+              </div>
+              <div
+                className={`right-line-inactive ${
+                  activeCourse == "Java" ? "right-line" : ""
+                }`}
+              ></div>
+            </div>
+          </FloatingTextRight>
+          <FloatingDescRight>
+            What everyone said was true. You cannot learn how to code by
+            reading, listening or watching someone else do it. You have to get
+            your hands dirty! I am a software developer building interfaces and
+            accessible applications. Welcome to my personal slice of the
+            internet.I'm glad you're here!
+          </FloatingDescRight>
         </div>
+      </div>
+      <div className="about">Hey</div>
+      <div
+        className={`tab-content-item ${
+          activeTab === "AboutMe" ? "fade-in" : "fade-out"
+        }`}
+      >
+        <AboutMeIde />
+        {/* the location text */}
+        {/* {activeTab === "AboutMe" && (
+          <LocationSection location="New York | Minnesota" />
+        )}
+        {activeTab === "Education" && <LocationSection location="New Jersey" />} */}
+
+    
       </div>
     </Wrapper>
   );
 }
 
+export default AboutMeSection;
+
 const Wrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
+  height: 93vh;
+  overflow: scroll;
+  background-color: #000;
+  .left-and-right-box {
+    background-image: url("/images/my-svg/lines.svg");
+    background-color: #000;
+    background-repeat: repeat-x;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50%;
+  }
+  .left-box {
+    flex: 1;
+  }
+  .right-box {
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    padding-top: 150px;
+  }
+`;
+const BoxWrapper = styled.div`
   position: relative;
 
-  background-image: url("/images/my-svg/falling-rocks.svg");
-  background-color: #000;
-  background-repeat: repeat-x;
-  background-size: cover;
   background-position: top;
   padding: 20px;
   transform: translateY(50px);
@@ -231,7 +278,7 @@ const Wrapper = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 17px;
-    width: 654px;
+    width: 100%;
     height: 400px;
     padding: 20px;
     position: relative;
@@ -337,28 +384,7 @@ const Wrapper = styled.div`
   }
   .third-section {
   }
-  .right {
-    display: flex;
-    gap: 50px;
-    flex-direction: column;
-    overflow: scroll;
-    height: 100vh;
-    padding-bottom: 200px;
-  }
-  .right-first-section {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  .right-first-title {
-    font-size: 32px;
-    color: white;
-    font-family: "Pixel12x10", sans-serif;
-  }
-  .right-first-cards {
-    display: flex;
-    gap: 20px;
-  }
+
   .my-projects-section {
     display: flex;
     flex-wrap: wrap; /* Adjust the height of each row as needed */
@@ -374,11 +400,129 @@ const Wrapper = styled.div`
     transform: translateY(0);
     transition: all 1s linear;
   }
- 
+`;
+const FloatingDescRight = styled(MediumText)`
+  color: #fff;
+  font-size: 12px;
+  font-family: "Spline Sans Mono", sans-serif;
+  padding: 10px 30px;
+  justify-content: center;
+  display: flex;
+  justify-content: center;
+  text-align: end;
+`;
+const FloatingTextRight = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  flex-direction: column;
+  gap: 20px;
+
+  /* background-color: red; */
+  .right-text-and-line {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    font-family: "Spline Sans Mono", sans-serif;
+  }
+  .right-btn {
+    color: white;
+    background-color: #0b0b0b;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: white 1px dotted;
+    cursor: pointer;
+  }
+  .right-btn:hover {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
+      0px 30px 60px rgba(23, 0, 102, 0.5),
+      inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
+    transform: translateY(-5px);
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  .right-line {
+    width: 50px;
+    height: 2px;
+    background-color: #ca4741;
+    transition: all 1s ease;
+  }
+  .right-line-active {
+    width: 50px; /* Expand to 50px width when active */
+    height: 2px;
+    background-color: #ca4741;
+  }
+  .right-line-inactive {
+    width: 30px;
+    height: 2px;
+    opacity: 0.1px;
+    transform: scaleX(1.5);
+  }
 `;
 
-// const Background = styled.div`
-//   width: 100vw;
-//   height: 100vh;
-//   /* background-color: green; */
-// `;
+const Wave = styled.div`
+  position: absolute;
+  height: 800px;
+  background-image: url("/images/my-svg/falling-rocks.svg");
+  background-repeat: repeat;
+  background-size: contain;
+  width: 100%;
+
+  z-index: -1;
+
+  @media (min-width: 1440px) {
+    width: 100%;
+  }
+`;
+const ContentWrapper = styled.div`
+  margin: 0 auto;
+  padding: 10px 30px;
+  display: grid;
+  grid-template-columns: 360px auto;
+
+  @media (max-width: 450px) {
+    grid-template-columns: auto;
+    gap: 60px;
+    padding: 150px 20px 250px;
+  }
+`;
+
+const TextWrapper = styled.div`
+  width: 560px;
+  display: grid;
+  gap: 30px;
+  padding-top: 80px;
+`;
+
+const Title = styled.div`
+  font-size: 68px;
+  color: ${themes.dark.text1};
+  background: linear-gradient(180deg, #d9dff4 0%, #280aff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  /* font-family: "Cisnero", sans-serif; */
+  /* font-family: "Spline Sans Mono", sans-serif; */
+  font-family: "Pixel12x10", sans-serif;
+  text-transform: uppercase;
+
+  span {
+    background: linear-gradient(180deg, #5451b7 0%, #00fa6b 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 48px;
+  }
+`;
+
+const Description = styled(MediumText)`
+  color: #fff;
+  font-family: "Spline Sans Mono", sans-serif;
+`;
+
+const Access = styled(SmallText)`
+  color: #fff;
+  font-family: "Spline Sans Mono", sans-serif;
+`;

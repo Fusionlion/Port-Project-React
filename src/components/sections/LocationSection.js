@@ -5,11 +5,8 @@ export default function LocationSection(props) {
   return (
     <Wrapper>
       <Liner />
-      <span>
-        Location
-        
-          </span>
-          
+      <span>Location</span>
+
       {props.location}
     </Wrapper>
   );
@@ -17,22 +14,19 @@ export default function LocationSection(props) {
 
 const Wrapper = styled.div`
   color: white;
-  position: fixed;
   font-family: "Spline Sans Mono", sans-serif;
   display: flex;
   align-items: center;
-line-height:18px ;
-  padding-bottom: 99px;
-  bottom: 20px;
+  line-height: 18px;
 
   span {
     color: orange;
-    padding-right:10px;
+    padding-right: 20px;
   }
 `;
 const Liner = styled.div`
-height:3px ;
-width:50px;
-background-color:orange ;
-margin-right:20px;
+  height: 3px;
+  width: 50px;
+  background-color: orange;
+  margin-right: 20px;
 `;

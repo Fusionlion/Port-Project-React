@@ -155,15 +155,14 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 
-  justify-content: center;
+  justify-content: space-between;
   position: relative;
-  height: 100%;
+  height: 86vh;
   width: 100%;
   @media screen and (max-width: 1000px) {
     overflow: visible;
 
     height: 120%;
-   
   }
   .top-left-and-right {
     display: flex;
@@ -184,6 +183,7 @@ const Wrapper = styled.div`
     align-items: center;
     align-self: bottom;
     color: white;
+    position: relative;
     bottom: 0;
     width: 100%;
     font-family: "Spline Sans Mono", sans-serif;

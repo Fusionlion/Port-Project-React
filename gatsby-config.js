@@ -21,6 +21,7 @@
 //     // `gatsby-plugin-offline`,
 //   ],
 // };
+
 module.exports = {
   siteMetadata: {
     title: `Fusion+Code`,

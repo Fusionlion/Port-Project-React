@@ -1,32 +1,65 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-const Ide = ({ data }) => {
-  var text = [
-    "we are the ones who are right",
-    "they will never catch us that is a fact",
+
+const Ide = () => {
+  const [line, setLine] = useState(0);
+  const [alreadyTypedText, setAlreadyTypedText] = useState("");
+  const [displayText, setDisplayText] = useState("");
+  const [isTyping, setIsTyping] = useState(true);
+
+  const text = [
+    "Click start to learn about my journey",
+    "They will never catch us; that is a fact",
   ];
 
-  var line = 0;
+  useEffect(() => {
+    const currentText = text[line];
+    if (!currentText || !isTyping) return;
+
+    let i = 0;
+    const interval = setInterval(() => {
+      setDisplayText((prevText) => prevText + currentText[i]);
+      i++;
+
+      if (i === currentText.length) {
+        setIsTyping(false);
+        clearInterval(interval);
+      }
+    }, 30);
+
+    return () => clearInterval(interval);
+  }, [line, isTyping]);
+
   function handleClick() {
-    line++;
-    console.log(text[line] + " test");
-    console.log("You clicked next");
+    const currentText = text[line];
+    if (currentText !== undefined && currentText.trim().length > 0) {
+      setAlreadyTypedText(
+        (prevText) => "\n" + prevText + "\n" + currentText + "\n"
+      );
+      setLine((prevLine) => prevLine + 1);
+      setDisplayText(""); // Clear displayed text when moving to the next line
+    } else {
+      setDisplayText("Im afraid that's all folks :{");
+    }
+
+    setIsTyping(true);
+    console.log("You clicked Next");
   }
 
   return (
     <Wrapper>
       <div className="lesson" id="typedtext">
         <div id="console-prompt">
-          Get Started<a className="blink">?</a>
+          Shall we get started<a className="blink">?</a>
         </div>
-        <div className="old">//{text[line--]}</div>
-        <div className="old">//{text[line]}</div>
-        <div className="typing">{line}</div>
+        <div className="old">//{alreadyTypedText}</div>
+        <div className="typing">{displayText}</div>
       </div>
-      <div className="next-ide-btn" onClick={handleClick}>
-        {" "}
-        Next
-      </div>
+      {!isTyping && (
+        <div className="next-ide-btn" onClick={handleClick}>
+          Next
+        </div>
+      )}
     </Wrapper>
   );
 };
@@ -73,8 +106,9 @@ const Wrapper = styled.div`
     animation: all 2s;
   }
   .old {
-    padding: 9px 16px;
+    padding: 33px 16px;
     color: #948f8f;
+    line-height: 1.5;
   }
   .blink {
     color: orange;

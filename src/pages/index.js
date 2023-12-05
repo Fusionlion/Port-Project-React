@@ -7,7 +7,7 @@ import ProjectCardx from "../components/buttons/ProjectCardx";
 import { useState } from "react";
 import ProjectBios from "../components/sections/ProjectBios";
 import Course from "../components/sections/Course";
-import AboutMeSection from "../components/sections/AboutMeSection";
+import AboutSection from "../components/sections/AboutMeSection";
 import HeroSection from "../components/sections/HeroSection";
 import PortfolioHero from "../components/sections/PortfolioHero";
 import MenuOptions from "../components/buttons/MenuOptions";
@@ -251,7 +251,7 @@ function SecondPage() {
             activeTab === "About" ? "fade-in" : "fade-out"
           }`}
         >
-          <AboutMeSection />
+          <AboutSection />
         </div>
         {/* content ends */}
         {/* content starts */}
@@ -325,11 +325,10 @@ const AboutMe = styled.div`
   }
   .menu-appear {
     top: 106px;
-    opacity:1;
+    opacity: 1;
     transition: opacity 1s ease-in-out;
   }
   .disappear {
-   
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
   }
@@ -392,8 +391,7 @@ const Backdrop = styled.div`
     gap: 10px;
     z-index: 999;
     @media screen and (max-width: 1000px) {
-    display:none ;
-    
+      display: none;
     }
   }
   .left-section {
