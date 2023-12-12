@@ -10,14 +10,17 @@ function FourthSection() {
     <Wrapper>
       {/* <FourthSectionBg /> */}
       <ContentWrapper>
-        <TestimonialButton />
-        <TestimonialButton />
+        <TestimonialButton title="Full Stack Developer" subtitle="" desc="" />
+        <TestimonialButton
+          title="Salesforce CRM"
+          subtitle=""
+          desc="In today’s accelerated digital transformation, Trailhead is focused on empowering anyone to learn the skills needed to transform their career or reskill at their current company. "
+        />
         <TextWrapper>
           <Intro>Testimonials</Intro>
-          <Title>Hear what people think about us.</Title>
+          <Title>Advancing through Cert.</Title>
           <Description>
-            Discover new TV shows and series, films, and more with MediaPro.
-            From award-winning shows and movies to your favorite sports.
+            Discover all the certifications i have earned through my years working in this software ecosystem.
           </Description>
         </TextWrapper>
       </ContentWrapper>
@@ -29,13 +32,15 @@ export default FourthSection;
 
 const Wrapper = styled.div`
   /* background-color: #f2f6ff; */
+  font-family: "Spline Sans Mono", sans-serif;
 `;
 
 const ContentWrapper = styled.div`
-  max-width: 1234px;
+  /* max-width: 1234px; */
   margin: 0 auto;
-  padding: 100px 30px;
+  padding: 100px 50px;
   display: flex;
+  justify-content:space-between ;
   flex-direction: row;
   align-items: center;
   gap: 40px;
@@ -49,7 +54,6 @@ const ContentWrapper = styled.div`
 
 const TextWrapper = styled.div`
   max-width: 360px;
-  display: grid;
   gap: 30px;
   display: flex;
   flex-direction: column;
@@ -58,9 +62,10 @@ const TextWrapper = styled.div`
 
 const Title = styled(H2)`
   /* color: ${themes.light.text1}; */
-color: white;
+  font-family: "Pixel12x10", sans-serif;
+  color: #c1bdbd;
   @media (max-width: 450px) {
-    font-size: 48px;
+    
   }
 `;
 

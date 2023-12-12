@@ -34,6 +34,7 @@ const Wrapper = styled.div`
   -ms-flex-align: center;
   align-items: center;
   gap: 20px;
+  cursor: pointer;
 
   *,
   & {
@@ -70,8 +71,6 @@ const Icon = styled.img`
   width: 29px;
   height: 29px;
 `;
-
-
 
 const IconWrapper = styled.div`
   width: 45px;

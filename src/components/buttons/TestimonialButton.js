@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Caption, Caption2, MediumText, SmallText } from "../styles/TextStyles";
 
 export default function TestimonialButton(props) {
-  const { title, subtitle } = props;
+  const { title, subtitle, desc } = props;
   return (
     <Link to="/page-2">
       <Wrapper>
@@ -13,11 +13,11 @@ export default function TestimonialButton(props) {
           <Ring src="/images/icons/icon-ring.svg" />
         </IconWrapper>
         <TextWrapper>
-          <Title>{title || "Get Started"}</Title>
-          <Subtitle1>{subtitle || "Let's find your show"}</Subtitle1>
+          <Title>{title || "Full Stack"}</Title>
+          <Subtitle1>{subtitle || "Java Developer"}</Subtitle1>
           <Subtitle>
-            {subtitle ||
-              "Your company is truly upstanding and is behind its product 100%. I am completely blown away."}
+            {desc ||
+              "Code is like humor. When you have to explain it, it’s bad. - Cory House"}
           </Subtitle>
         </TextWrapper>
       </Wrapper>
@@ -27,7 +27,7 @@ export default function TestimonialButton(props) {
 
 const Wrapper = styled.div`
   /* Auto layout */
-
+  font-family: "Spline Sans Mono", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -39,7 +39,7 @@ const Wrapper = styled.div`
   left: 0px;
   top: 0px;
 
-  background: rgba(15, 14, 71, 0.5);
+  background: linear-gradient(to top, #000000, #000, #1606cd);
   box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(40px);
   /* Note: backdrop-filter has minimal browser support */
@@ -75,7 +75,7 @@ const TextWrapper = styled.div`
 
 const Title = styled(SmallText)`
   color: white;
-  font-family: "SF Pro Text";
+  font-family: "Pixel12x10", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -87,7 +87,11 @@ const Subtitle1 = styled(Caption)`
 const Subtitle = styled(Caption)`
   color: white;
   opacity: 0.7;
-
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
   #orangee {
     color: orange;
   }

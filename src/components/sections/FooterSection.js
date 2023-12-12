@@ -23,29 +23,35 @@ const Footer = styled.div`
   text-align: center;
   justify-content: end;
   gap: 21px;
-  background-image: url("/images/my-svg/footer-mine.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom;
-  height: 590px;
+  height: auto;
   width: 100%;
-  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-bottom: 20px;
+  font-family: "Spline Sans Mono", sans-serif;
 `;
 
 const Apps = styled.div`
   width: 900px;
   height: 100px;
-  background: #201658;
-  box-shadow: 8px 8px 21px #150f3b, -8px -8px 21px #2b1d75;
-  border-radius: 65px;
+  background: #020202;
+  /* box-shadow: 2px 2px 20px #150f3b, -2px -2px 20px #030408; */
+  border-radius: 66px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   gap: 160px;
+  border: 1px #0c0c0c solid;
 `;
 
 const FooterIcon = styled.img`

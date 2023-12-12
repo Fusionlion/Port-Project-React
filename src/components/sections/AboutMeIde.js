@@ -1,27 +1,32 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import topicData from "../../data/data.json";
+import topicData from "../../data/aboutme.json";
 import Ide from "./Ide";
 import ProjectsCard from "../buttons/ProjectsCard";
 import BlackButton from "../buttons/BlackButton";
+import ProjectsList from "./ProjectsList";
 
-function AboutMeIde() {
+function AboutMeIde({ setActiveCardParent }) {
+  const [activeCard, setActiveCard] = useState("card");
+const [ideTyped, setIdeTyped] = useState("GET STARTED");
+  const handleCardClick = (cardname) => {
+    setActiveCardParent(cardname);
+    setActiveCard(cardname);
+    console.log(activeCard);
+  };
   const [topic, setTopic] = useState([topicData]);
   const data = topicData.map((record) => {
-    return record;
+    console.log(record.about);
+    return record.about;
   });
+
+  const handleTypingStarted = () => {
+    setIdeTyped("IN PROGRESS");
+    console.log("Button clicked in parent component!");
+  };
 
   return (
     <BodyContain>
-      <div className="left">
-        <div className="left-header">
-          <div className="circle"></div>
-          <div className="unselected-circle"></div>
-          <div className="unselected-circle"></div>
-          <div className="unselected-circle"></div>
-        </div>
-        <div className="time">00/05</div>
-      </div>
       <div className="overview-and-cards">
         <div className="topic-and-lesson">
           <div className="topic-container">
@@ -36,87 +41,23 @@ function AboutMeIde() {
               well-defined instructions written to solve a particular problem.
               It takes a set of input(s) and produces the desired output.
             </div>
-            <BlackButton label="GET STARTED" />
+            <BlackButton label={ideTyped} />
           </div>
-          <Ide />
+          <Ide text={data} onButtonClick={handleTypingStarted} />
         </div>
 
         {/* We put the course here/ below */}
         <div className="cards-title">My Projects</div>
         <div className="bottom-container" id="bottom-container">
           {/* <CardList data={data} /> */}
-          <ProjectsCard
+          <ProjectsList theCardClicked={handleCardClick} />
+          {/* <ProjectsCard
             title="{print.title}"
             desc="{print.desc}"
             imageSrc="https://cdn.dribbble.com/userupload/11325790/file/original-8157e394170422bbb0927202cc45f001.png?resize=2048x1537"
             num="{print.num}"
-          />
-          <ProjectsCard
-            title="{print.title}"
-            desc="{print.desc}"
-            imageSrc="https://cdn.dribbble.com/userupload/11325790/file/original-8157e394170422bbb0927202cc45f001.png?resize=2048x1537"
-            num="{print.num}"
-          />
-          <ProjectsCard
-            title="{print.title}"
-            desc="{print.desc}"
-            imageSrc="https://cdn.dribbble.com/userupload/11325790/file/original-8157e394170422bbb0927202cc45f001.png?resize=2048x1537"
-            num="{print.num}"
-          />
-          <ProjectsCard
-            title="{print.title}"
-            desc="{print.desc}"
-            imageSrc="https://cdn.dribbble.com/userupload/11325790/file/original-8157e394170422bbb0927202cc45f001.png?resize=2048x1537"
-            num="{print.num}"
-          />
-          <ProjectsCard
-            title="{print.title}"
-            desc="{print.desc}"
-            imageSrc="https://cdn.dribbble.com/userupload/11325790/file/original-8157e394170422bbb0927202cc45f001.png?resize=2048x1537"
-            num="{print.num}"
-          />
-          <ProjectsCard
-            title="{print.title}"
-            desc="{print.desc}"
-            imageSrc="https://cdn.dribbble.com/userupload/11325790/file/original-8157e394170422bbb0927202cc45f001.png?resize=2048x1537"
-            num="{print.num}"
-          />
-          <ProjectsCard
-            title="{print.title}"
-            desc="{print.desc}"
-            imageSrc="https://cdn.dribbble.com/userupload/11325790/file/original-8157e394170422bbb0927202cc45f001.png?resize=2048x1537"
-            num="{print.num}"
-          />
-          <ProjectsCard
-            title="{print.title}"
-            desc="{print.desc}"
-            imageSrc="https://cdn.dribbble.com/userupload/11325790/file/original-8157e394170422bbb0927202cc45f001.png?resize=2048x1537"
-            num="{print.num}"
-          />
-          <ProjectsCard
-            title="{print.title}"
-            desc="{print.desc}"
-            imageSrc="https://cdn.dribbble.com/userupload/11325790/file/original-8157e394170422bbb0927202cc45f001.png?resize=2048x1537"
-            num="{print.num}"
-          />
-          <ProjectsCard
-            title="{print.title}"
-            desc="{print.desc}"
-            imageSrc="https://cdn.dribbble.com/userupload/11325790/file/original-8157e394170422bbb0927202cc45f001.png?resize=2048x1537"
-            num="{print.num}"
-          />
-          <ProjectsCard
-            title="{print.title}"
-            desc="{print.desc}"
-            imageSrc="https://cdn.dribbble.com/userupload/11325790/file/original-8157e394170422bbb0927202cc45f001.png?resize=2048x1537"
-            num="{print.num}"
-          />
-          <ProjectsCard
-            title="{print.title}"
-            desc="{print.desc}"
-            imageSrc="https://cdn.dribbble.com/userupload/11325790/file/original-8157e394170422bbb0927202cc45f001.png?resize=2048x1537"
-            num="{print.num}"
-          />
+            click={() => handleCardClick("card2")}
+          /> */}
         </div>
       </div>
     </BodyContain>
@@ -257,9 +198,11 @@ const BodyContain = styled.div`
   }
 
   .bottom-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    padding: 19px 2px 19px 2px;
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); */
+    display: flex;
+    flex-wrap: wrap;
+    /* padding: 19px 2px 19px 2px; */
     gap: 70px;
     border-radius: 20px;
     justify-items: center;
@@ -301,6 +244,7 @@ const BodyContain = styled.div`
     border-radius: 11px;
     padding: 9px 16px;
     animation: all 2s;
+    line-height: 1.4;
   }
   .old {
     padding: 9px 16px;

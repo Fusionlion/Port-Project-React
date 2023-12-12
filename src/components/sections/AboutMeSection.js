@@ -18,14 +18,38 @@ import ParallaxSection from "./ParallaxSection";
 import CourseIde from "./CourseIde";
 import AboutMeIde from "./AboutMeIde";
 import FifthSection from "./FifthSection";
+import ProjectArticle from "./ProjectArticle";
+import AboutArticle from "./AboutArticle";
+import FooterSection from "../../components/sections/FooterSection";
+import FourthSection from "./FourthSection";
 function AboutMeSection() {
   const [activeTab, setActiveTab] = useState("AboutMe");
+  const [activeModal, setActiveModal] = useState("dontShow");
   const [activeCourse, setCourseTab] = useState("AboutMe");
+  const [activeCard, setActiveCard] = useState("card");
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);
   };
+  const handleModalClose = (close) => {
+    setActiveModal("close");
+  };
+  const handleCardClickChild = (card) => {
+    setActiveCard(card);
+    setActiveModal("show");
+    console.log("clicked from child");
+  };
+
   return (
     <Wrapper>
+      <Modal active={activeModal === "show"}>
+        <div className="background">
+          <div className="x" onClick={() => handleModalClose("close")}>
+            Close
+          </div>
+          <AboutArticle />
+        </div>
+      </Modal>
+
       <Wave />
       {/* <WaveBackground /> */}
 
@@ -65,20 +89,7 @@ function AboutMeSection() {
                         </div>
                       </div>
 
-                      <div
-                        className="image-and-text"
-                        onClick={() => handleTabClick("Education")}
-                      >
-                        <div className="image-2"></div>
-                        <div
-                          className={`image-text ${
-                            activeTab === "Education" ? "image-text-active" : ""
-                          }`}
-                        >
-                          Education <br />
-                          Level
-                        </div>
-                      </div>
+                
                       <div
                         className="image-and-text"
                         onClick={() => handleTabClick("Experience")}
@@ -121,37 +132,13 @@ function AboutMeSection() {
               {/* Description starts here */}
               <div className="third-section">
                 {/* Experience level */}
-                <div
-                  className={`tab-content-item ${
-                    activeTab === "Experience" ? "fade-in" : "fade-out"
-                  }`}
-                >
-                  <CareerSection />
-                </div>
-                {/* Education level */}
-                <div
-                  className={`tab-content-item ${
-                    activeTab === "Education" ? "fade-in" : "fade-out"
-                  }`}
-                >
-                  <EducationSection />
-                </div>
-                {/* Education level */}
+
                 <div
                   className={`tab-content-item ${
                     activeTab === "Contact" ? "fade-in" : "fade-out"
                   }`}
                 >
                   <ContactMeSection />
-                </div>
-
-                {/* Certs*/}
-                <div
-                  className={`tab-content-item ${
-                    activeTab === "Certifications" ? "fade-in" : "fade-out"
-                  }`}
-                >
-                  <CertificationSection />
                 </div>
               </div>
             </div>
@@ -207,31 +194,94 @@ function AboutMeSection() {
           </FloatingDescRight>
         </div>
       </div>
-      <div className="about">Hey</div>
+
       <div
         className={`tab-content-item ${
           activeTab === "AboutMe" ? "fade-in" : "fade-out"
         }`}
       >
-        <AboutMeIde />
-        {/* the location text */}
-        {/* {activeTab === "AboutMe" && (
-          <LocationSection location="New York | Minnesota" />
-        )}
-        {activeTab === "Education" && <LocationSection location="New Jersey" />} */}
+        <AboutMeIde setActiveCardParent={handleCardClickChild} />
 
-    
       </div>
+      {/* Education level */}
+      <div
+        className={`tab-content-item ${
+          activeTab === "Experience" ? "fade-in" : "fade-out"
+        }`}
+      >
+        <CareerSection />
+      </div>
+      {/* Education level */}
+      {/* Education level */}
+      <div
+        className={`tab-content-item ${
+          activeTab === "Certifications" ? "fade-in" : "fade-out"
+        }`}
+      >
+        <FourthSection />
+        <FifthSection />
+      </div>
+      {/* Education level */}
+      <FooterSection />
     </Wrapper>
   );
 }
 
 export default AboutMeSection;
 
+const Modal = styled.div`
+  position: fixed;
+  z-index: 100;
+  /* border-radius: 14px; */
+  -webkit-backdrop-filter: blur(31px);
+  backdrop-filter: blur(31px);
+  color: white;
+  display: flex;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  /* border: 1px #4a4747 solid; */
+  
+  opacity: ${(props) => (props.active ? "1" : "0")};
+  visibility: ${(props) => (props.active ? "visible" : "hidden")};
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+  .background {
+    position: absolute;
+    z-index: 100;
+    border-radius: 18px;
+    background-color: white;
+    color: black;
+    border-radius: 15px;
+    overflow: scroll;
+    height: 100%;
+  }
+  .x {
+    right: 0px;
+    position: absolute;
+    padding: 7px 10px;
+    background-color: #d84d48;
+    margin: 20px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    z-index: 999;
+    -webkit-transition: linear 0.2s;
+    transition: linear 0.2s;
+    border: 1px solid #0000001a;
+  }
+  .x:hover {
+    transition: linear 0.2s;
+    background-color: gray;
+    z-index: 999;
+  }
+`;
 const Wrapper = styled.div`
   height: 93vh;
   overflow: scroll;
   background-color: #000;
+  position: relative;
   .left-and-right-box {
     background-image: url("/images/my-svg/lines.svg");
     background-color: #000;

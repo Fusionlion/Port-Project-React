@@ -13,10 +13,11 @@ function FifthSection() {
       <ContentWrapper>
         <TextWrapper>
           <Intro>WHO'S BEHIND</Intro>
-          <Title>Meet the Developers</Title>
+          <Title>Meet the Developer</Title>
           <Description>
-            Discover new TV shows and series, films, and more with MediaPro.
-            From award-winning shows and movies to your favorite sports.
+            It's common for individuals in the technology field, such as
+            software developers, to be eager to obtain certifications as a way
+            to validate their skills and enhance their professional credentials.
           </Description>
         </TextWrapper>
       </ContentWrapper>
@@ -46,6 +47,7 @@ function FifthSection() {
 
 export default FifthSection;
 const Background = styled.div`
+
   background-image: url("/images/my-svg/undersea.svg");
   background-repeat: repeat-x;
   background-size: cover;
@@ -58,7 +60,7 @@ const Background = styled.div`
 `;
 const Wrapper = styled.div`
   overflow: visible;
-height: 500px;
+  font-family: "Spline Sans Mono", sans-serif;
   /* background-color: #f2f6ff; */
 `;
 
@@ -79,7 +81,7 @@ const ContentWrapper = styled.div`
 `;
 
 const TextWrapper = styled.div`
-  max-width: 390px;
+  max-width: 478px;
   align-items: center;
   display: grid;
   text-align: center;

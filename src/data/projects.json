@@ -1,0 +1,76 @@
+[
+  {
+    "title": "WHAT IS AN AlGORITHM?",
+    "num": "0",
+    "desc": "In computer programming terms, an algorithm is a set of well-defined instructions to solve a particular problem. It takes a set of input(s) and produces the desired output.o",
+    "image": "https://cdn.dribbble.com/userupload/11325790/file/original-8157e394170422bbb0927202cc45f001.png?resize=2048x1537"
+  },
+  {
+    "title": "Data Structure and Types",
+    "num": "1",
+    "desc": "Data structure is a storage that is used to store and organize data. It is a way of arranging data on a computer so that it can be accessed and updated efficiently.",
+    "image": "https://cdn.dribbble.com/userupload/11165238/file/original-973c3fb9fb487ff0d90155ecf644e096.png?resize=1504x1128",
+    "lesson": "Why is life soo wack nowadays.sufgisugfiugfiugsiufgjuhfufhsfufu.fusiufghiufu"
+  },
+  {
+    "title": "Why learn DSA?",
+    "num": "2",
+    "desc": "In this article, we will learn why every programmer should learn data structures and algorithms with the help of examples.This article is for those who have just started learning algorithms and wondered how impactful it will be to boost their career/programming skills.",
+    "image": "https://cdn.dribbble.com/users/175710/screenshots/14477487/media/788097b5259e7afff26d4ba3e54d2538.png?resize=1600x1200&vertical=center",
+    "lesson": "So fucking stressed yoo"
+  },
+  {
+    "title": "Asymptotic Analysis: Big-O Notation and More",
+    "num": "3",
+    "desc": "The efficiency of an algorithm depends on the amount of time, storage and other resources required to execute the algorithm. The efficiency is measured with the help of asymptotic notations.",
+    "image": "https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067__340.png"
+  },
+  {
+    "title": "Master Theorem",
+    "num": "4",
+    "desc": "In this tutorial, you will learn what master theorem is and how it is used for solving recurrence relations.The master method is a formula for solving recurrence relations of the form:",
+    "image": "https://media.istockphoto.com/photos/mountain-landscapes-picture-id108125029?b=1&k=20&m=108125029&s=170667a&w=0&h=L5kspxyBuqkMPMq9NP-0g3iTj7sCWjSXikPe_Kc4Ne8="
+  },
+  {
+    "title": "Divide and Conquer Algorithm",
+    "num": "5",
+    "desc": "The divide and conquer algorithm's operation will be explained in this lesson. To tackle a recursive problem, we will contrast the divide and conquer strategy with various methods.",
+    "image": ""
+  },
+  {
+    "title": "Stack Data Structure",
+    "num": "6",
+    "desc": "You will learn about the stack data structure and how it is implemented in Python, Java, and C/C++ in this course.Stacks are linear data structures that adhere to the Last In First Out rule (LIFO). This implies that the last piece to be added to the stack gets eliminated first.",
+    "image": ""
+  },
+  {
+    "title": "Queue Data Structure",
+    "num": "7",
+    "desc": "You will learn what a queue is in this tutorial. Additionally, queue implementations are available in Python, Java, C, and C++.In programming, a queue is a useful data structure. It is comparable to the line for tickets outside a movie theater, where the person who joins the line first receives the first ticket.",
+    "image": ""
+  },
+  {
+    "title": "Types of Queues",
+    "num": "8",
+    "desc": "This tutorial will teach you about different types of queues and illustrate them.In programming, a queue is a useful data structure. It's similar to the ticket line outside a movie theater, where the first person to enter the line gets the first ticket.",
+    "image": ""
+  },
+  {
+    "title": "Circular Queue Data Structure",
+    "num": "9",
+    "desc": "This tutorial will teach you what a circular queue is. There are also circular queue implementations in C, C++, Java, and Python.",
+    "image": ""
+  },
+  {
+    "title": "Priority Queue",
+    "num": "10",
+    "desc": "This tutorial will teach you what a priority queue is. You will also learn about its Python, Java, C, and C++ implementations.A priority queue is a type of queue in which each element has a different priority value. Furthermore, elements are served in the order of their priority. That is, the elements with the highest priority are served first.",
+    "image": ""
+  },
+  {
+    "title": "Deque Data Structure",
+    "num": "11",
+    "desc": "This tutorial will teach you what a double ended queue (deque) is. There are also working examples of various operations on a deque in C, C++, Java, and Python.",
+    "image": ""
+  }
+]

@@ -43,7 +43,7 @@ export default function TimeLine() {
 }
 
 const TimeLineWrapper = styled.div`
-  position: relative;
+ 
   margin: 20px 0;
 
   padding-left: 20px;

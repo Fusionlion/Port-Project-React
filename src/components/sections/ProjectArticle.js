@@ -113,10 +113,11 @@ const ArticleImage = styled.img`
   background-position: center top;
   background-color: black;
   margin: 40px 0px;
-  height: 700px;
+
   width: 100%;
   border-radius: 12px;
-`; 
+  border: 1px #423d3d solid;
+`;
 const Wrapper = styled.div`
   .sc {
     color: #3b8595;
@@ -127,7 +128,7 @@ const Wrapper = styled.div`
   .atw {
     color: #c48660;
   }
- 
+
   h1 {
     font-family: "Spline Sans Mono", sans-serif;
     font-size: 24px;
@@ -164,7 +165,7 @@ const Wrapper = styled.div`
     font-weight: 400;
     font-size: 14px;
     line-height: 24px;
-    margin-bottom:15px;
+    margin-bottom: 15px;
   }
   .title {
     background: #afb3f1;

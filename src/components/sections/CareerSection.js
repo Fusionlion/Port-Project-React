@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import TimeLine from "./TimeLine";
+import Resume from "./Resume";
 export default function CareerSection() {
   return (
     <Wrapper>
       <div className="title">Professional career</div>
-      <TimeLine />
+      <Resume />
     </Wrapper>
   );
 }
@@ -13,7 +14,10 @@ export default function CareerSection() {
 const Wrapper = styled.div`
   overflow: scroll;
   color: #03e903;
-  height: 500px;
+  padding: 0px 50px;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 50px;
 
   .title {
     font-size: 32px;

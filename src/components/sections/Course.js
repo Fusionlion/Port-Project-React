@@ -7,10 +7,14 @@ import FifthSection from "./FifthSection";
 
 export default function Course() {
   const [activeTab, setActiveTab] = useState("Data");
-
+ const [activeCard, setActiveCard] = useState("card");
   const handleTabClick = (tabName) => {
     console.log("the name is " + tabName);
     setActiveTab(tabName);
+  };
+  const handleCardClickChild = (card) => {
+    console.log("card clikde was" + card);
+    setActiveCard(card);
   };
   return (
     <Wrapper>
@@ -22,7 +26,7 @@ export default function Course() {
           activeTab === "Data" ? "fade-in" : "fade-out"
         }`}
       >
-        <CourseIde />
+        <CourseIde setActiveCardParent={handleCardClickChild} />
       </div>
       <div
         className={`tab-content-item ${

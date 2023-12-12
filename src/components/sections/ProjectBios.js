@@ -4,6 +4,7 @@ import ProjectBioCard from "../buttons/ProjectBioCard";
 import { useState } from "react";
 import ParallaxSection from "./ParallaxSection";
 import ProjectArticle from "./ProjectArticle";
+import ProjectsList from "./ProjectsList";
 
 function ProjectBios() {
   const [activeTab, setActiveTab] = useState("Showcase");
@@ -19,45 +20,21 @@ function ProjectBios() {
           impactful projects, demonstrating proficiency in various technologies
           and a proven track record of project excellence.
         </div>
-
-        <ProjectBioCard
-          title="MyHealth+"
-          desc="I developed an iOS application using Xcode, which serves as a sophisticated platform for meticulously monitoring fertility windows, as well as seamlessly facilitating appointments with healthcare professionals, thereby delivering a holistic solution for the management of reproductive health. This app empowers users with the ability to autonomously manage their fertility, while ensuring effortless access to specialized medical consultations when requisite."
-          imageSrc="https://remezcla.com/wp-content/uploads/2022/10/GettyImages-1430670718-1424x1068.jpg"
-          num="1"
-          tapped={() => handleTabClick("Fusion")}
-        />
-        <ProjectBioCard
-          title="Fusion+"
-          imageSrc="https://remezcla.com/wp-content/uploads/2022/10/GettyImages-1430670718-1424x1068.jpg"
-          desc="I developed an iOS application using Xcode, which serves as a sophisticated platform for meticulously monitoring fertility windows, as well as seamlessly facilitating appointments with healthcare professionals, thereby delivering a holistic solution for the management of reproductive health. This app empowers users with the ability to autonomously manage their fertility, while ensuring effortless access to specialized medical consultations when requisite."
-          tapped={() => handleTabClick("Fusion")}
-        />
-        <ProjectBioCard
-          title="Fuze"
-          imageSrc="/images/my-svg/stock-app.png"
-          desc="I engineered an iOS application through Xcode that provides a cutting-edge interface for users to engage in the intricate world of stock trading, offering real-time market data, advanced analysis tools, and seamless trade execution capabilities, thereby enabling individuals to participate in the dynamic and complex realm of financial markets with agility and sophistication. This app empowers users with the tools and insights needed to navigate the intricate landscape of stock trading, fostering informed decision-making and facilitating efficient execution of investment strategies."
-          tapped={() => handleTabClick("Mathis")}
-        />
-        <ProjectBioCard
-          title="Showcase"
-          imageSrc="/images/my-svg/showcase.png"
-          desc="I developed a Salesforce product showcase page using Apex, HTML, and CSS, creating a compelling and visually engaging platform within the Salesforce ecosystem. This page empowers businesses to effectively present their products, enhancing their sales and marketing strategies with a rich and dynamic user experience."
-        />
+        <ProjectsList theCardClicked={handleTabClick} />
       </ProjectsColumn>
       {/* THE info and description of project in detail */}
       <Wrapper>
         <div
           className={`tab-content-item ${
-            activeTab === "Showcase" ? "fade-in" : "fade-out"
+            activeTab === "0" ? "fade-in" : "fade-out"
           }`}
         >
-          <ParallaxSection />
+          <ProjectArticle />
         </div>
         {/* second app */}
         <div
           className={`tab-content-item ${
-            activeTab === "Fusion" ? "fade-in" : "fade-out"
+            activeTab === "1" ? "fade-in" : "fade-out"
           }`}
         >
           <ProjectArticle />

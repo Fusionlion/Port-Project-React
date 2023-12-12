@@ -14,7 +14,9 @@ function ProjectsCard(props) {
 
         <div className="desc">{props.desc}</div>
 
-        <div className="start-btn">START</div>
+        <div className="start-btn" onClick={props.click}>
+          START
+        </div>
         <ProgressBar />
         <div className="start-and-end">
           <div className="start">[zero]</div>
@@ -64,7 +66,7 @@ const Card = styled.div`
   gap: 10px;
   position: relative;
   border-radius: 17px;
-
+  flex: 1;
   .linear {
     position: absolute;
     height: 100%;
@@ -101,6 +103,7 @@ const Card = styled.div`
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    line-height: 1.8;
   }
   .icon-and-desc {
     display: flex;
@@ -111,11 +114,12 @@ const Card = styled.div`
 `;
 const ProjectCardStyle = styled.div`
   background-color: black;
-  width: 269px;
+  min-width: 269px;
+  width: 100%;
   height: 303px;
   border-radius: 17px;
   background-image: url("/images/my-svg/falling-rocks.svg");
-  background-image: url(${(props) => props.src});
+  background-image: url(${(props) =>props.src || "/images/my-svg/falling-rocks.svg"});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

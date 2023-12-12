@@ -1,14 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
 import CardList from "./CardList";
 import topicData from "../../data/data.json";
 import Ide from "./Ide";
 
-function CourseIde() {
+function CourseIde({ setActiveCardParent }) {
   const [topic, setTopic] = useState([topicData]);
+   const [topicClicked, setTopicClicked] = useState("0");
+ 
   const data = topicData.map((record) => {
     return record;
   });
+ 
+  const handleCardClickChild = (card) => {
+    console.log("card clikde was" + card);
+    setTopicClicked(card);
+    setActiveCardParent(card);
+    
+    // Adjust the value (e.g., 100) based on how much you want to scroll down
+  };
 
   return (
     <BodyContain>
@@ -39,13 +49,18 @@ function CourseIde() {
               GET STARTED
             </div>
           </div>
-          <Ide />
+          <Ide
+            // text={data[topicClicked].lesson}
+            text={data[topicClicked].lesson}
+            parentCardClicked={topicClicked}
+            title={data[topicClicked].title}
+          />
         </div>
 
         {/* We put the course here/ below */}
         <div className="cards-title">Other Lessons</div>
         <div className="bottom-container" id="bottom-container">
-          <CardList data={data} />
+          <CardList data={data} theCardClicked={handleCardClickChild} />
         </div>
       </div>
     </BodyContain>

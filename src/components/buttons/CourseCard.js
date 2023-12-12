@@ -14,7 +14,9 @@ function CourseCard(props) {
 
         <div className="desc">{props.desc}</div>
 
-        <div className="start-btn">START</div>
+        <div className="start-btn" onClick={props.click}>
+          START
+        </div>
         <ProgressBar />
         <div className="start-and-end">
           <div className="start">[zero]</div>

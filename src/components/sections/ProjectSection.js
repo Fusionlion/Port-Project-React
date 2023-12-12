@@ -5,14 +5,13 @@ import { useState } from "react";
 import CustomModal from "./Modal";
 
 function ProjectSection() {
-    const [modal, setModal] = useState(false);
+  const [modal, setModal] = useState(false);
   const toggleModal = () => {
-     
-      setModal(!modal);
-      
-    };
+    setModal(!modal);
+  };
   return (
     <Wrapper>
+      {/* project cards on the left \\ */}
       <Projects>
         <ProjectCard
           tap={toggleModal}
@@ -46,7 +45,7 @@ function ProjectSection() {
             </p>
           </div>
         </div>
-      ) }
+      )}
     </Wrapper>
   );
 }
@@ -54,11 +53,11 @@ function ProjectSection() {
 export default ProjectSection;
 
 const Wrapper = styled.div`
-  background-image: url("/images/my-svg/sea-animals.svg");
+  /* background-image: url("/images/my-svg/sea-animals.svg");
   background-repeat: repeat-x;
   background-size: cover;
-  background-position: top left;
-
+  background-position: top left; */
+  background-color: black;
   height: 600px;
   width: 100%;
   mix-blend-mode: normal;

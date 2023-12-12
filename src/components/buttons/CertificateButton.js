@@ -1,34 +1,55 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 export default function CertificateButton(props) {
-    return (
-      <Button>
-        <Shadow style={{ mixBlendMode: `${props.filter}` }} />
-        <Wrapper>
-          <div className="top">
-            <div className="top-left">{props.title}</div>
-            <Icon src={props.imageSrc} />
-          </div>
+  return (
+    <Button>
+      <Shadow style={{ mixBlendMode: `${props.filter}` }} />
+      <Wrapper>
+        <div className="top">
+          <div className="top-left">{props.title}</div>
+          <Icon src={props.imageSrc} />
+        </div>
 
-          <div className="desc">{props.desc}</div>
-          <div className="bottom">
-            <div className="bottom-left">
-              <div className="bottom-left-line" />
-            </div>
-            <div className="bottom-right">
-              <div className="bottom-right-line" />
-              <div className="bottom-right-line" style={{ width: "100px" }} />
-            </div>
+        <div className="desc">{props.desc}</div>
+        <div className="bottom">
+          <div className="bottom-left">
+            <div className="bottom-left-line" />
           </div>
-        </Wrapper>
-      </Button>
-    );
+          <div className="bottom-right">
+            <div className="bottom-right-line" />
+            <div className="bottom-right-line" style={{ width: "100px" }} />
+          </div>
+        </div>
+      </Wrapper>
+    </Button>
+  );
 }
 
 const Button = styled.div`
   position: relative;
   border-radius: 18px;
-  overflow:hidden ;
+  overflow: hidden;
+  background-color: black;
+  cursor: pointer;
+  font-family: "Spline Sans Mono", sans-serif;
+  transition: scale 1s ease-in-out;
+
+  @keyframes scale {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.02);
+    }
+  }
+
+  /* Apply the 'scale' animation to the element */
+
+  &:hover {
+    transition: scale 1s ease-in-out;
+    transform: scale(1.02);
+    box-shadow: 0px 0px 20px 0px rgba(90, 113, 158, 0.15);
+  }
 `;
 const Shadow = styled.div`
   background-image: url(https://road-safety.transport.ec.europa.eu/sites/default/files/styles/oe_theme_medium_no_crop/public/2021-08/sk-sk4-backround_printing_back_1.png?itok=Xiv5P5tt);
@@ -38,7 +59,6 @@ const Shadow = styled.div`
   position: absolute;
 
   mix-blend-mode: color-dodge;
-
 `;
 const Wrapper = styled.div`
   width: 335px;
@@ -54,31 +74,15 @@ const Wrapper = styled.div`
     rgba(76, 0, 200, 0.6) 100%
   ); */
 
- 
-  box-shadow: 0px 30px 60px 0px rgba(39, 77, 153, 0.2);
-  backdrop-filter: blur(20px);
+  /* box-shadow: 0px 30px 60px 0px rgba(39, 77, 153, 0.2);
+  backdrop-filter: blur(20px); */
   display: flex;
   flex-direction: column;
   align-items: space-between;
   justify-content: space-between;
   padding: 20px;
-  animation: scale 1s ease-in-out;
-  @keyframes scale {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(1.02);
-    }
-  }
-
-  /* Apply the 'scale' animation to the element */
-  animation: scale 1s ease-in-out;
-
-  &:hover {
-    transform: scale(1.02);
-    box-shadow: 0px 0px 20px 0px rgba(90, 113, 158, 0.15);
-  }
+  border: 1px #605a5a80 solid;
+  border-radius: 18px;
 
   .desc {
     color: white;
@@ -129,11 +133,11 @@ const Wrapper = styled.div`
   }
 `;
 
-const Icon = styled.div `
-      width: 30px;
-    height: 30px;
-    border-radius: 60px;
-  background-image: url(${(props) => props.src}); 
-    background-size: contain;
-    mix-blend-mode: color-burn;
-`
+const Icon = styled.div`
+  width: 30px;
+  height: 30px;
+  border-radius: 60px;
+  background-image: url(${(props) => props.src});
+  background-size: contain;
+  /* mix-blend-mode: color-burn; */
+`;

@@ -329,7 +329,7 @@ const AboutMe = styled.div`
     transition: opacity 1s ease-in-out;
   }
   .disappear {
-    opacity: 0;
+    display: none;
     transition: opacity 0.3s ease-in-out;
   }
 `;
