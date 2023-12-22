@@ -75,6 +75,12 @@ const Card = styled.div`
     background-image: linear-gradient(#ff000000, #000000, #242420);
     border-radius: 17px;
   }
+  .linear:hover {
+    background-image: linear-gradient(#ff000000, #000, #000);
+    border: #4040403d solid 1px;
+    border-radius: 12px;
+    overflow:hidden ;
+  }
   .icon-and-title {
     display: flex;
     gap: 10px;
@@ -110,21 +116,22 @@ const Card = styled.div`
   }
 `;
 const ProjectCardStyle = styled.div`
-  background-color: black;
   width: 250px;
   height: 360px;
   border-radius: 12px;
-  background-image: url("/images/my-svg/falling-rocks.svg");
-  background-image: url(${(props) => props.src});
+  background-image: url(${(props) => props.src || "/images/my-svg/falling-rocks.svg"});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   z-index: 1;
   cursor: pointer;
   transition: linear 0.2s;
-
   position: relative;
 
+  &:hover {
+    background-position: top;
+    cursor: pointer;
+  }
   .number {
     display: flex;
     justify-content: center;

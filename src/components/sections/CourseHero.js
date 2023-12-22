@@ -29,7 +29,7 @@ function CourseHero({ setActiveTab }) {
             accessible applications. Welcome to my personal slice of the
             internet.I'm glad you're here!
           </Description>
-          <GetStartedButton />
+          <GetStartedButton tapped={() => handleTabClick("hide-hero")} />
           <Access>
             Learn the best tools and platforms.Make your code efficient and
             learn new methodologies in programming.

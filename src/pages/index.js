@@ -171,38 +171,7 @@ function SecondPage() {
                   </div>
                 </div>
                 {/* The cards are here */}
-                <div className="front-right">
-                  <ProjectCardx
-                    title="MyHealth+"
-                    imageSrc="https://remezcla.com/wp-content/uploads/2022/10/GettyImages-1430670718-1424x1068.jpg"
-                    desc="I developed an iOS application using Xcode, which serves as a sophisticated platform for meticulously monitoring fertility windows, as well as seamlessly facilitating appointments with healthcare professionals, thereby delivering a holistic solution for the management of reproductive health. This app empowers users with the ability to autonomously manage their fertility, while ensuring effortless access to specialized medical consultations when requisite."
-                  />
-                  <ProjectCardx
-                    title="Fuze"
-                    imageSrc="/images/my-svg/stock-app.png"
-                    desc="I engineered an iOS application through Xcode that provides a cutting-edge interface for users to engage in the intricate world of stock trading, offering real-time market data, advanced analysis tools, and seamless trade execution capabilities, thereby enabling individuals to participate in the dynamic and complex realm of financial markets with agility and sophistication. This app empowers users with the tools and insights needed to navigate the intricate landscape of stock trading, fostering informed decision-making and facilitating efficient execution of investment strategies."
-                  />
-                  <ProjectCardx
-                    title="Showcase"
-                    imageSrc="/images/my-svg/showcase.png"
-                    desc="I developed a Salesforce product showcase page using Apex, HTML, and CSS, creating a compelling and visually engaging platform within the Salesforce ecosystem. This page empowers businesses to effectively present their products, enhancing their sales and marketing strategies with a rich and dynamic user experience."
-                  />
-                  <ProjectCardx
-                    title="Showcase"
-                    imageSrc="/images/my-svg/showcase.png"
-                    desc="I developed a Salesforce product showcase page using Apex, HTML, and CSS, creating a compelling and visually engaging platform within the Salesforce ecosystem. This page empowers businesses to effectively present their products, enhancing their sales and marketing strategies with a rich and dynamic user experience."
-                  />
-                  <ProjectCardx
-                    title="Showcase"
-                    imageSrc="/images/my-svg/showcase.png"
-                    desc="I developed a Salesforce product showcase page using Apex, HTML, and CSS, creating a compelling and visually engaging platform within the Salesforce ecosystem. This page empowers businesses to effectively present their products, enhancing their sales and marketing strategies with a rich and dynamic user experience."
-                  />
-                  <ProjectCardx
-                    title="Showcase"
-                    imageSrc="/images/my-svg/showcase.png"
-                    desc="I developed a Salesforce product showcase page using Apex, HTML, and CSS, creating a compelling and visually engaging platform within the Salesforce ecosystem. This page empowers businesses to effectively present their products, enhancing their sales and marketing strategies with a rich and dynamic user experience."
-                  />
-                </div>
+         
               </div>
               {/* The timeline  */}
               <div className="bottom">
@@ -318,10 +287,14 @@ const AboutMe = styled.div`
   overflow: hidden;
   background: linear-gradient(to top, #000000, #000, #000000);
   position: relative;
+
   .title {
     color: white;
     font-family: "Spline Sans Mono", sans-serif;
     cursor: pointer;
+    /* @media only screen and (min-width: 430px) {
+      font-size: 52px;
+    } */
   }
   .menu-appear {
     top: 106px;
@@ -376,6 +349,7 @@ const Backdrop = styled.div`
     border-bottom: 1px solid #14141b;
     align-items: baseline;
     background-image: url(/images/my-svg/header-stars.svg);
+  
   }
   .logo {
     height: 35px;
@@ -385,6 +359,10 @@ const Backdrop = styled.div`
     background-position: center center;
     background-repeat: no-repeat;
     filter: invert(1);
+    /* @media only screen and (min-width: 430px) {
+      height: 70px;
+      width: 70px;
+    } */
   }
   .middle-section {
     display: flex;
@@ -399,6 +377,7 @@ const Backdrop = styled.div`
     gap: 10px;
     font-size: 25px;
     align-items: center;
+   
   }
   .right-section {
     display: flex;
@@ -412,6 +391,9 @@ const Backdrop = styled.div`
     background-size: cover;
     background-position: center;
     cursor: pointer;
+    /* @media only screen and (min-width: 430px) {
+      display: none;
+    } */
   }
   .right-section-drop-down {
     height: 30px;
@@ -423,6 +405,13 @@ const Backdrop = styled.div`
     opacity: 0.6;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
+    /* @media only screen and (min-width: 430px) {
+      background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1024px-Hamburger_icon.svg.png);
+      filter: invert(8);
+      height: 82px;
+      width: 82px;
+      place-items: center;
+    } */
   }
   .right-section-drop-down-active {
     height: 30px;
@@ -435,6 +424,13 @@ const Backdrop = styled.div`
     cursor: pointer;
     transform: rotate(180deg);
     transition: transform 0.3s ease-in-out;
+    /* @media only screen and (min-width: 430px) {
+      background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1024px-Hamburger_icon.svg.png);
+      filter: invert(8);
+      height: 82px;
+      width: 82px;
+      place-items: center;
+    } */
   }
   .middle-btn {
     font-size: 17px;

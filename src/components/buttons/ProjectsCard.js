@@ -1,8 +1,40 @@
 import React from "react";
 import styled from "styled-components";
 import ProgressBar from "./ProgressBar";
-
+import { useState } from "react";
 function ProjectsCard(props) {
+  const [progressValue, setProgressValue] = useState(false);
+  const [isStarted, setIsStarted] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [titleClicked, setTitleClicked] = useState("");
+
+
+
+  // give dummy data if no data found
+  const data = require("../../data/projectDetailData.json");
+  // SHOW THE MODAL
+
+  // WEHEN START IS CLICKED ON THE CARD
+  const handleStartClick = () => {
+    setIsStarted(true);
+
+    // SEND UP THE TITLE THAT WAS CLICKED
+    setTitleClicked(props.title);
+
+    // SEND A MESSAGE UP THAT CARD START WAS CLICKED
+    props.click(props.title, props.article ?? data["WHAT IS AN ALGORITHM?"]);
+    // Simulate progrepross increase over time
+
+    // this should be ONNN
+    // if (props.title.toUpperCase().toUpperCase() in data) {
+    //   setProgressValue(true);
+    // }
+  };
+  const handleProgressChange = (newProgress) => {
+    setProgress(newProgress);
+    // Do something with the new progress value in the parent component
+    // console.log("Progress changed:", newProgress);
+  };
   return (
     <Card>
       <ProjectCardStyle onClick={props.tapped} src={props.imageSrc}>
@@ -14,13 +46,20 @@ function ProjectsCard(props) {
 
         <div className="desc">{props.desc}</div>
 
-        <div className="start-btn" onClick={props.click}>
-          START
+        <div className="start-btn" onClick={handleStartClick}>
+          {progress > 0
+            ? "IN-PROGRESS"
+            : !progressValue && titleClicked == props.title
+            ? "Not Complete"
+            : "START"}
         </div>
-        <ProgressBar />
+        <ProgressBar
+          progressValue={progressValue}
+          onProgressChange={handleProgressChange}
+        />
         <div className="start-and-end">
-          <div className="start">[zero]</div>
-          <div className="start">|done|</div>
+          <div className="start">[{progress}]</div>
+          <div className="start">|100|</div>
         </div>
       </Content>
     </Card>
@@ -36,7 +75,7 @@ const Content = styled.div`
     border: #343434 1px solid;
     /* width: 200px; */
     /* height: 50px; */
-    color: white;
+    color: ${(props) => (props.buttonLabel ? "white" : "gray")};
     text-align: center;
     margin: 13px 25px;
     padding: 10px 0px;
@@ -118,8 +157,9 @@ const ProjectCardStyle = styled.div`
   width: 100%;
   height: 303px;
   border-radius: 17px;
-  background-image: url("/images/my-svg/falling-rocks.svg");
-  background-image: url(${(props) =>props.src || "/images/my-svg/falling-rocks.svg"});
+  /* background-image: url("/images/my-svg/falling-rocks.svg"); */
+  background-image: url(${(props) =>
+    props.src || "/images/my-svg/falling-rocks.svg"});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

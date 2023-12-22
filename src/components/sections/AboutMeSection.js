@@ -26,30 +26,32 @@ function AboutMeSection() {
   const [activeTab, setActiveTab] = useState("AboutMe");
   const [activeModal, setActiveModal] = useState("dontShow");
   const [activeCourse, setCourseTab] = useState("AboutMe");
-  const [activeCard, setActiveCard] = useState("card");
+  const [activeCard, setActiveCard] = useState("");
+  const [article, setArticle] = useState([]);
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);
   };
+  let currentClickedTitle;
   const handleModalClose = (close) => {
     setActiveModal("close");
   };
-  const handleCardClickChild = (card) => {
-    setActiveCard(card);
-    setActiveModal("show");
-    console.log("clicked from child");
+  const handleCardClickChild = (titleOfCard, thearticle) => {
+    setActiveCard(titleOfCard);
+    setArticle(thearticle);
+    currentClickedTitle = titleOfCard ?? "no data";
+    console.log("got title in main Parent " + currentClickedTitle);
+
+    const data = require("../../data/projects.json");
+    // SHOW THE MODAL
+    if (data && data.length > 4) {
+      setActiveModal("show");
+    } else {
+      setActiveModal("dont show");
+    }
   };
 
   return (
     <Wrapper>
-      <Modal active={activeModal === "show"}>
-        <div className="background">
-          <div className="x" onClick={() => handleModalClose("close")}>
-            Close
-          </div>
-          <AboutArticle />
-        </div>
-      </Modal>
-
       <Wave />
       {/* <WaveBackground /> */}
 
@@ -89,7 +91,6 @@ function AboutMeSection() {
                         </div>
                       </div>
 
-                
                       <div
                         className="image-and-text"
                         onClick={() => handleTabClick("Experience")}
@@ -200,8 +201,11 @@ function AboutMeSection() {
           activeTab === "AboutMe" ? "fade-in" : "fade-out"
         }`}
       >
-        <AboutMeIde setActiveCardParent={handleCardClickChild} />
-
+        {/* ABOUT ME: GETTING DATA FROM PROJECTCARD/TITLE */}
+        <AboutMeIde
+          noData={activeModal}
+          setActiveCardParent={handleCardClickChild}
+        />
       </div>
       {/* Education level */}
       <div
@@ -221,7 +225,16 @@ function AboutMeSection() {
         <FourthSection />
         <FifthSection />
       </div>
-      {/* Education level */}
+
+      {/* MODAL STARTS HERE */}
+      <Modal active={activeModal === "show"}>
+        <div className="background">
+          <div className="x" onClick={() => handleModalClose("close")}>
+            Close
+          </div>
+          <AboutArticle data={article} title={activeCard} />
+        </div>
+      </Modal>
       <FooterSection />
     </Wrapper>
   );
@@ -242,7 +255,7 @@ const Modal = styled.div`
   top: 0px;
   bottom: 0px;
   /* border: 1px #4a4747 solid; */
-  
+
   opacity: ${(props) => (props.active ? "1" : "0")};
   visibility: ${(props) => (props.active ? "visible" : "hidden")};
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;

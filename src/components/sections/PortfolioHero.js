@@ -88,6 +88,11 @@ const Name = styled.div`
   width: 199px;
   font-size: 1.2rem;
   font-family: "Spline Sans Mono", sans-serif;
+  /* @media only screen and (min-width: 430px) {
+    font-size: 52px;
+    place-items: center;
+    display: none;
+  } */
 `;
 
 const TopRightContent = styled.div`
@@ -102,6 +107,9 @@ const TopRightContent = styled.div`
     height: 400px;
     flex: none;
   }
+  /* @media only screen and (min-width: 430px) {
+    display: none;
+  } */
   .icons-and-desc {
     display: flex;
     flex-direction: column;
@@ -191,6 +199,10 @@ const Wrapper = styled.div`
       width: 90%;
       overflow: hide;
     }
+    /* @media only screen and (min-width: 430px) {
+      /* hide the timeline on the bottom */
+      display: none;
+    } */
   }
   .split-and-desc {
     display: flex;
@@ -272,9 +284,9 @@ const Title = styled.div`
     color: transparent;
   }
 
-  @media (max-width: 450px) {
+  /* @media (max-width: 450px) {
     font-size: 48px;
-  }
+  } */
 `;
 
 const Description = styled(MediumText)`

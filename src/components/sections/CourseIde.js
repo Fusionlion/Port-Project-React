@@ -3,20 +3,28 @@ import styled from "styled-components";
 import CardList from "./CardList";
 import topicData from "../../data/data.json";
 import Ide from "./Ide";
-
+import FooterSection from "./FooterSection";
+import CourseRawIde from "./CourseRawIde";
+import IdeQuiz from "./IdeQuiz";
 function CourseIde({ setActiveCardParent }) {
   const [topic, setTopic] = useState([topicData]);
-   const [topicClicked, setTopicClicked] = useState("0");
- 
+  const [topicClicked, setTopicClicked] = useState(0);
+  const [titleClicked, setTitleClicked] = useState(false);
   const data = topicData.map((record) => {
     return record;
   });
- 
-  const handleCardClickChild = (card) => {
-    console.log("card clikde was" + card);
-    setTopicClicked(card);
+  let cardClickedRaw;
+  const handleCardClickChild = (card, num) => {
+    // console.log(data[topicClicked].lesson);
+    // the title of the card
+    cardClickedRaw = card;
+    console.log(topicClicked + " topic clicked");
+    setTopicClicked(num);
+    setTitleClicked(card);
+    console.log("card click up top was " + cardClickedRaw + "num was " + num);
+    // setTopicClicked(card);
     setActiveCardParent(card);
-    
+
     // Adjust the value (e.g., 100) based on how much you want to scroll down
   };
 
@@ -35,7 +43,7 @@ function CourseIde({ setActiveCardParent }) {
         <div className="topic-and-lesson">
           <div className="topic-container">
             <div className="topic-title-desc" id="topic-title">
-              WHAT IS AN ALGORITHM?
+             {"START WITH THE FUNDEMENTALS"} 
             </div>
             <div className="topic-title" id="topic-big-title">
               OVERVIEW
@@ -46,22 +54,45 @@ function CourseIde({ setActiveCardParent }) {
               It takes a set of input(s) and produces the desired output.
             </div>
             <div className="topic-button" id="next-button">
-              GET STARTED
+              {topicClicked > 0 ? "IN-PROGRESS" : "GET STARTED"}
             </div>
           </div>
+
           <Ide
             // text={data[topicClicked].lesson}
             text={data[topicClicked].lesson}
             parentCardClicked={topicClicked}
             title={data[topicClicked].title}
+            quiz={data[topicClicked].quiz}
+            // switchIde={handleSwitching}
           />
         </div>
 
         {/* We put the course here/ below */}
-        <div className="cards-title">Other Lessons</div>
+        <div className="cards-title">Data Structures & Algorithms</div>
         <div className="bottom-container" id="bottom-container">
           <CardList data={data} theCardClicked={handleCardClickChild} />
         </div>
+
+        {/* We put the course here/ below */}
+        <div className="cards-title">React JS</div>
+        <div className="bottom-container" id="bottom-container">
+          <CardList data={data} theCardClicked={handleCardClickChild} />
+        </div>
+        {/* We put the course here/ below */}
+        <div className="cards-title">Java Full Stack</div>
+        <div className="bottom-container" id="bottom-container">
+          <CardList data={data} theCardClicked={handleCardClickChild} />
+        </div>
+
+        {/* We put the course here/ below */}
+        <div className="cards-title">Salesforce Developer</div>
+        <div className="bottom-container" id="bottom-container">
+          <CardList data={data} theCardClicked={handleCardClickChild} />
+        </div>
+
+        {/* end */}
+        <FooterSection />
       </div>
     </BodyContain>
   );
@@ -76,7 +107,11 @@ const BodyContain = styled.div`
   position: relative;
   font-family: "Spline Sans Mono", sans-serif;
   margin-bottom: 167px;
-
+  background: linear-gradient(to top, #000000, #000, #1606cd00);
+  /* background-image: url(/images/my-svg/sea-animals.svg);
+  background-size: contain;
+  background-repeat: repeat;
+  background-position: bottom; */
   /* The line at the most left side */
   .left {
     display: flex;
@@ -128,6 +163,7 @@ const BodyContain = styled.div`
     font-size: 20px;
     color: white;
     width: 100%;
+    line-height: 1.3;
     overflow: scroll;
   }
   .topic-button {
@@ -195,7 +231,7 @@ const BodyContain = styled.div`
 
   .bottom-container {
     display: flex;
-    padding: 20px 20px;
+    padding: 20px 0px;
     overflow: scroll;
     gap: 15px;
     border-radius: 20px;
@@ -210,6 +246,11 @@ const BodyContain = styled.div`
     justify-content: space-between;
     gap: 10px;
     padding-right: 80px;
+
+    /* background-image: url(/images/my-svg/first.svg); */
+    background-attachment: fixed;
+    background-size: contain;
+    background-repeat: repeat-x;
   }
   .ide {
     background-color: #1b1b1b;

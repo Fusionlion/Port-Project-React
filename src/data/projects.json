@@ -3,14 +3,94 @@
     "title": "WHAT IS AN AlGORITHM?",
     "num": "0",
     "desc": "In computer programming terms, an algorithm is a set of well-defined instructions to solve a particular problem. It takes a set of input(s) and produces the desired output.o",
-    "image": "https://cdn.dribbble.com/userupload/11325790/file/original-8157e394170422bbb0927202cc45f001.png?resize=2048x1537"
+    "image": "https://cdn.dribbble.com/userupload/11325790/file/original-8157e394170422bbb0927202cc45f001.png?resize=2048x1537",
+    "article": [
+      {
+        "type": "title",
+        "content": {
+          "subtitle": "Your Year of Lord",
+          "title": "Health Companion"
+        }
+      },
+      {
+        "type": "parallax",
+        "content": "Fusion+",
+        "projectUrl": "/images/my-svg/undersea.svg"
+      },
+      {
+        "type": "text",
+        "content": "Fusion stands as a testament to my commitment to leveraging technology for positive impact. As a software developer with a passion for technology, I dedicated my skills to creating this powerful and user-friendly mobile application. My goal is to contribute to the well-being of individuals by providing essential tools and information for managing their reproductive health. Fusion-Ion goes beyond the conventional period tracker, offering a suite of innovative features that transform it into a comprehensive health companion."
+      },
+      {
+        "type": "text",
+        "content": "Located in the vibrant tech scene of New Jersey and occasionally in Minnesota, I draw inspiration from my surroundings to craft solutions that address real-world needs. Fusion-Ion reflects not only my technical proficiency but also my dedication to making a meaningful difference in people's lives through accessible and innovative applications. As I continue on my journey to become an advanced software engineer, Fusion-Ion stands as a testament to my continuous pursuit of excellence in the realm of technology."
+      },
+      {
+        "type": "image",
+        "content": "https://user-images.githubusercontent.com/74889517/182246804-279dc992-6078-49f3-a4a7-775fbb677c00.png"
+      },
+      {
+        "type": "text",
+        "content": "Fusion, a cutting-edge mobile application, offers a comprehensive set of features designed to empower individuals in managing their reproductive health effectively. One of the core functionalities of Fusion is its advanced period tracker, providing users with a user-friendly interface to log and monitor their menstrual cycles. This feature serves as a valuable tool for individuals to track their periods accurately, fostering a better understanding of their reproductive health."
+      },
+      {
+        "type": "text",
+        "content": "The app goes beyond mere period tracking by incorporating period cycle predictions. Fusion utilizes intelligent algorithms to analyze past menstrual data, offering users insights into their future cycles. This predictive capability enhances user preparedness and allows for better planning, contributing to a more informed and proactive approach to reproductive health.Fusion's Ovulation Calculator is another standout feature that aids individuals in family planning. By leveraging sophisticated calculations based on menstrual cycle data, the app predicts ovulation windows, assisting those trying to conceive or avoid pregnancy. This functionality aligns with Fusion's commitment to providing users with practical tools for making informed decisions about their reproductive journey."
+      },
+      {
+        "type": "text",
+        "content": "For individuals navigating pregnancy, Fusion offers a dedicated Pregnancy Calculator. This feature helps users estimate their due date, providing a convenient way to track the progression of their pregnancy. Fusion stands as a reliable companion throughout the entire reproductive process, from menstrual tracking to the stages of pregnancy. To enhance user engagement and adherence to their reproductive health goals, Fusion incorporates Reminders. Users can set personalized reminders for upcoming periods, ovulation windows, or any other relevant events. This feature ensures that users stay on top of their reproductive health routines, fostering a sense of control and well-being.Beyond its practical tools, Fusion is committed to educating and informing users about various aspects of reproductive health. The app serves as a valuable resource, offering educational content that empowers individuals with knowledge about their bodies, menstrual health, and fertility. Fusion's dedication to user education aligns with its mission to not only provide tools but also to foster a deeper understanding of reproductive well-being."
+      }
+    ]
   },
   {
-    "title": "Data Structure and Types",
+    "title": "MyHealth",
     "num": "1",
     "desc": "Data structure is a storage that is used to store and organize data. It is a way of arranging data on a computer so that it can be accessed and updated efficiently.",
     "image": "https://cdn.dribbble.com/userupload/11165238/file/original-973c3fb9fb487ff0d90155ecf644e096.png?resize=1504x1128",
-    "lesson": "Why is life soo wack nowadays.sufgisugfiugfiugsiufgjuhfufhsfufu.fusiufghiufu"
+    "lesson": "Why is life soo wack nowadays.sufgisugfiugfiugsiufgjuhfufhsfufu.fusiufghiufu",
+    "article": [
+      {
+        "type": "title",
+        "content": {
+          "subtitle": "Your Year of Lord 2",
+          "title": "Health Companion"
+        }
+      },
+      {
+        "type": "parallax",
+        "content": "MyHealth",
+        "projectUrl": "/images/my-svg/undersea.svg"
+      },
+      {
+        "type": "text",
+        "content": "Fusion stands as a testament to my commitment to leveraging technology for positive impact. As a software developer with a passion for technology, I dedicated my skills to creating this powerful and user-friendly mobile application. My goal is to contribute to the well-being of individuals by providing essential tools and information for managing their reproductive health. Fusion-Ion goes beyond the conventional period tracker, offering a suite of innovative features that transform it into a comprehensive health companion."
+      },
+      {
+        "type": "text",
+        "content": "Located in the vibrant tech scene of New Jersey and occasionally in Minnesota, I draw inspiration from my surroundings to craft solutions that address real-world needs. Fusion-Ion reflects not only my technical proficiency but also my dedication to making a meaningful difference in people's lives through accessible and innovative applications. As I continue on my journey to become an advanced software engineer, Fusion-Ion stands as a testament to my continuous pursuit of excellence in the realm of technology."
+      },
+      {
+        "type": "image",
+        "content": "https://user-images.githubusercontent.com/74889517/182246804-279dc992-6078-49f3-a4a7-775fbb677c00.png"
+      },
+      {
+        "type": "text",
+        "content": "Fusion, a cutting-edge mobile application, offers a comprehensive set of features designed to empower individuals in managing their reproductive health effectively. One of the core functionalities of Fusion is its advanced period tracker, providing users with a user-friendly interface to log and monitor their menstrual cycles. This feature serves as a valuable tool for individuals to track their periods accurately, fostering a better understanding of their reproductive health."
+      },
+      {
+        "type": "grid",
+        "content": ["/images/my-svg/undersea.svg","/images/my-svg/undersea.svg","/images/my-svg/undersea.svg","/images/my-svg/undersea.svg","/images/my-svg/undersea.svg"]
+      },
+      {
+        "type": "text",
+        "content": "The app goes beyond mere period tracking by incorporating period cycle predictions. Fusion utilizes intelligent algorithms to analyze past menstrual data, offering users insights into their future cycles. This predictive capability enhances user preparedness and allows for better planning, contributing to a more informed and proactive approach to reproductive health.Fusion's Ovulation Calculator is another standout feature that aids individuals in family planning. By leveraging sophisticated calculations based on menstrual cycle data, the app predicts ovulation windows, assisting those trying to conceive or avoid pregnancy. This functionality aligns with Fusion's commitment to providing users with practical tools for making informed decisions about their reproductive journey."
+      },
+      {
+        "type": "text",
+        "content": "For individuals navigating pregnancy, Fusion offers a dedicated Pregnancy Calculator. This feature helps users estimate their due date, providing a convenient way to track the progression of their pregnancy. Fusion stands as a reliable companion throughout the entire reproductive process, from menstrual tracking to the stages of pregnancy. To enhance user engagement and adherence to their reproductive health goals, Fusion incorporates Reminders. Users can set personalized reminders for upcoming periods, ovulation windows, or any other relevant events. This feature ensures that users stay on top of their reproductive health routines, fostering a sense of control and well-being.Beyond its practical tools, Fusion is committed to educating and informing users about various aspects of reproductive health. The app serves as a valuable resource, offering educational content that empowers individuals with knowledge about their bodies, menstrual health, and fertility. Fusion's dedication to user education aligns with its mission to not only provide tools but also to foster a deeper understanding of reproductive well-being."
+      }
+    ]
   },
   {
     "title": "Why learn DSA?",

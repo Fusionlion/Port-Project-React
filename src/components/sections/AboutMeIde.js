@@ -5,24 +5,28 @@ import Ide from "./Ide";
 import ProjectsCard from "../buttons/ProjectsCard";
 import BlackButton from "../buttons/BlackButton";
 import ProjectsList from "./ProjectsList";
+import ProjectBiosList from "./ProjectBiosList";
 
 function AboutMeIde({ setActiveCardParent }) {
   const [activeCard, setActiveCard] = useState("card");
-const [ideTyped, setIdeTyped] = useState("GET STARTED");
-  const handleCardClick = (cardname) => {
-    setActiveCardParent(cardname);
-    setActiveCard(cardname);
-    console.log(activeCard);
+  const [ideTyped, setIdeTyped] = useState("GET STARTED");
+
+  // WHEN A CARD IS CLICKED
+  // CARDNAME GETS NUMBER OF CARD CLICKED
+  const handleCardClick = (cardClickedFromChild, articlefromchild) => {
+    console.log("got tile for project list > " + cardClickedFromChild);
+    setActiveCardParent(cardClickedFromChild, articlefromchild);
+    setActiveCard(cardClickedFromChild);
   };
   const [topic, setTopic] = useState([topicData]);
   const data = topicData.map((record) => {
-    console.log(record.about);
+    // console.log(record.about);
     return record.about;
   });
 
   const handleTypingStarted = () => {
     setIdeTyped("IN PROGRESS");
-    console.log("Button clicked in parent component!");
+    // console.log("Button clicked in parent component!");
   };
 
   return (
@@ -50,7 +54,7 @@ const [ideTyped, setIdeTyped] = useState("GET STARTED");
         <div className="cards-title">My Projects</div>
         <div className="bottom-container" id="bottom-container">
           {/* <CardList data={data} /> */}
-          <ProjectsList theCardClicked={handleCardClick} />
+          <ProjectBiosList theCardClicked={handleCardClick} />
           {/* <ProjectsCard
             title="{print.title}"
             desc="{print.desc}"

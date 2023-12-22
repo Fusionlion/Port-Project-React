@@ -6,7 +6,7 @@ import CourseIde from "./CourseIde";
 import FifthSection from "./FifthSection";
 
 export default function Course() {
-  const [activeTab, setActiveTab] = useState("Data");
+  const [activeTab, setActiveTab] = useState("start");
  const [activeCard, setActiveCard] = useState("card");
   const handleTabClick = (tabName) => {
     console.log("the name is " + tabName);
@@ -19,13 +19,19 @@ export default function Course() {
   return (
     <Wrapper>
       <Background />
-      <CourseHero setActiveTab={handleTabClick} />
+      {activeTab === "start" && <CourseHero setActiveTab={handleTabClick} />}
 
       <div
         className={`tab-content-item ${
-          activeTab === "Data" ? "fade-in" : "fade-out"
+          activeTab === "start" || activeTab === "hide-hero"
+            ? "fade-in"
+            : "fade-out"
         }`}
       >
+        {activeTab === "hide-hero" && <div> <br></br>
+        <br></br>
+        <br></br> </div>}
+        
         <CourseIde setActiveCardParent={handleCardClickChild} />
       </div>
       <div
@@ -61,7 +67,7 @@ const Wrapper = styled.div`
 `;
 
 const Background = styled.div`
-  background-image: linear-gradient(to top, #000000, #040315, #000);
+  background-image: linear-gradient(to top, #000000, #040315, #0000);
   width: 100%;
   height: 100%;
   z-index: -1;

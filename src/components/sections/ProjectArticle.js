@@ -1,6 +1,37 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
+import FooterSection from "./FooterSection";
 export default function ProjectArticle() {
+  const bottomRef = useRef(null);
+
+  const handleIntersection = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        console.log("Bottom of the component is visible!");
+        // Your logic when the bottom is visible
+      }
+    });
+  };
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5, // Adjust this value based on your requirement
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, options);
+
+    if (bottomRef.current) {
+      observer.observe(bottomRef.current);
+    }
+
+    return () => {
+      if (bottomRef.current) {
+        observer.unobserve(bottomRef.current);
+      }
+    };
+  }, []);
   return (
     <Wrapper>
       <section>
@@ -104,6 +135,8 @@ export default function ProjectArticle() {
           </p>
         </div>
       </section>
+      <div ref={bottomRef} style={{ height: "1px", marginBottom: "-1px" }} />
+      <FooterSection />
     </Wrapper>
   );
 }
@@ -168,7 +201,7 @@ const Wrapper = styled.div`
     margin-bottom: 15px;
   }
   .title {
-    background: #afb3f1;
+    background: black;
     padding: 60px;
     margin: 0 auto;
     text-align: center;

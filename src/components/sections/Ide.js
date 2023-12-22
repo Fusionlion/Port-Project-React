@@ -1,12 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 
+// ... (other imports and declarations)
+
 const Ide = (props) => {
   const [line, setLine] = useState(0);
+  const [quiz, setQuiz] = useState(false);
   const [alreadyTypedText, setAlreadyTypedText] = useState("");
-  const [displayText, setDisplayText] = useState("");
+  const [displayText, setDisplayText] = useState("Click to begin");
   const [ideButton, setIdeButton] = useState("Click Me!");
-  const [isTyping, setIsTyping] = useState(true);
+  const [isTyping, setIsTyping] = useState(false);
   const lessonRef = useRef(null);
 
   const sample = [props.text ?? "nothing to see here"];
@@ -15,112 +18,331 @@ const Ide = (props) => {
 
   const [blinkClass, setBlinkClass] = useState("button-blink");
   const { onButtonClick, parentCardClicked } = props;
-  // Update the previous value for the next comparison
-  // useRef to store the previous value
   const previousParentCardClickedRef = useRef(parentCardClicked);
 
-  useEffect(() => {
-    // This block of code will run whenever parentCardClicked changes
-    console.log("Parent card clicked:", parentCardClicked);
+  const items = text;
+  const [displayedItems, setDisplayedItems] = useState([]);
 
-    // You can perform additional actions based on the change
-    // For example, you can call a function:
-    // yourFunction(parentCardClicked);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentQuestionIndex, setcurrentQuestionIndex] = useState(0);
 
-    // Or you can check if it's still the same or changed
-    if (parentCardClicked === previousParentCardClickedRef.current) {
-      console.log("Parent card is still the same.");
-      setBlinkClass("button-blink next-ide-btn");
+  const questions = props.quiz;
+  const [displayedQuestions, setDisplayedQuestions] = useState([]);
+
+  const [shouldShake, setShouldShake] = useState(false);
+
+  const [allQuestionsTyped, setAllQuestionsTyped] = useState(false);
+  const [allPickedAnswers, setPickedAnswers] = useState([]);
+  const [allRightPickedAnswers, setRightPickedAnswers] = useState([]);
+  // Function to update the picked answers
+  var isCorrect = false;
+
+  const updatePickedAnswers = (newAnswer) => {
+    setPickedAnswers((prevAnswers) => [...prevAnswers, newAnswer]);
+  };
+  const handleRighQuestionSelection = (selectedAnswer) => {
+    // Update state with the selected answer
+    // Check if the selected answer is not already in the array
+    if (!allRightPickedAnswers.includes(selectedAnswer)) {
+      // Update state with the selected answer
+      setRightPickedAnswers((prevAnswers) => [...prevAnswers, selectedAnswer]);
+    }
+
+    // Check if the selected answer is incorrect
+    /* Add your logic to check if the answer is correct */
+
+    // If the answer is incorrect, trigger the shake animation
+    if (!isCorrect) {
+      setShouldShake(true);
+
+      // Reset shouldShake after the animation completes
+      setTimeout(() => {
+        setShouldShake(false);
+      }, 500); // 500ms is the duration of the shake animation
+    }
+  };
+
+  // When a multiple choice has been tapped (each)
+  const handleAnswerSelection = (selectedAnswer) => {
+    let ex =
+      currentQuestionIndex == 0
+        ? currentQuestionIndex
+        : currentQuestionIndex - 1;
+    // Call the function to update picked answers
+    // console.log(ex + " CORRECT index from data");
+    // console.log(props.quiz[ex].question + " question from data");
+    //  console.log(props.quiz[ex].answer + " CORRECT ANSWER from data");
+    if (props.quiz[ex].answer == selectedAnswer) {
+      isCorrect = true;
+      setDisplayText("thats correct :)");
+      handleRighQuestionSelection(selectedAnswer);
     } else {
-      console.log("Parent card has changed.");
-      setDisplayText(props.title ?? "Click to get started!");
-      setIsTyping(false);
-      setBlinkClass("button-no-blink next-ide-btn");
-
-      setAlreadyTypedText("");
+      isCorrect = false;
+      setDisplayText("thats incorrect :(");
     }
 
-    // Update the previous value for the next comparison
-    previousParentCardClickedRef.current = parentCardClicked;
-  }, [parentCardClicked]);
-  useEffect(() => {
-    const currentText = text[line];
-    if (!currentText || !isTyping) return;
+    //   if the answer is not in all picked set it
+    if (!allPickedAnswers.includes(selectedAnswer)) {
+      updatePickedAnswers(selectedAnswer);
+    }
 
-    let i = 0;
-    const interval = setInterval(() => {
-       if (line == 0) {
-         setAlreadyTypedText((prevText) => props.title);
-       }
-      setDisplayText((prevText) => prevText + currentText[i]);
-      i++;
-      lessonRef.current.scrollTop = lessonRef.current.scrollHeight;
+    // Your other logic here
+  };
 
-      if (i === currentText.length) {
-        setIsTyping(false);
-        clearInterval(interval);
-
-        // Scroll to the bottom after typing
-        // if (lessonRef.current) {
-        // lessonRef.current.scrollTop = lessonRef.current.scrollHeight;
-        // }
-      }
-    }, 30);
-
-    return () => clearInterval(interval);
-  }, [line, isTyping]);
-
-  function handleClick() {
+  const handleReset = () => {
+     setDisplayedQuestions([]);
+     setAlreadyTypedText("");
+     setDisplayedItems([]);
+     setAllQuestionsTyped(false);
+     setcurrentQuestionIndex(0);
+     setDisplayText("click ( me ) to start");
+     setAllQuestionsTyped(false);
+     setPickedAnswers([]);
+     setRightPickedAnswers([]);
+     setLine(0);
+     setCurrentIndex(0);
+  }
+  // quiz button is clicked
+  const handleQuizButton = () => {
    
-    console.log(line);
-    if (onButtonClick) {
-      onButtonClick();
+    if (questions === undefined) {
+       
+      return;
     }
-    const currentText = text[line];
+    // RESETS EVERYTHING WHEN SWITCHING LESSON AND QUIZ
+    
+    if (quiz) {
+      setQuiz(false);
+      
+    } else {
+      setQuiz(true);
+    }
+     handleReset();
+  };
+
+  const handleStartQuizClick = () => {
+    if (currentQuestionIndex > 0 && displayText != "thats correct :)") {
+      setDisplayText("answer correctly to move to the next question! :/");
+      return;
+    }
+    console.log("starting quiz" + currentIndex + " " + questions.length);
+    if (currentQuestionIndex > questions.length) {
+      console.log("terminated");
+      return;
+    }
+    if (questions && questions.length > 0 && currentQuestionIndex < 3) {
+      setDisplayedQuestions((prevItems) => [
+        ...prevItems,
+        questions[currentQuestionIndex].question,
+      ]);
+
+      handleClick();
+    } else {
+      setAllQuestionsTyped(true);
+      setDisplayText("No more im afraid");
+    }
+  };
+
+  //for lesson
+  const handleNextClick = () => {
+    setDisplayedItems((prevItems) => [...prevItems, items[currentIndex]]);
+    setCurrentIndex((prevIndex) => prevIndex + 1);
+  };
+
+  // for the lesson
+  const handleClick = () => {
+    if (!quiz) {
+      handleNextClick();
+    }
+
+    setIsTyping(true);
+    setLine((prevLine) => prevLine + 1);
+    const currentText = text[currentIndex];
     if (currentText !== undefined) {
       setAlreadyTypedText(
         (prevText) => prevText + "\n" + currentText + "." + "\n"
       );
-      setLine((prevLine) => prevLine + 1);
-      setDisplayText(""); // Clear displayed text when moving to the next line
     } else {
       setDisplayText("Im afraid that's all folks :{");
     }
 
-    setIsTyping(true);
-  }
+    if (onButtonClick) {
+      onButtonClick();
+    }
+    setDisplayText("");
+  };
+
+  // when the cards below are clicked
+  useEffect(() => {
+    if (parentCardClicked === previousParentCardClickedRef.current) {
+      setBlinkClass("button-blink next-ide-btn");
+    } else {
+      setIsTyping(false);
+      setBlinkClass("button-no-blink next-ide-btn");
+      handleReset();
+      setDisplayText(props.title ?? "click to start");
+      
+    }
+
+    previousParentCardClickedRef.current = parentCardClicked;
+  }, [parentCardClicked]);
+
+  useEffect(() => {
+    // current line being typed
+    let currentText;
+    if (
+      quiz &&
+      questions &&
+      questions.length > 0 &&
+      currentQuestionIndex >= 0 &&
+      currentQuestionIndex < questions.length
+    ) {
+      console.log("the index is" + currentQuestionIndex);
+      currentText = questions[currentQuestionIndex].question;
+      setAllQuestionsTyped(false);
+    } else {
+      currentText = text[line];
+    }
+
+    if (!currentText || !isTyping) return;
+
+    let i = 0;
+    const interval = setInterval(() => {
+      // only show in lesson and not quiz
+      if (!quiz) {
+        setDisplayText((prevText) => prevText + currentText[i]);
+      } else {
+        setDisplayText((prevText) => prevText + currentText[i]);
+      }
+      i++;
+      lessonRef.current.scrollTop = lessonRef.current.scrollHeight;
+
+      // add the question to already seen in old
+
+      if (
+        currentText.trim().endsWith("?") &&
+        questions[currentQuestionIndex] &&
+        questions[currentQuestionIndex].options &&
+        i <= questions[currentQuestionIndex].options.length
+      ) {
+        setDisplayedQuestions((prevItems) => [
+          ...prevItems,
+          questions[currentQuestionIndex].options[i - 1],
+        ]);
+      }
+
+      if (i === currentText.length) {
+        setIsTyping(false);
+        clearInterval(interval);
+      }
+    }, 20);
+
+    setcurrentQuestionIndex((prevIndex) => prevIndex + 1);
+    return () => clearInterval(interval);
+  }, [line, isTyping]);
 
   return (
     <Wrapper>
       <div className="lesson" id="typedtext" ref={lessonRef}>
         <div id="console-prompt">
-          Shall we get started<a className="blink">?</a>
+          {currentQuestionIndex > 0 ? props.title : "Shall we get started"}<a className="blink">?</a>
         </div>
-        <div style={{ whiteSpace: "pre-line" }} className="old">
-          {alreadyTypedText}
-        </div>
-        <div className="typing">{displayText}</div>
+        {!quiz ? (
+          <div>
+            {displayedItems.map((item, index) =>
+              item.trimStart().startsWith("/") ? (
+                <div
+                  className="ide-image"
+                  style={{
+                    backgroundImage: `url("${item + "." + text[index + 1]}")`,
+                  }}
+                  placeholder={item}
+                  key={index}
+                />
+              ) : (
+                <div className="old" key={index}>
+                  {item.length < 4 ? "//Refer to the image above" : item}
+                </div>
+              )
+            )}
+            <div className="typing">
+              {displayText.length < 4 ? "refer to this image" : displayText.trimStart().startsWith("/") ? "refer to the following image" : displayText}
+            </div>
+          </div>
+        ) : (
+          // QUESYIONS TYPER
+          <div>
+            {displayedQuestions.map((item, index) =>
+              item.trim().endsWith("?") ? (
+                <div className="old" key={index}>
+                  {item}
+                </div>
+              ) : (
+                // if its an answer
+                <div
+                  className={`${
+                    allPickedAnswers.includes(item)
+                      ? allRightPickedAnswers.includes(item)
+                        ? "picked-and-correct"
+                        : !shouldShake // Add the condition for shaking
+                        ? "picked-but-incorrect shake" // Apply the shake class
+                        : "picked-but-incorrect"
+                      : "not-picked"
+                  }`}
+                  key={index}
+                  onClick={() => handleAnswerSelection(item)}
+                >
+                  {item}
+                </div>
+              )
+            )}
+            <div className="typing">{displayText}</div>
+          </div>
+        )}
+        {/* Question BUTTONS  */}
       </div>
 
       <div className="ide-buttons-right">
-        <div className="next-ide-btn">
-          {line}/{text.length}
+        <div className="next-ide-btn" onClick={handleQuizButton}>
+          {!quiz
+            ? questions !== undefined && questions.length !== undefined ? "Quiz" : "No-Quiz"
+            : allQuestionsTyped
+            ? "Back to lesson"
+            : (quiz ? currentQuestionIndex : currentIndex) +
+              "/" +
+              questions !== undefined && questions.length !== undefined ? questions.length : 0}
         </div>
-        {!isTyping && (
-          <div className={blinkClass} onClick={handleClick}>
-            {ideButton}
+
+        {!quiz ? (
+          <div className="flex-gap-10">
+            {!isTyping && (
+              <div className="next-ide-btn" onClick={handleClick}>
+                <span className={blinkClass}>{ideButton}</span>
+              </div>
+            )}
+            <div className="next-ide-btn">
+              {quiz ? currentQuestionIndex : line}/{text.length}
+            </div>
+          </div>
+        ) : (
+          <div className="next-ide-btn" onClick={handleStartQuizClick}>
+            {allQuestionsTyped
+              ? "You're done"
+              : line > 1 || currentQuestionIndex > 0
+              ? "Next"
+              : "Start Quiz"}
           </div>
         )}
       </div>
 
       {/* ide background video ------------------------- */}
-      {line == 0 && (
+      {line === 0 && (
         <Video autoPlay loop muted>
           <source src="/images/my-svg/backvideo.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </Video>
       )}
-      {line != 0 && <div className="background-ide"></div>}
+      {line !== 0 && <div className="background-ide"></div>}
       {/* Your other content goes here */}
     </Wrapper>
   );
@@ -136,7 +358,7 @@ const Video = styled.video`
   height: 100%;
   object-fit: cover;
   z-index: 4;
-  filter: blur(5px);
+  /* filter: blur(5px); */
   border-radius: 24px;
 `;
 
@@ -157,6 +379,13 @@ const Wrapper = styled.div`
   position: relative;
   border: 1px #3f3939 solid;
   position: relative;
+  .flex-gap-10 {
+    display: flex;
+    gap: 10px;
+  }
+  #console-prompt {
+    padding-bottom: 20px;
+  }
   .background-ide {
     position: absolute;
     top: 0;
@@ -179,7 +408,8 @@ const Wrapper = styled.div`
   }
   .next-ide-btn {
     border-radius: 7px;
-    padding: 10px;
+    padding: 10px 8px;
+    background-color: black;
     border: #483f3f 1px solid;
 
     cursor: pointer;
@@ -199,8 +429,109 @@ const Wrapper = styled.div`
     padding: 9px 16px;
     animation: all 2s;
     text-align: start;
+    line-height: 1.2;
     text-transform: lowercase;
     z-index: 5;
+  }
+
+  .typing-question {
+    background-color: black;
+    border: 1px solid #292929;
+    border-radius: 11px;
+    padding: 9px 16px;
+    margin: 10px 20px;
+    animation: all 2s;
+    text-align: start;
+    line-height: 1.2;
+    text-transform: lowercase;
+    z-index: 5;
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+  }
+  .picked-and-correct {
+    background-color: black;
+    color: green;
+    border: 1px solid #292929;
+    border-radius: 11px;
+    padding: 9px 16px;
+    margin: 10px 20px;
+    animation: all 2s;
+    text-align: start;
+    line-height: 1.2;
+    text-transform: lowercase;
+    z-index: 5;
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+  }
+  .picked-but-incorrect {
+    background-color: black;
+    color: red;
+    border: 1px solid #292929;
+    border-radius: 11px;
+    padding: 9px 16px;
+    margin: 10px 20px;
+    animation: all 2s;
+    text-align: start;
+    line-height: 1.2;
+    text-transform: lowercase;
+    z-index: 5;
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+  }
+  @keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+    20% {
+      transform: translateX(-10px);
+    }
+    40% {
+      transform: translateX(10px);
+    }
+    60% {
+      transform: translateX(-10px);
+    }
+    80% {
+      transform: translateX(10px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .shake {
+    animation: shake 0.5s ease-in-out;
+  }
+  .not-picked {
+    background-color: black;
+    color: white;
+    border: 1px solid #292929;
+    border-radius: 11px;
+    padding: 9px 16px;
+    margin: 10px 20px;
+    animation: all 2s;
+    text-align: start;
+    line-height: 1.2;
+    text-transform: lowercase;
+    z-index: 5;
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+  }
+  .picked-and-correct:hover,
+  .not-picked:hover,
+  .picked-and-incorrect:hover {
+    background-color: #100f0f;
+    margin: 10px 0px;
+  }
+  .ide-image {
+    background-image: url("/images/my-svg/woman-using-phone-laughing.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 399px;
+    margin: 20px 0px;
+    background-color: black;
+    border-radius: 9px;
   }
   .old {
     padding: 33px 16px;
@@ -218,8 +549,8 @@ const Wrapper = styled.div`
     cursor: pointer;
   }
   .button-blink {
-    background-color: #000;
     color: #c0453d;
+    border: -7px #3e3a3a solid;
     animation: 2s linear infinite condemned_blink_effect;
   }
   .blink {
@@ -235,13 +566,13 @@ const Wrapper = styled.div`
 
   @keyframes condemned_blink_effect {
     0% {
-      visibility: hidden;
+      color: gray;
     }
     50% {
       visibility: hidden;
     }
     100% {
-      visibility: visible;
+      color: red;
     }
   }
 

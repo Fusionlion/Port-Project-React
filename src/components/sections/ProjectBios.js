@@ -5,12 +5,19 @@ import { useState } from "react";
 import ParallaxSection from "./ParallaxSection";
 import ProjectArticle from "./ProjectArticle";
 import ProjectsList from "./ProjectsList";
+import AboutArticle from "./AboutArticle";
+import ProjectBiosList from "./ProjectBiosList";
 
 function ProjectBios() {
-  const [activeTab, setActiveTab] = useState("Showcase");
-
-  const handleTabClick = (tabName) => {
+  const [activeTab, setActiveTab] = useState("0");
+  const [article, setArticle] = useState([]);
+  let cardClickedBios;
+  const handleTabClick = (tabName, articlefromchild) => {
     setActiveTab(tabName);
+    setArticle(articlefromchild);
+    cardClickedBios = tabName;
+    // console.log("card clciked " + articlefromchild);
+    //  console.log("card clicke in projects 2 " + cardClickedBios);
   };
   return (
     <BioWrapper>
@@ -20,25 +27,13 @@ function ProjectBios() {
           impactful projects, demonstrating proficiency in various technologies
           and a proven track record of project excellence.
         </div>
-        <ProjectsList theCardClicked={handleTabClick} />
+        <ProjectBiosList theCardClicked={handleTabClick} />
       </ProjectsColumn>
       {/* THE info and description of project in detail */}
       <Wrapper>
-        <div
-          className={`tab-content-item ${
-            activeTab === "0" ? "fade-in" : "fade-out"
-          }`}
-        >
-          <ProjectArticle />
-        </div>
+        <AboutArticle data={article} title={activeTab} />
+
         {/* second app */}
-        <div
-          className={`tab-content-item ${
-            activeTab === "1" ? "fade-in" : "fade-out"
-          }`}
-        >
-          <ProjectArticle />
-        </div>
       </Wrapper>
     </BioWrapper>
   );
@@ -56,6 +51,7 @@ const ProjectsColumn = styled.div`
   padding-top: 10px;
   padding-bottom: 139px;
   width: 290px;
+  background: black;
 
   .column-desc {
     font-family: "Spline Sans Mono", sans-serif;
@@ -80,7 +76,8 @@ const BioWrapper = styled.div`
   margin-right: auto;
   gap: 20px;
   display: flex;
-  overflow: hidden;
+
+  background: black;
 `;
 
 const Wrapper = styled.div`
@@ -90,7 +87,7 @@ const Wrapper = styled.div`
   flex: 1;
   border-radius: 10px;
   padding-bottom: 139px;
-
+  background: black;
   .tab-content-item {
     transition: transform 0.3s ease-in-out;
     transition: opacity 0.7s linear;
