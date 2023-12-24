@@ -5,7 +5,7 @@ import SEO from "../components/layout/seo";
 import FifthSection from "../components/sections/FifthSection";
 import FourthSection from "../components/sections/FourthSection";
 import HeroSection from "../components/sections/HeroSection";
-import SecondSection from "../components/sections/SecondSection";
+// import SecondSection from "../components/sections/SecondSection";
 import ThirdSection from "../components/sections/ThirdSection";
 import IntroSection from "../components/sections/IntroSection";
 import BioSection from "../components/sections/BioSection";
@@ -21,7 +21,7 @@ function IndexPage() {
     <Layout>
       <SEO title="Fusion | Find you favorite shows & movies" />
       <HeroSection />
-      <SecondSection />
+      {/* <SecondSection /> */}
       <BioSection />
       <ThirdSection />
       <IntroSection />
