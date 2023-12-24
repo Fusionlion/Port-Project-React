@@ -11,6 +11,7 @@ import AboutSection from "../components/sections/AboutMeSection";
 import HeroSection from "../components/sections/HeroSection";
 import PortfolioHero from "../components/sections/PortfolioHero";
 import MenuOptions from "../components/buttons/MenuOptions";
+import Mobile from "./mobile";
 
 function SecondPage() {
   const [activeTab, setActiveTab] = useState("Portfolio");
@@ -171,7 +172,6 @@ function SecondPage() {
                   </div>
                 </div>
                 {/* The cards are here */}
-         
               </div>
               {/* The timeline  */}
               <div className="bottom">
@@ -233,10 +233,14 @@ function SecondPage() {
         </div>
         {/* content ends */}
       </Backdrop>
+
       {/* Menu item shown here */}
       <div className={`${isToggled ? "menu-appear" : "disappear"}`}>
         <MenuOptions setActiveTab={handleTabClick} />
       </div>
+
+      {/* if we are on mobile */}
+      <Mobile />
     </AboutMe>
   );
 }
@@ -252,6 +256,10 @@ const Lines = styled.div`
   background-repeat: repeat-x;
   background-position: top right;
   position: absolute;
+  /* hide on mobile */
+  @media (max-width: 1000px) {
+    display: none;
+  }
 `;
 const Bubbles = styled.div`
   height: 100vh;
@@ -263,6 +271,10 @@ const Bubbles = styled.div`
   background-position: bottom;
   position: absolute;
   filter: hue-rotate(7deg);
+  /* hide on mobile */
+  @media (max-width: 1000px) {
+    display: none;
+  }
 `;
 const SmallImage = styled.div`
   background-size: cover;
@@ -321,6 +333,7 @@ const Backdrop = styled.div`
 
   @media (max-width: 1000px) {
     overflow: scroll;
+    display: none;
   }
 
   .character {
@@ -349,7 +362,6 @@ const Backdrop = styled.div`
     border-bottom: 1px solid #14141b;
     align-items: baseline;
     background-image: url(/images/my-svg/header-stars.svg);
-  
   }
   .logo {
     height: 35px;
@@ -377,7 +389,6 @@ const Backdrop = styled.div`
     gap: 10px;
     font-size: 25px;
     align-items: center;
-   
   }
   .right-section {
     display: flex;
