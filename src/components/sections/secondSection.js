@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { themes } from "../styles/ColorStyles";
 import { Caption2, H2, MediumText } from "../styles/TextStyles";
 
-function SecondSection() {
+export default function SecondSection() {
   return (
     <Wrapper>
       <Background />
@@ -22,8 +22,6 @@ function SecondSection() {
     </Wrapper>
   );
 }
-
-export default SecondSection;
 
 const Background = styled.div`
   background-image: url("/images/my-svg/falling-rocks.svg");
