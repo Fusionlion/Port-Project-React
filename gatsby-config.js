@@ -47,7 +47,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `static/new-square-icon.png`, // Adjust the path to your new square icon
+        icon: `static/icon.png`, // Adjust the path to your new square icon
       },
     },
     // ... other plugins
