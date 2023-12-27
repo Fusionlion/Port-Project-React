@@ -4,18 +4,18 @@ import MobileProjectCard from "./MobileProjectCard";
 import FooterSection from "../sections/FooterSection";
 import { useCallback, useState } from "react";
 import MobileProjectList from "./MobileProjectList";
+import { Link } from "gatsby";
 export default function MobileProjects() {
+  const [activeTab, setActiveTab] = useState("0");
+  const [article, setArticle] = useState([]);
 
-   const [activeTab, setActiveTab] = useState("0");
-   const [article, setArticle] = useState([]);
-
-   const handleTabClick = (tabName, articlefromchild) => {
-     setActiveTab(tabName);
-     setArticle(articlefromchild);
-     console.log(tabName + " clicked");
-     // console.log("card clciked " + articlefromchild);
-     //  console.log("card clicke in projects 2 " + cardClickedBios);
-   };
+  const handleTabClick = (tabName, articlefromchild) => {
+    setActiveTab(tabName);
+    setArticle(articlefromchild);
+    console.log(tabName + " clicked");
+    // console.log("card clciked " + articlefromchild);
+    //  console.log("card clicke in projects 2 " + cardClickedBios);
+  };
   return (
     <Wrapper>
       <div className="projects-top-content">
@@ -37,10 +37,10 @@ export default function MobileProjects() {
       <ProjectCards>
         <div className="cards-title">Famous Artworks</div>
         <div className="cards-horizontal-projects">
-          <MobileProjectList />
+          <MobileProjectList theCardClicked={handleTabClick} />
         </div>
       </ProjectCards>
-
+      <Link to=".MobileProjectDetail">Click me</Link>
       <FooterSection />
     </Wrapper>
   );

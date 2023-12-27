@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import topicData from "../../data/projects.json";
 import { useState } from "react";
-import BlackButton from "../../buttons/BlackButton";
+import BlackButton from "../../components/buttons/BlackButton";
 import MobileProjectCard from "./MobileProjectCard";
 function MobileProjectList({ theCardClicked }) {
   // data is: print.title,print.num,print.desc
