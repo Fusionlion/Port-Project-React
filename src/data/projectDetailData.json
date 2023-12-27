@@ -4,13 +4,18 @@
       "type": "title",
       "content": {
         "subtitle": "Your Comprehensive",
-        "title": "Health Companion"
+        "title": "Health Companion 1",
+        "projectUrl": "/images/my-svg/sea-animals.svg"
       }
     },
     {
       "type": "parallax",
       "content": "Fusion+",
       "projectUrl": "/images/my-svg/undersea.svg"
+    },
+    {
+      "type": "pictures",
+      "content": ["/images/my-svg/undersea.svg", "/images/my-svg/undersea.svg"]
     },
     {
       "type": "text",
@@ -41,14 +46,19 @@
     {
       "type": "title",
       "content": {
-        "subtitle": "WHAT IS AN ALGORIYTM",
-        "title": "Lesson"
+        "subtitle": "Your Comprehensive",
+        "title": "Fusion Clinic",
+        "projectUrl": "https://c4.wallpaperflare.com/wallpaper/503/1015/682/roman-empire-painting-canvas-ancient-rome-hd-wallpaper-preview.jpg"
       }
     },
     {
       "type": "parallax",
       "content": "Fusion+",
       "projectUrl": "/images/my-svg/undersea.svg"
+    },
+    {
+      "type": "pictures",
+      "content": ["/images/my-svg/undersea.svg", "/images/my-svg/undersea.svg"]
     },
     {
       "type": "text",

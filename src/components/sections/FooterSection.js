@@ -10,9 +10,9 @@ export default function FooterSection() {
         <FooterIcon src="https://i.pinimg.com/originals/5e/10/d7/5e10d70b73f61c76194ef63da8f5c22a.png" />
       </Apps>
       <div className="info">
-        <p>
+       
           Privacy Information &copy; 2023 @ZablonCharles. All rights reserved.
-        </p>
+       
       </div>
     </Footer>
   );
@@ -22,14 +22,25 @@ const Footer = styled.div`
   color: white;
   text-align: center;
   justify-content: end;
-  gap: 21px;
-  height: auto;
-  width: 100%;
+  gap: 11px;
+  background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-bottom: 20px;
   font-family: "Spline Sans Mono", sans-serif;
+  .info {
+    font-size: 12px;
+    color: gray;
+    line-height: initial;
+    padding: 1px 31px;
+    font-family: "Spline Sans Mono", sans-serif;
+    @media (max-width: 500px) {
+      text-align: center;
+      text-align-last: center;
+      color: #615959;
+    }
+  }
 `;
 
 const Apps = styled.div`
@@ -52,14 +63,25 @@ const Apps = styled.div`
   display: flex;
   gap: 160px;
   border: 1px #0c0c0c solid;
+
+  /* on mobile footer */
+  @media (max-width: 500px) {
+    width: 389px;
+    border-radius: 76px;
+    height: 85px;
+    margin-top: 30px;
+    gap: 70px;
+    justify-content: center;
+    margin: 19px 93px;
+    background: #000;
+    display: flex;
+    border: 1px #0c0c0c solid;
+    text-align: -webkit-center;
+  }
 `;
 
 const FooterIcon = styled.img`
-  filter: invert(90%);
-  width: 40px;
-  height: 40px;
- 
-
+  filter: invert(100%);
+  width: 30px;
+  height: 30px;
 `;
-
-

@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import FooterSection from "../components/sections/FooterSection";
+import MobileProjects from "../components/mobileSections/MobileProjects";
 
 export default function Mobile() {
   const [showMenu, setShowMenu] = useState(false);
-  const [text, setText] = useState("Let's get started :)");
-  const [index, setIndex] = useState(0);
+  const [switchPage, setSwitchPage] = useState("home");
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % text.length);
-    }, 180); // Adjust the interval based on your needs
+  const handleHomeButton = (page) => {
+    setSwitchPage("home");
+    console.log(switchPage);
+  };
+  const handleMenuButton = (page) => {
+    if (page != "openMenu") {
+      setSwitchPage(page);
+      console.log(switchPage);
+    }
 
-    return () => clearInterval(interval);
-  }, [text]);
-
-  const handleMenuButton = () => {
     if (showMenu) {
       setShowMenu(false);
     } else {
@@ -24,98 +25,63 @@ export default function Mobile() {
   };
 
   return (
-    <MobileWrapper>
-      <div className="mobile-hero-background"></div>
-      <div className="mobile-stars-background"></div>
+    <>
+      {/* header only show */}
       <MobileHeader>
         <div
-          className={
-            showMenu ? "mobile-header-left-clicked" : "mobile-header-left"
-          }
-          onClick={handleMenuButton}
+          className="mobile-header-left-clicked"
+          onClick={() => handleMenuButton("openMenu")}
         >
           <div className="burger-line"></div>
           <div className="burger-line"></div>
           <div className="burger-line"></div>
         </div>
         <div className="mobile-header-right">
-          <div className="columns">
+          {/* <div className="columns">
             <div className="mobile-email">zab.charles@gmail.com</div>
             <div className="mobile-phone">201-267-5068</div>
-          </div>
+          </div> */}
           <div className="right-header-icon"></div>
+          <div className="mobile-name" onClick={handleHomeButton}>
+            Portfolio
+          </div>
         </div>
       </MobileHeader>
-      {/* show menu when menu button is clicked */}
-      {showMenu && (
-        <MobileMenu>
-          <li className="mobile-menu-item" onClick={handleMenuButton}>
-            PROJECTS
-          </li>
-          <li className="mobile-menu-item" onClick={handleMenuButton}>
-            COURSES
-          </li>
-          <li className="mobile-menu-item" onClick={handleMenuButton}>
-            ABOUT
-          </li>
-          <li className="mobile-menu-item" onClick={handleMenuButton}>
-            PRIVACY POLICY
-          </li>
-        </MobileMenu>
-      )}
+    
 
-      <MobileWelcomeTitle>
-        <div className="mobile-title-big">zablon charles</div>
-        <div className="mobile-title-big">PORTFOLIO</div>
-      </MobileWelcomeTitle>
 
-      <MobileWelcomeImage></MobileWelcomeImage>
-      <MobileDesc>
-        What everyone said was true. You cannot learn how to code by reading,
-        listening or watching someone else do it. You have to get your hands
-        dirty! I am a software developer building interfaces and accessible
-        applications. Welcome to my personal slice of the internet.I'm glad
-        you're here!
-      </MobileDesc>
-
-      <div className="mobile-welcome-button">GET STARTED</div>
-
-      <div class="after-button-text">
-        <br />
-        Learn the best tools and platforms.Make your code efficient and learn
-        new methodologies in programming.
-      </div>
-
-      <TypingText>
-        <div className="font-sa">{text.substring(0, index)} !</div>
-      </TypingText>
-    </MobileWrapper>
+        {/* show menu when menu button is clicked */}
+        {showMenu && (
+          <MobileMenu>
+            <li
+              className="mobile-menu-item"
+              onClick={() => handleMenuButton("projects")}
+            >
+              PROJECTS
+            </li>
+            <li className="mobile-menu-item" onClick={handleMenuButton}>
+              COURSES
+            </li>
+            <li className="mobile-menu-item" onClick={handleMenuButton}>
+              ABOUT
+            </li>
+            <li className="mobile-menu-item" onClick={handleMenuButton}>
+              PRIVACY POLICY
+            </li>
+          </MobileMenu>
+        )}
+     
+         <MobileProjects />
+     
+    </>
   );
 }
 
-const TypingText = styled.div`
-  margin: 50px 0px;
-  white-space: nowrap;
-  display: flex;
-  justify-content: center;
-  .font-sa {
-    font-family: "cisnero", sans-serif;
-    color: white;
-    align-self: center;
-    height: 160px;
-    font-size: 42px;
-    width: 350px;
-  }
-`;
+
 const MobileWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 100%;
-  padding: 30px;
-  overflow: scroll;
-  position: relative;
-  background: linear-gradient(to top, #000000, #06041a, #1506c8);
+ 
   .columns {
     display: flex;
     flex-direction: column;
@@ -154,65 +120,31 @@ const MobileWrapper = styled.div`
   }
   .after-button-text {
     color: rgba(238, 230, 230, 0.7);
-    font-style: normal;
-    font-weight: normal;
     font-size: 17px;
     line-height: 130%;
     margin: 20px;
     max-width: 90%;
     text-align: center;
     align-self: center;
+    font-size: 23px;
+    font-family: "Spline Sans Mono", sans-serif;
   }
 
   .mobile-welcome-button {
-    font-size: 50px;
-    padding: 50px 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 500px;
-    border-radius: 18px;
+    height: 200px;
+    width: 300px;
     color: white;
-    transition: transform 0.7s, color 0.7s;
-    cursor: pointer;
-    background: #473b2e2e;
-    box-shadow: 0px 0px 1px #615f5c00, 0px 0px 2px #ffc67b;
-    transition: all 0.6s;
-    align-self: center;
+    background: #0f0687;
+    font-size: 32px;
+    text-align: center;
+    padding: 21px 20px;
+    border-radius: 13px;
+    place-self: center;
+    z-index: 1;
   }
 `;
 
-const MobileDesc = styled.div`
-  font-family: "Bodoni Moda", serif;
-  font-size: 40px;
-  line-height: initial;
-  padding-bottom: 20px;
-  padding-top: 40px;
-  text-align: justify;
-  background-color: #100f0e47;
-  border-radius: 12px;
-  color: white;
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-  text-align: center;
-  margin-bottom: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-top: 20px;
-  .first-character {
-    font-weight: 400;
-    float: left;
-    font-size: 198px;
-    line-height: 105px;
-    padding-top: 40px;
-    padding-right: 8px;
-    /* padding-left: 3px; */
-    font-family: "Source Sans Pro", sans-serif;
-  }
-`;
+
 const MobileMenu = styled.div`
   display: flex;
   flex-direction: column;
@@ -225,30 +157,28 @@ const MobileMenu = styled.div`
   z-index: 1;
   border-radius: 12px;
   color: white;
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
+  background: #0d18af;
+  padding: 20px;
+  border-radius: 18px;
   padding-left: 20px;
+  text-align-last: right;
+  margin-top: 20px;
   .mobile-menu-item {
-    font-size: 62px;
-    font-family: "accelerare", "Times New Roman", Times, serif;
-    list-style: hebrew;
+    font-size: 52px;
+    font-family: "Spline Sans Mono", "Times New Roman", Times, serif;
+    list-style: oriya;
+    color: coral;
+    background: black;
+    padding: 28px 26px;
+    border-radius: 18px;
   }
   .mobile-menu-item:hover {
     border-bottom: 5px black solid;
     cursor: pointer;
   }
 `;
-const MobileWelcomeImage = styled.div`
-  min-height: 500px;
-  width: 100%;
-  border-radius: 30px;
-  background-image: url(/images/my-svg/merilios.png);
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat;
-  border-bottom: 1px #633e00 solid;
-  z-index: 1;
-`;
+
+
 const MobileHeader = styled.div`
   display: flex;
   justify-content: space-between;
@@ -256,6 +186,8 @@ const MobileHeader = styled.div`
   align-items: center;
   height: 170px;
   z-index: 1;
+  flex-direction: row-reverse;
+  border-bottom: solid 1px #498a4a;
   .mobile-header-left {
     display: flex;
 
@@ -269,6 +201,11 @@ const MobileHeader = styled.div`
     border-radius: 14px;
     margin: 10px 0px;
   }
+  .mobile-name {
+    font-size: 62px;
+    font-family: "Spline Sans Mono", sans-serif;
+    color: white;
+  }
   .mobile-header-left-clicked {
     display: flex;
     flex-direction: column;
@@ -281,9 +218,9 @@ const MobileHeader = styled.div`
     padding: 20px;
   }
   .burger-line {
-    width: 105px;
+    width: 84px;
     height: 4px;
-    background-color: black;
+    background-color: #fffcfc;
   }
   .mobile-header-right {
     display: flex;
@@ -293,9 +230,9 @@ const MobileHeader = styled.div`
     color: #2c94ea;
     border-radius: 14px;
     /* background: #d1d1d1; */
-    padding: 10px 22px;
+    padding: 10px 0px;
     text-align: end;
-   
+
     /* border: #95434333 solid 1px; */
   }
   .right-header-icon {
@@ -313,39 +250,4 @@ const MobileHeader = styled.div`
     /* font-size: 25px; */
   }
 `;
-const MobileWelcomeTitle = styled.div`
-  padding-bottom: 20px;
-  padding-top: 81px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-  /* font-family: "Spline Sans Mono", sans-serif; */
-  .mobile-title-big {
-    font-size: 132px;
-    color: black;
-    z-index: 1;
-  }
-  > :nth-child(1) {
-    font-size: 62px;
-    color: white;
-    background: #0e0482;
-    box-shadow: 5px 5px 10px #060237, -5px -5px 10px #1606cd;
-    padding: 8px 10px;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    text-align: center;
-    text-transform: uppercase;
-    font-family: "SF Display Pro", sans-serif;
-  }
-  > :nth-child(2) {
-    font-size: 132px;
-    font-family: "accelerare", sans-serif;
-    background: linear-gradient(to right, rgb(255 255 255), rgb(249 146 84));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 1px -1px #06022a;
-    /* font-family: "SF Pro Display", sans-serif; */
-  }
-`;
+
