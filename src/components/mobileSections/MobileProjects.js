@@ -4,44 +4,62 @@ import MobileProjectCard from "./MobileProjectCard";
 import FooterSection from "../sections/FooterSection";
 import { useCallback, useState } from "react";
 import MobileProjectList from "./MobileProjectList";
+import MobileProjectDetail from "./MobileProjectDetail";
 import { Link } from "gatsby";
 export default function MobileProjects() {
   const [activeTab, setActiveTab] = useState("0");
-  const [article, setArticle] = useState([]);
+  const [detailData, setDetailData] = useState([]);
 
-  const handleTabClick = (tabName, articlefromchild) => {
-    setActiveTab(tabName);
-    setArticle(articlefromchild);
-    console.log(tabName + " clicked");
+  const [showArticle, setShowArticel] = useState(false);
+  const handleArrow = () => {
+    console.log("the arrow was clicked");
+    setShowArticel(false);
+  };
+  const handleTabClick = (cardPrints) => {
+    // setActiveTab(tabName);
+    // setArticle(articlefromchild);
+    setDetailData(cardPrints);
+    if (cardPrints.article && cardPrints.article.length > 0) {
+      setShowArticel(true);
+    }
+    console.log(detailData + " tawy artic clicked");
     // console.log("card clciked " + articlefromchild);
     //  console.log("card clicke in projects 2 " + cardClickedBios);
   };
   return (
     <Wrapper>
-      <div className="projects-top-content">
-        <div className="project-top-left">
-          <div className="project-title">leonardo da Vinci</div>
-          <div className="project-title">1452 to 1519</div>
-          <div className="project-title">
-            Art Museum App Concept designed by Ajay Talwar. Connect with them on
-            Dribbble; the global community for designers and creative
-            professionals.
+      {!showArticle && (
+        <>
+          <div className="projects-top-content">
+            <div className="project-top-left">
+              <div className="project-title">leonardo da Vinci</div>
+              <div className="project-title">1452 to 1519</div>
+              <div className="project-title">
+                Art Museum App Concept designed by Ajay Talwar. Connect with
+                them on Dribbble; the global community for designers and
+                creative professionals.
+              </div>
+            </div>
+            <div className="project-top-right">
+              <div className="project-right-number">10</div>
+              <div className="project-right-line"></div>
+              <div className="project-right-number">04</div>
+            </div>
           </div>
-        </div>
-        <div className="project-top-right">
-          <div className="project-right-number">10</div>
-          <div className="project-right-line"></div>
-          <div className="project-right-number">04</div>
-        </div>
-      </div>
-      <ProjectCards>
-        <div className="cards-title">Famous Artworks</div>
-        <div className="cards-horizontal-projects">
-          <MobileProjectList theCardClicked={handleTabClick} />
-        </div>
-      </ProjectCards>
-      <Link to=".MobileProjectDetail">Click me</Link>
-      <FooterSection />
+          <ProjectCards>
+            <div className="cards-title">Famous Artworks</div>
+            <div className="cards-horizontal-projects">
+              <MobileProjectList theCardClicked={handleTabClick} />
+            </div>
+          </ProjectCards>
+
+          <FooterSection />
+        </>
+      )}
+      {/* show the detail */}
+      {showArticle && (
+        <MobileProjectDetail data={detailData} arrowClicked={handleArrow} />
+      )}
     </Wrapper>
   );
 }
@@ -91,6 +109,8 @@ const Wrapper = styled.div`
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: white;
   background-color: black;
+  position: relative;
+
   .projects-top-content {
     display: flex;
     justify-content: space-between;
@@ -123,6 +143,7 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 95px;
   }
 
   .project-title {

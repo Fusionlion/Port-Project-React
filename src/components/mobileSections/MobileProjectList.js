@@ -4,7 +4,7 @@ import topicData from "../../data/projects.json";
 import { useState } from "react";
 import BlackButton from "../../components/buttons/BlackButton";
 import MobileProjectCard from "./MobileProjectCard";
-function MobileProjectList({ theCardClicked }) {
+function MobileProjectList(props) {
   // data is: print.title,print.num,print.desc
   const [activeCard, setActiveCard] = useState("");
 
@@ -14,21 +14,21 @@ function MobileProjectList({ theCardClicked }) {
   const [visibleProjects, setVisibleProjects] = useState(5);
   const [clickedProjects, setClickedProjects] = useState([]);
 
-  const handleCardClick = (titlefromchild) => {
+  const handleCardClick = (cardPrints) => {
     //  console.log("you clicked in project list > " + titlefromchild);
-    theCardClicked(titlefromchild);
+    props.theCardClicked(cardPrints);
     // console.log("hahh " + articlefromchild + "from child articelll");
-    setActiveCard(titlefromchild);
+    // setActiveCard(titlefromchild);
     // Check if the project is already in the clickedProjects array
-    const isClicked = clickedProjects.includes(titlefromchild);
+    // const isClicked = clickedProjects.includes(titlefromchild);
 
-    if (isClicked) {
-      // Remove the project from clickedProjects if it was previously clicked
-      //  setClickedProjects((prev) => prev.filter((project) => project !== num));
-    } else {
-      // Add the project to clickedProjects if it was not previously clicked
-      //  setClickedProjects((prev) => [...prev, num]);
-    }
+    // if (isClicked) {
+    //   // Remove the project from clickedProjects if it was previously clicked
+    //   //  setClickedProjects((prev) => prev.filter((project) => project !== num));
+    // } else {
+    //   // Add the project to clickedProjects if it was not previously clicked
+    //   //  setClickedProjects((prev) => [...prev, num]);
+    // }
   };
 
   const showMoreProjects = () => {
@@ -37,19 +37,24 @@ function MobileProjectList({ theCardClicked }) {
 
   return (
     <>
-      {data.slice(0, visibleProjects).map((print, index) => (
-        <MobileProjectCard
-          key={print.num}
-          title={print.title}
-          desc={print.desc}
-          imageSrc={print.image}
-          num={index}
-          click={handleCardClick}
-          buttonLabel={
-            clickedProjects.includes(print.num) ? "RE-READ" : "START"
-          }
-        />
-      ))}
+      {data.slice(0, visibleProjects).map(
+        (print, index) =>
+          // Check if print.article exists and is truthy before rendering the card
+          print.article && (
+            <MobileProjectCard
+              key={print.num}
+              title={print.title}
+              desc={print.desc}
+              imageSrc={print.image}
+              num={index}
+              article={print.article}
+              click={() => handleCardClick(print)}
+              buttonLabel={
+                clickedProjects.includes(print.num) ? "RE-READ" : "START"
+              }
+            />
+          )
+      )}
       {visibleProjects < data.length && (
         <BlackButton label="Show More" onClick={showMoreProjects} />
       )}

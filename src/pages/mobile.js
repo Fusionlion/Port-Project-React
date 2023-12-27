@@ -47,41 +47,37 @@ export default function Mobile() {
           </div>
         </div>
       </MobileHeader>
-    
 
+      {/* show menu when menu button is clicked */}
+      {showMenu && (
+        <MobileMenu>
+          <li
+            className="mobile-menu-item"
+            onClick={() => handleMenuButton("projects")}
+          >
+            PROJECTS
+          </li>
+          <li className="mobile-menu-item" onClick={handleMenuButton}>
+            COURSES
+          </li>
+          <li className="mobile-menu-item" onClick={handleMenuButton}>
+            ABOUT
+          </li>
+          <li className="mobile-menu-item" onClick={handleMenuButton}>
+            PRIVACY POLICY
+          </li>
+        </MobileMenu>
+      )}
 
-        {/* show menu when menu button is clicked */}
-        {showMenu && (
-          <MobileMenu>
-            <li
-              className="mobile-menu-item"
-              onClick={() => handleMenuButton("projects")}
-            >
-              PROJECTS
-            </li>
-            <li className="mobile-menu-item" onClick={handleMenuButton}>
-              COURSES
-            </li>
-            <li className="mobile-menu-item" onClick={handleMenuButton}>
-              ABOUT
-            </li>
-            <li className="mobile-menu-item" onClick={handleMenuButton}>
-              PRIVACY POLICY
-            </li>
-          </MobileMenu>
-        )}
-     
-         <MobileProjects />
-     
+      <MobileProjects />
     </>
   );
 }
 
-
 const MobileWrapper = styled.div`
   display: flex;
   flex-direction: column;
- 
+
   .columns {
     display: flex;
     flex-direction: column;
@@ -144,7 +140,6 @@ const MobileWrapper = styled.div`
   }
 `;
 
-
 const MobileMenu = styled.div`
   display: flex;
   flex-direction: column;
@@ -178,7 +173,6 @@ const MobileMenu = styled.div`
   }
 `;
 
-
 const MobileHeader = styled.div`
   display: flex;
   justify-content: space-between;
@@ -187,7 +181,8 @@ const MobileHeader = styled.div`
   height: 170px;
   z-index: 1;
   flex-direction: row-reverse;
-  border-bottom: solid 1px #498a4a;
+  border-bottom: solid 1px #e8635d;
+  background: black;
   .mobile-header-left {
     display: flex;
 
@@ -250,4 +245,3 @@ const MobileHeader = styled.div`
     /* font-size: 25px; */
   }
 `;
-

@@ -4,16 +4,18 @@ import FooterSection from "../sections/FooterSection";
 import { useState } from "react";
 
 export default function MobileProjectDetail(props) {
-  
-  const data = require("../../data/projectDetailData.json"); // Import your JSON
+  const datafake = require("../../data/projectDetailData.json"); // Import your
+
   let datas =
-    props.data && props.data.length > 0
-      ? props.data
-      : data["WHAT IS AN ALGORITHM?"];
-  console.log("myne " + datas ?? "no data");
-  console.log("works " + data ?? "no data");
+    props.data && props.data.article.length > 0
+      ? props.data.article
+      : datafake["WHAT IS AN ALGORITHM?"];
+  console.log("Botthe data in detail " + props.data);
   const bottomRef = useRef(null);
 
+  const handleArrowClicked = () => {
+    props.arrowClicked();
+  };
   const handleIntersection = (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -91,13 +93,13 @@ export default function MobileProjectDetail(props) {
             <div
               key={index}
               className="projects-top-content"
-              style={{ backgroundImage: `url(${item.content.projectUrl})` }}
+              style={{ backgroundImage: `url(${props.data.image})` }}
             >
               <div className="blacked"></div>
               <div className="project-top-left">
-                <div className="project-title">{item.content.title}</div>
+                <div className="project-title">{props.data.title}</div>
                 <div className="project-title">1452 to 1519</div>
-                <div className="project-title">{item.content.subtitle}</div>
+                <div className="project-title">{props.data.desc}</div>
               </div>
               <div className="project-top-right">
                 <div className="project-right-number">10</div>
@@ -204,9 +206,10 @@ export default function MobileProjectDetail(props) {
 
   return (
     <Wrapper>
-      <div className="project-arrow" >
+      <div className="project-arrow" onClick={handleArrowClicked}>
         &#8592;
       </div>
+
       <div className="content">{renderContent()}</div>
 
       <br />
@@ -311,13 +314,18 @@ const Wrapper = styled.div`
   font-family: "Spline Sans Mono", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: white;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 99;
+  overflow: scroll;
   .content {
-    > :not(:first-child) {
-      /* Your styles here */
-
-      padding: 0px 30px;
+    > :nth-child(n + 3) {
+      padding: 0px 20px;
     }
+
     > :nth-child(2) {
       /* Your styles here */
     }
@@ -326,11 +334,11 @@ const Wrapper = styled.div`
     position: absolute;
     padding: 20px;
     color: #ffffff;
-    font-size: 24px;
+    font-size: 44px;
     top: 20px;
     left: 20px;
     cursor: pointer;
-    z-index: 1;
+    z-index: 99;
   }
   .projects-top-content {
     display: flex;
@@ -355,13 +363,15 @@ const Wrapper = styled.div`
     z-index: 0;
   }
   .project-top-left {
-    height: 500px;
+    /* height: 500px; */
     display: flex;
     flex-direction: column;
-    justify-content: end;
-    padding: 20px;
-    padding-bottom: 87px;
+    justify-content: center;
     z-index: 1;
+    text-align: center;
+    padding: 20px;
+    padding-bottom: 35px;
+    padding-top: 144px;
 
     > :nth-child(2) {
       font-size: 15px;
@@ -379,10 +389,13 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     position: absolute;
+    padding-top: 148px;
+    position: absolute;
+    right: 0;
   }
   .project-pics {
     display: flex;
-    padding: 36px 0px 36px 30px;
+    padding: 0px 0px 3px 20px;
     justify-content: flex-start;
     gap: 10px;
     margin-bottom: 20px;

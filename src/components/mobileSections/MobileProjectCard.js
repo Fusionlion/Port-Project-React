@@ -9,7 +9,6 @@ function MobileProjectCard(props) {
   const [titleClicked, setTitleClicked] = useState("");
 
   // give dummy data if no data found
-  const data = require("../../data/projectDetailData.json");
   // SHOW THE MODAL
 
   // WEHEN START IS CLICKED ON THE CARD
@@ -20,7 +19,7 @@ function MobileProjectCard(props) {
     setTitleClicked(props.title);
 
     // SEND A MESSAGE UP THAT CARD START WAS CLICKED
-    props.click(props.title, props.article ?? data["WHAT IS AN ALGORITHM?"]);
+    props.click();
     // Simulate progrepross increase over time
 
     // this should be ONNN
