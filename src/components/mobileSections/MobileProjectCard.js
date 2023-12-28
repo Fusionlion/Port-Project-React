@@ -154,8 +154,7 @@ const ProjectCardStyle = styled.div`
   height: 210px;
   border-radius: 17px;
   /* background-image: url("/images/my-svg/falling-rocks.svg"); */
-  background-image: url(${(props) =>
-    props.src || "/images/my-svg/falling-rocks.svg"});
+  background-image: url(${(props) =>props.src || "/images/my-svg/falling-rocks.svg"});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

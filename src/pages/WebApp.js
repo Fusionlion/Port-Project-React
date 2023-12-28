@@ -3,16 +3,12 @@ import SEO from "../components/layout/seo";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import "../components/styles/Font.css";
-import ProjectCardx from "../components/buttons/ProjectCardx";
 import { useState } from "react";
 import ProjectBios from "../components/sections/ProjectBios";
 import Course from "../components/sections/Course";
 import AboutSection from "../components/sections/AboutMeSection";
-import HeroSection from "../components/sections/HeroSection";
 import PortfolioHero from "../components/sections/PortfolioHero";
 import MenuOptions from "../components/buttons/MenuOptions";
-import Mobile from "./mobile";
-import MobileApp from "./MobileApp";
 
 function WebApp() {
   const [activeTab, setActiveTab] = useState("Portfolio");

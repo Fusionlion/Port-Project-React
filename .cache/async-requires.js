@@ -6,7 +6,6 @@ exports.components = {
   "component---src-pages-index-3-js": () => import("./../../../src/pages/index-3.js" /* webpackChunkName: "component---src-pages-index-3-js" */),
   "component---src-pages-index-js": () => import("./../../../src/pages/index.js" /* webpackChunkName: "component---src-pages-index-js" */),
   "component---src-pages-mobile-app-js": () => import("./../../../src/pages/MobileApp.js" /* webpackChunkName: "component---src-pages-mobile-app-js" */),
-  "component---src-pages-mobile-js": () => import("./../../../src/pages/Mobile.js" /* webpackChunkName: "component---src-pages-mobile-js" */),
   "component---src-pages-web-app-js": () => import("./../../../src/pages/WebApp.js" /* webpackChunkName: "component---src-pages-web-app-js" */)
 }
 
