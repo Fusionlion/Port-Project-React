@@ -12,21 +12,24 @@ function SecondPage() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
-  const handleResize = () => {
-    setIsMobile(window.innerWidth <= 768);
-  };
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
 
-  // Check if window is defined (client-side)
-  if (typeof window !== 'undefined') {
-    window.addEventListener("resize", handleResize);
-  }
-
-  return () => {
+    // Check if window is defined (client-side)
     if (typeof window !== 'undefined') {
-      window.removeEventListener("resize", handleResize);
+      handleResize(); // Initial check
+      window.addEventListener('resize', handleResize);
     }
-  };
-}, []);
+
+    return () => {
+      // Check if window is defined (client-side)
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', handleResize);
+      }
+    };
+  }, []); // Empty dependency array means it runs once after initial render
+
 
 
   return (
