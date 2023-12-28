@@ -12,16 +12,22 @@ function SecondPage() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
 
+  // Check if window is defined (client-side)
+  if (typeof window !== 'undefined') {
     window.addEventListener("resize", handleResize);
+  }
 
-    return () => {
+  return () => {
+    if (typeof window !== 'undefined') {
       window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+    }
+  };
+}, []);
+
 
   return (
     <div>
