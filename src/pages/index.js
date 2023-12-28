@@ -15,22 +15,20 @@ function SecondPage() {
     };
 
     // Check if window is defined (client-side)
-    if (typeof window !== "undefined") {
+    if (typeof window != "undefined") {
       handleResize(); // Initial check
       window.addEventListener("resize", handleResize);
     }
 
     return () => {
       // Check if window is defined (client-side)
-      if (typeof window !== "undefined") {
+      if (typeof window != "undefined") {
         window.removeEventListener("resize", handleResize);
       }
     };
   }, []); // Empty dependency array means it runs once after initial render
 
-  return <div>{isMobile ? <MobileApp /> : <WebApp />}</div>;
+  return <div>{ <MobileApp/>}</div>;
 }
 
 export default SecondPage;
-
-
