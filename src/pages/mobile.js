@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import FooterSection from "../components/sections/FooterSection";
 import MobileProjects from "../components/mobileSections/MobileProjects";
+import MobileHome from "../components/mobileSections/MobileHome";
 
 export default function Mobile() {
   const [showMenu, setShowMenu] = useState(false);
@@ -12,9 +13,8 @@ export default function Mobile() {
     console.log(switchPage);
   };
   const handleMenuButton = (page) => {
-    if (page != "openMenu") {
+    if (switchPage != "") {
       setSwitchPage(page);
-      console.log(switchPage);
     }
 
     if (showMenu) {
@@ -30,7 +30,7 @@ export default function Mobile() {
       <MobileHeader>
         <div
           className="mobile-header-left-clicked"
-          onClick={() => handleMenuButton("openMenu")}
+          onClick={handleMenuButton}
         >
           <div className="burger-line"></div>
           <div className="burger-line"></div>
@@ -68,8 +68,8 @@ export default function Mobile() {
           </li>
         </MobileMenu>
       )}
-
-      <MobileProjects />
+      {switchPage === "home" && <MobileHome />}
+      {switchPage === "projects" && <MobileProjects />}
     </>
   );
 }

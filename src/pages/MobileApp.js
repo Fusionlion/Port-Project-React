@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import MobileProjects from "../components/mobileSections/MobileProjects";
 import MobileProjectDetail from "../components/mobileSections/MobileProjectDetail";
+import MobileHome from "../components/mobileSections/MobileHome";
 
-export default function test() {
+export default function MobileApp() {
   return (
     <MobileLayout>
       {/* header only show */}
@@ -23,7 +24,8 @@ export default function test() {
         </div>
       </MobileHeader>
       
-      <MobileProjects />
+      {/* <MobileProjects /> */}
+      <MobileHome />
     </MobileLayout>
   );
 }
