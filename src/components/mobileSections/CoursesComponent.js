@@ -15,20 +15,23 @@ const Image = styled.div`
   background-image: url("https://qph.cf2.quoracdn.net/main-qimg-0c2f4f674f12955ae42d6196ed556e57-lq");
   background-color: #ccc;
   background-size: cover;
+  background-position: center center;
   width: 100%;
-  height: 360px;
-  border-radius: 12px;
+  height: 497px;
+  /* border-radius: 9px; */
   background-color: #ccc; /* Placeholder color, replace with your image */
+  border: #595a5b 1px solid;
+  box-shadow: 0px -17px 0px -10px #645d5d, 0px -28px 0px -18px #764aca;
 `;
 const LastImage = styled.div`
-  background-image: url("https://qph.cf2.quoracdn.net/main-qimg-0c2f4f674f12955ae42d6196ed556e57-lq");
+  background-image: url("https://northierthanthou.files.wordpress.com/2012/12/renaissance-the-school-of-athens-classic-art-paitings-raphael-painter-rafael-philosophers-hd-wallpapers.jpg?w=880");
   background-color: #ccc;
   background-size: cover;
-  background-attachment: fixed;
   width: 100%;
-  height: 95px;
+  height: 203px;
   background-color: #ccc;
-  background-position: bottom;
+  background-position: center;
+  border-radius: 9px;
   margin-bottom: 17px; /* Placeholder color, replace with your image */
 `;
 
