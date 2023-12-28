@@ -6,6 +6,7 @@ import { useCallback, useState } from "react";
 import MobileProjectList from "./MobileProjectList";
 import MobileProjectDetail from "./MobileProjectDetail";
 import { Link } from "gatsby";
+import RoundedImageComponent from "./RoundedImageComponent";
 export default function MobileProjects() {
   const [activeTab, setActiveTab] = useState("0");
   const [detailData, setDetailData] = useState([]);
@@ -46,13 +47,15 @@ export default function MobileProjects() {
               <div className="project-right-number">04</div>
             </div>
           </div>
+          <Paddy>
+            <RoundedImageComponent/>
+          </Paddy>
           <ProjectCards>
-            <div className="cards-title">Famous Artworks</div>
+            <div className="cards-title"> My Projects</div>
             <div className="cards-horizontal-projects">
               <MobileProjectList theCardClicked={handleTabClick} />
             </div>
           </ProjectCards>
-
           <FooterSection />
         </>
       )}
@@ -63,6 +66,9 @@ export default function MobileProjects() {
     </Wrapper>
   );
 }
+const Paddy = styled.div`
+  padding: 0px 20px;
+`;
 const BackgroundProjects = styled.div`
   background-image: url("/images/my-svg/first.svg");
   background-size: cover;
@@ -92,15 +98,6 @@ const ProjectCards = styled.div`
     flex-wrap: wrap;
     row-gap: 23px;
     gap: 10px;
-
-    .card {
-      background-image: url(https://i.pinimg.com/originals/c1/7c/55/c17c5505b0b4214cbe85551aa68725f2.jpg);
-      background-size: cover;
-      min-width: 172px;
-      height: 210px;
-      background-color: #f0f0f0;
-      border-radius: 12px;
-    }
   }
 `;
 
@@ -126,8 +123,11 @@ const Wrapper = styled.div`
     flex-direction: column;
     justify-content: end;
     padding: 20px;
-    padding-bottom: 87px;
+    padding-bottom: 72px;
 
+    > :nth-child(1) {
+      font-family: "cisnero";
+    }
     > :nth-child(2) {
       font-size: 15px;
     }

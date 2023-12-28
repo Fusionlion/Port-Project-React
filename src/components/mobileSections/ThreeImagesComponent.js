@@ -13,8 +13,8 @@ const StyledImageContainer = styled.div`
 `;
 
 const StyledImage = styled.div`
-  width: ${(props) => (props.isMiddle ? "200px" : "100px")};
-  height: ${(props) => (props.isMiddle ? "279px" : "200px")};
+  width: ${(props) => (props.isMiddle ? "200px" : "140px")};
+  height: ${(props) => (props.isMiddle ? "208px" : "160px")};
   background-image: url(${(props) => props.src});
   background-size: cover;
   background-position: center;

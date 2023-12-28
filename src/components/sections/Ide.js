@@ -90,34 +90,31 @@ const Ide = (props) => {
   };
 
   const handleReset = () => {
-     setDisplayedQuestions([]);
-     setAlreadyTypedText("");
-     setDisplayedItems([]);
-     setAllQuestionsTyped(false);
-     setcurrentQuestionIndex(0);
-     setDisplayText("click ( me ) to start");
-     setAllQuestionsTyped(false);
-     setPickedAnswers([]);
-     setRightPickedAnswers([]);
-     setLine(0);
-     setCurrentIndex(0);
-  }
+    setDisplayedQuestions([]);
+    setAlreadyTypedText("");
+    setDisplayedItems([]);
+    setAllQuestionsTyped(false);
+    setcurrentQuestionIndex(0);
+    setDisplayText("click ( me ) to start");
+    setAllQuestionsTyped(false);
+    setPickedAnswers([]);
+    setRightPickedAnswers([]);
+    setLine(0);
+    setCurrentIndex(0);
+  };
   // quiz button is clicked
   const handleQuizButton = () => {
-   
     if (questions === undefined) {
-       
       return;
     }
     // RESETS EVERYTHING WHEN SWITCHING LESSON AND QUIZ
-    
+
     if (quiz) {
       setQuiz(false);
-      
     } else {
       setQuiz(true);
     }
-     handleReset();
+    handleReset();
   };
 
   const handleStartQuizClick = () => {
@@ -181,7 +178,6 @@ const Ide = (props) => {
       setBlinkClass("button-no-blink next-ide-btn");
       handleReset();
       setDisplayText(props.title ?? "click to start");
-      
     }
 
     previousParentCardClickedRef.current = parentCardClicked;
@@ -245,7 +241,8 @@ const Ide = (props) => {
     <Wrapper>
       <div className="lesson" id="typedtext" ref={lessonRef}>
         <div id="console-prompt">
-          {currentQuestionIndex > 0 ? props.title : "Shall we get started"}<a className="blink">?</a>
+          {currentQuestionIndex > 0 ? props.title : "Shall we get started"}
+          <a className="blink">?</a>
         </div>
         {!quiz ? (
           <div>
@@ -266,7 +263,11 @@ const Ide = (props) => {
               )
             )}
             <div className="typing">
-              {displayText.length < 4 ? "refer to this image" : displayText.trimStart().startsWith("/") ? "refer to the following image" : displayText}
+              {displayText.length < 4
+                ? "refer to this image"
+                : displayText.trimStart().startsWith("/")
+                ? "refer to the following image"
+                : displayText}
             </div>
           </div>
         ) : (
@@ -305,12 +306,15 @@ const Ide = (props) => {
       <div className="ide-buttons-right">
         <div className="next-ide-btn" onClick={handleQuizButton}>
           {!quiz
-            ? questions !== undefined && questions.length !== undefined ? "Quiz" : "No-Quiz"
+            ? questions !== undefined && questions.length !== undefined
+              ? "Quiz"
+              : "No-Quiz"
             : allQuestionsTyped
             ? "Back to lesson"
-            : (quiz ? currentQuestionIndex : currentIndex) +
-              "/" +
-              questions !== undefined && questions.length !== undefined ? questions.length : 0}
+            : (quiz ? currentQuestionIndex : currentIndex) + "/" + questions !==
+                undefined && questions.length !== undefined
+            ? questions.length
+            : 0}
         </div>
 
         {!quiz ? (
@@ -379,6 +383,18 @@ const Wrapper = styled.div`
   position: relative;
   border: 1px #3f3939 solid;
   position: relative;
+
+  @media screen and (max-width: 768px) {
+    height: 339px;
+    width: 100%;
+    padding: 19px 20px;
+    font-size: 16px;
+    margin: 0px;
+    align-self: center;
+    border-radius: 112px;
+    border: 1px #000000 solid;
+    border-bottom: #41403d 1px solid;
+  }
   .flex-gap-10 {
     display: flex;
     gap: 10px;

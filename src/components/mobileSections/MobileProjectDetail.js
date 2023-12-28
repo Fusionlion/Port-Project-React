@@ -319,7 +319,7 @@ const Wrapper = styled.div`
   left: 0;
   height: 100vh;
   width: 100%;
-  z-index: 99;
+  /* z-index: 99; */
   overflow: scroll;
   .content {
     > :nth-child(n + 3) {
@@ -334,9 +334,9 @@ const Wrapper = styled.div`
     position: absolute;
     padding: 20px;
     color: #ffffff;
-    font-size: 44px;
-    top: 20px;
-    left: 20px;
+    font-size: 34px;
+    top: 65px;
+    left: 1px;
     cursor: pointer;
     z-index: 99;
   }

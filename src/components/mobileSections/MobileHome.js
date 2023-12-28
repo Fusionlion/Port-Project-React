@@ -69,6 +69,8 @@ const Wrapper = styled.div`
     text-align: center;
     color: bisque;
     font-size: 14px;
+    font-family: "Spline Sans Mono", sans-serif;
+    line-height: 1.2;
   }
   .mobile-welcome-button {
     text-align: center;
@@ -86,6 +88,7 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
     font-family: "Spline Sans Mono", sans-serif;
+    margin: 0px 58px;
   }
 `;
 const MobileWelcomeTitle = styled.div`
@@ -106,8 +109,8 @@ const MobileWelcomeTitle = styled.div`
   > :nth-child(1) {
     font-size: 18px;
     color: white;
-    color: #4d67de;
-    box-shadow: 5px 5px 10px #060237, -5px -5px 10px #1606cd;
+    color: #bbbbbd;
+    box-shadow: 5px 5px 10px #000000, -5px -5px 10px #151417;
     padding: 8px 10px;
     border-radius: 8px;
     margin-bottom: 12px;
@@ -121,12 +124,13 @@ const MobileWelcomeTitle = styled.div`
     background: linear-gradient(to right, rgb(255 255 255), rgb(249 146 84));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 1px -1px #06022a;
+    text-shadow: 5px 9px 11px #000000, 1px -1px 0px #151417;
+    /* text-shadow: 1px -1px #06022a; */
     /* font-family: "SF Pro Display", sans-serif; */
   }
 `;
 const MobileWelcomeImage = styled.div`
-  position: relative;
+  /* position: relative;
   min-height: 326px;
   width: 243px;
   overflow: visible;
@@ -134,14 +138,37 @@ const MobileWelcomeImage = styled.div`
   align-self: center;
   background-color: black;
   margin: 20px auto; /* Adjust margin as needed */
-  background-image: url(/images/my-svg/merilios.png);
+  /* background-image: url(/images/my-svg/merilios.png);
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
   align-self: center;
   border-radius: 244px;
   box-shadow: 0px 90px 90px -60px rgba(255, 165, 0, 0.7);
-  position: relative;
+  position: relative; */ 
+   min-height: 326px;
+    width: 335px;
+    overflow: visible;
+    border: 1px #633e00fc solid;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    background-color: black;
+    margin: 20px auto;
+    background-image: url(/images/my-svg/merilios.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    border-radius: 244px;
+    box-shadow: 0px 90px 90px -60px rgba(255,165,0,0.7);
+    position: relative;
+    background-image: url(/images/my-svg/bubbles.svg);
+    background-size: cover;
+    background-position: center center;
+
 
   .my-name {
     position: absolute;
@@ -177,7 +204,7 @@ const MobileWelcomeImage = styled.div`
   .curved-text {
     position: absolute;
     top: 50%;
-    left: 50%;
+    right: 0;
     transform: translate(-50%, -50%)
       rotate(calc(360deg / var(--total) * var(--index)))
       translateY(calc(var(--radius, 5) * -1ch));
@@ -224,8 +251,8 @@ const TypingText = styled.div`
     font-family: "cisnero", sans-serif;
     color: white;
     align-self: center;
-    font-size: 12px;
-
+    font-size: 18px;
+    text-align: center;
     width: 350px;
   }
 `;

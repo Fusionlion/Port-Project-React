@@ -29,8 +29,8 @@ function WebApp() {
   return (
     <AboutMe>
       <SEO title="Fusion | Welcome to my portfolio" />
-      {/* <Bubbles />
-      <Lines /> */}
+      <Bubbles />
+      <Lines />
 
       <Backdrop>
         <div className="header">
@@ -294,17 +294,16 @@ const SmallImage = styled.div`
   }
 `;
 const AboutMe = styled.div`
-  @media screen and (max-width: 1000px) {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: linear-gradient(to top, #000000, #000, #000000);
+  position: relative;
+  /* @media screen and (max-width: 1000px) {
     display: none;
-    
   }
   @media screen and (min-width: 1000px) {
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    background: linear-gradient(to top, #000000, #000, #000000);
-    position: relative;
-  }
+  } */
   .title {
     color: white;
     font-family: "Spline Sans Mono", sans-serif;
