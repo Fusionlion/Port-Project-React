@@ -11,23 +11,23 @@ import WebApp from "./WebApp";
 function SecondPage() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
-   useEffect(() => {
-     const handleResize = () => {
-       setIsMobile(window.innerWidth <= 768);
-     };
+  useEffect(() => {
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
 
-     if (typeof window !== "undefined") {
-       // Check if running on the client side
-       handleResize(); // Initial check
-       window.addEventListener("resize", handleResize);
-     }
+  // Check if window is defined (client-side)
+  if (typeof window !== 'undefined') {
+    window.addEventListener("resize", handleResize);
+  }
 
-     return () => {
-       if (typeof window !== "undefined") {
-         window.removeEventListener("resize", handleResize);
-       }
-     };
-   }, []);
+  return () => {
+    if (typeof window !== 'undefined') {
+      window.removeEventListener("resize", handleResize);
+    }
+  };
+}, []);
+
 
   return (
     <div>
