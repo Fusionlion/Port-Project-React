@@ -2,21 +2,33 @@ import React from "react";
 import SEO from "../components/layout/seo";
 import styled from "styled-components";
 import "../components/styles/Font.css";
-import { useMediaQuery } from "react-responsive";
 
 import MobileApp from "./MobileApp";
 import WebApp from "./WebApp";
 
-function SecondPage() {
-  const isMobile = useMediaQuery({ maxWidth: 1000 });
+function index() {
+  return (
+    <>
+      <MobileWrapper>
+        <MobileApp />
+      </MobileWrapper>
 
-  return <div>{isMobile ? <MobileApp /> : <WebApp />}</div>;
+      <WebWrapper>
+        <WebApp />
+      </WebWrapper>
+    </>
+  );
 }
 
-export default SecondPage;
+export default index;
 
-const Wrapper = styled.div`
-  .hide-web {
+const WebWrapper = styled.div`
+  @media (max-width: 700px) {
+    display: none;
+  }
+`;
+const MobileWrapper = styled.div`
+  @media (min-width: 700px) {
     display: none;
   }
 `;
