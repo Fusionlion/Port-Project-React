@@ -102,7 +102,6 @@ const BodyContain = styled.div`
   flex-direction: column;
   position: relative;
   font-family: "Spline Sans Mono", sans-serif;
-  margin-bottom: 167px;
   background: linear-gradient(to top, #000000, #000, #000);
   width: 100%;
   color: white;

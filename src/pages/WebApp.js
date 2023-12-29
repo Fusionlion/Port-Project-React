@@ -331,10 +331,10 @@ const Backdrop = styled.div`
   overflow: hidden;
   position: relative;
 
-  @media (max-width: 1000px) {
+  /* @media (max-width: 1000px) {
     overflow: scroll;
     display: none;
-  }
+  } */
 
   .character {
     background-image: url(/images/my-svg/exploded_mockup.png);

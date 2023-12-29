@@ -28,7 +28,7 @@ function SecondPage() {
     };
   }, []); // Empty dependency array means it runs once after initial render
 
-  return <div>{ <MobileApp/>}</div>;
+  return <div>{isMobile ? <MobileApp /> : <WebApp />}</div>;
 }
 
 export default SecondPage;
