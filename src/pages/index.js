@@ -8,7 +8,7 @@ import MobileApp from "./MobileApp";
 import WebApp from "./WebApp";
 
 function SecondPage() {
-  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const isMobile = useMediaQuery({ maxWidth: 1000 });
 
   return <div>{isMobile ? <MobileApp /> : <WebApp />}</div>;
 }
