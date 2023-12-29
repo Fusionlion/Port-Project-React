@@ -6,7 +6,7 @@ import "../components/styles/Font.css";
 import MobileApp from "./MobileApp";
 import WebApp from "./WebApp";
 
-function index() {
+function Index() {
   return (
     <>
       <MobileWrapper>
@@ -20,15 +20,19 @@ function index() {
   );
 }
 
-export default index;
+export default Index;
 
 const WebWrapper = styled.div`
-  @media (max-width: 700px) {
+  @media screen and (max-width: 1000px) {
     display: none;
   }
+
+  /* Add additional styles for the WebWrapper here */
 `;
+
 const MobileWrapper = styled.div`
-  @media (min-width: 700px) {
+  @media screen and (min-width: 999px) {
     display: none;
   }
+  /* Add additional styles for the MobileWrapper here */
 `;
