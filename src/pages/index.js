@@ -8,7 +8,7 @@ import WebApp from "./WebApp";
 
 function Index() {
   return (
-    <>
+    <Wrapper>
       <MobileWrapper>
         <MobileApp />
       </MobileWrapper>
@@ -16,23 +16,28 @@ function Index() {
       <WebWrapper>
         <WebApp />
       </WebWrapper>
-    </>
+    </Wrapper>
   );
 }
 
 export default Index;
 
+const Wrapper = styled.div`
+  position: relative;
+`;
 const WebWrapper = styled.div`
-  @media screen and (max-width: 1000px) {
+  /* @media screen and (max-width: 1000px) {
     display: none;
-  }
+   
+  } */
 
   /* Add additional styles for the WebWrapper here */
 `;
 
 const MobileWrapper = styled.div`
+  /* position: absolute;
   @media screen and (min-width: 999px) {
     display: none;
-  }
+  } */
   /* Add additional styles for the MobileWrapper here */
 `;

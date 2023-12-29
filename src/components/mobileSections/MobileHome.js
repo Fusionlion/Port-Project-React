@@ -5,7 +5,7 @@ import FooterSection from "../sections/FooterSection";
 import ThreeImagesComponent from "./ThreeImagesComponent";
 import RoundedImageComponent from "./RoundedImageComponent";
 import CoursesComponent from "./CoursesComponent";
-export default function MobileHome() {
+export default function MobileHome(props) {
   const [text, setText] = useState("Let's get started :)");
   const [index, setIndex] = useState(0);
 
@@ -48,9 +48,18 @@ export default function MobileHome() {
       <TypingText>
         <div className="font-sa">{text.substring(0, index)} !</div>
       </TypingText>
-      <ThreeImagesComponent />
+      <ThreeImagesComponent
+        title="Projects"
+        buttonClicked={() => {
+          props.page("projects");
+        }}
+      />
       <RoundedImageComponent />
-      <CoursesComponent />
+      <CoursesComponent
+        buttonClicked={() => {
+          props.page("courses");
+        }}
+      />
       <FooterSection />
     </Wrapper>
   );
@@ -65,6 +74,9 @@ const Wrapper = styled.div`
   overflow: scroll;
   position: relative;
   background: linear-gradient(to top, #000000, #000000, #000000);
+  .padding-default {
+    padding: 0px 20px;
+  }
   .after-button-text {
     text-align: center;
     color: bisque;

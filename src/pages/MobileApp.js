@@ -76,7 +76,7 @@ export default function MobileApp() {
         </MobileMenu>
       )}
       {/* <MobileProjects /> */}
-      {switchPage == "home" && <MobileHome />}
+      {switchPage == "home" && <MobileHome page={handleMenuButton} />}
       {switchPage == "projects" && <MobileProjects />}
       {switchPage == "courses" && <MobileCourses />}
     </MobileLayout>

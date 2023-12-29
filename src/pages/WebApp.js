@@ -24,7 +24,7 @@ function WebApp() {
 
   return (
     <AboutMe>
-      <SEO title="Fusion | Welcome to my portfolio" />
+      {/* <SEO title="Fusion | Welcome to my portfolio" /> */}
       <Bubbles />
       <Lines />
 
@@ -295,9 +295,9 @@ const AboutMe = styled.div`
   overflow: hidden;
   background: linear-gradient(to top, #000000, #000, #000000);
   position: relative;
-  /* @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1000px) {
     display: none;
-  }
+  } /* 
   @media screen and (min-width: 1000px) {
   } */
   .title {

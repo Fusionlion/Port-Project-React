@@ -43,13 +43,16 @@ function MobileProjectCard(props) {
 
         <div className="desc">{props.desc}</div>
 
-        <div className="start-btn" onClick={handleStartClick}>
-          {progress > 0
-            ? "IN-PROGRESS"
-            : !progressValue && titleClicked == props.title
-            ? "Not Complete"
-            : "START"}
-        </div>
+        {!props.buttonOff && (
+          <div className="start-btn" onClick={handleStartClick}>
+            {progress > 0
+              ? "IN-PROGRESS"
+              : !progressValue && titleClicked == props.title
+              ? "Not Complete"
+              : "START"}
+          </div>
+        )}
+
         {/* <ProgressBar
           progressValue={progressValue}
           onProgressChange={handleProgressChange}
@@ -154,7 +157,8 @@ const ProjectCardStyle = styled.div`
   height: 210px;
   border-radius: 17px;
   /* background-image: url("/images/my-svg/falling-rocks.svg"); */
-  background-image: url(${(props) =>props.src || "/images/my-svg/falling-rocks.svg"});
+  background-image: url(${(props) =>
+    props.src || "/images/my-svg/falling-rocks.svg"});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

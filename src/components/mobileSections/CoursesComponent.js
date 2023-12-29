@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import ThreeImagesComponent from "./ThreeImagesComponent";
+import CourseCard from "../buttons/CourseCard";
+import MobileProjectCard from "./MobileProjectCard";
 
 const Container = styled.div`
   display: flex;
@@ -9,30 +12,66 @@ const Container = styled.div`
   color: white;
   font-family: "Spline Sans Mono", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-`;
 
+  .horixontal {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 23px;
+    overflow: hidden;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+`;
+const ImageWrapper = styled.div`
+  width: 100%;
+  height: 497px;
+  position: relative;
+  overflow: visible;
+`;
 const Image = styled.div`
-  background-image: url("https://qph.cf2.quoracdn.net/main-qimg-0c2f4f674f12955ae42d6196ed556e57-lq");
+  /* background-image: url("https://backiee.com/static/wpdb/wallpapers/1000x563/289646.jpg");
   background-color: #ccc;
   background-size: cover;
   background-position: center center;
   width: 100%;
-  height: 497px;
+  height: 100%;
   /* border-radius: 9px; */
-  background-color: #ccc; /* Placeholder color, replace with your image */
-  border: #595a5b 1px solid;
-  box-shadow: 0px -17px 0px -10px #645d5d, 0px -28px 0px -18px #764aca;
-`;
-const LastImage = styled.div`
-  background-image: url("https://northierthanthou.files.wordpress.com/2012/12/renaissance-the-school-of-athens-classic-art-paitings-raphael-painter-rafael-philosophers-hd-wallpapers.jpg?w=880");
+  /* Placeholder color, replace with your image */
+  /* border: #595a5b 1px solid; */
+  /* box-shadow: 0px -17px 0px -10px #645d5d, 0px -28px 0px -18px #764aca;  */
+  background-image: url(https://backiee.com/static/wpdb/wallpapers/1000x563/289646.jpg);
   background-color: #ccc;
   background-size: cover;
+  background-position: center center;
   width: 100%;
-  height: 203px;
+  height: 100%;
   background-color: #ccc;
+  /* box-shadow: 0px -17px 0px -10px #645d5d, 0px -28px 0px -18px #764aca; */
+  border-radius: 218px;
+  border: 2px solid #303337;
+`;
+const TopSvg = styled.div`
+  position: absolute;
+  background-image: url(/images/my-svg/3-birds.svg);
+  background-size: contain;
+  background-position: center center;
+  width: 425px;
+  height: 100%;
+  top: -48px;
+  left: -29px;
+  background-repeat: no-repeat;
+  -webkit-filter: drop-shadow(14px 15px 4px black);
+  filter: drop-shadow(14px 15px 4px black);
+`;
+const LastImage = styled.div`
+  background-image: url(images/my-svg/falling-rocks.svg);
+  background-size: cover;
+  width: 100%;
+  height: 203px px;
+  background-color: #000;
   background-position: center;
   border-radius: 9px;
-  margin-bottom: 17px; /* Placeholder color, replace with your image */
+  margin-bottom: 17px;
 `;
 
 const Title = styled.div`
@@ -40,6 +79,10 @@ const Title = styled.div`
   font-weight: bold;
   margin: 20px 0;
   font-family: "cisnero";
+  background: linear-gradient(to right, rgb(255 255 255), rgb(165 235 15));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 5px 9px 11px #000000, 1px -1px 0px #151417;
 `;
 
 const ThreeTexts = styled.div`
@@ -101,10 +144,13 @@ const StyledButton = styled.div`
   margin: 0px 69px;
 `;
 
-const CoursesComponent = () => {
+const CoursesComponent = (props) => {
   return (
     <Container>
-      <Image />
+      <ImageWrapper>
+        <Image />
+        <TopSvg />
+      </ImageWrapper>
       <Title>This is a Bold Courses</Title>
       <ThreeTexts>
         <div>Left Text</div>
@@ -127,7 +173,20 @@ const CoursesComponent = () => {
         solutions in the dynamic realm of software development.
       </NormalText>
       <LastImage />
-      <StyledButton>courses.</StyledButton>
+      <div className="horixontal">
+        <MobileProjectCard
+          title="Learn Java fullstack"
+          buttonOff="off"
+          imageSrc="https://wallpapers-clan.com/wp-content/uploads/2023/11/wolf-in-the-night-forest-desktop-wallpaper-preview.jpg"
+        />
+        <MobileProjectCard
+          title="Learn Apex Development"
+          buttonOff="off"
+          imageSrc="https://img.freepik.com/premium-photo/forest-landscape-with-sunset-forest-background_901003-26514.jpg"
+        />
+      </div>
+
+      <StyledButton onClick={props.buttonClicked}>courses.</StyledButton>
     </Container>
   );
 };

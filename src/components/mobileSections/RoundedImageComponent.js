@@ -28,20 +28,19 @@ const StyledNormalText = styled.div`
 `;
 
 const StyledRoundedImage = styled.div`
-  width: 300px;
+  width: 100%;
   height: 300px;
   background-image: url("https://qph.cf2.quoracdn.net/main-qimg-0c2f4f674f12955ae42d6196ed556e57-lq");
   background-color: #ccc;
   background-size: cover;
-  border: aliceblue 2px solid;
-  border-radius: 50%;
+  border-radius: 12px;
   margin-bottom: 10px;
 `;
 
 const StyledTitleBold = styled.div`
   font-weight: bold;
   margin-bottom: 10px;
-  border: 1px solid white;
+  border: 1px solid #4a8895;
   border-radius: 319px;
   padding: 19px 89px;
   border-radius: 50% 50%;
@@ -51,7 +50,7 @@ const StyledTitleBold = styled.div`
 `;
 
 const StyledBorderedText = styled.div`
-  border: 1px solid #ededed;
+  border: 1px solid #254349;
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 19px;
@@ -78,10 +77,7 @@ const RoundedImageComponent = () => {
         and dedicated, with good feedback and exercises for every problem you
         encounter
       </StyledNormalText>
-      <StyledBorderedText>
-        
-        This is Text in a Border
-      </StyledBorderedText>
+      <StyledBorderedText>This is Text in a Border</StyledBorderedText>
     </StyledContainer>
   );
 };
