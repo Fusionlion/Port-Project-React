@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import styled from "styled-components";
 import FooterSection from "../sections/FooterSection";
 import ThreeImagesComponent from "./ThreeImagesComponent";
@@ -7,6 +6,9 @@ import RoundedImageComponent from "./RoundedImageComponent";
 import CoursesComponent from "./CoursesComponent";
 import AboutMeComponent from "./AboutMeComponent";
 import MidSectionComponent from "./MidSectionComponent";
+import EmploymentHistoryComponent from "./EmploymentHistoryComponent";
+import CodingExpertiseComponent from "./CodingExpertiseComponent";
+import CertificateComponent from "./CertificateComponent";
 export default function MobileHome(props) {
   const [text, setText] = useState("Let's get started :)");
   const [index, setIndex] = useState(0);
@@ -51,6 +53,9 @@ export default function MobileHome(props) {
         <div className="font-sa">{text.substring(0, index)} !</div>
       </TypingText>
       <AboutMeComponent />
+      <EmploymentHistoryComponent />
+      <CodingExpertiseComponent />
+      <CertificateComponent />
       <MidSectionComponent />
       <ThreeImagesComponent
         title="Projects"

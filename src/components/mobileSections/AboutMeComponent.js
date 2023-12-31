@@ -10,6 +10,10 @@ const StyledComponent = styled.div`
   color: white;
   border-bottom: 1px solid #3c3c3c;
   padding-bottom: 19px;
+  .bold-text {
+    font-family: "Spline Sans Mono", sans-serif;
+    font-size: 14px;
+  }
   .bottom-border {
     border-bottom: 1px solid #3c3c3c;
     padding-bottom: 10px;
@@ -124,6 +128,7 @@ const AboutMeComponent = () => {
           various platforms including HTML and CSS.
         </div>
       </div>
+      <div className="bold-text">Work History</div>
     </StyledComponent>
   );
 };

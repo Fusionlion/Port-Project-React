@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import MobileProjects from "../components/mobileSections/MobileProjects";
 import MobileProjectDetail from "../components/mobileSections/MobileProjectDetail";
+import "../components/styles/Font.css";
 import MobileHome from "../components/mobileSections/MobileHome";
 import MobileCourses from "../components/mobileSections/MobileCourses";
 

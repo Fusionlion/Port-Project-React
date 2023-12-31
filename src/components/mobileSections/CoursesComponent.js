@@ -24,7 +24,7 @@ const Container = styled.div`
 `;
 const ImageWrapper = styled.div`
   width: 100%;
-  height: 497px;
+  /* height: 497px; */
   position: relative;
   overflow: visible;
 `;
@@ -39,16 +39,15 @@ const Image = styled.div`
   /* Placeholder color, replace with your image */
   /* border: #595a5b 1px solid; */
   /* box-shadow: 0px -17px 0px -10px #645d5d, 0px -28px 0px -18px #764aca;  */
-  background-image: url(https://backiee.com/static/wpdb/wallpapers/1000x563/289646.jpg);
+  background-image: url(/images/my-svg/earth-dots.png);
   background-color: #ccc;
   background-size: cover;
   background-position: center center;
   width: 100%;
-  height: 100%;
+  height: 387px;
   background-color: #ccc;
-  /* box-shadow: 0px -17px 0px -10px #645d5d, 0px -28px 0px -18px #764aca; */
-  border-radius: 218px;
-  border: 2px solid #303337;
+  border-radius: 426px;
+  border: 2px solid #932300;
 `;
 const TopSvg = styled.div`
   position: absolute;

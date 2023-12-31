@@ -30,7 +30,7 @@ const StyledNormalText = styled.div`
 const StyledRoundedImage = styled.div`
   width: 100%;
   height: 244px;
-  background-image: url(/images/my-svg/woman-holding-phone.png);
+  background-image: url(/images/my-svg/watch-project.png);
   background-color: #ccc;
   background-size: cover;
   margin-bottom: 10px;
