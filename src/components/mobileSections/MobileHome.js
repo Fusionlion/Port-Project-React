@@ -56,7 +56,6 @@ export default function MobileHome(props) {
       <EmploymentHistoryComponent />
       <CodingExpertiseComponent />
       <CertificateComponent />
-      <MidSectionComponent />
       <ThreeImagesComponent
         title="Projects"
         buttonClicked={() => {
