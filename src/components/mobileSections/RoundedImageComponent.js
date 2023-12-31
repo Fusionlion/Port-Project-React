@@ -29,12 +29,12 @@ const StyledNormalText = styled.div`
 
 const StyledRoundedImage = styled.div`
   width: 100%;
-  height: 300px;
-  background-image: url("https://qph.cf2.quoracdn.net/main-qimg-0c2f4f674f12955ae42d6196ed556e57-lq");
+  height: 244px;
+  background-image: url(/images/my-svg/woman-holding-phone.png);
   background-color: #ccc;
   background-size: cover;
-  /* border-radius: 12px; */
   margin-bottom: 10px;
+  background-position: center;
 `;
 
 const StyledTitleBold = styled.div`

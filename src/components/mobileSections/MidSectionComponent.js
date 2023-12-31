@@ -9,7 +9,7 @@ export default function MidSectionComponent() {
         This is a description of the mid-section component. It can contain
         relevant information about the content.
       </Description>
-      <Image src="images/my-svg/iphone2.png" alt="Your Image" />
+      <Image />
     </Wrapper>
   );
 }
@@ -19,8 +19,10 @@ const Wrapper = styled.div`
   /* max-width: 800px; */
   margin: 0 auto;
   color: white;
-  padding: 80px 0px;
+  padding: 24px 0px;
   position: relative;
+  background-image: url(/images/my-svg/falling-stars.svg);
+  background-repeat: repeat-y;
 `;
 
 const Title = styled.div`
@@ -36,15 +38,21 @@ const Title = styled.div`
 `;
 
 const Description = styled.div`
-  font-size: 16px;
   margin-bottom: 20px;
+  font-size: 14px;
+  font-family: "Spline Sans Mono", sans-serif;
+  line-height: 1.2;
+  gap: 18px;
+  text-align: center;
 `;
 
-const Image = styled.img`
+const Image = styled.div`
   width: 100%;
-  object-fit: contain;
-  /* -webkit-transform: scale(3.5); */
-  /* transform: scale(3.5); */
-  /* top: 191px; */
+  height: 680px;
+  background-image: url(images/my-svg/iphone2.png);
   position: relative;
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* background-color: aliceblue; */
+  background-position: center;
 `;

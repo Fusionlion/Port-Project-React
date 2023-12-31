@@ -8,6 +8,8 @@ const StyledComponent = styled.div`
   width: 100%;
   margin: 0 auto;
   color: white;
+  border-bottom: 1px solid #3c3c3c;
+  padding-bottom: 19px;
   .bottom-border {
     border-bottom: 1px solid #3c3c3c;
     padding-bottom: 10px;
