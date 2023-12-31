@@ -152,6 +152,7 @@ const MobileHeader = styled.div`
   position: fixed;
   width: 100%;
   backdrop-filter: blur(7px);
+  background-color: black;
   background-image: url(/images/my-svg/header-stars.svg);
   background-position: center;
   .mobile-header-left {
