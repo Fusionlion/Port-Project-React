@@ -33,7 +33,7 @@ const StyledRoundedImage = styled.div`
   background-image: url("https://qph.cf2.quoracdn.net/main-qimg-0c2f4f674f12955ae42d6196ed556e57-lq");
   background-color: #ccc;
   background-size: cover;
-  border-radius: 12px;
+  /* border-radius: 12px; */
   margin-bottom: 10px;
 `;
 
