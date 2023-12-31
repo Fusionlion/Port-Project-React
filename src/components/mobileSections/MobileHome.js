@@ -91,6 +91,7 @@ const Wrapper = styled.div`
     font-size: 14px;
     font-family: "Spline Sans Mono", sans-serif;
     line-height: 1.2;
+    padding-bottom: 35px;
   }
   .mobile-welcome-button {
     text-align: center;
