@@ -10,6 +10,7 @@ const StyledComponent = styled.div`
   color: white;
   border-bottom: 1px solid #3c3c3c;
   padding-bottom: 19px;
+  overflow: hidden;
   .bold-text {
     font-family: "Spline Sans Mono", sans-serif;
     font-size: 14px;

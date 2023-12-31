@@ -30,8 +30,8 @@ const StyledNormalText = styled.div`
 const StyledRoundedImage = styled.div`
   width: 100%;
   height: 244px;
-  background-image: url(/images/my-svg/watch-project.png);
-  background-color: #ccc;
+  background-image: url("/images/my-svg/watch-project.png");
+
   background-size: cover;
   margin-bottom: 10px;
   background-position: center;
