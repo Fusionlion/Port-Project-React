@@ -10,16 +10,16 @@ import EmploymentHistoryComponent from "./EmploymentHistoryComponent";
 import CodingExpertiseComponent from "./CodingExpertiseComponent";
 import CertificateComponent from "./CertificateComponent";
 export default function MobileHome(props) {
-  const [text, setText] = useState("Let's get started :)");
-  const [index, setIndex] = useState(0);
+  // const [text, setText] = useState("Let's get started :)");
+  // const [index, setIndex] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % text.length);
-    }, 180); // Adjust the interval based on your needs
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setIndex((prevIndex) => (prevIndex + 1) % text.length);
+  //   }, 180); // Adjust the interval based on your needs
 
-    return () => clearInterval(interval);
-  }, [text]);
+  //   return () => clearInterval(interval);
+  // }, [text]);
   return (
     <Wrapper>
       <MobileWelcomeTitle>
