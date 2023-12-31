@@ -49,9 +49,9 @@ export default function MobileHome(props) {
         Learn the best tools and platforms.Make your code efficient and learn
         new methodologies in programming.
       </div>
-      <TypingText>
+      {/* <TypingText>
         <div className="font-sa">{text.substring(0, index)} !</div>
-      </TypingText>
+      </TypingText> */}
       <AboutMeComponent />
       <EmploymentHistoryComponent />
       <CodingExpertiseComponent />

@@ -39,7 +39,7 @@ const Image = styled.div`
   /* Placeholder color, replace with your image */
   /* border: #595a5b 1px solid; */
   /* box-shadow: 0px -17px 0px -10px #645d5d, 0px -28px 0px -18px #764aca;  */
-  background-image: url(/images/my-svg/earth-dots.png);
+  background-image: url(https://preview.redd.it/p9jtsvxck9j51.png?auto=webp&s=8f52326f9d6793e9058edac360ff7298dbc74fca);
   background-color: #ccc;
   background-size: cover;
   background-position: center center;
