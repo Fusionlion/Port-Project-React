@@ -9,7 +9,7 @@ export default function MidSectionComponent() {
         This is a description of the mid-section component. It can contain
         relevant information about the content.
       </Description>
-      <Image src="images/my-svg/iphone1.png" alt="Your Image" />
+      <Image src="images/my-svg/iphone2.png" alt="Your Image" />
     </Wrapper>
   );
 }
@@ -21,7 +21,6 @@ const Wrapper = styled.div`
   color: white;
   padding: 80px 0px;
   position: relative;
-  padding-bottom: 407px;
 `;
 
 const Title = styled.div`
@@ -44,7 +43,8 @@ const Description = styled.div`
 const Image = styled.img`
   width: 100%;
   object-fit: contain;
-  transform: scale(3.5);
-  top: 191px;
+  /* -webkit-transform: scale(3.5); */
+  /* transform: scale(3.5); */
+  /* top: 191px; */
   position: relative;
 `;
