@@ -5,6 +5,8 @@ import FooterSection from "../sections/FooterSection";
 import ThreeImagesComponent from "./ThreeImagesComponent";
 import RoundedImageComponent from "./RoundedImageComponent";
 import CoursesComponent from "./CoursesComponent";
+import AboutMeComponent from "./AboutMeComponent";
+import MidSectionComponent from "./MidSectionComponent";
 export default function MobileHome(props) {
   const [text, setText] = useState("Let's get started :)");
   const [index, setIndex] = useState(0);
@@ -48,6 +50,8 @@ export default function MobileHome(props) {
       <TypingText>
         <div className="font-sa">{text.substring(0, index)} !</div>
       </TypingText>
+      <AboutMeComponent />
+      <MidSectionComponent />
       <ThreeImagesComponent
         title="Projects"
         buttonClicked={() => {
