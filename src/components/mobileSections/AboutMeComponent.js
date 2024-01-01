@@ -97,16 +97,6 @@ const StyledComponent = styled.div`
 const AboutMeComponent = () => {
   return (
     <StyledComponent>
-      {/* First Div */}
-      <div className="section">
-        <div className="title">About</div>
-        <div className="column-text">
-          <div>Text 1</div>
-          <div>Text 2</div>
-          <div>Text 3</div>
-        </div>
-      </div>
-
       {/* Second Div */}
       <div className="section-image">
         <div className="section-svg"></div>

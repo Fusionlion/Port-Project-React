@@ -45,6 +45,7 @@ const Wrapper = styled.div`
 const JobEntry = styled.div`
   display: flex;
   background-color: #141414;
+  gap: 20px;
   border-left: ${({ isOnRight }) => (isOnRight ? "1px solid white" : "none")};
   border-right: ${({ isOnRight }) => (!isOnRight ? "1px solid white" : "none")};
   flex-flow: ${({ isOnRight }) => (!isOnRight ? "row-reverse" : "none")};

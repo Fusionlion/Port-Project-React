@@ -10,9 +10,7 @@ export default function FooterSection() {
         <FooterIcon src="https://i.pinimg.com/originals/5e/10/d7/5e10d70b73f61c76194ef63da8f5c22a.png" />
       </Apps>
       <div className="info">
-       
-          Privacy Information &copy; 2023 @ZablonCharles. All rights reserved.
-       
+        Privacy Information &copy; 2023 @ZablonCharles. All rights reserved.
       </div>
     </Footer>
   );
@@ -66,14 +64,20 @@ const Apps = styled.div`
 
   /* on mobile footer */
   @media (max-width: 500px) {
-    width: 389px;
+    width: 325px;
     border-radius: 76px;
-    height: 85px;
+    height: 66px;
     margin-top: 30px;
-    gap: 70px;
+    gap: 47px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
     justify-content: center;
     margin: 19px 93px;
     background: #000;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     border: 1px #0c0c0c solid;
     text-align: -webkit-center;

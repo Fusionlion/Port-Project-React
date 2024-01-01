@@ -24,6 +24,9 @@ const Language = styled.div`
   font-size: 16px;
   text-transform: lowercase;
   margin-bottom: 5px;
+  transform: rotate(270deg);
+  position: absolute;
+  margin-top: 49px;
 `;
 
 const Bar = styled.div`

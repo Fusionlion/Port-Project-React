@@ -167,26 +167,30 @@ const MobileWelcomeImage = styled.div`
   border-radius: 244px;
   box-shadow: 0px 90px 90px -60px rgba(255, 165, 0, 0.7);
   position: relative; */
-  min-height: 326px;
-  width: 335px;
+  min-height: 354px;
+  width: 100%;
   overflow: visible;
-  border: 1px #633e00fc solid;
+  /* border: 1px #633e00fc solid; */
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  background-color: black;
+  /* background-color: black; */
   margin: 20px auto;
-  background-image: url(/images/my-svg/merilios.png);
+  /* background-image: url(/images/my-svg/merilios.png); */
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
-  border-radius: 244px;
-  box-shadow: 0px 90px 90px -60px rgba(255, 165, 0, 0.7);
+  border-radius: 358px;
+  /* box-shadow: 0px 90px 90px -60px rgb(142 33 33 / 70%); */
   position: relative;
-  background-image: url(/images/my-svg/bubbles.svg);
+  background-image: url(/images/my-svg/falling-rocks.svg);
   background-size: cover;
   background-position: center center;
 
