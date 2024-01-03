@@ -79,7 +79,7 @@ const Apps = styled.div`
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    border: 1px #0c0c0c solid;
+    border: 1px #353232 solid;
     text-align: -webkit-center;
   }
 `;

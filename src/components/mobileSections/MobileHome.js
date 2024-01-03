@@ -46,8 +46,8 @@ export default function MobileHome(props) {
       <div className="mobile-welcome-button">GET STARTED</div>
       <div className="after-button-text">
         <br />
-        Learn the best tools and platforms.Make your code efficient and learn
-        new methodologies in programming.
+        Step into my digital realm, where technology meets innovation, and join
+        me on a journey of coding, creativity, and continuous learning.
       </div>
       {/* <TypingText>
         <div className="font-sa">{text.substring(0, index)} !</div>
@@ -95,7 +95,7 @@ const Wrapper = styled.div`
   }
   .mobile-welcome-button {
     text-align: center;
-    font-size: 22px;
+    font-size: 20px;
     background-color: black;
     padding: 10px 30px;
     border-radius: 26px;
@@ -242,19 +242,21 @@ const MobileWelcomeImage = styled.div`
 const MobileDesc = styled.div`
   font-family: "Spline Sans Mono", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 18px;
-  line-height: initial;
+  font-size: 23px;
+  line-height: 1.2;
   padding-bottom: 20px;
-  padding-top: 30px;
+  /* padding-top: 30px; */
   text-align: justify;
-  /* background-color: #100f0e47; */
-  border-radius: 12px;
-  color: #ff9500;
+
+  color: #d1d1d1;
   text-align: center;
-  margin-bottom: 20px;
-  /* padding-left: 10px;
-  padding-right: 10px; */
   margin-top: 20px;
+  text-align: justify;
+  text-align-last: center;
+  font-family: "Lavire Personal Use", sans-serif;
+  background: linear-gradient(to top, rgb(86 86 86), rgb(255 255 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   .first-character {
     font-weight: 400;
     float: left;

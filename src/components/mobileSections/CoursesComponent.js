@@ -3,6 +3,8 @@ import styled from "styled-components";
 import ThreeImagesComponent from "./ThreeImagesComponent";
 import CourseCard from "../buttons/CourseCard";
 import MobileProjectCard from "./MobileProjectCard";
+import { useState } from "react";
+import MobileTextImage from "./MobileTextImage";
 
 const Container = styled.div`
   display: flex;
@@ -22,46 +24,7 @@ const Container = styled.div`
     flex-wrap: wrap;
   }
 `;
-const ImageWrapper = styled.div`
-  width: 100%;
-  /* height: 497px; */
-  position: relative;
-  overflow: visible;
-`;
-const Image = styled.div`
-  /* background-image: url("https://backiee.com/static/wpdb/wallpapers/1000x563/289646.jpg");
-  background-color: #ccc;
-  background-size: cover;
-  background-position: center center;
-  width: 100%;
-  height: 100%;
-  /* border-radius: 9px; */
-  /* Placeholder color, replace with your image */
-  /* border: #595a5b 1px solid; */
-  /* box-shadow: 0px -17px 0px -10px #645d5d, 0px -28px 0px -18px #764aca;  */
-  background-image: url(https://preview.redd.it/p9jtsvxck9j51.png?auto=webp&s=8f52326f9d6793e9058edac360ff7298dbc74fca);
-  background-color: #ccc;
-  background-size: cover;
-  background-position: center center;
-  width: 100%;
-  height: 387px;
-  background-color: #ccc;
-  border-radius: 426px;
-  border: 2px solid #932300;
-`;
-const TopSvg = styled.div`
-  position: absolute;
-  background-image: url(/images/my-svg/3-birds.svg);
-  background-size: contain;
-  background-position: center center;
-  width: 425px;
-  height: 100%;
-  top: -48px;
-  left: -29px;
-  background-repeat: no-repeat;
-  -webkit-filter: drop-shadow(14px 15px 4px black);
-  filter: drop-shadow(14px 15px 4px black);
-`;
+
 const LastImage = styled.div`
   background-image: url(images/my-svg/falling-rocks.svg);
   background-size: cover;
@@ -121,6 +84,29 @@ const NormalText = styled.div`
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   text-align: justify;
   line-height: 1.5;
+  /* max-height: ${(props) => (props.showMore ? "none" : "8 * 1.5em")}; */
+  display: ${(props) => (props.showMore ? "block" : "-webkit-box")};
+  -webkit-line-clamp: 9; /* Number of lines to show */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  position: relative;
+  .bg-text {
+    position: absolute;
+    background: linear-gradient(359deg, #000000ad, transparent, transparent);
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+  }
+`;
+
+const ShowMoreButton = styled.button`
+  background-color: #151313;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
 `;
 
 const StyledButton = styled.div`
@@ -144,33 +130,41 @@ const StyledButton = styled.div`
 `;
 
 const CoursesComponent = (props) => {
+  const [showMore, setShowMore] = useState(false);
+
+  const toggleShowMore = () => {
+    setShowMore(!showMore);
+  };
   return (
     <Container>
-      <ImageWrapper>
-        <Image />
-        <TopSvg />
-      </ImageWrapper>
-      <Title>This is a Bold Courses</Title>
-      <ThreeTexts>
+      <Title>
+        Nurturing Tech Talents in Java, Salesforce, HTML, CSS, and Beyond
+      </Title>
+      {/* <ThreeTexts>
         <div>Left Text</div>
         <div>Middle Text</div>
         <div>Right Text</div>
-      </ThreeTexts>
+      </ThreeTexts> */}
       <BigStyledText>Yay! We have courses</BigStyledText>
-      <NormalText>
+      <NormalText showMore={showMore}>
         {" "}
-        I have crafted comprehensive courses that seamlessly integrate Java,
-        Salesforce, and Frontend Development to provide a holistic learning
-        experience. These courses are designed to equip learners with a
-        versatile skill set, covering the robust Java programming language for
-        backend development, Salesforce for powerful CRM solutions, and frontend
-        technologies for creating engaging user interfaces. Whether you're
-        aspiring to be a full-stack developer or aiming to specialize in
-        Salesforce integration, these courses offer a well-rounded curriculum,
-        hands-on projects, and practical insights, ensuring that participants
-        gain proficiency in each domain and the ability to architect end-to-end
-        solutions in the dynamic realm of software development.
+        I am fueled by a profound passion for empowering aspiring developers
+        with the knowledge and skills to navigate the dynamic realms of Java,
+        Salesforce Apex, HTML, CSS, and the intricate world of data structures
+        and algorithms. Teaching is not merely a profession for me; it is a
+        fervent pursuit to inspire and guide individuals on their journey to
+        becoming proficient developers. As I share the intricacies of coding, I
+        aim to cultivate not only technical expertise but also a deep
+        understanding of problem-solving and innovative thinking. Witnessing the
+        moment when a concept clicks, and a learner grasps the intricacies of a
+        programming language or algorithm is what propels me forward, and it is
+        this joy that fuels my commitment to education in the ever-evolving
+        landscape of technology.
+        <div className="bg-text"></div>
       </NormalText>
+      {!showMore && (
+        <ShowMoreButton onClick={toggleShowMore}>Show More</ShowMoreButton>
+      )}
       <LastImage />
       <div className="horixontal">
         <MobileProjectCard
@@ -186,6 +180,7 @@ const CoursesComponent = (props) => {
       </div>
 
       <StyledButton onClick={props.buttonClicked}>courses.</StyledButton>
+      <MobileTextImage />
     </Container>
   );
 };

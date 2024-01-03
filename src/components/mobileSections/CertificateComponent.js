@@ -75,6 +75,7 @@ const Wrapper = styled.div`
   gap: 20px;
   color: white;
   padding: 20px 0px;
+  justify-content: center;
 `;
 
 const TopTitle = styled.div`
@@ -123,8 +124,12 @@ const Icon = styled.img`
 `;
 
 const Description = styled.p`
-  font-size: 16px;
+  font-size: 13px;
   margin-bottom: 10px;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  display: -webkit-box;
 `;
 
 const Date = styled.p`
@@ -133,7 +138,7 @@ const Date = styled.p`
 `;
 
 const ShowMoreButton = styled.button`
-  padding: 10px 60px;
+  padding: 10px 44px;
   text-align: center;
   font-size: 17px;
   background-color: black;

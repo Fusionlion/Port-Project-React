@@ -30,10 +30,21 @@ const StyledComponent = styled.div`
     text-align: justify;
   }
   .space {
-    width: 100%;
-    height: 76px;
-    background: aliceblue;
+    /* width: 100%;
+    height: 99px;
+    background-image: url(/images/my-svg/merilios.png);
     border-radius: 7px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; */
+    width: 100%;
+    height: 101px;
+    background-image: url(/images/my-svg/armor.png);
+    border-radius: 7px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: solid #131111 1px;
   }
   .title {
     font-size: 54px;
@@ -57,11 +68,11 @@ const StyledComponent = styled.div`
   .section-image {
     height: 500px;
     /* background-image: url("https://w0.peakpx.com/wallpaper/323/210/HD-wallpaper-night-mountains-minimalist-8k-mountains-minimalism-minimalist-artist-artwork-digital-art-dark-black.jpg"); */
-    background-color: #1f1f23;
+    background-color: #0b0b0b;
     background-size: cover;
     position: relative;
     border-radius: 12px;
-    border: 1px solid #181616;
+    /* border: 1px solid #181616; */
   }
   .section-svg {
     height: 492px;

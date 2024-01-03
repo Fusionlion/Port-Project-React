@@ -21,15 +21,39 @@ const StyledImageContainer = styled.div`
   text-align: justify;
   line-height: 1.5;
   margin: 20px 0;
+  gap: 5px;
 `;
 
 const StyledImage = styled.div`
-  width: ${(props) => (props.isMiddle ? "200px" : "140px")};
-  height: ${(props) => (props.isMiddle ? "208px" : "160px")};
+  width: ${(props) => (props.isMiddle == "middle" ? "200px" : "140px")};
+  height: ${(props) => (props.isMiddle == "middle" ? "208px" : "160px")};
   background-image: url(${(props) => props.src});
   background-size: cover;
-  background-position: center;
+  background-position: ${(props) =>
+    props.isMiddle === "left"
+      ? "center center"
+      : props.isMiddle === "right"
+      ? "center right"
+      : "center center"};
   border-radius: 8px;
+  border: 1px #3e3e3e solid;
+  position: relative;
+  overflow: hidden;
+
+  .name {
+    position: absolute;
+    color: white;
+    background: linear-gradient(1deg, #000000, #000000, black);
+    bottom: 0;
+    width: 100%;
+    font-size: 9px;
+    text-align: center;
+    height: 19px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #202020;
+  }
 `;
 
 const StyledTextButtonContainer = styled.div`
@@ -79,17 +103,19 @@ const ThreeImagesComponent = (props) => {
         </StyledText>
         <StyledImageContainer>
           <StyledImage
-            src="https://qph.cf2.quoracdn.net/main-qimg-0c2f4f674f12955ae42d6196ed556e57-lq"
-            isMiddle={false}
-          />
+            src="https://user-images.githubusercontent.com/74889517/182249015-9292982d-095e-4414-8af5-76909f905cfa.png"
+            isMiddle={"left"}
+          ></StyledImage>
           <StyledImage
-            src="https://i.redd.it/b7qfov5w5rca1.png"
-            isMiddle={true}
-          />
+            src="https://user-images.githubusercontent.com/74889517/182240184-175f842b-08bf-448a-bb24-60e7589b37c0.png"
+            isMiddle={"middle"}
+          >
+            <div className="name">Health +</div>
+          </StyledImage>
           <StyledImage
-            src="https://i.pinimg.com/564x/46/46/01/464601bf0415d42b53995b517cc1cd5c.jpg"
-            isMiddle={false}
-          />
+            src="https://user-images.githubusercontent.com/74889517/182249026-b848efe2-f972-42e5-baad-fd9038d9caaf.png"
+            isMiddle={"right"}
+          ></StyledImage>
         </StyledImageContainer>
         <StyledButton onClick={props.buttonClicked}>projects.</StyledButton>
       </StyledTextButtonContainer>

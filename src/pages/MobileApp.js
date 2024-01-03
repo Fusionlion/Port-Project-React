@@ -97,7 +97,7 @@ const MobileMenu = styled.div`
   justify-content: space-between;
   color: black;
   padding-top: 40px;
-  gap: 15px;
+  gap: 9px;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
   -webkit-animation: all 1s ease-in-out;
@@ -112,7 +112,7 @@ const MobileMenu = styled.div`
   position: fixed;
   top: 68px;
   width: 100%;
-  backdrop-filter: blur(3px);
+  background: black;
   border-radius: 12px;
   border-bottom: 1px solid #111010;
   .mobile-menu-item {
@@ -122,8 +122,7 @@ const MobileMenu = styled.div`
     color: #cbc9c8;
     background: #000000;
     padding: 13px 16px;
-    border-radius: 11px;
-    border: 1px solid #322c20;
+    border-bottom: 1px solid #444040;
   }
   .mobile-menu-item:hover {
     border-bottom: 5px black solid;
@@ -151,7 +150,6 @@ const MobileHeader = styled.div`
   padding: 0px 15px;
   position: fixed;
   width: 100%;
-  backdrop-filter: blur(7px);
   background-color: black;
   background-image: url(/images/my-svg/header-stars.svg);
   background-position: center;

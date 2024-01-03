@@ -18,7 +18,13 @@ const CodingExpertiseComponent = () => {
           <Title>Coding Expertise</Title>
           <Subtitle>Explore the languages I work with</Subtitle>
         </TopLeftText>
-        <TopRightButton>View Portfolio</TopRightButton>
+        <TopRightButton
+          href="https://github.com/zabloncharles"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Portfolio
+        </TopRightButton>
       </TopSection>
       <BottomSection>
         {expertiseData.map((item, index) => (
@@ -60,7 +66,7 @@ const Subtitle = styled.p`
   color: #888;
 `;
 
-const TopRightButton = styled.button`
+const TopRightButton = styled.a`
   padding: 10px 11px;
   font-size: 14px;
   color: white;
