@@ -22,11 +22,14 @@ export default function MobileHome(props) {
   // }, [text]);
   return (
     <Wrapper>
+      <BGroundBlack />
+
+      <BGround />
+      <BGroundBottom />
       <MobileWelcomeTitle>
         <div className="mobile-title-big">welcome</div>
         <div className="mobile-title-big">PORTFOLIO</div>
       </MobileWelcomeTitle>
-
       <MobileWelcomeImage>
         <div className="my-name">
           <div>CHARLES</div>
@@ -72,14 +75,44 @@ export default function MobileHome(props) {
     </Wrapper>
   );
 }
-
+const BGroundBottom = styled.div`
+  height: 800px;
+  width: 100vw;
+  background-image: url(/images/my-svg/undersea.svg);
+  background-size: cover;
+  background-position: center top;
+  position: absolute;
+  left: 0;
+  background-repeat: no-repeat;
+  bottom: -158px;
+  mix-blend-mode: hard-light;
+`;
+const BGround = styled.div`
+  height: 800px;
+  width: 100vw;
+  background-image: url(/images/my-svg/sea-animals.svg);
+  background-size: cover;
+  background-position: center top;
+  position: absolute;
+  left: 0;
+  background-repeat: no-repeat;
+  top: 15px;
+  mix-blend-mode: hard-light;
+`;
+const BGroundBlack = styled.div`
+  height: 800px;
+  width: 100vw;
+  background-color: black;
+  position: absolute;
+  z-index: -6;
+`;
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 100%;
   padding: 30px;
-  overflow: scroll;
+  overflow: hidden;
   position: relative;
   background: linear-gradient(to top, #000000, #000000, #000000);
   .padding-default {
