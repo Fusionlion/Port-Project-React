@@ -26,18 +26,16 @@ const Wrapper = styled.div`
   position: relative;
 `;
 const WebWrapper = styled.div`
-  /* @media screen and (max-width: 1000px) {
+  /* if its below 1000 show this */
+  @media screen and (max-width: 1000px) {
     display: none;
-   
-  } */
+  }
 
   /* Add additional styles for the WebWrapper here */
 `;
 
 const MobileWrapper = styled.div`
-  /* position: absolute;
   @media screen and (min-width: 999px) {
     display: none;
-  } */
-  /* Add additional styles for the MobileWrapper here */
+  }
 `;
