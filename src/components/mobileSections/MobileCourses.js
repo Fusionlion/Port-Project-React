@@ -1,32 +1,28 @@
 import React, { useState, useRef } from "react";
 import styled from "styled-components";
 import CardList from "../sections/CardList";
-import topicData from "../../data/data.json";
+import topicData from "../../data/courses.json";
 import Ide from "../sections/Ide";
 import FooterSection from "../sections/FooterSection";
 import MobileProjectList from "./MobileProjectList";
 import MobileCourseList from "./MobileCourseList";
 
 function MobileCourses() {
-  const [topic, setTopic] = useState([topicData]);
-  const [topicClicked, setTopicClicked] = useState(0);
-  const [titleClicked, setTitleClicked] = useState(false);
-  const data = topicData.map((record) => {
-    return record;
-  });
-  let cardClickedRaw;
-  const handleCardClickChild = (print) => {
-    // console.log(data[topicClicked].lesson);
-    // the title of the card
-    cardClickedRaw = print.title;
-    console.log(topicClicked + " topic clicked");
-    setTopicClicked(print.num);
-    setTitleClicked(print.title);
-    console.log("card click up top was " + cardClickedRaw + "num was " + print.num);
-    // setTopicClicked(card);
-    
+  const [cardData, setCardData] = useState([]);
 
-    // Adjust the value (e.g., 100) based on how much you want to scroll down
+  const [topicClicked, setTopicClicked] = useState();
+  const [currLineFromIde, setCurrLineFromIde] = useState();
+  const handleLineFromIde = (line) => {
+    setCurrLineFromIde(line);
+  };
+  const handleCardClickChild = (print) => {
+    setCardData(print);
+    setTopicClicked(print.title);
+    // Scroll to the top of the page
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Use 'auto' for instant scrolling
+    });
   };
 
   return (
@@ -34,13 +30,13 @@ function MobileCourses() {
       <div className="overview-and-cards">
         <div className="projects-top-content">
           <div className="project-top-left">
-            <div className="project-title">leonardo da Vinci</div>
-            <div className="project-title">1452 to 1519</div>
-            <div className="project-title">
-              Art Museum App Concept designed by Ajay Talwar. Connect with them
-              on Dribbble; the global community for designers and creative
-              professionals.
-            </div>
+            <div className="project-title">Evaluate Your Skills</div>
+            <div className="project-title">Comprehensive courses</div>
+            <li className="project-title">
+              Unlock the door to expertise with TechMastery Courses. Delve into
+              the intricacies of data structures, master the art of Java
+              programming, and empower your Salesforce development journey.
+            </li>
           </div>
           <div className="project-top-right">
             <div className="project-right-number">10</div>
@@ -49,22 +45,34 @@ function MobileCourses() {
           </div>
         </div>
         <Ide
-          className="mobile-ide"
-          // text={data[topicClicked].lesson}
-          text={data[topicClicked].lesson}
+          text={cardData.lesson}
           parentCardClicked={topicClicked}
-          title={data[topicClicked].title}
-          quiz={data[topicClicked].quiz}
+          title={cardData.title}
+          quiz={cardData.quiz}
+          updateLineParent={handleLineFromIde}
           // switchIde={handleSwitching}
         />
       </div>
       <ProjectCards>
-        <div className="cards-title"> Data Structures & Algorithms</div>
         <div className="cards-horizontal-projects">
-          <MobileCourseList
-           
-            theCardClicked={handleCardClickChild}
-          />
+          {Object.keys(topicData).map((subject, index) => (
+            <div key={`${subject}_${index}`}>
+              <div className="cards-title">
+                <div>{subject}</div>
+                <div>
+                  {topicData[subject].lesson ?? topicData[subject].length}
+                </div>
+              </div>
+              <div className="cards-horizontal-projects">
+                <MobileCourseList
+                  key={`${subject}_course_${index}`}
+                  subject={subject}
+                  theCardClicked={handleCardClickChild}
+                  lineChanged={currLineFromIde}
+                />
+              </div>
+            </div>
+          ))}
         </div>
       </ProjectCards>
 
@@ -87,6 +95,8 @@ const ProjectCards = styled.div`
     font-weight: bold;
     margin-bottom: 30px;
     color: white;
+    display: flex;
+    justify-content: space-between;
   }
 
   .cards-horizontal-projects {
@@ -94,7 +104,7 @@ const ProjectCards = styled.div`
     justify-content: space-between;
     flex-wrap: wrap;
     row-gap: 23px;
-    gap: 10px;
+    gap: 27px;
   }
 `;
 const BodyContain = styled.div`
@@ -111,13 +121,13 @@ const BodyContain = styled.div`
     display: flex;
     justify-content: space-between;
     position: relative;
-    background-image: url(/images/my-svg/sea-animals.svg);
+    background-image: url(/images/my-svg/falling-rocks.svg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom left;
   }
   .project-top-left {
-    height: 500px;
+    height: 439px;
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -126,14 +136,25 @@ const BodyContain = styled.div`
 
     > :nth-child(1) {
       font-family: "cisnero";
+      font-size: 52px;
+      background: linear-gradient(to right, rgb(255 255 255), rgb(70 86 157));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 5px 9px 11px #000000, 1px -1px 0px #151417;
     }
     > :nth-child(2) {
       font-size: 15px;
+      line-height: 1.2;
+      font-weight: normal;
+      color: gray;
     }
     > :nth-child(3) {
       font-size: 15px;
       line-height: initial;
       color: tan;
+      line-height: 1.2;
+      font-weight: normal;
+      list-style: katakana-iroha;
     }
   }
   .project-top-right {
@@ -142,7 +163,8 @@ const BodyContain = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 95px;
+    padding-top: 5px;
+    position: absolute;
   }
 
   .project-title {

@@ -1,0 +1,712 @@
+{
+  "Data Structures & Algorithms": [
+    {
+      "title": "Master Theorem 1",
+      "num": "0",
+      "desc": "In this tutorial, you will learn what master theorem is and how it is used for solving recurrence relations.The master method is a formula for solving recurrence relations of the form:",
+      "image": "https://media.istockphoto.com/photos/mountain-landscapes-picture-id108125029?b=1&k=20&m=108125029&s=170667a&w=0&h=L5kspxyBuqkMPMq9NP-0g3iTj7sCWjSXikPe_Kc4Ne8=",
+      "lesson": "(/images/my-svg/woman-using-phone-laughing.jpg).An algorithm is a single, specific way of performing a complex task efficiently and repeatedly.(/images/my-svg/woman-using-phone-laughing.jpg).The algorithm works by performing all of the smaller steps you need to do to perform the complex task, and is guaranteed to work (something that doesn't really work or only works sometimes would just be considered incomplete). To use a non-programming example, consider a manufacturing plant for a cookie company. The machines have pre-determined procedures for making chocolate chip cookies, oatmeal raisin abominations cookies, and sugar cookies. Now imagine that you're the guy whose job it is to switch the production lines to a new recipe whenever you change what kind of cookie you're making. It would be a huge pain if, every time you had to manually input the recipe, and give the machines instructions like measure 50kg of chocolate chips and move the flour bin at 0.1 m/s until it reaches the mixing bowl, and then rotate it at 0.25°/s until all of the flour is in the mixing bowl. It would take a ton of time, and even if you knew the recipes by heart it would still be way too easy to make a tiny mistake and cover the floor in raisins.Instead, the machine has preset routines. You push the sugar cookie button, and it follows the exact steps you gave it to make sugar cookies, every time. You don't have to worry about stupid mistakes, and it doesn't take you three hours to input the instructions.Algorithms are like those routines. Computer programs have thousands of tasks that are used over and over again. Things like sort this list of numbers, draw a triangle with these vertexes and this color,and save this file. People have worked out efficient, consistent ways of doing those tasks, and now everyone just uses those instead of doing it themselves every time. Some algorithms are designed for less common things, like finding special prime numbers: not things people do all the time, but things where coming up with a better way of doing them is still a big deal.In the end, algorithm is basically just a fancy term for method of doing something complicated/repetitive/irritating.', 'Things like 'sort this list of numbers"
+    },
+    {
+      "title": "Data Structure and Types",
+      "num": "1",
+      "desc": "Data structure is a storage that is used to store and organize data. It is a way of arranging data on a computer so that it can be accessed and updated efficiently.",
+      "image": "https://cdn.dribbble.com/userupload/11165238/file/original-973c3fb9fb487ff0d90155ecf644e096.png?resize=1504x1128",
+      "lesson": "Imagine you have different ways to organize your toys, like putting them in a line, stacking them, or arranging them in groups. In the world of computers, we also have special ways to organize information, and we call them 'data structures.' Let's explore some of them in a way that's easy to understand! Arrays are like a row of toy boxes where each box holds something similar, like all your cars in one box. Linked Lists are like a chain of toy cars, with each car holding hands with the next one. They're connected, making it easy to find the next toy. Stacks are like a stack of building blocks. You always add a new block on top, and when you want to take one, you grab the top one first. Queues are like waiting in line for a fun slide. The first one who came gets to slide down first, and then the next, forming a line. Trees are like a family tree where there's a grandparent at the top, parents below, and children branching out. Everyone is connected like a big tree. Graphs are like your friends as dots, and lines show how you're friends with each other. It's like a map of who knows who. Hash Tables are like having a treasure chest with a special key for each treasure. When you want a treasure, you use its key to find it quickly. So, data structures are like special ways of keeping our toys or information in order. Each way has its own magic that helps computers do things faster and smarter. Just like you organize your toys to play better, computers use data structures to work better!",
+      "quiz": [
+        {
+          "question": "What is an example of an array in real life?",
+          "options": [
+            "Row of books",
+            "Stack of pancakes",
+            "Circle of friends",
+            "Line for a slide"
+          ],
+          "answer": "Row of books"
+        },
+        {
+          "question": "How would you describe a linked list with toys?",
+          "options": [
+            "Chain of connected toys",
+            "Stack of building blocks",
+            "Row of toy boxes",
+            "Line for a slide"
+          ],
+          "answer": "Chain of connected toys"
+        },
+        {
+          "question": "What's a similarity between stacks and building blocks?",
+          "options": [
+            "Always add on the bottom",
+            "Always add on top",
+            "Always add in the middle",
+            "Always add at the end of the line"
+          ],
+          "answer": "Always add on top"
+        },
+        {
+          "question": "How can you compare a queue to a real-life scenario?",
+          "options": [
+            "Waiting in line for a slide",
+            "Stacking building blocks",
+            "Connecting toys in a chain",
+            "Arranging toys in a row"
+          ],
+          "answer": "Waiting in line for a slide"
+        },
+        {
+          "question": "What's the best comparison for trees in a family?",
+          "options": [
+            "Circle of friends",
+            "Stack of pancakes",
+            "Family tree with grandparents, parents, and children",
+            "Line for a slide"
+          ],
+          "answer": "Family tree with grandparents, parents, and children"
+        }
+      ]
+    },
+    {
+      "title": "Why learn DSA?",
+      "num": "2",
+      "desc": "In this article, we will learn why every programmer should learn data structures and algorithms with the help of examples.This article is for those who have just started learning algorithms and wondered how impactful it will be to boost their career/programming skills.",
+      "image": "https://cdn.dribbble.com/users/175710/screenshots/14477487/media/788097b5259e7afff26d4ba3e54d2538.png?resize=1600x1200&vertical=center",
+      "lesson": "Data Structures and Algorithms (DSA) are like building blocks for computer programs. Imagine you have a set of special tools to solve different kinds of puzzles. DSA is like having the right tools to solve problems in the most efficient way. It helps you organize and store information in a way that makes it easy for the computer to understand and process. Just like using the right keys to unlock different doors, DSA allows you to unlock solutions to various challenges in programming. So, by learning DSA, you're basically becoming a problem-solving superhero!",
+      "quiz": [
+        {
+          "question": "What does DSA stand for?",
+          "options": [
+            "Data Science and Analytics",
+            "Digital System Architecture",
+            "Data Structures and Algorithms",
+            "Dynamic Software Applications"
+          ],
+          "answer": "Data Structures and Algorithms"
+        },
+        {
+          "question": "Why is DSA important for coding interviews?",
+          "options": [
+            "It's not important",
+            "Developers like to show off",
+            "Many interviews include DSA questions",
+            "To make interviews longer"
+          ],
+          "answer": "Many interviews include DSA questions"
+        },
+        {
+          "question": "How does DSA contribute to efficient code?",
+          "options": [
+            "By making code longer",
+            "By optimizing resource usage",
+            "By adding more bugs",
+            "By using fancy colors"
+          ],
+          "answer": "By optimizing resource usage"
+        },
+        {
+          "question": "What does DSA provide a foundation for?",
+          "options": [
+            "Cooking recipes",
+            "Advanced topics in computer science",
+            "Building sandcastles",
+            "Learning to ride a bike"
+          ],
+          "answer": "Advanced topics in computer science"
+        },
+        {
+          "question": "Why is DSA like having special tools?",
+          "options": [
+            "To fix cars",
+            "To solve puzzles efficiently",
+            "To build houses",
+            "To play video games"
+          ],
+          "answer": "To solve puzzles efficiently"
+        }
+      ]
+    },
+    {
+      "title": "Asymptotic Analysis: Big-O Notation and More",
+      "num": "3",
+      "desc": "The efficiency of an algorithm depends on the amount of time, storage and other resources required to execute the algorithm. The efficiency is measured with the help of asymptotic notations.",
+      "image": "https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067__340.png",
+      "lesson": "Imagine you are on a quest to climb a mountain, and you want to find the fastest and most efficient path to reach the summit. Similarly, in the world of algorithms, we are often faced with challenges to find the most efficient way to solve problems. This is where asymptotic analysis and Big-O notation come into play.Asymptotic analysis helps us evaluate the performance of an algorithm as it approaches infinity. It's like looking at the behavior of our mountain-climbing path when the mountain becomes infinitely large. Big-O notation, a part of asymptotic analysis, simplifies this evaluation by providing an upper bound on the growth rate of an algorithm's runtime.Let's break it down further. Imagine you have different routes to climb the mountain, each with its own speed and level of difficulty. Asymptotic analysis allows us to compare these routes and determine which one is the most efficient in the long run.Big-O notation, represented as O(f(n)), expresses the upper limit of how an algorithm's runtime grows concerning its input size (n). It's like saying, 'No matter how big the mountain gets, our climbing path will never be worse than this.'For example, O(n) signifies linear growth, meaning the time taken increases linearly with the input size. On the other hand, O(log n) indicates logarithmic growth, where the time taken grows slowly even as the input size increases.Mastering asymptotic analysis and Big-O notation is like becoming a skilled mountain climber who can analyze various paths, choose the most efficient one, and conquer any mountainous challenge with optimal speed and resource usage.",
+      "quiz": [
+        {
+          "question": "What does asymptotic analysis help us evaluate?",
+          "options": [
+            "The height of the mountain",
+            "The efficiency of an algorithm",
+            "The number of climbing paths",
+            "The size of the climbing team"
+          ],
+          "answer": "The efficiency of an algorithm"
+        },
+        {
+          "question": "What does Big-O notation provide?",
+          "options": [
+            "A lower bound on growth rate",
+            "An upper bound on growth rate",
+            "Exact runtime for algorithms",
+            "Number of climbing steps"
+          ],
+          "answer": "An upper bound on growth rate"
+        },
+        {
+          "question": "What does O(n) represent in Big-O notation?",
+          "options": [
+            "Linear growth",
+            "Exponential growth",
+            "Constant growth",
+            "Logarithmic growth"
+          ],
+          "answer": "Linear growth"
+        },
+        {
+          "question": "How is O(log n) interpreted?",
+          "options": [
+            "Exponential growth",
+            "Quadratic growth",
+            "Logarithmic growth",
+            "Cubic growth"
+          ],
+          "answer": "Logarithmic growth"
+        },
+        {
+          "question": "Why is mastering asymptotic analysis and Big-O notation beneficial?",
+          "options": [
+            "To become a faster mountain climber",
+            "To evaluate the size of the mountain",
+            "To analyze algorithm efficiency",
+            "To count climbing steps"
+          ],
+          "answer": "To analyze algorithm efficiency"
+        }
+      ]
+    },
+    {
+      "title": "Master Theorem",
+      "num": "4",
+      "desc": "In this tutorial, you will learn what master theorem is and how it is used for solving recurrence relations. The master method is a formula for solving recurrence relations of the form:",
+      "image": "https://media.istockphoto.com/photos/mountain-landscapes-picture-id108125029?b=1&k=20&m=108125029&s=170667a&w=0&h=L5kspxyBuqkMPMq9NP-0g3iTj7sCWjSXikPe_Kc4Ne8=",
+      "lesson": "The Master Theorem is like a magical spellbook for mathematicians and computer scientists. Imagine you have a magical formula that helps you solve tricky puzzles that keep repeating themselves, just like climbing the same mountain over and over. This is exactly what the Master Theorem does. It's a special set of rules that helps us solve problems that can be described with a specific formula.\n\nPicture it like this: You're on a quest to climb a mountain, and every time you take a step, you find yourself at the same spot again. The Master Theorem is your secret code to figure out how many steps you'll need to reach the top without actually taking all those steps.\n\nThe formula it solves looks like this: T(n) = a * T(n/b) + f(n), where 'a' is the number of subproblems, 'b' is the factor by which the problem size is reduced, and 'f(n)' is the cost of dividing the problem and combining the solutions. The Master Theorem tells you exactly how fast this problem will be solved without having to do all the climbing yourself.\n\nSo, in the world of magical algorithms, the Master Theorem is your trusty spellbook to conquer repeating challenges efficiently."
+    },
+    {
+      "title": "Divide and Conquer Algorithm",
+      "num": "5",
+      "desc": "The divide and conquer algorithm's operation will be explained in this lesson. To tackle a recursive problem, we will contrast the divide and conquer strategy with various methods.",
+      "image": "",
+      "lesson": "Welcome to the world of the Divide and Conquer Algorithm! In this lesson, we'll unravel the mysteries of how this powerful algorithm works. Imagine you're faced with a big problem, and it seems too complicated to solve in one go. That's where the Divide and Conquer Algorithm comes to your rescue.\n\nPicture this: You have a massive puzzle, and instead of trying to solve it all at once, you break it down into smaller, more manageable pieces. You conquer each small piece separately, and then you combine the solutions to conquer the entire puzzle. It's like breaking down a big adventure into smaller quests and tackling each one to eventually complete the grand journey.\n\nThe Divide and Conquer strategy is a bit like teamwork. Instead of facing the whole problem alone, you divide it among your team members, conquer your individual parts, and then bring everything together for a victorious finish.\n\nIn the realm of algorithms, Divide and Conquer is a hero that helps us tackle big problems efficiently. So, get ready to dive into the magic of breaking down challenges, conquering each part, and emerging victorious with the Divide and Conquer Algorithm.",
+      "quiz": [
+        {
+          "question": "What is the main idea behind the Divide and Conquer Algorithm?",
+          "options": [
+            "Solving problems in one go",
+            "Breaking down problems into smaller parts",
+            "Conquering challenges individually",
+            "Never dividing tasks"
+          ],
+          "answer": "Breaking down problems into smaller parts"
+        },
+        {
+          "question": "How can you compare the Divide and Conquer strategy to teamwork?",
+          "options": [
+            "It's not related to teamwork",
+            "Team members face the whole problem together",
+            "Divide tasks, conquer individually, and combine solutions",
+            "Teamwork is not efficient"
+          ],
+          "answer": "Divide tasks, conquer individually, and combine solutions"
+        },
+        {
+          "question": "What kind of problems is the Divide and Conquer Algorithm good at solving?",
+          "options": [
+            "Only small problems",
+            "Big and complicated problems",
+            "Only teamwork-related problems",
+            "None of the above"
+          ],
+          "answer": "Big and complicated problems"
+        },
+        {
+          "question": "In the analogy, what is the 'big adventure' compared to?",
+          "options": [
+            "The entire puzzle",
+            "Smaller quests",
+            "Divide and Conquer Algorithm",
+            "Teamwork"
+          ],
+          "answer": "The entire puzzle"
+        },
+        {
+          "question": "What's the magic of the Divide and Conquer Algorithm?",
+          "options": [
+            "Solving problems in one go",
+            "Breaking down challenges",
+            "Facing big problems alone",
+            "Conquering problems without dividing"
+          ],
+          "answer": "Breaking down challenges"
+        }
+      ]
+    },
+    {
+      "title": "Stack Data Structure",
+      "num": "6",
+      "desc": "You will learn about the stack data structure and how it is implemented in Python, Java, and C/C++ in this course.Stacks are linear data structures that adhere to the Last In First Out rule (LIFO). This implies that the last piece to be added to the stack gets eliminated first.",
+      "image": "",
+      "lesson": "Welcome to the world of the Stack Data Structure! In this lesson, we'll explore the concept of stacks and understand how they play a crucial role in the realm of computer science and programming.\n\nImagine a stack of books on your desk. You add new books to the top of the stack, and when you need a book, you take it from the top. This Last In, First Out (LIFO) principle is the essence of a stack. In programming, a stack is a data structure that follows this principle, where the last element added is the first one to be removed.\n\nLet's break it down further. Think of a stack as a pile of plates in a cafeteria. You add a plate to the top of the stack, and when you want to take a plate, you always take the one from the top. This simple yet powerful structure is used in various applications, from managing function calls in a program to navigating web pages in your browser history.\n\nIn this lesson, we'll delve into the operations of a stack, explore how it's implemented in programming languages like Python, Java, and C/C++, and understand why it's a fundamental tool for efficient data management.",
+      "quiz": [
+        {
+          "question": "What principle does a stack follow?",
+          "options": [
+            "First In, First Out (FIFO)",
+            "Last In, First Out (LIFO)",
+            "Random order",
+            "Alphabetical order"
+          ],
+          "answer": "Last In, First Out (LIFO)"
+        },
+        {
+          "question": "How is a stack similar to a pile of plates?",
+          "options": [
+            "Plates are randomly taken",
+            "Taking plates from the bottom",
+            "Adding plates to the bottom",
+            "Taking plates from the top"
+          ],
+          "answer": "Taking plates from the top"
+        },
+        {
+          "question": "What kind of data structure is a stack?",
+          "options": [
+            "First In, First Out (FIFO)",
+            "Priority Queue",
+            "Last In, First Out (LIFO)",
+            "Linked List"
+          ],
+          "answer": "Last In, First Out (LIFO)"
+        },
+        {
+          "question": "In programming, what is a common use of a stack?",
+          "options": [
+            "Managing function calls",
+            "Sorting elements",
+            "Storing data randomly",
+            "Executing loops"
+          ],
+          "answer": "Managing function calls"
+        },
+        {
+          "question": "Why is the Last In, First Out (LIFO) principle important in a stack?",
+          "options": [
+            "It's not important",
+            "Allows efficient data management",
+            "Causes confusion",
+            "Slows down operations"
+          ],
+          "answer": "Allows efficient data management"
+        }
+      ]
+    },
+    {
+      "title": "Queue Data Structure",
+      "num": "7",
+      "desc": "You will learn what a queue is in this tutorial. Additionally, queue implementations are available in Python, Java, C, and C++.In programming, a queue is a useful data structure. It is comparable to the line for tickets outside a movie theater, where the person who joins the line first receives the first ticket.",
+      "image": "/images/my-svg/falling-rocks.svg",
+      "lesson": "Welcome to the fascinating world of the Queue Data Structure! In this lesson, we'll explore the concept of queues, a fundamental data structure in computer science and programming.\n\nThink of a queue as a line of people waiting for a bus. The person who arrives first is the first to board the bus. This First In, First Out (FIFO) principle defines a queue. In programming, a queue is a collection of elements where the first element added is the first one to be removed.\n\nImagine waiting in line at your favorite ice cream shop. The person who arrives first gets served first. This orderly approach is similar to how a queue operates in the digital realm. Queues play a crucial role in various applications, from managing tasks in an operating system to handling print jobs in a printer queue.\n\nIn this lesson, we'll dive into the operations of a queue, explore how it's implemented in programming languages like Python, Java, C, and C++, and understand its significance in creating efficient and organized algorithms.",
+
+      "quiz": [
+        {
+          "question": "What principle does a queue follow?",
+          "options": [
+            "Last In, First Out (LIFO)",
+            "First In, First Out (FIFO)",
+            "Random order",
+            "Alphabetical order"
+          ],
+          "answer": "First In, First Out (FIFO)"
+        },
+        {
+          "question": "How is a queue similar to waiting in line for an ice cream shop?",
+          "options": [
+            "Last person served first",
+            "Random order of service",
+            "Serving based on age",
+            "First person served first"
+          ],
+          "answer": "First person served first"
+        },
+        {
+          "question": "In programming, what is a common use of a queue?",
+          "options": [
+            "Managing function calls",
+            "Sorting elements",
+            "Handling print jobs",
+            "Storing data randomly"
+          ],
+          "answer": "Handling print jobs"
+        },
+        {
+          "question": "Why is the First In, First Out (FIFO) principle important in a queue?",
+          "options": [
+            "It's not important",
+            "Allows efficient task management",
+            "Causes delays",
+            "Randomizes task execution"
+          ],
+          "answer": "Allows efficient task management"
+        },
+        {
+          "question": "How does a queue contribute to creating organized algorithms?",
+          "options": [
+            "It doesn't contribute",
+            "Causes algorithmic chaos",
+            "Ensures efficient algorithm execution",
+            "Slows down algorithmic processes"
+          ],
+          "answer": "Ensures efficient algorithm execution"
+        }
+      ]
+    },
+    {
+      "title": "Types of Queues",
+      "num": "8",
+      "desc": "This tutorial will teach you about different types of queues and illustrate them.In programming, a queue is a useful data structure. It's similar to the ticket line outside a movie theater, where the first person to enter the line gets the first ticket.",
+      "lesson": "Let's embark on a journey to explore the fascinating world of different types of queues! Queues, a fundamental data structure, come in various forms, each designed for specific use cases. In this lesson, we'll delve into the diverse types of queues and understand their unique characteristics.\n\n1. **Simple Queue:** The basic form of a queue, following the First In, First Out (FIFO) principle. Elements enter from one end and exit from the other in a linear fashion.\n\n2. **Priority Queue:** Imagine a special queue where each element has a priority, and elements with higher priorities are served first. Priority queues play a crucial role in scenarios where certain tasks take precedence.\n\n3. **Circular Queue:** In a circular queue, the last element is connected to the first, forming a circle. This design eliminates the limitation of a fixed-size queue and allows efficient use of available space.\n\n4. **Double-Ended Queue (Deque):** Unlike a standard queue, a deque supports insertion and deletion at both ends. It provides flexibility in managing elements from both the front and the rear.\n\nBy understanding these types of queues, you'll be equipped with valuable knowledge to apply the most suitable queue variant in different programming scenarios.",
+      "image": "",
+      "quiz": [
+        {
+          "question": "What principle does a simple queue follow?",
+          "options": [
+            "Random order",
+            "Last In, First Out (LIFO)",
+            "First In, First Out (FIFO)",
+            "Alphabetical order"
+          ],
+          "answer": "First In, First Out (FIFO)"
+        },
+        {
+          "question": "What distinguishes a priority queue from a simple queue?",
+          "options": [
+            "It doesn't have priorities",
+            "Serves elements randomly",
+            "Elements have different priorities",
+            "Follows Last In, First Out (LIFO)"
+          ],
+          "answer": "Elements have different priorities"
+        },
+        {
+          "question": "What is a characteristic feature of a circular queue?",
+          "options": [
+            "Elements never exit",
+            "Limited to a fixed size",
+            "Last element connected to the first",
+            "Follows Last In, First Out (LIFO)"
+          ],
+          "answer": "Last element connected to the first"
+        },
+        {
+          "question": "How does a double-ended queue (deque) differ from a standard queue?",
+          "options": [
+            "Only supports insertion at the front",
+            "Supports insertion and deletion at both ends",
+            "Follows Last In, First Out (LIFO)",
+            "Fixed size"
+          ],
+          "answer": "Supports insertion and deletion at both ends"
+        },
+        {
+          "question": "Why is understanding different types of queues important in programming?",
+          "options": [
+            "It's not important",
+            "Adds unnecessary complexity",
+            "Enables better problem-solving",
+            "Slows down the programming process"
+          ],
+          "answer": "Enables better problem-solving"
+        }
+      ]
+    },
+    {
+      "title": "Circular Queue Data Structure",
+      "num": "9",
+      "image": "",
+      "desc": "This tutorial will teach you what a circular queue is. There are also circular queue implementations in C, C++, Java, and Python.",
+      "lesson": "Welcome to the captivating world of the Circular Queue data structure! In this lesson, we'll unravel the mysteries behind the Circular Queue and discover its unique properties and applications.\n\nA Circular Queue is an extension of the basic queue concept with an interesting twist. Unlike a standard queue, the last element in a Circular Queue is connected to the first, forming a circular structure. This design offers advantages such as efficient use of available space and the elimination of the limitation imposed by a fixed-size queue.\n\nKey features of a Circular Queue:\n1. **Circular Structure:** The last element is connected to the first, creating a circular arrangement of elements.\n2. **Efficient Space Utilization:** The circular design prevents wasted space, making it suitable for scenarios where space efficiency is crucial.\n3. **Flexibility:** As elements continuously circulate, a Circular Queue provides flexibility in managing and accessing elements.\n\nThroughout this lesson, we'll explore real-world analogies, engaging examples, and practical use cases to solidify your understanding of Circular Queues. Get ready to dive into the fascinating realm of circularity and efficiency!",
+
+      "quiz": [
+        {
+          "question": "What distinguishes a Circular Queue from a standard queue?",
+          "options": [
+            "Elements never exit",
+            "Limited to a fixed size",
+            "Last element connected to the first",
+            "Follows Last In, First Out (LIFO)"
+          ],
+          "answer": "Last element connected to the first"
+        },
+        {
+          "question": "What advantage does a Circular Queue offer in terms of space utilization?",
+          "options": [
+            "Wastes space",
+            "Requires extra space",
+            "Provides flexibility",
+            "Prevents wasted space"
+          ],
+          "answer": "Prevents wasted space"
+        },
+        {
+          "question": "In a Circular Queue, what is the arrangement of elements?",
+          "options": [
+            "Random order",
+            "Linear structure",
+            "Last element connected to the first",
+            "Follows Last In, First Out (LIFO)"
+          ],
+          "answer": "Last element connected to the first"
+        },
+        {
+          "question": "Why is a Circular Queue considered flexible in managing elements?",
+          "options": [
+            "Has a fixed size",
+            "Cannot manage elements efficiently",
+            "Follows Last In, First Out (LIFO)",
+            "Allows efficient circulation of elements"
+          ],
+          "answer": "Allows efficient circulation of elements"
+        },
+        {
+          "question": "In what scenarios is the use of Circular Queues beneficial?",
+          "options": [
+            "Never beneficial",
+            "When space efficiency is crucial",
+            "Only in specific programming languages",
+            "Slows down program execution"
+          ],
+          "answer": "When space efficiency is crucial"
+        }
+      ]
+    },
+    {
+      "title": "Priority Queue",
+      "num": "10",
+      "image": "",
+      "desc": "This tutorial will teach you what a priority queue is. You will also learn about its Python, Java, C, and C++ implementations.A priority queue is a type of queue in which each element has a different priority value. Furthermore, elements are served in the order of their priority. That is, the elements with the highest priority are served first.",
+      "lesson": "Embark on an exciting journey into the realm of Priority Queues! In this lesson, we'll delve into the fascinating concept of a Priority Queue, a data structure that adds an extra layer of sophistication to the traditional queue model.\n\nA Priority Queue differs from a standard queue by assigning each element a priority value. Elements are served based on their priority, with higher-priority elements taking precedence. This makes Priority Queues an invaluable tool in scenarios where the order of processing is determined by priority levels.\n\nKey features of a Priority Queue:\n1. **Priority-Based Ordering:** Elements are processed based on their assigned priority values.\n2. **Dynamic Priority Levels:** Priority levels can be adjusted dynamically to reflect changing requirements.\n3. **Versatile Applications:** Priority Queues find applications in various domains, from task scheduling to network routing.\n\nThroughout this lesson, we'll explore real-world examples, practical use cases, and the inner workings of Priority Queues. Get ready to elevate your understanding of queues to new heights with the Priority Queue!",
+
+      "quiz": [
+        {
+          "question": "What sets a Priority Queue apart from a standard queue?",
+          "options": [
+            "Random ordering",
+            "Priority-based ordering",
+            "First In, First Out (FIFO)",
+            "Fixed-size structure"
+          ],
+          "answer": "Priority-based ordering"
+        },
+        {
+          "question": "How are elements in a Priority Queue processed?",
+          "options": [
+            "Based on their insertion order",
+            "Randomly",
+            "Based on their priority values",
+            "In reverse order"
+          ],
+          "answer": "Based on their priority values"
+        },
+        {
+          "question": "What makes Priority Queues versatile in various applications?",
+          "options": [
+            "Fixed priority levels",
+            "Dynamic priority levels",
+            "First In, First Out (FIFO)",
+            "Limited use cases"
+          ],
+          "answer": "Dynamic priority levels"
+        },
+        {
+          "question": "In a Priority Queue, which elements take precedence?",
+          "options": [
+            "Low-priority elements",
+            "Elements in random order",
+            "High-priority elements",
+            "Last In, First Out (LIFO)"
+          ],
+          "answer": "High-priority elements"
+        },
+        {
+          "question": "Name a domain where Priority Queues find practical applications.",
+          "options": [
+            "Entertainment",
+            "Social media",
+            "Task scheduling",
+            "Weather forecasting"
+          ],
+          "answer": "Task scheduling"
+        }
+      ]
+    },
+    {
+      "title": "Deque Data Structure",
+      "num": "11",
+      "desc": "This tutorial will teach you what a double ended queue (deque) is. There are also working examples of various operations on a deque in C, C++, Java, and Python.",
+      "lesson": "Welcome to the world of Deque, a versatile data structure that combines the benefits of both stacks and queues! In this lesson, we'll unravel the mysteries of Deque (Double-Ended Queue) and understand how it provides a flexible and efficient way to manage data.\n\nKey Characteristics of a Deque:\n1. **Double Ends:** Deque allows elements to be inserted and removed from both ends, offering enhanced flexibility.\n2. **Dynamic Size:** Unlike fixed-size structures, a Deque can dynamically adjust its size to accommodate varying amounts of data.\n3. **Random Access:** Elements in a Deque can be accessed randomly, providing quick access to any position.\n\nWe'll explore the implementation of Deque in popular programming languages such as C, C++, Java, and Python. Additionally, practical examples will demonstrate how Deque can be applied to solve real-world problems.\n\nGet ready to dive into the Deque data structure, where the possibilities are as endless as the data it holds!",
+      "image": "",
+      "quiz": [
+        {
+          "question": "What does 'Deque' stand for?",
+          "options": [
+            "Double-Ended Queue",
+            "Dynamic Queue",
+            "Double-Ended Stack",
+            "Data Queue"
+          ],
+          "answer": "Double-Ended Queue"
+        },
+        {
+          "question": "What is a key characteristic of a Deque?",
+          "options": [
+            "Fixed Size",
+            "Single End",
+            "Double Ends",
+            "Sequential Access"
+          ],
+          "answer": "Double Ends"
+        },
+        {
+          "question": "How does a Deque differ from a standard queue?",
+          "options": [
+            "Allows only rear insertion",
+            "Allows both front and rear insertion",
+            "Has a fixed size",
+            "Processes elements randomly"
+          ],
+          "answer": "Allows both front and rear insertion"
+        },
+        {
+          "question": "Can elements in a Deque be accessed randomly?",
+          "options": [
+            "Yes, always",
+            "No, never",
+            "Only from the front",
+            "Only from the rear"
+          ],
+          "answer": "Yes, always"
+        },
+        {
+          "question": "In which programming languages is Deque commonly implemented?",
+          "options": ["JavaScript", "Python", "C++", "All of the above"],
+          "answer": "All of the above"
+        }
+      ]
+    }
+  ],
+  "Java": [
+    {
+      "title": "WHAT IS AN AlG0RITHM?",
+      "num": "0",
+      "desc": "In computer programming terms, an algorithm is a set of well-defined instructions to solve a particular problem. It takes a set of input(s) and produces the desired output.o",
+      "image": "https://cdn.dribbble.com/userupload/11325790/file/original-8157e394170422bbb0927202cc45f001.png?resize=2048x1537",
+      "lesson": "(https://cdn.dribbble.com/userupload/11325790/file/original-8157e394170422bbb0927202cc45f001.png?resize=2048x1537).An algorithm is a single, specific way of performing a complex task efficiently and repeatedly.(/images/my-svg/woman-using-phone-laughing.jpg).The algorithm works by performing all of the smaller steps you need to do to perform the complex task, and is guaranteed to work (something that doesn't really work or only works sometimes would just be considered incomplete). To use a non-programming example, consider a manufacturing plant for a cookie company. The machines have pre-determined procedures for making chocolate chip cookies, oatmeal raisin abominations cookies, and sugar cookies. Now imagine that you're the guy whose job it is to switch the production lines to a new recipe whenever you change what kind of cookie you're making. It would be a huge pain if, every time you had to manually input the recipe, and give the machines instructions like measure 50kg of chocolate chips and move the flour bin at 0.1 m/s until it reaches the mixing bowl, and then rotate it at 0.25°/s until all of the flour is in the mixing bowl. It would take a ton of time, and even if you knew the recipes by heart it would still be way too easy to make a tiny mistake and cover the floor in raisins.Instead, the machine has preset routines. You push the sugar cookie button, and it follows the exact steps you gave it to make sugar cookies, every time. You don't have to worry about stupid mistakes, and it doesn't take you three hours to input the instructions.Algorithms are like those routines. Computer programs have thousands of tasks that are used over and over again. Things like sort this list of numbers, draw a triangle with these vertexes and this color,and save this file. People have worked out efficient, consistent ways of doing those tasks, and now everyone just uses those instead of doing it themselves every time. Some algorithms are designed for less common things, like finding special prime numbers: not things people do all the time, but things where coming up with a better way of doing them is still a big deal.In the end, algorithm is basically just a fancy term for method of doing something complicated/repetitive/irritating.', 'Things like 'sort this list of numbers",
+      "quiz": [
+        {
+          "question": "What is an algorithm?",
+          "options": [
+            "A set of well-defined instructions to solve a particular problem.",
+            "A recipe for making cookies.",
+            "A random sequence of steps.",
+            "A complex mathematical formula."
+          ],
+          "answer": "A set of well-defined instructions to solve a particular problem."
+        },
+        {
+          "question": "How do algorithms work in computer programming?",
+          "options": [
+            "By performing random tasks.",
+            "By executing predefined procedures efficiently and repeatedly.",
+            "By solving complex mathematical equations.",
+            "By generating random output."
+          ],
+          "answer": "By executing predefined procedures efficiently and repeatedly."
+        },
+        {
+          "question": "Why are algorithms compared to preset routines in a machine?",
+          "options": [
+            "To emphasize their randomness.",
+            "To highlight their complexity.",
+            "To showcase their efficiency and consistency.",
+            "To showcase their simplicity."
+          ],
+          "answer": "To showcase their efficiency and consistency."
+        },
+        {
+          "question": "What is the significance of algorithms in computer programs?",
+          "options": [
+            "They add unnecessary complexity.",
+            "They are only used for uncommon tasks.",
+            "They provide efficient solutions to frequently used tasks.",
+            "They are irrelevant in modern programming."
+          ],
+          "answer": "They provide efficient solutions to frequently used tasks."
+        }
+      ]
+    },
+
+    {
+      "title": "Asymptotic Analysis: Big-O Notation and More",
+      "num": "3",
+      "desc": "The efficiency of an algorithm depends on the amount of time, storage and other resources required to execute the algorithm. The efficiency is measured with the help of asymptotic notations.",
+      "image": "https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067__340.png"
+    },
+    {
+      "title": "Master Theorem",
+      "num": "4",
+      "desc": "In this tutorial, you will learn what master theorem is and how it is used for solving recurrence relations.The master method is a formula for solving recurrence relations of the form:",
+      "image": "https://media.istockphoto.com/photos/mountain-landscapes-picture-id108125029?b=1&k=20&m=108125029&s=170667a&w=0&h=L5kspxyBuqkMPMq9NP-0g3iTj7sCWjSXikPe_Kc4Ne8="
+    },
+    {
+      "title": "Divide and Conquer Algorithm",
+      "num": "5",
+      "desc": "The divide and conquer algorithm's operation will be explained in this lesson. To tackle a recursive problem, we will contrast the divide and conquer strategy with various methods.",
+      "image": ""
+    },
+    {
+      "title": "Stack Data Structure",
+      "num": "6",
+      "desc": "You will learn about the stack data structure and how it is implemented in Python, Java, and C/C++ in this course.Stacks are linear data structures that adhere to the Last In First Out rule (LIFO). This implies that the last piece to be added to the stack gets eliminated first.",
+      "image": ""
+    },
+    {
+      "title": "Queue Data Structure",
+      "num": "7",
+      "desc": "You will learn what a queue is in this tutorial. Additionally, queue implementations are available in Python, Java, C, and C++.In programming, a queue is a useful data structure. It is comparable to the line for tickets outside a movie theater, where the person who joins the line first receives the first ticket.",
+      "image": ""
+    },
+    {
+      "title": "Types of Queues",
+      "num": "8",
+      "desc": "This tutorial will teach you about different types of queues and illustrate them.In programming, a queue is a useful data structure. It's similar to the ticket line outside a movie theater, where the first person to enter the line gets the first ticket.",
+      "image": ""
+    },
+    {
+      "title": "Circular Queue Data Structure",
+      "num": "9",
+      "desc": "This tutorial will teach you what a circular queue is. There are also circular queue implementations in C, C++, Java, and Python.",
+      "image": ""
+    },
+    {
+      "title": "Priority Queue",
+      "num": "10",
+      "desc": "This tutorial will teach you what a priority queue is. You will also learn about its Python, Java, C, and C++ implementations.A priority queue is a type of queue in which each element has a different priority value. Furthermore, elements are served in the order of their priority. That is, the elements with the highest priority are served first.",
+      "image": ""
+    },
+    {
+      "title": "Deque Data Structure",
+      "num": "11",
+      "desc": "This tutorial will teach you what a double ended queue (deque) is. There are also working examples of various operations on a deque in C, C++, Java, and Python.",
+      "image": ""
+    }
+  ]
+}

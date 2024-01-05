@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 // import ProgressBar from "./ProgressBar";
 import { useState } from "react";
+import ProgressBar from "../buttons/ProgressBar";
 function MobileProjectCard(props) {
   const [progressValue, setProgressValue] = useState(false);
   const [isStarted, setIsStarted] = useState(false);
@@ -9,8 +10,16 @@ function MobileProjectCard(props) {
   const [titleClicked, setTitleClicked] = useState("");
 
   // give dummy data if no data found
-  // SHOW THE MODAL
+  // SHOW the number of sentences
 
+  let lessonLength;
+
+  if (props.size) {
+    lessonLength = props.size.split(".").length;
+  } else {
+    // Handle the case when props.size is undefined
+    lessonLength = 0; // or any default value you prefer
+  }
   // WEHEN START IS CLICKED ON THE CARD
   const handleStartClick = () => {
     setIsStarted(true);
@@ -20,6 +29,7 @@ function MobileProjectCard(props) {
 
     // SEND A MESSAGE UP THAT CARD START WAS CLICKED
     props.click();
+    setProgressValue(progressValue + 10);
     // Simulate progrepross increase over time
 
     // this should be ONNN
@@ -45,21 +55,19 @@ function MobileProjectCard(props) {
 
         {!props.buttonOff && (
           <div className="start-btn" onClick={handleStartClick}>
-            {progress > 0
-              ? "IN-PROGRESS"
-              : !progressValue && titleClicked == props.title
-              ? "Not Complete"
-              : "START"}
+            {props.updateProgress > 0 ? "in-progress." : "START"}
           </div>
         )}
 
-        {/* <ProgressBar
-          progressValue={progressValue}
+        <ProgressBar
+          progressValue={props.updateProgress}
           onProgressChange={handleProgressChange}
-        /> */}
+          size={lessonLength}
+        />
+
         <div className="start-and-end">
-          <div className="start">[{progress}]</div>
-          <div className="start">|100|</div>
+          <div className="start">[{props.updateProgress ?? "no data"}]</div>
+          <div className="start">|{lessonLength}|</div>
         </div>
       </Content>
     </Card>

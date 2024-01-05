@@ -14,7 +14,7 @@ const Ide = (props) => {
 
   const sample = [props.text ?? "nothing to see here"];
   const message = sample[0].toString();
-  const text = message.split(".");
+  const text = message.split(/\.(?![^()]*\))/);
 
   const [blinkClass, setBlinkClass] = useState("button-blink");
   const { onButtonClick, parentCardClicked } = props;
@@ -154,6 +154,7 @@ const Ide = (props) => {
 
     setIsTyping(true);
     setLine((prevLine) => prevLine + 1);
+    props.updateLineParent(line);
     const currentText = text[currentIndex];
     if (currentText !== undefined) {
       setAlreadyTypedText(
@@ -193,11 +194,19 @@ const Ide = (props) => {
       currentQuestionIndex >= 0 &&
       currentQuestionIndex < questions.length
     ) {
-      console.log("the index is" + currentQuestionIndex);
       currentText = questions[currentQuestionIndex].question;
       setAllQuestionsTyped(false);
     } else {
       currentText = text[line];
+
+      if (currentText !== undefined) {
+        if (currentText.trimStart().startsWith("(")) {
+          currentText = "Refer to the following image!";
+        }
+      } else {
+        // Handle the case when currentText is undefined
+        currentText = "pick a subject to start :)";
+      }
     }
 
     if (!currentText || !isTyping) return;
@@ -246,29 +255,31 @@ const Ide = (props) => {
         </div>
         {!quiz ? (
           <div>
-            {displayedItems.map((item, index) =>
-              item.trimStart().startsWith("/") ? (
-                <div
-                  className="ide-image"
-                  style={{
-                    backgroundImage: `url("${item + "." + text[index + 1]}")`,
-                  }}
-                  placeholder={item}
-                  key={index}
-                />
-              ) : (
-                <div className="old" key={index}>
-                  {item.length < 4 ? "//Refer to the image above" : item}
+            {displayedItems.map((item, index) => {
+              const match = item.match(/\(([^)]+)\)/);
+              const url = match ? match[1] : null;
+
+              return (
+                <div key={index} className={url ? "" : "old"}>
+                  {url ? (
+                    <div
+                      className="ide-image"
+                      style={{
+                        backgroundImage: `url("${
+                          url.includes("/")
+                            ? url
+                            : `"/images/my-svg/falling-rocks.svg")`
+                        }")`,
+                      }}
+                      placeholder={url}
+                    />
+                  ) : (
+                    <>{item.length < 4 ? "//Refer to the image above" : item}</>
+                  )}
                 </div>
-              )
-            )}
-            <div className="typing">
-              {displayText.length < 4
-                ? "refer to this image"
-                : displayText.trimStart().startsWith("/")
-                ? "refer to the following image"
-                : displayText}
-            </div>
+              );
+            })}
+            <div className="typing">{displayText}</div>
           </div>
         ) : (
           // QUESYIONS TYPER
@@ -320,8 +331,8 @@ const Ide = (props) => {
         {!quiz ? (
           <div className="flex-gap-10">
             {!isTyping && (
-              <div className="next-ide-btn" onClick={handleClick}>
-                <span className={blinkClass}>{ideButton}</span>
+              <div className={blinkClass} onClick={handleClick}>
+                <span>{ideButton}</span>
               </div>
             )}
             <div className="next-ide-btn">
@@ -385,15 +396,12 @@ const Wrapper = styled.div`
   position: relative;
 
   @media screen and (max-width: 768px) {
-    height: 339px;
+    height: 394px;
     width: 100%;
-    padding: 19px 20px;
     font-size: 16px;
-    margin: 0px;
-    align-self: center;
-    border-radius: 112px;
-    border: 1px #000000 solid;
-    border-bottom: #41403d 1px solid;
+    border: #191918c9 1px solid;
+    transform: scale(0.93);
+    border-radius: 16px;
   }
   .flex-gap-10 {
     display: flex;
@@ -401,6 +409,10 @@ const Wrapper = styled.div`
   }
   #console-prompt {
     padding-bottom: 20px;
+    @media screen and (max-width: 768px) {
+      padding-bottom: 10px;
+      text-align: center;
+    }
   }
   .background-ide {
     position: absolute;
@@ -410,6 +422,11 @@ const Wrapper = styled.div`
     height: 100%;
     background-color: #000;
     border-radius: 24px;
+    @media screen and (max-width: 768px) {
+      /* background: url(/images/my-svg/falling-rocks.svg); */
+      /* background-size: cover; */
+      /* filter: hue-rotate(137deg); */
+    }
   }
   .ide-buttons-right {
     display: flex;
@@ -432,11 +449,14 @@ const Wrapper = styled.div`
   }
   .lesson {
     flex: 1;
-    margin-bottom: 58px;
+    margin-bottom: 38px;
     padding: 5px 2px;
     border-radius: 10px;
     overflow: scroll;
     z-index: 5;
+    @media screen and (max-width: 768px) {
+      margin-bottom: 42px;
+    }
   }
   .typing {
     background-color: black;
@@ -540,14 +560,21 @@ const Wrapper = styled.div`
     margin: 10px 0px;
   }
   .ide-image {
-    background-image: url("/images/my-svg/woman-using-phone-laughing.jpg");
+    background-image: url("/images/my-svg/falling-rocks.svg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center center;
     width: 100%;
     height: 399px;
     margin: 20px 0px;
     background-color: black;
     border-radius: 9px;
+
+    @media screen and (max-width: 1000px) {
+      height: 244px;
+      background-position: center center;
+      border: 1px solid #292929;
+    }
   }
   .old {
     padding: 33px 16px;
@@ -557,6 +584,12 @@ const Wrapper = styled.div`
     text-transform: lowercase;
     font-size: medium;
     z-index: 5;
+    @media screen and (max-width: 768px) {
+      color: #4f4a4a;
+      padding: 7px 5px;
+      line-height: 1.2;
+      text-align: justify;
+    }
   }
   .button-no-blink {
     background-color: #000;

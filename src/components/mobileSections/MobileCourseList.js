@@ -1,36 +1,49 @@
 import React from "react";
 import styled from "styled-components";
-import topicData from "../../data/projects.json";
-import { useState } from "react";
+import topicData from "../../data/courses.json";
+import { useState, useEffect } from "react";
 import BlackButton from "../../components/buttons/BlackButton";
 import MobileProjectCard from "./MobileProjectCard";
 function MobileCourseList(props) {
   // data is: print.title,print.num,print.desc
   const [activeCard, setActiveCard] = useState("");
+  const [activeCardNum, setActiveCardNum] = useState(0);
 
-  const data = topicData.map((record) => {
+  const data = topicData[props.subject ?? "Java"].map((record) => {
     return record;
   });
-  const [visibleProjects, setVisibleProjects] = useState(5);
+  const [visibleProjects, setVisibleProjects] = useState(4);
   const [clickedProjects, setClickedProjects] = useState([]);
+  console.log(visibleProjects + " " + data.length);
+  useEffect(() => {
+    // Run the function when the relevant prop from the parent changes
+    setClickedProjects((prevClickedProjects) => {
+      const existingIndex = prevClickedProjects.findIndex(
+        (clicked) => clicked.title === activeCard
+      );
 
+      if (existingIndex !== -1) {
+        // If the card is already in the array, update its click count
+        const updatedClickedProjects = [...prevClickedProjects];
+        updatedClickedProjects[existingIndex] = {
+          ...updatedClickedProjects[existingIndex],
+          count: updatedClickedProjects[existingIndex].count + 1,
+        };
+        return updatedClickedProjects;
+      } else {
+        // If the card is not in the array, add it with a click count of 1
+        return [
+          ...prevClickedProjects,
+          { num: activeCardNum, title: activeCard, count: 1 },
+        ];
+      }
+    });
+  }, [props.lineChanged, activeCard]); // Include the relevant props in the dependency arraydependency array
   const handleCardClick = (cardPrints) => {
-    //  console.log("you clicked in project list > " + titlefromchild);
     props.theCardClicked(cardPrints);
-    // console.log("hahh " + articlefromchild + "from child articelll");
-    // setActiveCard(titlefromchild);
-    // Check if the project is already in the clickedProjects array
-    // const isClicked = clickedProjects.includes(titlefromchild);
-
-    // if (isClicked) {
-    //   // Remove the project from clickedProjects if it was previously clicked
-    //   //  setClickedProjects((prev) => prev.filter((project) => project !== num));
-    // } else {
-    //   // Add the project to clickedProjects if it was not previously clicked
-    //   //  setClickedProjects((prev) => [...prev, num]);
-    // }
+    setActiveCard(cardPrints.title);
+    setActiveCardNum(cardPrints.num);
   };
-
   const showMoreProjects = () => {
     setVisibleProjects((prev) => prev + 5);
   };
@@ -39,15 +52,19 @@ function MobileCourseList(props) {
     <>
       {data.slice(0, visibleProjects).map(
         (print, index) =>
-          // Check if print.article exists and is truthy before rendering the card
-          print.article && (
+          // Check if print.lesson exists and is truthy before rendering the card
+          print.lesson && (
             <MobileProjectCard
               key={print.num}
               title={print.title}
               desc={print.desc}
               imageSrc={print.image}
+              size={print.lesson}
+              updateProgress={
+                clickedProjects.find((clicked) => clicked.title === print.title)
+                  ?.count || 0
+              }
               num={index}
-              article={print.article}
               click={() => handleCardClick(print)}
               buttonLabel={
                 clickedProjects.includes(print.num) ? "RE-READ" : "START"
@@ -55,7 +72,7 @@ function MobileCourseList(props) {
             />
           )
       )}
-      {visibleProjects < data.length && (
+      {visibleProjects > 1 && visibleProjects < data.length && (
         <BlackButton label="Show More" onClick={showMoreProjects} />
       )}
     </>
