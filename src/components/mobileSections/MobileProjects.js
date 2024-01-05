@@ -33,12 +33,16 @@ export default function MobileProjects() {
         <>
           <div className="projects-top-content">
             <div className="project-top-left">
-              <div className="project-title">leonardo da Vinci</div>
-              <div className="project-title">1452 to 1519</div>
               <div className="project-title">
-                Art Museum App Concept designed by Ajay Talwar. Connect with
-                them on Dribbble; the global community for designers and
-                creative professionals.
+                A Software Developer's Odyssey
+              </div>
+              <div className="project-title">Hands-on experience</div>
+              <div className="project-title">
+                I've successfully completed numerous projects, showcasing my
+                expertise in crafting robust and efficient software solutions. I
+                take pride in my ability to seamlessly collaborate with back-end
+                developers, design APIs, and deploy large-scale software with
+                precision.
               </div>
             </div>
             <div className="project-top-right">
@@ -47,9 +51,7 @@ export default function MobileProjects() {
               <div className="project-right-number">04</div>
             </div>
           </div>
-          <Paddy>
-            <RoundedImageComponent/>
-          </Paddy>
+
           <ProjectCards>
             <div className="cards-title"> My Projects</div>
             <div className="cards-horizontal-projects">
@@ -112,38 +114,53 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     position: relative;
-    background-image: url(/images/my-svg/sea-animals.svg);
+    background-image: url(/images/my-svg/falling-stars.svg);
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: bottom left;
+    background-repeat: repeat-y;
+    background-position: left top;
   }
   .project-top-left {
-    height: 500px;
+    height: 533px;
     display: flex;
     flex-direction: column;
     justify-content: end;
     padding: 20px;
-    padding-bottom: 72px;
 
     > :nth-child(1) {
       font-family: "cisnero";
+      font-size: 52px;
+      background: linear-gradient(
+        to left,
+        rgb(218 47 47),
+        white,
+        rgb(244 31 169)
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 5px 9px 11px #000000, 1px -1px 0px #151417;
+      font-weight: normal;
     }
     > :nth-child(2) {
       font-size: 15px;
+      color: gray;
+      font-weight: normal;
     }
     > :nth-child(3) {
       font-size: 15px;
-      line-height: initial;
-      color: tan;
+      line-height: 1.2;
+      color: white;
+      font-weight: normal;
     }
   }
   .project-top-right {
-    color: #ffffff;
+    color: #494444;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 95px;
+    position: absolute;
+    right: 0;
   }
 
   .project-title {
@@ -159,7 +176,7 @@ const Wrapper = styled.div`
 
   .project-right-line {
     width: 2px;
-    background-color: #ffffff;
+    background-color: #494444;
     margin: 5px 0;
     height: 100px;
   }

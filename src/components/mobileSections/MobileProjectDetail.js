@@ -358,7 +358,7 @@ const Wrapper = styled.div`
     background: linear-gradient(to top, black, #00000094, transparent);
     height: 100%;
     width: 100%;
-    top: 0;
+    bottom: -1px;
     left: 0;
     z-index: 0;
   }
@@ -395,20 +395,22 @@ const Wrapper = styled.div`
   }
   .project-pics {
     display: flex;
-    padding: 0px 0px 3px 20px;
+    padding: 0px 20px;
+    -webkit-box-pack: start;
     justify-content: flex-start;
-    gap: 10px;
+    gap: 6px;
     margin-bottom: 20px;
-    overflow: scroll;
+    flex-wrap: wrap;
     .pic {
       background-repeat: no-repeat;
       background-size: cover;
       flex: 1;
       min-width: 124px;
       height: 168px;
-      background-color: #f0f0f0;
-      border-radius: 5px;
+      background-color: #000000;
+      border-radius: 11px;
       margin-bottom: 8px;
+      border: 1px solid #060606;
     }
   }
   .project-title {
