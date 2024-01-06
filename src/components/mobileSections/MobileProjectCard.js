@@ -114,6 +114,9 @@ const Card = styled.div`
   position: relative;
   border-radius: 17px;
   flex: 1;
+  overflow: hidden;
+  min-width: 237px;
+  height: 445px;
   .linear {
     position: absolute;
     height: 100%;
@@ -146,7 +149,7 @@ const Card = styled.div`
     padding-top: 5px;
     width: 100%;
     display: -webkit-box;
-    -webkit-line-clamp: 16;
+    -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -163,7 +166,7 @@ const ProjectCardStyle = styled.div`
   background-color: black;
   min-width: 172px;
   height: 210px;
-  border-radius: 17px;
+
   /* background-image: url("/images/my-svg/falling-rocks.svg"); */
   background-image: url(${(props) =>
     props.src || "/images/my-svg/falling-rocks.svg"});

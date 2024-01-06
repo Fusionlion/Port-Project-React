@@ -70,7 +70,6 @@ const StyledComponent = styled.div`
     /* background-image: url("https://w0.peakpx.com/wallpaper/323/210/HD-wallpaper-night-mountains-minimalist-8k-mountains-minimalism-minimalist-artist-artwork-digital-art-dark-black.jpg"); */
     background-color: #0b0b0b;
     background-size: cover;
-    position: relative;
     border-radius: 12px;
     /* border: 1px solid #181616; */
   }
@@ -86,22 +85,28 @@ const StyledComponent = styled.div`
     -ms-transform: scale(1.7);
     -webkit-transform: scale(1.7);
     -ms-transform: scale(1.7);
-    transform: scale(2.2);
+    transform: scale(1.9);
     left: 27px;
   }
   .flip-text-1 {
     transform: rotate(270deg);
     top: 244px;
-    right: 20px;
-    position: absolute;
+    right: -68px;
+    position: relative;
     font-size: 42px;
+    font-family: "spline sans mono";
   }
   .flip-text-2 {
     transform: rotate(270deg);
     top: 139px;
-    right: -116px;
-    position: absolute;
+    right: -128px;
+    position: relative;
     font-size: 82px;
+    font-family: "cisnero", sans-serif;
+    background: linear-gradient(to right, rgb(255 255 255), rgb(249 146 84));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 7px 7px 4px #000000, 1px -1px 0px #151417;
   }
 `;
 
@@ -117,8 +122,8 @@ const AboutMeComponent = () => {
 
       {/* Third Div */}
       <div className="section bottom-border">
-        <div className="bold-text">Bold Text</div>
-        <div>Smaller Text</div>
+        <div className="bold-text">About Me</div>
+        <div>S.E</div>
       </div>
 
       {/* Fourth Div */}

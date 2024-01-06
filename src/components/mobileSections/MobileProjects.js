@@ -82,16 +82,24 @@ const BackgroundProjects = styled.div`
   background-color: black;
 `;
 const ProjectCards = styled.div`
-  padding: 20px;
-  margin-top: 20px;
+  padding: 0px 20px;
   background-image: url(/images/my-svg/bubbles.svg);
   background-size: cover;
   background-repeat: repeat;
   background-position-y: center;
   .cards-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 30px;
+    font-size: 15px;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    width: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 16;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.8;
+    font-weight: normal;
   }
 
   .cards-horizontal-projects {
@@ -114,17 +122,18 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     position: relative;
-    background-image: url(/images/my-svg/falling-stars.svg);
+    background-image: url(/images/my-svg/lines.svg);
     background-size: cover;
     background-repeat: repeat-y;
     background-position: left top;
   }
   .project-top-left {
-    height: 533px;
+    height: 473px;
     display: flex;
     flex-direction: column;
     justify-content: end;
     padding: 20px;
+    margin-top: 26px;
 
     > :nth-child(1) {
       font-family: "cisnero";
@@ -146,9 +155,16 @@ const Wrapper = styled.div`
       font-weight: normal;
     }
     > :nth-child(3) {
-      font-size: 15px;
-      line-height: 1.2;
+      font-size: 13px;
       color: white;
+      padding-top: 5px;
+      width: 100%;
+      display: -webkit-box;
+      -webkit-line-clamp: 16;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.8;
       font-weight: normal;
     }
   }

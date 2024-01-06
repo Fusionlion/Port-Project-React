@@ -160,7 +160,7 @@ const CoursesComponent = (props) => {
         programming language or algorithm is what propels me forward, and it is
         this joy that fuels my commitment to education in the ever-evolving
         landscape of technology.
-        <div className="bg-text"></div>
+        {!showMore && <div className="bg-text"></div>}
       </NormalText>
       {!showMore && (
         <ShowMoreButton onClick={toggleShowMore}>Show More</ShowMoreButton>

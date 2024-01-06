@@ -97,7 +97,7 @@ export default function MobileProjectDetail(props) {
             >
               <div className="blacked"></div>
               <div className="project-top-left">
-                <div className="project-title">{props.data.title}</div>
+                <div className="project-title-pt">{props.data.title}</div>
                 <div className="project-title">1452 to 1519</div>
                 <div className="project-title">{props.data.desc}</div>
               </div>
@@ -381,6 +381,15 @@ const Wrapper = styled.div`
       line-height: initial;
       color: tan;
     }
+  }
+  .project-title-pt {
+    font-family: "cisnero";
+    font-size: 52px;
+    background: linear-gradient(to left, rgb(218 47 47), white, rgb(0 0 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 5px 9px 11px #00000000, 1px -1px 0px #000000;
+    font-weight: normal;
   }
   .project-top-right {
     color: #ffffff;

@@ -107,7 +107,7 @@ const MobileTextImage = () => {
         Salesforce Apex, HTML, and CSS, we invite aspiring developers to join
         this odyssey, where knowledge becomes a beacon illuminating the path to
         success in the ever-evolving tech industry.
-        <div className="bg-text"></div>
+        {!showMore && <div className="bg-text"></div>}
       </StyledNormalText>
       {!showMore && (
         <ShowMoreButton onClick={toggleShowMore}>Show More</ShowMoreButton>
@@ -125,7 +125,7 @@ const MobileTextImage = () => {
         only Java and Salesforce Apex but also a profound understanding of
         frontend development, API integration, and the intricacies of data
         management.
-        <div className="bg-text"></div>
+        {!showMore && <div className="bg-text"></div>}
       </StyledNormalText>
       {!showMore && (
         <ShowMoreButton onClick={toggleShowMore}>Show More</ShowMoreButton>

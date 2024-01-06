@@ -112,15 +112,16 @@ const MobileMenu = styled.div`
   position: fixed;
   top: 68px;
   width: 100%;
-  background: black;
+  backdrop-filter: blur(6px);
   border-radius: 12px;
   border-bottom: 1px solid #111010;
+  text-transform: lowercase;
   .mobile-menu-item {
     font-size: 22px;
     font-family: "Spline Sans Mono", "Times New Roman", Times, serif;
     list-style: oriya;
     color: #cbc9c8;
-    background: #000000;
+    /* background: #000000; */
     padding: 13px 16px;
     border-bottom: 1px solid #444040;
   }
@@ -146,13 +147,16 @@ const MobileHeader = styled.div`
   height: 80px;
   z-index: 100;
   flex-direction: row-reverse;
-  border-bottom: solid 1px #232523;
+  border-bottom: solid 1px #2325235c;
   padding: 0px 15px;
   position: fixed;
   width: 100%;
   backdrop-filter: blur(9px);
   background-image: url(/images/my-svg/header-stars.svg);
   background-position: center;
+  background-position: bottom center;
+  background-size: cover;
+
   .mobile-header-left {
     display: flex;
     flex-direction: column;
@@ -160,8 +164,11 @@ const MobileHeader = styled.div`
   }
   .mobile-name {
     font-size: 26px;
-    font-family: "Spline Sans Mono", sans-serif;
+    font-family: "cisnero";
     color: white;
+    position: relative;
+    top: 3px;
+    left: -2px;
   }
   .burger-line {
     width: 27px;

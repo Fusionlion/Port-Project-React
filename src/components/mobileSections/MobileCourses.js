@@ -56,14 +56,14 @@ function MobileCourses() {
       <ProjectCards>
         <div className="cards-horizontal-projects">
           {Object.keys(topicData).map((subject, index) => (
-            <div key={`${subject}_${index}`}>
+            <div key={`${subject}_${index}`} className="subject-container">
               <div className="cards-title">
                 <div>{subject}</div>
                 <div>
                   {topicData[subject].lesson ?? topicData[subject].length}
                 </div>
               </div>
-              <div className="cards-horizontal-projects">
+              <div className="cards-scroll-container">
                 <MobileCourseList
                   key={`${subject}_course_${index}`}
                   subject={subject}
@@ -106,6 +106,14 @@ const ProjectCards = styled.div`
     row-gap: 23px;
     gap: 27px;
   }
+  .subject-container {
+    overflow: hidden;
+  }
+  .cards-scroll-container {
+    display: flex;
+    gap: 10px;
+    overflow: scroll;
+  }
 `;
 const BodyContain = styled.div`
   display: flex;
@@ -121,7 +129,7 @@ const BodyContain = styled.div`
     display: flex;
     justify-content: space-between;
     position: relative;
-    background-image: url(/images/my-svg/falling-rocks.svg);
+    background-image: url(/images/my-svg/header-stars.svg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom left;
@@ -137,7 +145,7 @@ const BodyContain = styled.div`
     > :nth-child(1) {
       font-family: "cisnero";
       font-size: 52px;
-      background: linear-gradient(to right, rgb(255 255 255), rgb(70 86 157));
+      background: linear-gradient(to right, rgb(255 239 239), rgb(252 0 202));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-shadow: 5px 9px 11px #000000, 1px -1px 0px #151417;
@@ -149,22 +157,29 @@ const BodyContain = styled.div`
       color: gray;
     }
     > :nth-child(3) {
-      font-size: 15px;
-      line-height: initial;
-      color: tan;
-      line-height: 1.2;
+      font-size: 13px;
+      color: white;
+      padding-top: 5px;
+      width: 100%;
+      display: -webkit-box;
+      -webkit-line-clamp: 16;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.8;
       font-weight: normal;
       list-style: katakana-iroha;
     }
   }
   .project-top-right {
-    color: #ffffff;
+    color: #494444;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 5px;
+    padding-top: 95px;
     position: absolute;
+    right: 0;
   }
 
   .project-title {

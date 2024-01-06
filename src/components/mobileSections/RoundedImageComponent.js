@@ -40,6 +40,7 @@ const ShowMoreButton = styled.button`
   border-radius: 6px;
   cursor: pointer;
   margin-top: 10px;
+  z-index: 99;
 `;
 
 const StyledRoundedImage = styled.div`
@@ -80,12 +81,12 @@ const RoundedImageComponent = () => {
   const [showMore, setShowMore] = useState(false);
 
   const toggleShowMore = () => {
-    setShowMore(!showMore);
+    setShowMore(true);
   };
   return (
     <StyledContainer>
       <StyledTextBold>CAN YOU FEEL THE LOVE</StyledTextBold>
-      <StyledNormalText showMore={showMore}>
+      <StyledNormalText showMore={showMore} onClick={toggleShowMore}>
         In the dynamic realm of software development, my journey is best
         reflected in the projects I've undertaken—each a testament to my skills
         and commitment to crafting impactful solutions. This section showcases
@@ -98,7 +99,7 @@ const RoundedImageComponent = () => {
       )}
       <StyledRoundedImage></StyledRoundedImage>
       <StyledTitleBold>Full Scale Projects</StyledTitleBold>
-      <StyledNormalText>
+      <StyledNormalText showMore={showMore} onClick={toggleShowMore}>
         As a seasoned Java developer and frontend specialist, I've successfully
         navigated the intricacies of building scalable and responsive user
         interfaces. The fusion of these skills has been pivotal in crafting

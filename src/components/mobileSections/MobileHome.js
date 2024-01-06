@@ -25,7 +25,7 @@ export default function MobileHome(props) {
       <BGroundBlack />
 
       <BGround />
-      <BGroundBottom />
+      {/* <BGroundBottom /> */}
       <MobileWelcomeTitle>
         <div className="mobile-title-big">welcome</div>
         <div className="mobile-title-big">PORTFOLIO</div>
@@ -85,7 +85,6 @@ const BGroundBottom = styled.div`
   left: 0;
   background-repeat: no-repeat;
   bottom: -158px;
-  mix-blend-mode: hard-light;
 `;
 const BGround = styled.div`
   height: 800px;
@@ -97,7 +96,6 @@ const BGround = styled.div`
   left: 0;
   background-repeat: no-repeat;
   top: 15px;
-  mix-blend-mode: hard-light;
 `;
 const BGroundBlack = styled.div`
   height: 800px;
