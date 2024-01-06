@@ -117,14 +117,22 @@ const Card = styled.div`
   flex: 1;
   overflow: hidden;
   .linear {
-    position: absolute;
+    /* position: absolute;
     height: 100%;
     width: 100%;
     /* z-index: 2; */
-    backdrop-filter: blur(13px);
+    /* backdrop-filter: blur(13px);
     background-image: linear-gradient(#ff000000, #000000, #242420);
     border-radius: 17px;
+    border: 1px solid #0d0c0c;  */
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(#00000000, #000000, #000000fc);
+    border-radius: 17px;
     border: 1px solid #0d0c0c;
+    z-index: 2;
+    bottom: 0;
   }
   .icon-and-title {
     display: flex;
@@ -175,7 +183,7 @@ const ProjectCardStyle = styled.div`
   z-index: 1;
   cursor: pointer;
   transition: linear 0.2s;
-
+  border-radius: 17px;
   position: relative;
 
   .number {

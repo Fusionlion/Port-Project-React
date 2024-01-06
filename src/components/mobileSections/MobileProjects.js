@@ -7,6 +7,7 @@ import MobileProjectList from "./MobileProjectList";
 import MobileProjectDetail from "./MobileProjectDetail";
 import { Link } from "gatsby";
 import RoundedImageComponent from "./RoundedImageComponent";
+import MidSectionComponent from "./MidSectionComponent";
 export default function MobileProjects() {
   const [activeTab, setActiveTab] = useState("0");
   const [detailData, setDetailData] = useState([]);
@@ -58,6 +59,7 @@ export default function MobileProjects() {
               <MobileProjectList theCardClicked={handleTabClick} />
             </div>
           </ProjectCards>
+
           <FooterSection />
         </>
       )}

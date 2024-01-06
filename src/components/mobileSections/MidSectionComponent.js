@@ -1,15 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function MidSectionComponent() {
+export default function MidSectionComponent(props) {
   return (
     <Wrapper>
-      <Title>Title</Title>
+      <Title>{props.title ?? "Title"}</Title>
+      <TitleDesc>{props.titleDesc ?? "something good"}</TitleDesc>
       <Description>
-        This is a description of the mid-section component. It can contain
-        relevant information about the content.
+        {props.desc ??
+          "This is a description of the mid-section component. It can contain relevant information about the content."}
       </Description>
-      <Image />
+      {/* <Image /> */}
     </Wrapper>
   );
 }
@@ -19,14 +20,14 @@ const Wrapper = styled.div`
   /* max-width: 800px; */
   margin: 0 auto;
   color: white;
-  padding: 24px 0px;
+  padding: 24px 20px;
   position: relative;
   background-image: url(/images/my-svg/falling-stars.svg);
   background-repeat: repeat-y;
 `;
 
 const Title = styled.div`
-  font-size: 54px;
+  font-size: 44px;
   font-weight: bold;
   margin: 20px 0;
   font-family: "cisnero";
@@ -36,14 +37,23 @@ const Title = styled.div`
   -webkit-text-fill-color: transparent;
   text-shadow: 5px 9px 11px #000000, 1px -1px 0px #4f0000;
 `;
-
+const TitleDesc = styled.div`
+  font-size: 15px;
+  margin: 20px 0;
+  /* font-family: "cisnero"; */
+  font-family: "Spline Sans Mono", sans-serif;
+  text-align: center;
+  color: gray;
+`;
 const Description = styled.div`
   margin-bottom: 20px;
-  font-size: 14px;
-  font-family: "Spline Sans Mono", sans-serif;
-  line-height: 1.2;
-  gap: 18px;
-  text-align: center;
+  font-size: 13px;
+  color: white;
+  padding-top: 5px;
+  width: 100%;
+
+  line-height: 1.8;
+  font-weight: normal;
 `;
 
 const Image = styled.div`
