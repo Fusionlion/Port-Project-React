@@ -43,7 +43,7 @@ function MobileProjectCard(props) {
     // console.log("Progress changed:", newProgress);
   };
   return (
-    <Card>
+    <Card src={props.imageSrc}>
       <ProjectCardStyle onClick={props.tapped} src={props.imageSrc}>
         <div className="number">{props.num}</div>
       </ProjectCardStyle>
@@ -66,7 +66,7 @@ function MobileProjectCard(props) {
         />
 
         <div className="start-and-end">
-          <div className="start">[{props.updateProgress ?? "no data"}]</div>
+          <div className="start">[{props.updateProgress ?? "0"}]</div>
           <div className="start">|{lessonLength}|</div>
         </div>
       </Content>
@@ -108,6 +108,9 @@ const Content = styled.div`
 `;
 const Card = styled.div`
   /* width: 250px; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   display: flex;
   flex-direction: column;
   text-align: start;
@@ -115,6 +118,7 @@ const Card = styled.div`
   position: relative;
   border-radius: 17px;
   flex: 1;
+  min-width: 172px;
   overflow: hidden;
   .linear {
     /* position: absolute;
@@ -128,11 +132,16 @@ const Card = styled.div`
     position: absolute;
     height: 100%;
     width: 100%;
-    background: linear-gradient(#00000000, #000000, #000000fc);
+    background-image: url(${(props) =>
+      props.src || "/images/my-svg/falling-rocks.svg"});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     border-radius: 17px;
     border: 1px solid #0d0c0c;
-    z-index: 2;
+    /* z-index: 2; */
     bottom: 0;
+    filter: blur(26px);
   }
   .icon-and-title {
     display: flex;
@@ -149,6 +158,8 @@ const Card = styled.div`
     color: transparent;
     text-transform: uppercase;
     margin-top: 10px;
+    text-align: ${(props) =>
+      (props.centerText = "center" ? "center" : "start")};
   }
   .desc {
     font-size: 10px;
@@ -156,11 +167,13 @@ const Card = styled.div`
     padding-top: 5px;
     width: 100%;
     display: -webkit-box;
-    -webkit-line-clamp: 6;
+    -webkit-line-clamp: 7;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
     line-height: 1.8;
+    text-align: ${(props) =>
+      (props.centerText = "center" ? "center" : "start")};
   }
   .icon-and-desc {
     display: flex;
@@ -183,7 +196,7 @@ const ProjectCardStyle = styled.div`
   z-index: 1;
   cursor: pointer;
   transition: linear 0.2s;
-  border-radius: 17px;
+  /* border-radius: 17px; */
   position: relative;
 
   .number {

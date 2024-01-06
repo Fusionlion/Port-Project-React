@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import FooterSection from "../sections/FooterSection";
 import { useState } from "react";
+import PictureComponent from "./PictureComponent";
 
 export default function MobileProjectDetail(props) {
   const datafake = require("../../data/projectDetailData.json"); // Import your
@@ -98,7 +99,9 @@ export default function MobileProjectDetail(props) {
               <div className="blacked"></div>
               <div className="project-top-left">
                 <div className="project-title-pt">{props.data.title}</div>
-                <div className="project-title">1452 to 1519</div>
+                <div className="project-title">
+                  {props.data.subtitle ?? "Project"}
+                </div>
                 <div className="project-title">{props.data.desc}</div>
               </div>
               <div className="project-top-right">
@@ -117,15 +120,20 @@ export default function MobileProjectDetail(props) {
           return (
             <div className="project-pics">
               {combinedArray.map((item, index) => (
-                <div
-                  key={`picture-${index}`}
-                  className="pic"
-                  style={{
-                    backgroundImage: `url(${
-                      item.type === "pictures" ? item.content : item
-                    })`,
-                  }}
-                ></div>
+                // <img
+                //   key={`picture-${index}`}
+                //   className="pic"
+                //   style={{
+                //     backgroundImage: `url(${
+                //       item.type === "pictures" ? item.content : item
+                //     })`,
+                //   }}
+                // ></img>
+                // <div className="pic">
+                <PictureComponent
+                  key={index}
+                  url={item.type === "pictures" ? item.content : item}
+                />
               ))}
             </div>
           );
@@ -413,9 +421,10 @@ const Wrapper = styled.div`
     .pic {
       background-repeat: no-repeat;
       background-size: cover;
+      background-position: center;
       flex: 1;
-      min-width: 124px;
-      height: 168px;
+      min-width: 177px;
+      height: 250px;
       background-color: #000000;
       border-radius: 11px;
       margin-bottom: 8px;

@@ -5,6 +5,7 @@ import CourseCard from "../buttons/CourseCard";
 import MobileProjectCard from "./MobileProjectCard";
 import { useState } from "react";
 import MobileTextImage from "./MobileTextImage";
+import topicData from "../../data/courses.json";
 
 const Container = styled.div`
   display: flex;
@@ -22,6 +23,9 @@ const Container = styled.div`
     overflow: hidden;
     width: 100%;
     flex-wrap: wrap;
+  }
+  .center-text {
+    text-align: center;
   }
 `;
 
@@ -131,10 +135,13 @@ const StyledButton = styled.div`
 
 const CoursesComponent = (props) => {
   const [showMore, setShowMore] = useState(false);
-
+  const data = topicData["Java"].map((record) => {
+    return record;
+  });
   const toggleShowMore = () => {
     setShowMore(!showMore);
   };
+  const [visibleProjects, setVisibleProjects] = useState(2);
   return (
     <Container>
       <Title>
@@ -167,16 +174,30 @@ const CoursesComponent = (props) => {
       )}
       <LastImage />
       <div className="horixontal">
-        <MobileProjectCard
-          title="Learn Java fullstack"
-          buttonOff="off"
-          imageSrc="https://wallpapers-clan.com/wp-content/uploads/2023/11/wolf-in-the-night-forest-desktop-wallpaper-preview.jpg"
-        />
-        <MobileProjectCard
+        {data.slice(0, visibleProjects).map((print, index) => (
+          // Check if print.lesson exists and is truthy before rendering the card
+
+          <MobileProjectCard
+            key={print.num}
+            title={print.title}
+            desc="--- --- --- --- ----- ----"
+            // imageSrc={print.image}
+            imageSrc={
+              index == 0
+                ? "https://img.freepik.com/premium-photo/forest-landscape-with-sunset-forest-background_901003-26514.jpg"
+                : print.image
+            }
+            size={print.lesson}
+            num={index}
+            buttonOff="off"
+            centerText="center"
+          />
+        ))}
+        {/* <MobileProjectCard
           title="Learn Apex Development"
           buttonOff="off"
           imageSrc="https://img.freepik.com/premium-photo/forest-landscape-with-sunset-forest-background_901003-26514.jpg"
-        />
+        /> */}
       </div>
 
       <StyledButton onClick={props.buttonClicked}>courses.</StyledButton>

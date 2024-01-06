@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import topicData from "../../data/projects.json";
+import topicData from "../../data/projectDetailArticleData.json";
 import { useState } from "react";
 import BlackButton from "../../components/buttons/BlackButton";
 import MobileProjectCard from "./MobileProjectCard";
@@ -45,6 +45,7 @@ function MobileProjectList(props) {
               key={print.num}
               title={print.title}
               desc={print.desc}
+              subtitle={print.subtitle}
               imageSrc={print.image}
               num={index}
               article={print.article}
@@ -55,11 +56,40 @@ function MobileProjectList(props) {
             />
           )
       )}
-      {visibleProjects < data.length && (
-        <BlackButton label="Show More" onClick={showMoreProjects} />
-      )}
+      {/* {visibleProjects < data.length && ( */}
+      <ProjectMoreButton onClick={showMoreProjects}>
+        Show More
+      </ProjectMoreButton>
     </>
   );
 }
 
 export default MobileProjectList;
+
+const ProjectMoreButton = styled.div`
+  background-color: black;
+  padding: 10px 30px;
+  border-radius: 26px;
+  color: #dbc9c9;
+  -webkit-transition: all 0.7s, color 0.7s;
+  -webkit-transition: all 0.7s, color 0.7s;
+  transition: all 0.7s, color 0.7s;
+  cursor: pointer;
+  border: #ffffff1f solid 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Spline Sans Mono", sans-serif;
+  width: 100%;
+  margin: 10px 86px;
+  font-size: 18px;
+  background: linear-gradient(to right, rgb(255 255 255), rgb(146 73 107));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+  &:hover {
+    color: orange;
+    margin: 0px 40px;
+  }
+`;

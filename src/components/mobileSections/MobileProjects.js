@@ -8,13 +8,15 @@ import MobileProjectDetail from "./MobileProjectDetail";
 import { Link } from "gatsby";
 import RoundedImageComponent from "./RoundedImageComponent";
 import MidSectionComponent from "./MidSectionComponent";
+import ThreeImagesComponent from "./ThreeImagesComponent";
+import PictureComponent from "./PictureComponent";
+import MobileProjectDetailArticle from "./MobileProjectDetailArticle";
 export default function MobileProjects() {
   const [activeTab, setActiveTab] = useState("0");
   const [detailData, setDetailData] = useState([]);
 
   const [showArticle, setShowArticel] = useState(false);
   const handleArrow = () => {
-    console.log("the arrow was clicked");
     setShowArticel(false);
   };
   const handleTabClick = (cardPrints) => {
@@ -24,7 +26,7 @@ export default function MobileProjects() {
     if (cardPrints.article && cardPrints.article.length > 0) {
       setShowArticel(true);
     }
-    console.log(detailData + " tawy artic clicked");
+
     // console.log("card clciked " + articlefromchild);
     //  console.log("card clicke in projects 2 " + cardClickedBios);
   };
@@ -60,18 +62,30 @@ export default function MobileProjects() {
             </div>
           </ProjectCards>
 
+          <Paddy>
+            <ThreeImagesComponent
+              buttonLabel="GitHub"
+              link="https://github.com/zabloncharles/"
+              title="Check out more pojects on github"
+              text="Discover an array of compelling projects on my GitHub profile, showcasing the culmination of years of experience as a seasoned software developer. With a focus on Java programming, Salesforce development, front-end design, and iOS app design, each repository is a testament to my commitment to pushing the boundaries of technology. From intricate Java solutions to the complexities of Salesforce, engaging front-end designs, and innovative iOS applications, the projects reflect a journey fueled by a passion for innovation and a deep understanding of cutting-edge technologies. Delve into the intricacies of code, explore the nuances of problem-solving, and witness the evolution of skills in this GitHub portfolio. Whether you're a coding enthusiast or a fellow developer, these projects serve as a narrative of exploration, highlighting the relentless pursuit of mastery in the ever-evolving digital landscape. Check out the extensive collection on GitHub and join the journey of continuous learning and technological excellence."
+            />
+          </Paddy>
+
           <FooterSection />
         </>
       )}
       {/* show the detail */}
       {showArticle && (
-        <MobileProjectDetail data={detailData} arrowClicked={handleArrow} />
+        <MobileProjectDetailArticle
+          data={detailData}
+          arrowClicked={handleArrow}
+        />
       )}
     </Wrapper>
   );
 }
 const Paddy = styled.div`
-  padding: 0px 20px;
+  padding: 20px 20px;
 `;
 const BackgroundProjects = styled.div`
   background-image: url("/images/my-svg/first.svg");
