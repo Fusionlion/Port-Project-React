@@ -98,6 +98,7 @@ const Content = styled.div`
   .start-and-end {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 10px;
   }
   .start {
     color: white;
@@ -115,15 +116,13 @@ const Card = styled.div`
   border-radius: 17px;
   flex: 1;
   overflow: hidden;
-  min-width: 237px;
-  height: 445px;
   .linear {
     position: absolute;
     height: 100%;
     width: 100%;
     /* z-index: 2; */
     backdrop-filter: blur(13px);
-    /* background-image: linear-gradient(#ff000000, #000000, #242420); */
+    background-image: linear-gradient(#ff000000, #000000, #242420);
     border-radius: 17px;
     border: 1px solid #0d0c0c;
   }
