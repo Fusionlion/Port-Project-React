@@ -201,7 +201,12 @@ const CoursesComponent = (props) => {
       </div>
 
       <StyledButton onClick={props.buttonClicked}>courses.</StyledButton>
-      <MobileTextImage />
+      <MobileTextImage
+        title2="More Courses"
+        title3="Empowering Learning "
+        text2="I've successfully tailored CRM solutions to meet specific business needs, integrating third-party services and crafting custom components. In the realm of Java development, I've contributed to diverse projects, implementing best practices to build robust and scalable applications. My passion for algorithms and data structures is evident in my ability to design optimized solutions for complex problems. Through my courses, learners not only gain theoretical knowledge but also dive into hands-on experiences. From building customized Salesforce applications to developing Java solutions and mastering fundamental data structures, my courses empower individuals to apply their skills in real-world scenarios, fostering a dynamic and immersive learning experience."
+        url="https://private-user-images.githubusercontent.com/74889517/294764520-b061c53b-384c-4259-92fb-be40e16fcf64.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDQ2NTA2NDksIm5iZiI6MTcwNDY1MDM0OSwicGF0aCI6Ii83NDg4OTUxNy8yOTQ3NjQ1MjAtYjA2MWM1M2ItMzg0Yy00MjU5LTkyZmItYmU0MGUxNmZjZjY0LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAxMDclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMTA3VDE3NTkwOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTJlMzhlMjQ0MTVhNGJkYjA5YmNkNTYwN2Y4OTY4YWViOGUyZWFlZDE2MjA2MDk1NGZlNmQzM2Y5ZjlkNTZlOTImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.POWOLbBOMYpKAFyQ6s2-lWlV-c8Psf1bZ6fzvrZvEIw"
+      />
     </Container>
   );
 };

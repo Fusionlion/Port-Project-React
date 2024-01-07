@@ -169,6 +169,7 @@ const MobileHeader = styled.div`
     position: relative;
     top: 3px;
     left: -2px;
+    text-transform: uppercase;
   }
   .burger-line {
     width: 27px;

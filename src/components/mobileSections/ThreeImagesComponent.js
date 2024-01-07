@@ -34,7 +34,6 @@ const StyledImage = styled.div`
   border: 1px #3e3e3e solid;
   position: relative;
   overflow: hidden;
-  background-size: 253px;
 
   .name {
     position: absolute;
@@ -101,7 +100,6 @@ const ThreeImagesComponent = (props) => {
     "https://cdn.dribbble.com/userupload/10634461/file/original-c113412acf43e890dfba66921b388e8b.png?resize=1504x1128",
     "https://cdn.dribbble.com/userupload/3226653/file/original-49b22d25b280c4101f5f99fdbc9fe092.png?resize=1504x1128",
     "https://cdn.dribbble.com/userupload/3481642/file/original-37fc75acd6740374cd19b722027e0fed.png?resize=1504x1128",
-    "https://cdn.dribbble.com/users/6234/screenshots/15858416/media/6f46abb48572b7820271407e63d88477.png?resize=1600x1200&vertical=center",
   ];
 
   // Shuffle the array using the Fisher-Yates algorithm

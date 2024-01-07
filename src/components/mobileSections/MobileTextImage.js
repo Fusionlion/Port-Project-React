@@ -54,10 +54,7 @@ const ShowMoreButton = styled.button`
 const StyledRoundedImage = styled.div`
   width: 100%;
   height: 244px;
-  background-image: url("/images/my-svg/proj.png");
-
   background-size: contain;
-  mix-blend-mode: hard-light;
   margin-bottom: 10px;
   background-position: center;
   border: 1px solid #191a1a;
@@ -74,7 +71,6 @@ const StyledTitleBold = styled.div`
   margin-bottom: 10px;
   text-align: center;
   line-height: 1.2;
-  text-wrap: nowrap;
 `;
 
 const StyledBorderedText = styled.div`
@@ -88,49 +84,119 @@ const StyledBorderedText = styled.div`
   line-height: 1.2;
 `;
 
-const MobileTextImage = () => {
+const MobileTextImage = (props) => {
   const [showMore, setShowMore] = useState(false);
-
+  const [showLess, setShowLess] = useState(false);
+  const toggleShowLess = () => {
+    setShowMore(false);
+    setShowLess(false);
+  };
   const toggleShowMore = () => {
-    setShowMore(!showMore);
+    setShowMore(true);
+    setShowLess(true);
   };
   return (
     <StyledContainer>
-      <StyledTextBold>CodeCraft Chronicles</StyledTextBold>
-      <StyledNormalText showMore={showMore}>
-        My narrative extends beyond the realm of mere coding; it's about
-        empowering individuals with the skills to architect robust software
-        solutions and revolutionize the tech landscape. The "CodeCraft
-        Chronicles" is a testament to the passion for teaching, a commitment to
-        demystifying the complexities of data structures and algorithms, and a
-        relentless pursuit of excellence. As we unravel the chapters of Java,
-        Salesforce Apex, HTML, and CSS, we invite aspiring developers to join
-        this odyssey, where knowledge becomes a beacon illuminating the path to
-        success in the ever-evolving tech industry.
-        {!showMore && <div className="bg-text"></div>}
-      </StyledNormalText>
-      {!showMore && (
-        <ShowMoreButton onClick={toggleShowMore}>Show More</ShowMoreButton>
-      )}
-      <StyledRoundedImage></StyledRoundedImage>
-      <StyledTitleBold>Full Scale Projects</StyledTitleBold>
-      <StyledNormalText showMore={showMore}>
-        At the heart of this chronicle lies a dedication to projects that
-        transcend the ordinary. From crafting a cutting-edge iOS app that tracks
-        fertility cycles and recommends nearby healthcare professionals to
-        developing a Salesforce full-stack application for university students,
-        the projects undertaken in the "CodeCraft Chronicles" are not mere code;
-        they are impactful solutions to real-world challenges. Each project
-        serves as a testament to the versatility of skills, encompassing not
-        only Java and Salesforce Apex but also a profound understanding of
-        frontend development, API integration, and the intricacies of data
-        management.
-        {!showMore && <div className="bg-text"></div>}
-      </StyledNormalText>
-      {!showMore && (
-        <ShowMoreButton onClick={toggleShowMore}>Show More</ShowMoreButton>
-      )}
-      <StyledBorderedText>CodeCraft Chronicles</StyledBorderedText>
+      <StyledTextBold>{props.title1 ?? "CodeCraft Chronicles"}</StyledTextBold>
+      {props.text1 &&
+        (props.text1.split(".").length <= 5
+          ? props.text1.split(".").map((sentence, index, array) => (
+              <StyledNormalText key={index} showMore={showMore}>
+                {sentence}
+                {index !== array.length - 1 && "."}
+              </StyledNormalText>
+            ))
+          : props.text1.split(".").map(
+              (sentence, index, array) =>
+                (showMore || index < 2) && (
+                  <>
+                    <StyledNormalText key={index} showMore={showMore}>
+                      {sentence}
+                      {index % 5 === 4 && index !== array.length - 1 && <br />}
+                      {/* Add a line break every 5th period, but not after the last sentence */}
+                    </StyledNormalText>
+
+                    {index === props.text1.split(".").length - 1 && (
+                      <>
+                        {showMore && (
+                          <ShowMoreButton
+                            key={"showMorebButton" + index}
+                            onClick={toggleShowLess}
+                          >
+                            Show Less
+                          </ShowMoreButton>
+                        )}
+                      </>
+                    )}
+
+                    {!showMore && index === 1 && (
+                      <ShowMoreButton
+                        key={"showLess-Button" + index}
+                        onClick={toggleShowMore}
+                      >
+                        Show More
+                      </ShowMoreButton>
+                    )}
+                  </>
+                )
+            ))}
+      {!showMore && <div className="bg-text"></div>}
+      <StyledRoundedImage
+        style={{
+          backgroundImage: `url(${
+            props.url ?? "images/my-svg/falling-rocks.svg"
+          })`,
+        }}
+      ></StyledRoundedImage>
+      <StyledTitleBold>{props.title2 ?? "Full Scale Projects"}</StyledTitleBold>
+
+      {props.text2 &&
+        (props.text2.split(".").length <= 5
+          ? props.text2.split(".").map((sentence, index, array) => (
+              <StyledNormalText key={index} showMore={showMore}>
+                {sentence}.
+              </StyledNormalText>
+            ))
+          : props.text2.split(".").map(
+              (sentence, index, array) =>
+                (showMore || index < 3) && (
+                  <>
+                    <StyledNormalText key={index} showMore={showMore}>
+                      {sentence}
+                      {index !== array.length - 1 && "."}
+                      {index % 5 === 4 && index !== array.length - 1 && <br />}
+                      {/* Add a line break every 5th period, but not after the last sentence */}
+                    </StyledNormalText>
+
+                    {index === props.text2.split(".").length - 1 && (
+                      <>
+                        {showMore && (
+                          <ShowMoreButton
+                            key={"showMorebButton" + index}
+                            onClick={toggleShowLess}
+                          >
+                            Show Less
+                          </ShowMoreButton>
+                        )}
+                      </>
+                    )}
+
+                    {!showMore && index === 2 && (
+                      <ShowMoreButton
+                        key={"showLess-Button" + index}
+                        onClick={toggleShowMore}
+                      >
+                        Show More
+                      </ShowMoreButton>
+                    )}
+                  </>
+                )
+            ))}
+      {!showMore && <div className="bg-text"></div>}
+
+      <StyledBorderedText>
+        {props.title3 ?? "CodeCraft Chronicles"}
+      </StyledBorderedText>
     </StyledContainer>
   );
 };

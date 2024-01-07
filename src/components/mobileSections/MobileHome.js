@@ -9,6 +9,7 @@ import MidSectionComponent from "./MidSectionComponent";
 import EmploymentHistoryComponent from "./EmploymentHistoryComponent";
 import CodingExpertiseComponent from "./CodingExpertiseComponent";
 import CertificateComponent from "./CertificateComponent";
+import BookComponent from "./BookComponent";
 export default function MobileHome(props) {
   // const [text, setText] = useState("Let's get started :)");
   // const [index, setIndex] = useState(0);
@@ -71,6 +72,7 @@ export default function MobileHome(props) {
           props.page("courses");
         }}
       />
+      <BookComponent />
       <FooterSection />
     </Wrapper>
   );

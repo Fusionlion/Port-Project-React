@@ -16,7 +16,7 @@ const CodingExpertiseComponent = () => {
       <TopSection>
         <TopLeftText>
           <Title>Coding Expertise</Title>
-          <Subtitle>Explore the languages I work with</Subtitle>
+          <Subtitle>Explore the languages I work with.</Subtitle>
         </TopLeftText>
         <TopRightButton
           href="https://github.com/zabloncharles"
