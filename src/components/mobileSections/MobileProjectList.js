@@ -56,10 +56,11 @@ function MobileProjectList(props) {
             />
           )
       )}
-      {/* {visibleProjects < data.length && ( */}
-      <ProjectMoreButton onClick={showMoreProjects}>
-        Show More
-      </ProjectMoreButton>
+      {visibleProjects < data.length && (
+        <ProjectMoreButton onClick={showMoreProjects}>
+          Show More
+        </ProjectMoreButton>
+      )}
     </>
   );
 }

@@ -118,7 +118,8 @@ const Card = styled.div`
   position: relative;
   border-radius: 17px;
   flex: 1;
-  min-width: 172px;
+  /* min-width: 172px; */
+  min-width: 242px;
   overflow: hidden;
   .linear {
     /* position: absolute;
@@ -142,6 +143,7 @@ const Card = styled.div`
     /* z-index: 2; */
     bottom: 0;
     filter: blur(26px);
+    background-size: 357px;
   }
   .icon-and-title {
     display: flex;

@@ -93,29 +93,25 @@ export default function MobileProjectDetailArticle(props) {
           const sentencesArray = item.content.split(".");
           const chunkSize = 5;
           let sentences = [];
-
+          let imageCount = 0;
           while (sentencesArray.length > 0) {
             sentences.push(sentencesArray.splice(0, chunkSize).join("."));
           }
-          let imageCount = 0;
 
           return (
             <>
               {sentences.map((sentence, sentenceIndex) => (
                 <React.Fragment key={`sentence-${index}-${sentenceIndex}`}>
-                  {sentenceIndex === 0 ? (
-                    <p key={`sentence-${index}-${sentenceIndex}`}>
-                      <span className="first-letter">{sentence[0]}</span>
-                      {sentence.slice(0)}
-                    </p>
-                  ) : (
-                    <p key={`sentence-${index}-${sentenceIndex}`}>{sentence}</p>
-                  )}
-
-                  {imageList[imageCount] && (
+                  <p>
+                    <span className={sentenceIndex == 0 ? "first-letter" : ""}>
+                      {sentence[0]}
+                    </span>
+                    {sentence.slice(1)}
+                  </p>
+                  {imageList[sentenceIndex] && (
                     <PictureComponent
                       key={`image-${index}-${sentenceIndex}`}
-                      url={imageList[imageCount++]}
+                      url={imageList[sentenceIndex]}
                       alt={`Image ${index}-${sentenceIndex}`}
                     />
                   )}

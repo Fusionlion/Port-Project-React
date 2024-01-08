@@ -77,7 +77,7 @@ const StyledBorderedText = styled.div`
   line-height: 1.2;
 `;
 
-const RoundedImageComponent = () => {
+const RoundedImageComponent = (props) => {
   const [showMore, setShowMore] = useState(false);
 
   const toggleShowMore = () => {

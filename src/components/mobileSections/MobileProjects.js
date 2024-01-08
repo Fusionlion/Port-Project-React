@@ -1,15 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import MobileProjectCard from "./MobileProjectCard";
 import FooterSection from "../sections/FooterSection";
 import { useCallback, useState } from "react";
 import MobileProjectList from "./MobileProjectList";
-import MobileProjectDetail from "./MobileProjectDetail";
 import { Link } from "gatsby";
-import RoundedImageComponent from "./RoundedImageComponent";
-import MidSectionComponent from "./MidSectionComponent";
 import ThreeImagesComponent from "./ThreeImagesComponent";
-import PictureComponent from "./PictureComponent";
+
 import MobileProjectDetailArticle from "./MobileProjectDetailArticle";
 export default function MobileProjects() {
   const [activeTab, setActiveTab] = useState("0");
@@ -30,6 +26,17 @@ export default function MobileProjects() {
     // console.log("card clciked " + articlefromchild);
     //  console.log("card clicke in projects 2 " + cardClickedBios);
   };
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Add this line for smooth scrolling
+    });
+
+    // You can also use this effect to scroll to the top whenever some condition changes
+    // For example, when a state variable changes
+    // window.scrollTo(0, 0);
+  }, []);
   return (
     <Wrapper>
       {!showArticle && (

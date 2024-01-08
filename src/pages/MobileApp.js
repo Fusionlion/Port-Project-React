@@ -5,6 +5,7 @@ import MobileProjectDetail from "../components/mobileSections/MobileProjectDetai
 import "../components/styles/Font.css";
 import MobileHome from "../components/mobileSections/MobileHome";
 import MobileCourses from "../components/mobileSections/MobileCourses";
+import PrivacyComponent from "../components/mobileSections/PrivacyComponent";
 
 export default function MobileApp() {
   const [switchPage, setSwitchPage] = useState("home");
@@ -68,10 +69,10 @@ export default function MobileApp() {
           >
             COURSES
           </li>
-          <li className="mobile-menu-item" onClick={handleMenuButton}>
-            ABOUT
-          </li>
-          <li className="mobile-menu-item" onClick={handleMenuButton}>
+          <li
+            className="mobile-menu-item"
+            onClick={() => handleMenuButton("privacy")}
+          >
             PRIVACY POLICY
           </li>
         </MobileMenu>
@@ -80,6 +81,7 @@ export default function MobileApp() {
       {switchPage == "home" && <MobileHome page={handleMenuButton} />}
       {switchPage == "projects" && <MobileProjects />}
       {switchPage == "courses" && <MobileCourses />}
+      {switchPage == "privacy" && <PrivacyComponent />}
     </MobileLayout>
   );
 }

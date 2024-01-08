@@ -247,7 +247,7 @@ const Ide = (props) => {
   }, [line, isTyping]);
 
   return (
-    <Wrapper>
+    <Wrapper ref={props.innerRef}>
       <div className="lesson" id="typedtext" ref={lessonRef}>
         <div id="console-prompt">
           {currentQuestionIndex > 0 ? props.title : "Shall we get started"}

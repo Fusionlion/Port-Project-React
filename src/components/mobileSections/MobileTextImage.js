@@ -154,7 +154,8 @@ const MobileTextImage = (props) => {
         (props.text2.split(".").length <= 5
           ? props.text2.split(".").map((sentence, index, array) => (
               <StyledNormalText key={index} showMore={showMore}>
-                {sentence}.
+                {sentence}
+                {index !== array.length - 1 && "."}
               </StyledNormalText>
             ))
           : props.text2.split(".").map(

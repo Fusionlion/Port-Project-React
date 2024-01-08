@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import CardList from "../sections/CardList";
 import topicData from "../../data/courses.json";
@@ -15,15 +15,26 @@ function MobileCourses() {
   const handleLineFromIde = (line) => {
     setCurrLineFromIde(line);
   };
+  const ideRef = useRef();
   const handleCardClickChild = (print) => {
     setCardData(print);
     setTopicClicked(print.title);
     // Scroll to the top of the page
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth", // Use 'auto' for instant scrolling
+
+    ideRef.current.scrollIntoView({
+      behavior: "smooth",
+      inline: "center",
+      block: "center",
     });
   };
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+
+    // You can also use this effect to scroll to the top whenever some condition changes
+    // For example, when a state variable changes
+    // window.scrollTo(0, 0);
+  }, []);
 
   return (
     <BodyContain>
@@ -45,6 +56,7 @@ function MobileCourses() {
           </div>
         </div>
         <Ide
+          innerRef={ideRef} // Assign the ref to the Ide component
           text={cardData.lesson}
           parentCardClicked={topicClicked}
           title={cardData.title}

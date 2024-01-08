@@ -33,7 +33,7 @@
     "title": "Fusion 'Dream' Extension",
     "num": "2",
     "desc": "Fusion: Dream Start is a simple yet powerful Chrome extension that aims to kickstart your day with inspiration. It provides a beautiful new tab experience, displaying the current date along with a custom background to set the mood for your daily tasks.",
-    "image": "https://private-user-images.githubusercontent.com/74889517/287500081-f8f21ee2-1035-4eb9-8f4d-dd628ab89d0a.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDQ1MzYwNTIsIm5iZiI6MTcwNDUzNTc1MiwicGF0aCI6Ii83NDg4OTUxNy8yODc1MDAwODEtZjhmMjFlZTItMTAzNS00ZWI5LThmNGQtZGQ2MjhhYjg5ZDBhLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAxMDYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMTA2VDEwMDkxMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWEwYzU1YWJhNjRlNzI3MGJjY2ZiNTg0NTYwMWQ1MzdkM2RhMzA0ZGY3ZWNhZmZjZDkyYjhkODNkYmFjYzkxM2YmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.PLgl40g26yQSMoZTfnlWdy8TUXG5O_LWhjaQOwFVHqU",
+    "image": "https://github.com/zabloncharles/Fusion-Chrome-Extension/assets/74889517/f8f21ee2-1035-4eb9-8f4d-dd628ab89d0a",
     "article": [
       {
         "type": "title",
@@ -46,16 +46,12 @@
       {
         "type": "pictures",
         "content": [
-          "https://private-user-images.githubusercontent.com/74889517/287500081-f8f21ee2-1035-4eb9-8f4d-dd628ab89d0a.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDQ1MjYwNDksIm5iZiI6MTcwNDUyNTc0OSwicGF0aCI6Ii83NDg4OTUxNy8yODc1MDAwODEtZjhmMjFlZTItMTAzNS00ZWI5LThmNGQtZGQ2MjhhYjg5ZDBhLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAxMDYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMTA2VDA3MjIyOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTY2Njc1NzU5NjZmZDBkNDQ2YWEzZWJiMTMyMTdhYmJkYmZmYmY2NGYyZDUzYmEwMDllMGE4YjU0M2RkMGM3YzUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.7gkd4AmUZ59GDQaZemuXpww-wbV8880gDUdUS8ONAnc"
+          "https://github.com/zabloncharles/Fusion-Chrome-Extension/assets/74889517/f8f21ee2-1035-4eb9-8f4d-dd628ab89d0a"
         ]
       },
       {
         "type": "text",
-        "content": "🖼️ Stunning Backgrounds: Enjoy a curated collection of stunning backgrounds that change every time you open a new tab.📅 Daily Inspiration: Start your day right with a beautiful visual backdrop and the current date right at your fingertips.🎨 Minimalistic Design: A clean and minimalistic user interface that won't clutter your browsing experience.🖌️ Customization: Personalize your new tab page with your favorite background images."
-      },
-      {
-        "type": "text",
-        "content": "This extension necessitates specific permissions to enhance its functionality seamlessly. Firstly, the 'tabs' permission is required, granting access to essential information about browser tabs. This permission enables the extension to query and manipulate tab states, allowing actions such as opening, closing, and updating tabs. Additionally, the 'activeTab' permission is essential as it provides temporary access to the currently active tab when the user invokes the extension. This permission is particularly useful for interacting with the content of the current tab, ensuring a seamless user experience. Lastly, the 'storage' permission is necessary for utilizing the Chrome Storage API. This permission facilitates a key-value storage mechanism, allowing the extension to store and retrieve data locally, including user preferences. Together, these permissions empower the extension to deliver a robust and efficient browsing experience while respecting user privacy and security."
+        "content": "Stunning Backgrounds: Enjoy a curated collection of stunning backgrounds that change every time you open a new tab.📅 Daily Inspiration: Start your day right with a beautiful visual backdrop and the current date right at your fingertips.🎨 Minimalistic Design: A clean and minimalistic user interface that won't clutter your browsing experience.🖌️ Customization: Personalize your new tab page with your favorite background images.This extension necessitates specific permissions to enhance its functionality seamlessly. Firstly, the 'tabs' permission is required, granting access to essential information about browser tabs. This permission enables the extension to query and manipulate tab states, allowing actions such as opening, closing, and updating tabs. Additionally, the 'activeTab' permission is essential as it provides temporary access to the currently active tab when the user invokes the extension. This permission is particularly useful for interacting with the content of the current tab, ensuring a seamless user experience.Lastly, the 'storage' permission is necessary for utilizing the Chrome Storage API. This permission facilitates a key-value storage mechanism, allowing the extension to store and retrieve data locally, including user preferences. Together, these permissions empower the extension to deliver a robust and efficient browsing experience while respecting user privacy and security."
       }
     ]
   },
@@ -75,16 +71,13 @@
       {
         "type": "pictures",
         "content": [
-          "https://camo.githubusercontent.com/b07409836dcd6e5f8478bd5c7f1bc1a06771fd61cae4f9f61f0fef5ac6caa280/68747470733a2f2f63646e2e6472696262626c652e636f6d2f75736572732f323131343538382f73637265656e73686f74732f31393636323033312f6d656469612f35626635613138366461326661363566623364343137383361623131656438662e706e673f726573697a653d313030307837353026766572746963616c3d63656e746572"
+          "https://camo.githubusercontent.com/b07409836dcd6e5f8478bd5c7f1bc1a06771fd61cae4f9f61f0fef5ac6caa280/68747470733a2f2f63646e2e6472696262626c652e636f6d2f75736572732f323131343538382f73637265656e73686f74732f31393636323033312f6d656469612f35626635613138366461326661363566623364343137383361623131656438662e706e673f726573697a653d313030307837353026766572746963616c3d63656e746572",
+          "https://camo.githubusercontent.com/6c1632c297d67135a84cdaf2f2cc0686946494953cd2df86302714119046090c/68747470733a2f2f63646e2e6472696262626c652e636f6d2f75736572732f323131343538382f73637265656e73686f74732f31393636323032392f6d656469612f32313436376564643030663036613165303464383462353336376662356433302e706e673f726573697a653d313030307837353026766572746963616c3d63656e746572"
         ]
       },
       {
         "type": "text",
-        "content": "The University Student Portal is a Salesforce-based web application built using Visualforce. It provides a platform for students to manage their academic information conveniently. This portal allows students to sign in, sign up, and access their personalized dashboard, which includes information about their exams, schedules, and any missed assignments or announcements."
-      },
-      {
-        "type": "text",
-        "content": "Features User Registration: New students can sign up for an account by providing their details and creating a username/password.User Authentication: Registered students can sign in using their credentials securely.Personalized Dashboard: Upon signing in, students are greeted with a personalized dashboard displaying their upcoming exams and any missed assignments or announcements.Exam Details: Students can view detailed information about upcoming exams, including date, time, location, and subject.Notifications: Automated notifications for missed assignments and important announcements keep students informed.User-Friendly Interface: The portal offers an intuitive and user-friendly interface for ease of navigation."
+        "content": "The University Student Portal is a Salesforce-based web application built using Visualforce. It provides a platform for students to manage their academic information conveniently. This portal allows students to sign in, sign up, and access their personalized dashboard, which includes information about their exams, schedules, and any missed assignments or announcements.Features User Registration: New students can sign up for an account by providing their details and creating a username/password.User Authentication: Registered students can sign in using their credentials securely.Personalized Dashboard: Upon signing in, students are greeted with a personalized dashboard displaying their upcoming exams and any missed assignments or announcements.Exam Details: Students can view detailed information about upcoming exams, including date, time, location, and subject.Notifications: Automated notifications for missed assignments and important announcements keep students informed.User-Friendly Interface: The portal offers an intuitive and user-friendly interface for ease of navigation."
       }
     ]
   }

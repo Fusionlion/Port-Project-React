@@ -174,23 +174,24 @@ const CoursesComponent = (props) => {
       )}
       <LastImage />
       <div className="horixontal">
-        {data.slice(0, visibleProjects).map((print, index) => (
+        {data.slice(0, visibleProjects).map((print, index, array) => (
           // Check if print.lesson exists and is truthy before rendering the card
 
           <MobileProjectCard
             key={print.num}
             title={print.title}
-            desc="--- --- --- --- ----- ----"
+            desc={print.desc}
             // imageSrc={print.image}
             imageSrc={
               index == 0
                 ? "https://img.freepik.com/premium-photo/forest-landscape-with-sunset-forest-background_901003-26514.jpg"
-                : print.image
+                : "https://storage.googleapis.com/pai-images/2de6b783396943c4886331a590e04998.jpeg"
             }
             size={print.lesson}
             num={index}
             buttonOff="off"
             centerText="center"
+            updateProgress="DSA"
           />
         ))}
         {/* <MobileProjectCard
@@ -205,7 +206,7 @@ const CoursesComponent = (props) => {
         title2="More Courses"
         title3="Empowering Learning "
         text2="I've successfully tailored CRM solutions to meet specific business needs, integrating third-party services and crafting custom components. In the realm of Java development, I've contributed to diverse projects, implementing best practices to build robust and scalable applications. My passion for algorithms and data structures is evident in my ability to design optimized solutions for complex problems. Through my courses, learners not only gain theoretical knowledge but also dive into hands-on experiences. From building customized Salesforce applications to developing Java solutions and mastering fundamental data structures, my courses empower individuals to apply their skills in real-world scenarios, fostering a dynamic and immersive learning experience."
-        url="https://private-user-images.githubusercontent.com/74889517/294764520-b061c53b-384c-4259-92fb-be40e16fcf64.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDQ2NTA2NDksIm5iZiI6MTcwNDY1MDM0OSwicGF0aCI6Ii83NDg4OTUxNy8yOTQ3NjQ1MjAtYjA2MWM1M2ItMzg0Yy00MjU5LTkyZmItYmU0MGUxNmZjZjY0LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAxMDclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMTA3VDE3NTkwOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTJlMzhlMjQ0MTVhNGJkYjA5YmNkNTYwN2Y4OTY4YWViOGUyZWFlZDE2MjA2MDk1NGZlNmQzM2Y5ZjlkNTZlOTImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.POWOLbBOMYpKAFyQ6s2-lWlV-c8Psf1bZ6fzvrZvEIw"
+        url="https://cdn.dribbble.com/userupload/12073929/file/original-516b8de983e2bde467a7ffe521953d10.png?resize=2048x1536"
       />
     </Container>
   );

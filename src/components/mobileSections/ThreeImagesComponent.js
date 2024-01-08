@@ -21,17 +21,38 @@ const StyledImageContainer = styled.div`
   text-align: justify;
   line-height: 1.5;
   margin: 20px 0;
-  gap: 5px;
-  flex-wrap: nowrap;
+  gap: 10px;
+  flex-wrap: wrap;
 `;
 
 const StyledImage = styled.div`
-  width: ${(props) => (props.isMiddle ? "200px" : "140px")};
-  height: ${(props) => (props.isMiddle ? "208px" : "160px")};
+  /* width: ${(props) => (props.isMiddle ? "200px" : "140px")}; */
+  height: 280px;
+  min-width: 100%;
+  /* height: ${(props) => (props.isMiddle ? "208px" : "160px")}; */
   background-image: url(${(props) => props.src});
   background-size: cover;
   background-position: center;
   border-radius: 8px;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  .name {
+    position: absolute;
+    color: #070707;
+    bottom: 0;
+    width: 100%;
+    font-size: 12px;
+    /* text-align: center; */
+    height: 19px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border-top: 1px solid #20202005;
+    backdrop-filter: blur(7px);
+    display: flex;
+  }
 `;
 
 const StyledTextButtonContainer = styled.div`
@@ -65,21 +86,21 @@ const StyledButton = styled.div`
   justify-content: center;
   align-items: center;
   font-family: "Spline Sans Mono", sans-serif;
-  margin: 0px 69px;
+  margin: 12px 69px;
 `;
 
 const ThreeImagesComponent = (props) => {
   const images = [
     "https://cdn.dribbble.com/userupload/9177759/file/original-d57495d059eb995d8515f3c27f37c2df.jpg?resize=2048x1536",
-    "https://user-images.githubusercontent.com/74889517/182249015-9292982d-095e-4414-8af5-76909f905cfa.png",
-    "https://cdn.dribbble.com/users/6822466/screenshots/19779255/media/f2740e42ba8a89888519f20846814f62.png?resize=1600x1200&vertical=center",
+    "https://cdn.dribbble.com/userupload/5037488/file/original-cc1c543e24796eaaad7df4c8c607aaeb.png?resize=2048x1536&vertical=center",
     "https://user-images.githubusercontent.com/74889517/182240184-175f842b-08bf-448a-bb24-60e7589b37c0.png",
     "https://user-images.githubusercontent.com/74889517/182249026-b848efe2-f972-42e5-baad-fd9038d9caaf.png",
-    "https://cdn.dribbble.com/userupload/2919546/file/original-26217fe72f6e9140f90038f92045d1e0.png?resize=1504x1128",
-    "https://cdn.dribbble.com/users/116739/screenshots/5451395/attachments/1180329/01-full.png?resize=800x600&vertical=center",
+    "https://cdn.dribbble.com/userupload/5037487/file/original-d58fe78b48391be3883b852b2e5090a7.png?resize=2048x1536&vertical=center",
     "https://cdn.dribbble.com/userupload/10634461/file/original-c113412acf43e890dfba66921b388e8b.png?resize=1504x1128",
-    "https://cdn.dribbble.com/userupload/3226653/file/original-49b22d25b280c4101f5f99fdbc9fe092.png?resize=1504x1128",
-    "https://cdn.dribbble.com/userupload/3481642/file/original-37fc75acd6740374cd19b722027e0fed.png?resize=1504x1128",
+    "https://cdn.dribbble.com/userupload/4304357/file/original-29a4c5a8f30db7aa64d03ef10b925e85.jpg?resize=2048x10352&vertical=center",
+    "https://cdn.dribbble.com/userupload/2991686/file/original-70d4656dd207db0f5a8cbbe5089ac9b2.png?resize=2048x1536&vertical=center",
+    "https://cdn.dribbble.com/users/14638622/screenshots/20547638/media/254f3a25105133ce6ea7546b373cfd18.png?resize=1600x1200&vertical=center",
+    "https://cdn.dribbble.com/users/2387542/screenshots/11704764/media/f26d6ffe6823a8b34df7d5c18a9e907a.png?resize=1600x1200&vertical=center",
   ];
 
   // Shuffle the array using the Fisher-Yates algorithm
@@ -103,14 +124,28 @@ const ThreeImagesComponent = (props) => {
 
   const addPaddingAfterFifthSentence = (text) => {
     const sentences = text.split(". ");
-    const updatedText = sentences.map((sentence, index) => (
+    const updatedText = sentences.map((sentence, index, array) => (
       <React.Fragment key={index}>
         {sentence}
+        {index !== array.length - 1 && "."}
         {
           index % 4 === 3 && (
             <div style={{ padding: "10px" }} />
           ) /* Add a line break after every fifth sentence */
         }
+        {index % 4 === 3 && (
+          <>
+            <div style={{ padding: "5px" }} />
+            <StyledImage src={getRandomImage()} isMiddle={"center"}>
+              <div className="name">1</div>
+            </StyledImage>
+            <div style={{ padding: "10px" }} />
+            <StyledImage src={getRandomImage()} isMiddle={"center"}>
+              <div className="name">1</div>
+            </StyledImage>
+            <div style={{ padding: "10px" }} />
+          </>
+        )}
       </React.Fragment>
     ));
 
@@ -127,20 +162,24 @@ const ThreeImagesComponent = (props) => {
               "Fusion presents smart data for your code, algorithms, and work at a glance. It's an indispensable tool for developers everywhere, as it can be used by beginner to uber-experts alike. Explore the vast possibilities of data-driven insights, streamline your coding experience, and elevate your projects to new heights. With Fusion, you're not just writing code; you're crafting intelligent solutions. Dive into a world where innovation meets efficiency, and let Fusion empower your coding journey. Harness the power of data with Fusion – where every line of code tells a story, and every algorithm is a masterpiece. Join the Fusion revolution today!"
           )}
         </StyledText>
-        <StyledImageContainer>
-          <StyledImage src={getRandomImage()} isMiddle={"left"}>
-            <div className="name">1</div>
-          </StyledImage>
-          <StyledImage src={getRandomImage()} isMiddle={"middle"}>
-            <div className="name">design +</div>
-          </StyledImage>
-          <StyledImage src={getRandomImage()} isMiddle={"right"}>
-            <div className="name">2</div>
-          </StyledImage>
-        </StyledImageContainer>
+        {/* {!props.imagesOff && (
+          <StyledImageContainer>
+            <StyledImage src={getRandomImage()} isMiddle={"left"}>
+              <div className="name">1</div>
+            </StyledImage>
+            <StyledImage src={getRandomImage()} isMiddle={"middle"}>
+              <div className="name">design +</div>
+            </StyledImage>
+            <StyledImage src={getRandomImage()} isMiddle={"right"}>
+              <div className="name">2</div>
+            </StyledImage>
+          </StyledImageContainer>
+        )} */}
         <StyledButton
-          onClick={() =>
-            props.link ? window.open(props.link, "_blank") : props.buttonClicked
+          onClick={
+            props.link
+              ? () => window.open(props.link, "_blank")
+              : props.buttonClicked
           }
         >
           {props.buttonLabel ?? "projects."}
