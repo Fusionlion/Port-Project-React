@@ -39,7 +39,7 @@ const StyledComponent = styled.div`
     background-position: center; */
     width: 100%;
     height: 101px;
-    background-image: url(https://private-user-images.githubusercontent.com/74889517/294761400-31389eae-1a50-4e70-a5d9-8878490df0c7.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDQ2NTA2NDksIm5iZiI6MTcwNDY1MDM0OSwicGF0aCI6Ii83NDg4OTUxNy8yOTQ3NjE0MDAtMzEzODllYWUtMWE1MC00ZTcwLWE1ZDktODg3ODQ5MGRmMGM3LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAxMDclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMTA3VDE3NTkwOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPThhMzY1ZTMxNTY1MDcwZjA4MDcyODdlMjQzYWEwZWVjMTUyZmI4ZDZjYTYzNzQwNmI1ZDk1ZDQxNjhhZWM4ODQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.6LrpLhhe-rTYPi1LLrFnsNKyCrTtpAW847er5HbP07Y);
+    background-image: url(https://github.com/zabloncharles/Resources-Sch/assets/74889517/31389eae-1a50-4e70-a5d9-8878490df0c7);
     border-radius: 7px;
     background-size: contain;
     background-repeat: no-repeat;
