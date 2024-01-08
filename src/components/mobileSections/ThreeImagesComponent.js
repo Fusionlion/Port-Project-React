@@ -26,7 +26,7 @@ const StyledImageContainer = styled.div`
 `;
 
 const StyledImage = styled.div`
-  width: ${(props) => (props.isMiddle == "middle" ? "200px" : "140px")};
+  width: ${(props) => (props.isMiddle == "middle" ? "100%" : "100%")};
   height: ${(props) => (props.isMiddle == "middle" ? "208px" : "160px")};
   background-image: url(${(props) => props.src});
   background-size: cover;
