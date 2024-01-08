@@ -26,29 +26,12 @@ const StyledImageContainer = styled.div`
 `;
 
 const StyledImage = styled.div`
-  width: ${(props) => (props.isMiddle == "middle" ? "100%" : "100%")};
-  height: ${(props) => (props.isMiddle == "middle" ? "208px" : "160px")};
+  width: ${(props) => (props.isMiddle ? "200px" : "140px")};
+  height: ${(props) => (props.isMiddle ? "208px" : "160px")};
   background-image: url(${(props) => props.src});
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   border-radius: 8px;
-  border: 1px #3e3e3e solid;
-  position: relative;
-
-  .name {
-    position: absolute;
-    color: white;
-    background: linear-gradient(1deg, #000000, #000000, black);
-    bottom: 0;
-    width: 100%;
-    font-size: 9px;
-    text-align: center;
-    height: 19px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-top: 1px solid #202020;
-  }
 `;
 
 const StyledTextButtonContainer = styled.div`
@@ -56,16 +39,13 @@ const StyledTextButtonContainer = styled.div`
 `;
 
 const StyledText = styled.p`
+  text-align: center;
+  color: white;
+  font-size: 17px;
   font-family: "Spline Sans Mono", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   text-align: justify;
-  font-size: 13px;
-  color: white;
-  padding-top: 5px;
-  width: 100%;
-  overflow: hidden;
-  line-height: 1.8;
-  font-weight: normal;
+  line-height: 1.5;
 `;
 
 const StyledButton = styled.div`
