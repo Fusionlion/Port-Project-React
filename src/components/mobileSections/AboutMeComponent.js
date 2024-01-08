@@ -44,7 +44,7 @@ const StyledComponent = styled.div`
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
-    border: solid #131111 1px;
+    /* border: solid #131111 1px; */
   }
   .title {
     font-size: 54px;
@@ -131,8 +131,9 @@ const AboutMeComponent = () => {
         <div className="space"></div>
         <div>
           I have extensive experience in coding for all languages (Java,
-          Javascript, Apex, Salesforce), as well as designing graphics on
-          various platforms including HTML and CSS.
+          Javascript, HTML, React, Lua, Apex, Python, Salesforce 'Apex'), as
+          well as designing graphics on various platforms including HTML and
+          CSS.
         </div>
       </div>
       <div className="bold-text">Work History</div>
