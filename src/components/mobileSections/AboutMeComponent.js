@@ -39,7 +39,7 @@ const StyledComponent = styled.div`
     background-position: center; */
     width: 100%;
     height: 101px;
-    background-image: url(https://github.com/zabloncharles/Resources-Sch/assets/74889517/31389eae-1a50-4e70-a5d9-8878490df0c7);
+    background-image: url(https://github.com/zabloncharles/Port-Project-React/blob/main/public/images/my-svg/armor.png?raw=true);
     border-radius: 7px;
     background-size: contain;
     background-repeat: no-repeat;
