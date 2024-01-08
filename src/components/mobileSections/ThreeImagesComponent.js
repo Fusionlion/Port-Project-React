@@ -26,7 +26,7 @@ const StyledImageContainer = styled.div`
 `;
 
 const StyledImage = styled.div`
-  min-width: ${(props) => (props.isMiddle == "middle" ? "200px" : "140px")};
+  min-width: ${(props) => (props.isMiddle == "middle" ? "150px" : "140px")};
   min-height: ${(props) => (props.isMiddle == "middle" ? "208px" : "160px")};
   background-image: url(${(props) => props.src});
   background-size: cover;
