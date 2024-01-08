@@ -22,18 +22,18 @@ const StyledImageContainer = styled.div`
   line-height: 1.5;
   margin: 20px 0;
   gap: 5px;
+  flex-wrap: nowrap;
 `;
 
 const StyledImage = styled.div`
-  width: ${(props) => (props.isMiddle == "middle" ? "200px" : "140px")};
-  height: ${(props) => (props.isMiddle == "middle" ? "208px" : "160px")};
+  min-width: ${(props) => (props.isMiddle == "middle" ? "200px" : "140px")};
+  min-height: ${(props) => (props.isMiddle == "middle" ? "208px" : "160px")};
   background-image: url(${(props) => props.src});
   background-size: cover;
   background-position: center center;
   border-radius: 8px;
   border: 1px #3e3e3e solid;
   position: relative;
-  overflow: hidden;
 
   .name {
     position: absolute;
