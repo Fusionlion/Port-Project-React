@@ -139,6 +139,7 @@ const Card = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 17px;
+    overflow: hidden;
     border: 1px solid #0d0c0c;
     /* z-index: 2; */
     bottom: 0;
