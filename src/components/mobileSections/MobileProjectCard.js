@@ -187,9 +187,9 @@ const Card = styled.div`
 `;
 const ProjectCardStyle = styled.div`
   background-color: black;
-  min-width: 172px;
+  width: 100%;
   height: 210px;
-
+  border-radius: 17px;
   /* background-image: url("/images/my-svg/falling-rocks.svg"); */
   background-image: url(${(props) =>
     props.src || "/images/my-svg/falling-rocks.svg"});
