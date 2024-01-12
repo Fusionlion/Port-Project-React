@@ -6,27 +6,35 @@ import Ide from "../sections/Ide";
 import FooterSection from "../sections/FooterSection";
 import MobileProjectList from "./MobileProjectList";
 import MobileCourseList from "./MobileCourseList";
+import CourseLessonRow from "./CourseLessonRow";
+import LessonRowList from "./LessonRowList";
+import CourseDetail from "./CourseDetail";
 
 function MobileCourses() {
   const [cardData, setCardData] = useState([]);
-
+  const [showIde, setShowIde] = useState(false);
   const [topicClicked, setTopicClicked] = useState();
   const [currLineFromIde, setCurrLineFromIde] = useState();
+  const [subjectCurr, setSubjectCurr] = useState();
   const handleLineFromIde = (line) => {
     setCurrLineFromIde(line);
   };
+
   const ideRef = useRef();
-  const handleCardClickChild = (print) => {
+
+  const handleCardClickChild = (print, sub) => {
+    setShowIde(true);
     setCardData(print);
     setTopicClicked(print.title);
-    // Scroll to the top of the page
-
-    ideRef.current.scrollIntoView({
-      behavior: "smooth",
-      inline: "center",
-      block: "center",
-    });
+    setSubjectCurr(sub);
+    console.log("here w" + subjectCurr);
+    // ideRef.current.scrollIntoView({
+    //   behavior: "smooth",
+    //   inline: "center",
+    //   block: "center",
+    // });
   };
+
   useEffect(() => {
     // Scroll to the top when the component mounts
     window.scrollTo(0, 0);
@@ -37,60 +45,91 @@ function MobileCourses() {
   }, []);
 
   return (
-    <BodyContain>
-      <div className="overview-and-cards">
-        <div className="projects-top-content">
-          <div className="project-top-left">
-            <div className="project-title">Evaluate Your Skills</div>
-            <div className="project-title">Comprehensive courses</div>
-            <li className="project-title">
-              Unlock the door to expertise with TechMastery Courses. Delve into
-              the intricacies of data structures, master the art of Java
-              programming, and empower your Salesforce development journey.
-            </li>
-          </div>
-          <div className="project-top-right">
-            <div className="project-right-number">10</div>
-            <div className="project-right-line"></div>
-            <div className="project-right-number">04</div>
-          </div>
-        </div>
-        <Ide
-          innerRef={ideRef} // Assign the ref to the Ide component
-          text={cardData.lesson}
-          parentCardClicked={topicClicked}
-          title={cardData.title}
-          quiz={cardData.quiz}
-          updateLineParent={handleLineFromIde}
-          // switchIde={handleSwitching}
-        />
-      </div>
-      <ProjectCards>
-        <div className="cards-horizontal-projects">
-          {Object.keys(topicData).map((subject, index) => (
-            <div key={`${subject}_${index}`} className="subject-container">
-              <div className="cards-title">
-                <div>{subject}</div>
-                <div>
-                  {topicData[subject].lesson ?? topicData[subject].length}
-                </div>
-              </div>
-              <div className="cards-scroll-container">
-                <MobileCourseList
-                  key={`${subject}_course_${index}`}
-                  subject={subject}
-                  theCardClicked={handleCardClickChild}
-                  lineChanged={currLineFromIde}
-                />
-              </div>
+    <>
+      <BodyContain>
+        <div className="overview-and-cards">
+          <div className="projects-top-content">
+            <div className="project-top-left">
+              <div className="project-title">Evaluate Your Skills</div>
+              <div className="project-title">Comprehensive courses</div>
+              <li className="project-title">
+                Unlock the door to expertise with TechMastery Courses. Delve
+                into the intricacies of data structures, master the art of Java
+                programming, and empower your Salesforce development journey.
+              </li>
             </div>
-          ))}
+            <div className="project-top-right">
+              <div className="project-right-number">10</div>
+              <div className="project-right-line"></div>
+              <div className="project-right-number">04</div>
+            </div>
+          </div>
+          <div className={ideRef}></div>
+          {/* {showIde && (
+          <Ide
+            // innerRef={ideRef} // Assign the ref to the Ide component
+            text={cardData.lesson}
+            parentCardClicked={topicClicked}
+            title={cardData.title}
+            quiz={cardData.quiz}
+            updateLineParent={handleLineFromIde}
+            // switchIde={handleSwitching}
+          />
+        )} */}
+          {/* {showIde && (
+          <div className="cards-horizontal-new">
+            <LessonRowList
+              subject="Java"
+              theCardClicked={handleCardClickChild}
+              lineChanged={currLineFromIde}
+            />
+          </div>
+        )} */}
         </div>
-      </ProjectCards>
+        {!showIde && (
+          <ProjectCards>
+            <div className="cards-horizontal-projects">
+              {Object.keys(topicData).map((subject, index) => (
+                <div key={`${subject}_${index}`} className="subject-container">
+                  <div className="cards-title">
+                    <div>{subject}</div>
 
-      {/* end */}
-      <FooterSection />
-    </BodyContain>
+                    <div>
+                      {topicData[subject].lesson ?? topicData[subject].length}
+                    </div>
+                  </div>
+                  <div className="cards-scroll-container">
+                    <MobileCourseList
+                      key={`${subject}_course_${index}`}
+                      subject={subject}
+                      clicked={handleCardClickChild}
+                      // theCardClicked={() => {
+                      //   setClickedSubject(subject);
+
+                      //   console.log(clickedSubject + " " + " " + subject);
+                      // }}
+                      lineChanged={currLineFromIde}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </ProjectCards>
+        )}
+
+        {/* end */}
+        <FooterSection />
+        {console.log(" down" + subjectCurr)}
+      </BodyContain>
+      {showIde && (
+        <CourseDetail
+          arrowClicked={() => {
+            setShowIde(false);
+          }}
+          subject={subjectCurr}
+        />
+      )}
+    </>
   );
 }
 
@@ -114,7 +153,8 @@ const ProjectCards = styled.div`
   .cards-horizontal-projects {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
     row-gap: 23px;
     gap: 27px;
   }
@@ -145,6 +185,10 @@ const BodyContain = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom left;
+  }
+  .cards-horizontal-new {
+    display: flex;
+    flex-direction: column;
   }
   .project-top-left {
     height: 439px;

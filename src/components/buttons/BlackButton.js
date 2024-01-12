@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 export default function BlackButton(props) {
-  return <Wrapper>{props.label}</Wrapper>;
+  return <Wrapper onClick={props.clicked}>{props.label}</Wrapper>;
 }
 
 const Wrapper = styled.div`

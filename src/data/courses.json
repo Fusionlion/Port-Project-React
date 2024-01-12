@@ -609,113 +609,199 @@
       "num": "0",
       "desc": "Examine the utilization of Locale settings in Salesforce, recognize diverse personal and organizational language configurations, identify the two available types of time zones that can be configured in Salesforce, elucidate the purpose of both single and multi-currency setups for organizations, and discuss considerations pertaining to the Organization ID in Salesforce.",
       "image": "https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067__340.png",
-      "lesson": "Upon completion of this study. you should be capable of: Recognizing the two types of licenses applicable for user access to features. providing an explanation of the role of business hours and holidays in escalation rules and entitlement processes. describing the implementation of standard and custom fiscal years along with fiscal year configuration. identifying considerations concerning data and file storage. and recognizing considerations associated with Salesforce API.Think of Organization Setup like the backstage of a concert before the main event. It's where you handle all the essential details before the show starts. In the tech world, it's a crucial part of setting up things in Salesforce.So, before diving into the nitty-gritty of using Salesforce, you've got to decide on some basics. Imagine you're creating your virtual world. Organization Setup lets you choose your time zone 'when things happen', language 'how you communicate', and currency 'what kind of money you use'.But wait, there's more behind the scenes! In this setup, you also figure out how much space you have to store your data and files 'like photos or documents', the number of 'passes' for your friends to join your virtual world 'license counts', and a special way to connect with other systems 'API usage'.So, Organization Setup is like setting the stage for your Salesforce journey. You make sure everything is in order before you start rocking the tech world."
+      "lesson": "((https://github.com/zabloncharles/Resources-Sch/assets/74889517/066671f3-cdaf-429b-85b0-f2c93e6bc942)).By the end of this study, you'll be able to grasp a few critical things. First, you'll understand the two types of licenses that control what features users can access. Next, you'll delve into the role of business hours and holidays, specifically in how they impact the rules and processes for managing escalations and entitlements. Then, you'll get into the nitty-gritty of fiscal years, both the standard setup and the customizable aspects for organizations.Moving on, you'll explore considerations about data and file storage – essentially, how much digital space you've got for your stuff. Lastly, you'll get the lowdown on Salesforce API, which is a techy way of making sure Salesforce can smoothly communicate with other systems.Now, imagine prepping for a major concert. Before the show kicks off, there's a ton of work happening backstage – that's Organization Setup in Salesforce. It's like defining the vibe of your virtual world – choosing when things happen, how you talk, and even what kind of 'currency' you're dealing with. But it's not just that; you're also deciding on the backstage details, like how much space you've got for your digital gear, how many 'passes' your friends need to join, and a slick way to connect with other tech systems. So, Organization Setup is your backstage pass, ensuring everything's squared away before you dive into the tech scene. It's the groundwork before you start rocking the tech world.In the Salesforce world, think of company settings as the behind-the-scenes magic controlling the whole show. Data storage is like the secret vault where all the important info hangs out, and file storage is the cool spot for attachments and other stuff. User and feature licenses are the VIP passes, keeping tabs on who gets to use what cool features. Fiscal years help plan the money game, with options for standard or custom periods. Language settings make talking to the system easy, offering different language support levels. The unique organization ID is your golden ticket, giving you access to special features and support. Locale and time zone settings make everything look and feel just right, while multi-currency support lets you deal in different types of money. Business hours and holidays are like the schedule, making sure everything runs smoothly and you get what you're entitled to. It's basically the behind-the-scenes setup that makes your Salesforce experience awesome."
     }
   ],
   "Java": [
     {
-      "title": "WHAT IS AN AlG0RITHM?",
-      "num": "0",
-      "desc": "In computer programming terms, an algorithm is a set of well-defined instructions to solve a particular problem. It takes a set of input(s) and produces the desired output.o",
+      "title": "What is java?",
+      "num": "1",
+      "desc": "In this first lesson we lesrn what java is and why we should learn this popoluar coding language.",
       "image": "https://cdn.dribbble.com/userupload/11325790/file/original-8157e394170422bbb0927202cc45f001.png?resize=2048x1537",
-      "lesson": "(https://cdn.dribbble.com/userupload/11325790/file/original-8157e394170422bbb0927202cc45f001.png?resize=2048x1537).An algorithm is a single, specific way of performing a complex task efficiently and repeatedly.(/images/my-svg/woman-using-phone-laughing.jpg).The algorithm works by performing all of the smaller steps you need to do to perform the complex task, and is guaranteed to work 'something that doesn't really work or only works sometimes would just be considered incomplete'. To use a non-programming example, consider a manufacturing plant for a cookie company. The machines have pre-determined procedures for making chocolate chip cookies, oatmeal raisin abominations cookies, and sugar cookies. Now imagine that you're the guy whose job it is to switch the production lines to a new recipe whenever you change what kind of cookie you're making. It would be a huge pain if, every time you had to manually input the recipe, and give the machines instructions like measure 50kg of chocolate chips and move the flour bin at 0.1 m/s until it reaches the mixing bowl, and then rotate it at 0.25°/s until all of the flour is in the mixing bowl. It would take a ton of time, and even if you knew the recipes by heart it would still be way too easy to make a tiny mistake and cover the floor in raisins.Instead, the machine has preset routines. You push the sugar cookie button, and it follows the exact steps you gave it to make sugar cookies, every time. You don't have to worry about stupid mistakes, and it doesn't take you three hours to input the instructions.Algorithms are like those routines. Computer programs have thousands of tasks that are used over and over again. Things like sort this list of numbers, draw a triangle with these vertexes and this color,and save this file. People have worked out efficient, consistent ways of doing those tasks, and now everyone just uses those instead of doing it themselves every time. Some algorithms are designed for less common things, like finding special prime numbers: not things people do all the time, but things where coming up with a better way of doing them is still a big deal.In the end, algorithm is basically just a fancy term for method of doing something complicated/repetitive/irritating.', 'Things like 'sort this list of numbers",
+      "lesson": "Introduction to Java",
       "quiz": [
         {
-          "question": "What is an algorithm?",
+          "question": "What is java?",
           "options": [
-            "A set of well-defined instructions to solve a particular problem.",
-            "A recipe for making cookies.",
-            "A random sequence of steps.",
-            "A complex mathematical formula."
+            "a. A type of programming language",
+            "b. A set of instructions to solve a problem",
+            "c. A computer hardware component",
+            "d. An error in code"
           ],
-          "answer": "A set of well-defined instructions to solve a particular problem."
-        },
-        {
-          "question": "How do algorithms work in computer programming?",
-          "options": [
-            "By performing random tasks.",
-            "By executing predefined procedures efficiently and repeatedly.",
-            "By solving complex mathematical equations.",
-            "By generating random output."
-          ],
-          "answer": "By executing predefined procedures efficiently and repeatedly."
-        },
-        {
-          "question": "Why are algorithms compared to preset routines in a machine?",
-          "options": [
-            "To emphasize their randomness.",
-            "To highlight their complexity.",
-            "To showcase their efficiency and consistency.",
-            "To showcase their simplicity."
-          ],
-          "answer": "To showcase their efficiency and consistency."
-        },
-        {
-          "question": "What is the significance of algorithms in computer programs?",
-          "options": [
-            "They add unnecessary complexity.",
-            "They are only used for uncommon tasks.",
-            "They provide efficient solutions to frequently used tasks.",
-            "They are irrelevant in modern programming."
-          ],
-          "answer": "They provide efficient solutions to frequently used tasks."
+          "answer": "a. A type of programming language"
         }
       ]
     },
-
     {
-      "title": "Asymptotic Analysis: Big-O Notation and More",
+      "title": "Object-oriented",
+      "num": "2",
+      "desc": "Java is a high-level, class-based, object-oriented programming language. It is designed to have as few implementation dependencies as possible.",
+      "image": "https://cdn.dribbble.com/userupload/11325790/file/original-8157e394170422bbb0927202cc45f001.png?resize=2048x1537",
+      "lesson": "Introduction to Java Programming",
+      "quiz": [
+        {
+          "question": "Which of the following describes Java?",
+          "options": [
+            "a. Low-level programming language",
+            "b. Procedural programming language",
+            "c. Object-oriented programming language",
+            "d. Scripting language"
+          ],
+          "answer": "c. Object-oriented programming language"
+        }
+      ]
+    },
+    {
+      "title": "Variables",
       "num": "3",
-      "desc": "The efficiency of an algorithm depends on the amount of time, storage and other resources required to execute the algorithm. The efficiency is measured with the help of asymptotic notations.",
-      "image": "https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067__340.png"
+      "desc": "Variables are containers for storing data values. In Java, a variable must be declared with a data type.",
+      "image": "https://www.java.com/images/java/hero/java_hero_1160x400.jpg",
+      "lesson": "Understanding Java Variables",
+      "quiz": [
+        {
+          "question": "What is a variable in Java?",
+          "options": [
+            "a. A reserved keyword",
+            "b. A container for storing data values",
+            "c. A data type",
+            "d. A loop statement"
+          ],
+          "answer": "c. A data type"
+        }
+      ]
     },
     {
-      "title": "Master Theorem",
+      "title": "Conditional statements",
       "num": "4",
-      "desc": "In this tutorial, you will learn what master theorem is and how it is used for solving recurrence relations.The master method is a formula for solving recurrence relations of the form:",
-      "image": "https://media.istockphoto.com/photos/mountain-landscapes-picture-id108125029?b=1&k=20&m=108125029&s=170667a&w=0&h=L5kspxyBuqkMPMq9NP-0g3iTj7sCWjSXikPe_Kc4Ne8="
+      "desc": "Conditional statements, such as if-else, allow the execution of different code based on certain conditions.",
+      "image": "https://www.java.com/images/java/hero/java_hero_1160x400.jpg",
+      "lesson": "Working with Conditional Statements in Java",
+      "quiz": [
+        {
+          "question": "What is the purpose of an if-else statement?",
+          "options": [
+            "a. To declare a variable",
+            "b. To define a method",
+            "c. To execute different code based on conditions",
+            "d. To create a loop"
+          ],
+          "answer": "c. To execute different code based on conditions"
+        }
+      ]
     },
     {
-      "title": "Divide and Conquer Algorithm",
+      "title": "Loops",
       "num": "5",
-      "desc": "The divide and conquer algorithm's operation will be explained in this lesson. To tackle a recursive problem, we will contrast the divide and conquer strategy with various methods.",
-      "image": ""
+      "desc": "Loops, such as for and while, enable the repetition of code blocks until a certain condition is met.",
+      "image": "https://www.java.com/images/java/hero/java_hero_1160x400.jpg",
+      "lesson": "Mastering Loops in Java",
+      "quiz": [
+        {
+          "question": "What is the purpose of a loop in programming?",
+          "options": [
+            "a. To declare variables",
+            "b. To create conditional statements",
+            "c. To enable the repetition of code",
+            "d. To define methods"
+          ],
+          "answer": "c. To enable the repetition of code"
+        }
+      ]
     },
     {
-      "title": "Stack Data Structure",
+      "title": "Arrays",
       "num": "6",
-      "desc": "You will learn about the stack data structure and how it is implemented in Python, Java, and C/C++ in this course.Stacks are linear data structures that adhere to the Last In First Out rule (LIFO). This implies that the last piece to be added to the stack gets eliminated first.",
-      "image": ""
+      "desc": "Arrays are used to store multiple values in a single variable. In Java, arrays must be declared with a specified data type.",
+      "image": "https://www.java.com/images/java/hero/java_hero_1160x400.jpg",
+      "lesson": "Understanding Arrays in Java",
+      "quiz": [
+        {
+          "question": "What is the purpose of an array in Java?",
+          "options": [
+            "a. To store multiple values in a single variable",
+            "b. To declare a loop",
+            "c. To define conditional statements",
+            "d. To create classes"
+          ],
+          "answer": "a. To store multiple values in a single variable"
+        }
+      ]
     },
     {
-      "title": "Queue Data Structure",
+      "title": "Functions",
       "num": "7",
-      "desc": "You will learn what a queue is in this tutorial. Additionally, queue implementations are available in Python, Java, C, and C++.In programming, a queue is a useful data structure. It is comparable to the line for tickets outside a movie theater, where the person who joins the line first receives the first ticket.",
-      "image": ""
+      "desc": "Functions, also known as methods, are blocks of code that perform a specific task. In Java, they must be defined within a class.",
+      "image": "https://www.java.com/images/java/hero/java_hero_1160x400.jpg",
+      "lesson": "Mastering Functions in Java",
+      "quiz": [
+        {
+          "question": "What is a function in Java?",
+          "options": [
+            "a. A reserved keyword",
+            "b. A variable",
+            "c. A block of code that performs a specific task",
+            "d. A loop statement"
+          ],
+          "answer": "c. A block of code that performs a specific task"
+        }
+      ]
     },
     {
-      "title": "Types of Queues",
+      "title": "OOP",
       "num": "8",
-      "desc": "This tutorial will teach you about different types of queues and illustrate them.In programming, a queue is a useful data structure. It's similar to the ticket line outside a movie theater, where the first person to enter the line gets the first ticket.",
-      "image": ""
+      "desc": "Object-oriented programming (OOP) is a paradigm that organizes code into reusable objects. Java is an object-oriented language.",
+      "image": "https://www.java.com/images/java/hero/java_hero_1160x400.jpg",
+      "lesson": "Introduction to Object-Oriented Programming in Java",
+      "quiz": [
+        {
+          "question": "What is the main idea behind object-oriented programming?",
+          "options": [
+            "a. Code organization into reusable objects",
+            "b. Sequential execution of code",
+            "c. Procedural programming",
+            "d. Looping structures"
+          ],
+          "answer": "a. Code organization into reusable objects"
+        }
+      ]
     },
     {
-      "title": "Circular Queue Data Structure",
+      "title": "Exception handling",
       "num": "9",
-      "desc": "This tutorial will teach you what a circular queue is. There are also circular queue implementations in C, C++, Java, and Python.",
-      "image": ""
+      "desc": "Exception handling in Java involves managing runtime errors to prevent program crashes. Keywords such as try, catch, and finally are used.",
+      "image": "https://www.java.com/images/java/hero/java_hero_1160x400.jpg",
+      "lesson": "Java Exception Handling",
+      "quiz": [
+        {
+          "question": "What is the purpose of exception handling in Java?",
+          "options": [
+            "a. To create runtime errors",
+            "b. To prevent program crashes",
+            "c. To define loops",
+            "d. To declare variables"
+          ],
+          "answer": "b. To prevent program crashes"
+        }
+      ]
     },
     {
-      "title": "Priority Queue",
+      "title": "Classes and libraries",
       "num": "10",
-      "desc": "This tutorial will teach you what a priority queue is. You will also learn about its Python, Java, C, and C++ implementations.A priority queue is a type of queue in which each element has a different priority value. Furthermore, elements are served in the order of their priority. That is, the elements with the highest priority are served first.",
-      "image": ""
-    },
-    {
-      "title": "Deque Data Structure",
-      "num": "11",
-      "desc": "This tutorial will teach you what a double ended queue (deque) is. There are also working examples of various operations on a deque in C, C++, Java, and Python.",
-      "image": ""
+      "desc": "Java provides built-in classes and libraries that offer various functionalities, making it a versatile programming language.",
+      "image": "https://www.java.com/images/java/hero/java_hero_1160x400.jpg",
+      "lesson": "Exploring Java's Built-in Classes and Libraries",
+      "quiz": [
+        {
+          "question": "What makes Java a versatile programming language?",
+          "options": [
+            "a. Its ability to create runtime errors",
+            "b. Its extensive built-in classes and libraries",
+            "c. Its focus on procedural programming",
+            "d. Its use of loops"
+          ],
+          "answer": "b. Its extensive built-in classes and libraries"
+        }
+      ]
     }
   ]
 }

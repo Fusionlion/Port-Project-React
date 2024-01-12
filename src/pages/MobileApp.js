@@ -69,6 +69,7 @@ export default function MobileApp() {
           >
             COURSES
           </li>
+
           <li
             className="mobile-menu-item"
             onClick={() => handleMenuButton("privacy")}

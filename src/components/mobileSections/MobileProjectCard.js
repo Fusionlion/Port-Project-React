@@ -133,6 +133,7 @@ const Card = styled.div`
     position: absolute;
     height: 100%;
     width: 100%;
+
     background-image: url(${(props) =>
       props.src || "/images/my-svg/falling-rocks.svg"});
     background-size: cover;
@@ -190,7 +191,7 @@ const ProjectCardStyle = styled.div`
   width: 100%;
   height: 210px;
   border-radius: 17px;
-  /* background-image: url("/images/my-svg/falling-rocks.svg"); */
+
   background-image: url(${(props) =>
     props.src || "/images/my-svg/falling-rocks.svg"});
   background-size: cover;

@@ -200,7 +200,7 @@ const Ide = (props) => {
       currentText = text[line];
 
       if (currentText !== undefined) {
-        if (currentText.trimStart().startsWith("(")) {
+        if (currentText.trimStart().startsWith("('")) {
           currentText = "Refer to the following image!";
         }
       } else {
@@ -256,7 +256,7 @@ const Ide = (props) => {
         {!quiz ? (
           <div>
             {displayedItems.map((item, index) => {
-              const match = item.match(/\(([^)]+)\)/);
+              const match = item.match(/\(\(([^)]+)\)\)/);
               const url = match ? match[1] : null;
 
               return (
@@ -375,6 +375,9 @@ const Video = styled.video`
   z-index: 4;
   /* filter: blur(5px); */
   border-radius: 24px;
+  @media screen and (max-width: 768px) {
+    border: #1c1b1b 1px solid;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -456,6 +459,7 @@ const Wrapper = styled.div`
     z-index: 5;
     @media screen and (max-width: 768px) {
       margin-bottom: 42px;
+      padding: 5px 0px;
     }
   }
   .typing {
@@ -468,6 +472,18 @@ const Wrapper = styled.div`
     line-height: 1.2;
     text-transform: lowercase;
     z-index: 5;
+    @media screen and (max-width: 768px) {
+      background-color: black;
+      border: none;
+      border-top: 1px solid #292929;
+      border-radius: 0px;
+      padding: 9px 8px;
+      -webkit-animation: all 2s;
+      animation: all 2s;
+      text-align: start;
+      line-height: 1.3;
+      text-transform: lowercase;
+    }
   }
 
   .typing-question {
@@ -562,7 +578,7 @@ const Wrapper = styled.div`
   .ide-image {
     background-image: url("/images/my-svg/falling-rocks.svg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-position: center center;
     width: 100%;
     height: 399px;

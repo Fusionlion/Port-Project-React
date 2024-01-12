@@ -12,9 +12,9 @@ function MobileCourseList(props) {
   const data = topicData[props.subject ?? "Java"].map((record) => {
     return record;
   });
-  const [visibleProjects, setVisibleProjects] = useState(4);
+  const [visibleProjects, setVisibleProjects] = useState(1);
   const [clickedProjects, setClickedProjects] = useState([]);
-  console.log(visibleProjects + " " + data.length);
+
   useEffect(() => {
     // Run the function when the relevant prop from the parent changes
     setClickedProjects((prevClickedProjects) => {
@@ -40,12 +40,14 @@ function MobileCourseList(props) {
     });
   }, [props.lineChanged, activeCard]); // Include the relevant props in the dependency arraydependency array
   const handleCardClick = (cardPrints) => {
-    props.theCardClicked(cardPrints);
+    // props.theCardClicked(cardPrints);
+    props.clicked(cardPrints, props.subject);
+
     setActiveCard(cardPrints.title);
     setActiveCardNum(cardPrints.num);
   };
   const showMoreProjects = () => {
-    setVisibleProjects((prev) => prev + 5);
+    setVisibleProjects((prev) => prev + 3);
   };
 
   return (
@@ -73,7 +75,7 @@ function MobileCourseList(props) {
           )
       )}
       {visibleProjects > 1 && visibleProjects < data.length && (
-        <BlackButton label="Show More" onClick={showMoreProjects} />
+        <BlackButton label="Show More" clicked={showMoreProjects} />
       )}
     </>
   );
