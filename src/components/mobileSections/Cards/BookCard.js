@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 // import ProgressBar from "./ProgressBar";
 import { useState } from "react";
-import ProgressBar from "../buttons/ProgressBar";
+import ProgressBar from "../../buttons/ProgressBar";
+
 function BookCard(props) {
   const [progressValue, setProgressValue] = useState(false);
   const [isStarted, setIsStarted] = useState(false);
@@ -22,20 +23,8 @@ function BookCard(props) {
   }
   // WEHEN START IS CLICKED ON THE CARD
   const handleStartClick = () => {
-    setIsStarted(true);
-
-    // SEND UP THE TITLE THAT WAS CLICKED
-    setTitleClicked(props.title);
-
     // SEND A MESSAGE UP THAT CARD START WAS CLICKED
     props.click();
-    setProgressValue(progressValue + 10);
-    // Simulate progrepross increase over time
-
-    // this should be ONNN
-    // if (props.title.toUpperCase().toUpperCase() in data) {
-    //   setProgressValue(true);
-    // }
   };
   const handleProgressChange = (newProgress) => {
     setProgress(newProgress);
@@ -43,7 +32,7 @@ function BookCard(props) {
     // console.log("Progress changed:", newProgress);
   };
   return (
-    <Card src={props.imageSrc}>
+    <Card src={props.imageSrc} onClick={handleStartClick}>
       <ProjectCardStyle
         onClick={props.tapped}
         src={props.imageSrc}
@@ -56,7 +45,7 @@ function BookCard(props) {
           {props.title}
         </Title>
         <Desc2>
-          {props.desc2 ??
+          {props.desc ??
             "Explore the fundamentals of Java from a beginner's perspective."}
         </Desc2>
         <div className="desc">Z.CHARLES</div>
@@ -89,7 +78,7 @@ const Desc2 = styled.div`
   top: -43px;
   text-align: center;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: hidden;
@@ -233,7 +222,7 @@ const Card = styled.div`
 `;
 const Title = styled.div`
   text-align: center;
-  font-size: 52px;
+  font-size: 32px;
   text-transform: uppercase;
   margin: 20px 0;
   font-family: "cisnero";
@@ -242,6 +231,7 @@ const Title = styled.div`
   -webkit-text-fill-color: transparent;
   text-shadow: 1px -1px 0px #00000000, 1px -1px 0px #151417;
   margin-top: 10px;
+  padding-bottom: 25px;
 `;
 const ProjectCardStyle = styled.div`
   min-width: 172px;

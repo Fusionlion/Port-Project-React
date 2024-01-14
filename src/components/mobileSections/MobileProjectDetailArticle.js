@@ -156,6 +156,7 @@ const Wrapper = styled.div`
   width: 100%;
   /* z-index: 99; */
   overflow: scroll;
+  z-index: 5;
   .content {
     > :nth-child(n + 1) {
       padding: 0px 20px;

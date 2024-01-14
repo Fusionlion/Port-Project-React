@@ -6,7 +6,7 @@ import MobileProjectCard from "./MobileProjectCard";
 import { useState } from "react";
 import MobileTextImage from "./MobileTextImage";
 import topicData from "../../data/courses.json";
-import BookCard from "./BookCard";
+import BookCard from "./Cards/BookCard";
 
 const Container = styled.div`
   display: flex;

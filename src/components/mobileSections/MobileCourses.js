@@ -9,19 +9,50 @@ import MobileCourseList from "./MobileCourseList";
 import CourseLessonRow from "./CourseLessonRow";
 import LessonRowList from "./LessonRowList";
 import CourseDetail from "./CourseDetail";
+import CategoryCard from "./Cards/CategoryCard";
+import TrendingCards from "./TrendingCards";
+import CurrentProjectList from "./lists/CurrentProjectList";
+import NumberCourse from "./Cards/NumberCourse";
+import MobileProjectDetail from "./MobileProjectDetail";
+import MobileProjectDetailArticle from "./MobileProjectDetailArticle";
+import CategoryList from "./lists/CategoryList";
+import BooksList from "./lists/BooksList";
+import CoursesComponent from "./CoursesComponent";
 
 function MobileCourses() {
   const [cardData, setCardData] = useState([]);
   const [showIde, setShowIde] = useState(false);
+  const [showArticle, setShowArticle] = useState(false);
+  const [showArticel, setShowArticel] = useState(false);
   const [topicClicked, setTopicClicked] = useState();
   const [currLineFromIde, setCurrLineFromIde] = useState();
   const [subjectCurr, setSubjectCurr] = useState();
+  const [detailData, setDetailData] = useState([]);
+  const [activeTab, setActiveTab] = useState("0");
+  const [detailProjectData, setDetailProjectData] = useState([]);
+
+  const handleProjectTabClick = (cardPrints) => {
+    // setActiveTab(tabName);
+    // setArticle(articlefromchild);
+    setDetailData(cardPrints);
+    if (cardPrints.article && cardPrints.article.length > 0) {
+      setShowArticel(true);
+    }
+
+    // console.log("card clciked " + articlefromchild);
+    //  console.log("card clicke in projects 2 " + cardClickedBios);
+  };
+  const handleArrow = () => {
+    setShowArticle(false);
+  };
   const handleLineFromIde = (line) => {
     setCurrLineFromIde(line);
   };
 
   const ideRef = useRef();
-
+  const handleArticle = (placeholder) => {
+    setShowArticle(true);
+  };
   const handleCardClickChild = (print, sub) => {
     setShowIde(true);
     setCardData(print);
@@ -33,6 +64,11 @@ function MobileCourses() {
     //   inline: "center",
     //   block: "center",
     // });
+  };
+
+  const handleTabClick = (cardPrints) => {
+    setShowArticle(true);
+    setDetailData(cardPrints);
   };
 
   useEffect(() => {
@@ -64,42 +100,42 @@ function MobileCourses() {
               <div className="project-right-number">04</div>
             </div>
           </div>
-          <div className={ideRef}></div>
-          {/* {showIde && (
-          <Ide
-            // innerRef={ideRef} // Assign the ref to the Ide component
-            text={cardData.lesson}
-            parentCardClicked={topicClicked}
-            title={cardData.title}
-            quiz={cardData.quiz}
-            updateLineParent={handleLineFromIde}
-            // switchIde={handleSwitching}
-          />
-        )} */}
-          {/* {showIde && (
-          <div className="cards-horizontal-new">
-            <LessonRowList
-              subject="Java"
-              theCardClicked={handleCardClickChild}
-              lineChanged={currLineFromIde}
-            />
+
+          <div className="cards-title"> My Projects</div>
+          <div className="cards-horizontal-list">
+            <CategoryList theCardClicked={handleTabClick} />
           </div>
-        )} */}
+
+          <div className="cards-title"> Books & Research</div>
+          <div className="cards-horizontal-list">
+            <BooksList theCardClicked={handleTabClick} />
+          </div>
+
+          <div className="cards-title"> Current Projects</div>
+          <div className="cards-horizontal-list">
+            <CurrentProjectList theCardClicked={handleTabClick} />
+          </div>
+
+          <div className={ideRef}></div>
         </div>
         {!showIde && (
           <ProjectCards>
             <div className="cards-horizontal-projects">
               {Object.keys(topicData).map((subject, index) => (
                 <div key={`${subject}_${index}`} className="subject-container">
-                  <div className="cards-title">
-                    <div>{subject}</div>
-
-                    <div>
+                  {index < 1 && (
+                    <div className="course-title">
+                      {/* <div>{subject}</div> */}
+                      <div>Courses</div>
+                      {/* <div>
                       {topicData[subject].lesson ?? topicData[subject].length}
+                    </div> */}
                     </div>
-                  </div>
+                  )}
                   <div className="cards-scroll-container">
                     <MobileCourseList
+                      count={topicData[subject].length}
+                      index={index}
                       key={`${subject}_course_${index}`}
                       subject={subject}
                       clicked={handleCardClickChild}
@@ -116,7 +152,9 @@ function MobileCourses() {
             </div>
           </ProjectCards>
         )}
-
+        <PaddingH>
+          <CoursesComponent linksOff="off" />
+        </PaddingH>
         {/* end */}
         <FooterSection />
         {console.log(" down" + subjectCurr)}
@@ -129,11 +167,23 @@ function MobileCourses() {
           subject={subjectCurr}
         />
       )}
+      {showArticle && (
+        <MobileProjectDetailArticle
+          data={detailData}
+          arrowClicked={handleArrow}
+        />
+      )}
     </>
   );
 }
 
 export default MobileCourses;
+
+const PaddingH = styled.div`
+  // Your styles here
+  padding: 0px 20px;
+`;
+
 const ProjectCards = styled.div`
   padding: 20px;
   margin-top: 20px;
@@ -164,7 +214,6 @@ const ProjectCards = styled.div`
   .cards-scroll-container {
     display: flex;
     gap: 10px;
-    overflow: scroll;
   }
 `;
 const BodyContain = styled.div`
@@ -176,7 +225,29 @@ const BodyContain = styled.div`
   width: 100%;
   color: white;
   overflow: hidden;
-
+  .cards-title {
+    // Your styles here
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: white;
+    padding: 0px 20px;
+  }
+  .course-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: white;
+    text-align: center;
+  }
+  .cards-horizontal-list {
+    display: flex;
+    gap: 7px;
+    padding-left: 20px;
+    overflow: scroll;
+    padding-right: 20px;
+    padding-bottom: 20px;
+  }
   .projects-top-content {
     display: flex;
     justify-content: space-between;
@@ -235,7 +306,8 @@ const BodyContain = styled.div`
     align-items: center;
     padding-top: 95px;
     position: absolute;
-    right: 0;
+    left: 101px;
+    rotate: 90deg;
   }
 
   .project-title {
@@ -247,6 +319,7 @@ const BodyContain = styled.div`
   .project-right-number {
     font-size: 18px;
     font-weight: bold;
+    rotate: 267deg;
   }
 
   .project-right-line {

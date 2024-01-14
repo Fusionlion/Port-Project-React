@@ -200,8 +200,9 @@ const CoursesComponent = (props) => {
           imageSrc="https://img.freepik.com/premium-photo/forest-landscape-with-sunset-forest-background_901003-26514.jpg"
         /> */}
       </div>
-
-      <StyledButton onClick={props.buttonClicked}>courses.</StyledButton>
+      {!props.linksOff && (
+        <StyledButton onClick={props.buttonClicked}>courses.</StyledButton>
+      )}
       <MobileTextImage
         title2="More Courses"
         title3="Empowering Learning "

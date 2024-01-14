@@ -4,6 +4,7 @@ import topicData from "../../data/courses.json";
 import { useState, useEffect } from "react";
 import BlackButton from "../../components/buttons/BlackButton";
 import MobileProjectCard from "./MobileProjectCard";
+import NumberCourse from "./Cards/NumberCourse";
 function MobileCourseList(props) {
   // data is: print.title,print.num,print.desc
   const [activeCard, setActiveCard] = useState("");
@@ -56,7 +57,10 @@ function MobileCourseList(props) {
         (print, index) =>
           // Check if print.lesson exists and is truthy before rendering the card
           print.lesson && (
-            <MobileProjectCard
+            <NumberCourse
+              subject={props.subject}
+              count={props.count}
+              index={props.index}
               key={print.num}
               title={print.title}
               desc={print.desc}

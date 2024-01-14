@@ -7,6 +7,7 @@ import Ide from "../sections/Ide";
 import CourseLessonRow from "./CourseLessonRow";
 import LessonRowList from "./LessonRowList";
 import CoursesComponent from "./CoursesComponent";
+import ParallaxStars from "./MobileBackgrounds.js/ParallaxStars";
 
 export default function CourseDetail(props) {
   // const datafake = require("../../data/courses.json"); // Import your
@@ -14,6 +15,7 @@ export default function CourseDetail(props) {
   const [currLineFromIde, setCurrLineFromIde] = useState();
   const [topicClicked, setTopicClicked] = useState();
   const [lessonCount, setLessonCout] = useState();
+
   const handleArrowClicked = () => {
     props.arrowClicked();
   };
@@ -24,6 +26,13 @@ export default function CourseDetail(props) {
   const handleLineFromIde = (line) => {
     setCurrLineFromIde(line);
   };
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Add this line for smooth scrolling
+    });
+  }, []);
   return (
     <Wrapper>
       <div className="project-arrow" onClick={handleArrowClicked}>
@@ -31,6 +40,7 @@ export default function CourseDetail(props) {
       </div>
       <Ide
         // innerRef={ideRef} // Assign the ref to the Ide component
+        ideType="blurry"
         text={cardData.lesson}
         parentCardClicked={topicClicked}
         title={cardData.title}
@@ -48,11 +58,13 @@ export default function CourseDetail(props) {
         }}
         subject={props.subject}
         theCardClicked={handleLessonClicked}
+        lineChanged={currLineFromIde}
       />
       <Padding>
         <CoursesComponent />
       </Padding>
       <FooterSection />
+      <ParallaxStars />
     </Wrapper>
   );
 }
@@ -85,8 +97,9 @@ const Wrapper = styled.div`
   background-color: black;
   color: aliceblue;
   padding-top: 120px;
-  background-image: url(/images/my-svg/falling-stars.svg);
+  /* background-image: url(/images/my-svg/falling-stars.svg); */
   width: 100%;
+  z-index: 5;
   .project-arrow {
     position: absolute;
     padding: 20px;

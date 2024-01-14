@@ -74,7 +74,7 @@ function LessonRowList(props) {
           )
       )}
       {visibleProjects > 1 && visibleProjects < data.length && (
-        <MoreButton clicked={showMoreProjects}>Show More</MoreButton>
+        <MoreButton onClick={showMoreProjects}>Show More</MoreButton>
       )}
     </>
   );

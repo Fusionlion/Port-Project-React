@@ -82,14 +82,15 @@ const Card = styled.div`
   text-align: start;
   position: relative;
   border-radius: 17px;
-  background-color: ${(props) => (props.updateProgress > 0 ? "gray" : "black")};
+  background-color: ${(props) => (props.updateProgress > 0 ? "gray" : "none")};
   overflow: hidden;
   display: flex;
   justify-content: start;
   align-items: center;
   margin: 5px 20px;
-  border: 1px solid #333333ad;
+  border: 1px solid #0000006b;
   padding: 17px 15px;
+  backdrop-filter: blur(33px);
   .number {
     font-size: xxx-large;
     font-family: "ACCELERARE";

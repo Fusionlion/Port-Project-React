@@ -381,7 +381,8 @@ const Video = styled.video`
 `;
 
 const Wrapper = styled.div`
-  background-color: #000;
+  background-color: ${(props) =>
+    props.ideType === "blurry" ? "none" : "#000"};
   z-index: 6;
   color: white;
   border-radius: 24px;
@@ -393,6 +394,7 @@ const Wrapper = styled.div`
   width: 658px;
   padding: 20px;
   font-size: 20px;
+  backdrop-filter: ${(props) => (props.ideType === "blurry" ? "33px" : "none")};
   font-family: "Spline Sans Mono", sans-serif;
   position: relative;
   border: 1px #3f3939 solid;
@@ -423,8 +425,11 @@ const Wrapper = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #000;
+    background-color: ${(props) =>
+      props.ideType === "blurry" ? "none" : "#000"};
     border-radius: 24px;
+    backdrop-filter: ${(props) =>
+      props.ideType === "blurry" ? "33px" : "none"};
     @media screen and (max-width: 768px) {
       /* background: url(/images/my-svg/falling-rocks.svg); */
       /* background-size: cover; */

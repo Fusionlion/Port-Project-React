@@ -121,6 +121,7 @@ const Card = styled.div`
   /* min-width: 172px; */
   min-width: 242px;
   overflow: hidden;
+  border: 1px solid #7d7d7d30;
   .linear {
     /* position: absolute;
     height: 100%;
