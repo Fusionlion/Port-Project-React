@@ -59,7 +59,7 @@ const StyledTextButtonContainer = styled.div`
   text-align: center;
 `;
 
-const StyledText = styled.p`
+const StyledText = styled.div`
   text-align: center;
   color: white;
   font-size: 17px;

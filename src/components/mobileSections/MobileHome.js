@@ -10,6 +10,7 @@ import EmploymentHistoryComponent from "./EmploymentHistoryComponent";
 import CodingExpertiseComponent from "./CodingExpertiseComponent";
 import CertificateComponent from "./CertificateComponent";
 import BookComponent from "./BookComponent";
+import GetStartedButton from "./GetStartedButton";
 export default function MobileHome(props) {
   // const [text, setText] = useState("Let's get started :)");
   // const [index, setIndex] = useState(0);
@@ -47,7 +48,11 @@ export default function MobileHome(props) {
         applications. Welcome to my personal slice of the internet.I'm glad
         you're here!
       </MobileDesc>
-      <div className="mobile-welcome-button">GET STARTED</div>
+      <GetStartedButton
+        clicked={() => {
+          props.page("courses");
+        }}
+      />
       <div className="after-button-text">
         <br />
         Step into my digital realm, where technology meets innovation, and join
@@ -77,6 +82,7 @@ export default function MobileHome(props) {
     </Wrapper>
   );
 }
+
 const BGroundBottom = styled.div`
   height: 800px;
   width: 100vw;

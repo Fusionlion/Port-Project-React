@@ -76,11 +76,6 @@ export default function MobileProjectDetailArticle(props) {
                 </div>
                 <div className="project-title">{props.data.desc}</div>
               </div>
-              <div className="project-top-right">
-                <div className="project-right-number">10</div>
-                <div className="project-right-line"></div>
-                <div className="project-right-number">04</div>
-              </div>
             </div>
           );
 
@@ -265,7 +260,6 @@ const Wrapper = styled.div`
   }
   .project-title {
     font-size: 54px;
-    font-weight: bold;
     margin-bottom: 10px;
   }
 

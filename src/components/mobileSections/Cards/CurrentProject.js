@@ -37,6 +37,8 @@ const CardContainer = styled.div`
   > :nth-child(2) {
     font-size: 25px;
     font-family: "lavire personal use";
+    filter: drop-shadow(2px 4px 6px black);
+    color: white;
   }
 `;
 
@@ -60,6 +62,7 @@ const HorizontalDivsContainer = styled.div`
   margin-bottom: 10px;
 
   > :nth-child(1) {
+    color: white;
     list-style: hiragana;
     overflow: hidden;
     display: -webkit-box;
@@ -120,6 +123,8 @@ const CurrentProject = (props) => {
     // Handle the case when props.size is undefined
     lessonLength = 0; // or any default value you prefer
   }
+  const skillsString = props.stack ?? "java";
+  const skillsArray = skillsString.split(",");
   // WEHEN START IS CLICKED ON THE CARD
   const handleStartClick = () => {
     // SEND A MESSAGE UP THAT CARD START WAS CLICKED
@@ -137,15 +142,22 @@ const CurrentProject = (props) => {
     <OuterContainer background={getRandomColor} onClick={handleStartClick}>
       <SpaceBetween>
         <CardContainer>
-          <div>Creative Cloud</div>
-          <div>Sr. Product Designer</div>
+          <div>Creative Project</div>
+          <div>{props.title}</div>
         </CardContainer>
-        <FaJava />
+
+        {skillsArray[0] === "java" && <FaJava />}
+        {skillsArray[0] === "html" && <FaHtml5 />}
+        {skillsArray[0] === "php" && <FaPhp />}
+        {skillsArray[0] === "python" && <FaPython />}
+        {skillsArray[0] === "css" && <FaCss3 />}
+        {skillsArray[0] === "salesforce" && <FaSalesforce />}
       </SpaceBetween>
 
       <ButtonContainer>
-        <StyledButton>Java</StyledButton>
-        <StyledButton>Salesforce</StyledButton>
+        {skillsArray.map((skill, index) => (
+          <StyledButton key={index}>{skill}</StyledButton>
+        ))}
       </ButtonContainer>
 
       <HorizontalDivsContainer>
@@ -160,7 +172,7 @@ const CurrentProject = (props) => {
           <Circle />
         </CircleContainer>
 
-        <div>4 hours ago</div>
+        <div>{props.date ?? "started months ago"}</div>
       </TextContainer>
     </OuterContainer>
   );

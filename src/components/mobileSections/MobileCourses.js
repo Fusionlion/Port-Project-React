@@ -18,6 +18,8 @@ import MobileProjectDetailArticle from "./MobileProjectDetailArticle";
 import CategoryList from "./lists/CategoryList";
 import BooksList from "./lists/BooksList";
 import CoursesComponent from "./CoursesComponent";
+import LoadingScreen from "./LoadingScreen";
+import ParallaxStars from "./MobileBackgrounds.js/ParallaxStars";
 
 function MobileCourses() {
   const [cardData, setCardData] = useState([]);
@@ -81,84 +83,85 @@ function MobileCourses() {
   }, []);
 
   return (
-    <>
-      <BodyContain>
-        <div className="overview-and-cards">
-          <div className="projects-top-content">
-            <div className="project-top-left">
-              <div className="project-title">Evaluate Your Skills</div>
-              <div className="project-title">Comprehensive courses</div>
-              <li className="project-title">
-                Unlock the door to expertise with TechMastery Courses. Delve
-                into the intricacies of data structures, master the art of Java
-                programming, and empower your Salesforce development journey.
-              </li>
+    <Wrapper>
+      {!showArticle && !showIde && (
+        <BodyContain>
+          <div className="overview-and-cards">
+            <div className="projects-top-content">
+              <div className="project-top-left">
+                <div className="project-title">Evaluate Your Skills</div>
+                <div className="project-title">Comprehensive courses</div>
+                <li className="project-title">
+                  Unlock the door to expertise with TechMastery Courses. Delve
+                  into the intricacies of data structures, master the art of
+                  Java programming, and empower your Salesforce development
+                  journey.
+                </li>
+              </div>
             </div>
-            <div className="project-top-right">
-              <div className="project-right-number">10</div>
-              <div className="project-right-line"></div>
-              <div className="project-right-number">04</div>
+
+            <div className="cards-title"> Trending</div>
+            <div className="cards-horizontal-list">
+              <CategoryList theCardClicked={handleTabClick} />
             </div>
-          </div>
 
-          <div className="cards-title"> My Projects</div>
-          <div className="cards-horizontal-list">
-            <CategoryList theCardClicked={handleTabClick} />
-          </div>
+            <div className="cards-title"> Books & Research</div>
+            <div className="cards-horizontal-list">
+              <BooksList theCardClicked={handleTabClick} />
+            </div>
 
-          <div className="cards-title"> Books & Research</div>
-          <div className="cards-horizontal-list">
-            <BooksList theCardClicked={handleTabClick} />
-          </div>
+            <div className="cards-title"> Current Projects</div>
+            <div className="cards-horizontal-list">
+              <CurrentProjectList theCardClicked={handleTabClick} />
+            </div>
 
-          <div className="cards-title"> Current Projects</div>
-          <div className="cards-horizontal-list">
-            <CurrentProjectList theCardClicked={handleTabClick} />
+            <div className={ideRef}></div>
           </div>
-
-          <div className={ideRef}></div>
-        </div>
-        {!showIde && (
-          <ProjectCards>
-            <div className="cards-horizontal-projects">
-              {Object.keys(topicData).map((subject, index) => (
-                <div key={`${subject}_${index}`} className="subject-container">
-                  {index < 1 && (
-                    <div className="course-title">
-                      {/* <div>{subject}</div> */}
-                      <div>Courses</div>
-                      {/* <div>
+          {!showIde && (
+            <ProjectCards>
+              <div className="cards-horizontal-projects">
+                {Object.keys(topicData).map((subject, index) => (
+                  <div
+                    key={`${subject}_${index}`}
+                    className="subject-container"
+                  >
+                    {index < 1 && (
+                      <div className="course-title">
+                        {/* <div>{subject}</div> */}
+                        <div>Courses</div>
+                        {/* <div>
                       {topicData[subject].lesson ?? topicData[subject].length}
                     </div> */}
-                    </div>
-                  )}
-                  <div className="cards-scroll-container">
-                    <MobileCourseList
-                      count={topicData[subject].length}
-                      index={index}
-                      key={`${subject}_course_${index}`}
-                      subject={subject}
-                      clicked={handleCardClickChild}
-                      // theCardClicked={() => {
-                      //   setClickedSubject(subject);
+                      </div>
+                    )}
+                    <div className="cards-scroll-container">
+                      <MobileCourseList
+                        count={topicData[subject].length}
+                        index={index}
+                        key={`${subject}_course_${index}`}
+                        subject={subject}
+                        clicked={handleCardClickChild}
+                        // theCardClicked={() => {
+                        //   setClickedSubject(subject);
 
-                      //   console.log(clickedSubject + " " + " " + subject);
-                      // }}
-                      lineChanged={currLineFromIde}
-                    />
+                        //   console.log(clickedSubject + " " + " " + subject);
+                        // }}
+                        lineChanged={currLineFromIde}
+                      />
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </ProjectCards>
-        )}
-        <PaddingH>
-          <CoursesComponent linksOff="off" />
-        </PaddingH>
-        {/* end */}
-        <FooterSection />
-        {console.log(" down" + subjectCurr)}
-      </BodyContain>
+                ))}
+              </div>
+            </ProjectCards>
+          )}
+          <PaddingH>
+            <CoursesComponent linksOff="off" />
+          </PaddingH>
+          {/* end */}
+          <FooterSection />
+          {console.log(" down" + subjectCurr)}
+        </BodyContain>
+      )}
       {showIde && (
         <CourseDetail
           arrowClicked={() => {
@@ -173,12 +176,16 @@ function MobileCourses() {
           arrowClicked={handleArrow}
         />
       )}
-    </>
+      <ParallaxStars />
+    </Wrapper>
   );
 }
 
 export default MobileCourses;
-
+const Wrapper = styled.div`
+  // Your styles here
+  position: relative;
+`;
 const PaddingH = styled.div`
   // Your styles here
   padding: 0px 20px;
@@ -186,7 +193,6 @@ const PaddingH = styled.div`
 
 const ProjectCards = styled.div`
   padding: 20px;
-  margin-top: 20px;
   background-image: url(/images/my-svg/bubbles.svg);
   background-size: cover;
   background-repeat: repeat;
@@ -221,7 +227,7 @@ const BodyContain = styled.div`
   flex-direction: column;
   position: relative;
   font-family: "Spline Sans Mono", sans-serif;
-  background: linear-gradient(to top, #000000, #000, #000);
+  /* background: linear-gradient(to top, #000000, #000, #0006); */
   width: 100%;
   color: white;
   overflow: hidden;
@@ -238,7 +244,7 @@ const BodyContain = styled.div`
     font-weight: bold;
     margin-bottom: 30px;
     color: white;
-    text-align: center;
+    text-align: start;
   }
   .cards-horizontal-list {
     display: flex;
@@ -282,6 +288,8 @@ const BodyContain = styled.div`
       line-height: 1.2;
       font-weight: normal;
       color: gray;
+      padding-bottom: 10px;
+      padding-top: 5px;
     }
     > :nth-child(3) {
       font-size: 13px;
@@ -296,38 +304,14 @@ const BodyContain = styled.div`
       line-height: 1.8;
       font-weight: normal;
       list-style: katakana-iroha;
+      backdrop-filter: blur(42px);
+      border: 1px solid #323232;
+      border-radius: 11px;
+      padding: 11px;
+      background: url(/images/my-svg/falling-rocks.svg);
     }
   }
-  .project-top-right {
-    color: #494444;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 95px;
-    position: absolute;
-    left: 101px;
-    rotate: 90deg;
-  }
 
-  .project-title {
-    font-size: 54px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-
-  .project-right-number {
-    font-size: 18px;
-    font-weight: bold;
-    rotate: 267deg;
-  }
-
-  .project-right-line {
-    width: 2px;
-    background-color: #ffffff;
-    margin: 5px 0;
-    height: 100px;
-  }
   .bottom-container {
     display: flex;
     padding: 20px 0px;

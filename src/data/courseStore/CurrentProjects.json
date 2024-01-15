@@ -1,0 +1,93 @@
+[
+  {
+    "title": "Health Track",
+    "num": "1",
+    "desc": "Health-track : 'Your Comprehensive Health Companion', 'stack': 'java,salesforce'",
+    "date": "3 months ago",
+    "image": "https://user-images.githubusercontent.com/74889517/182246804-279dc992-6078-49f3-a4a7-775fbb677c00.png",
+    "article": [
+      {
+        "type": "title",
+        "content": {
+          "subtitle": "Your Comprehensive",
+          "title": "MyHealth",
+          "projectUrl": "https://user-images.githubusercontent.com/74889517/175617827-24a21acd-9353-4131-bbf7-b633610f4609.png"
+        }
+      },
+
+      {
+        "type": "pictures",
+        "content": [
+          "https://user-images.githubusercontent.com/74889517/182246804-279dc992-6078-49f3-a4a7-775fbb677c00.png",
+          "https://user-images.githubusercontent.com/74889517/182240184-175f842b-08bf-448a-bb24-60e7589b37c0.png",
+          "https://user-images.githubusercontent.com/74889517/182246135-efb33494-dd50-49c6-a9f1-84ef322ce95c.png",
+          "https://user-images.githubusercontent.com/74889517/182249015-9292982d-095e-4414-8af5-76909f905cfa.png",
+          "https://user-images.githubusercontent.com/74889517/182249026-b848efe2-f972-42e5-baad-fd9038d9caaf.png"
+        ]
+      },
+      {
+        "type": "text",
+        "content": "Your Comprehensive Health Companion Fusion-Ion is a powerful and user-friendly mobile application designed to empower individuals by providing essential tools and information for managing their reproductive health. With a suite of innovative features, Fusion-Ion is more than just a period tracker; it's a comprehensive health companion. Available for iOS.A few of the things you can do with Fusion:Features: Period tracker, Period cycle, predictions Ovulation, calculator, Pregnancy calculator, Reminders, Education, and information"
+      }
+    ]
+  },
+  {
+    "title": "Soulmate",
+    "num": "2",
+    "desc": "Your Path to Meaningful Connections",
+    "date": "12 months ago",
+    "stack": "java,swift",
+    "image": "https://user-images.githubusercontent.com/74889517/182246804-279dc992-6078-49f3-a4a7-775fbb677c00.png",
+    "article": [
+      {
+        "type": "title",
+        "content": {
+          "subtitle": "Your Comprehensive",
+          "title": "MyHealth",
+          "projectUrl": "https://user-images.githubusercontent.com/74889517/175617827-24a21acd-9353-4131-bbf7-b633610f4609.png"
+        }
+      },
+
+      {
+        "type": "pictures",
+        "content": [
+          "https://user-images.githubusercontent.com/74889517/182246804-279dc992-6078-49f3-a4a7-775fbb677c00.png",
+          "https://user-images.githubusercontent.com/74889517/182240184-175f842b-08bf-448a-bb24-60e7589b37c0.png"
+        ]
+      },
+      {
+        "type": "text",
+        "content": "In an era dominated by swipes, likes, and instant gratification, making genuine, meaningful connections has become increasingly challenging. The digital age has given us countless ways to interact, yet finding a soulful connection has never felt more elusive. Enter Soulmate, an app designed to revolutionize the way we connect with others, bringing authenticity and depth back into the world of dating and relationships.The Challenge of Connection in the Digital Age.The paradox of modern dating is that while we have more tools than ever to connect, we often find ourselves feeling more disconnected. Shallow interactions, superficial judgments based on profile pictures, and the pressure to keep up with a fast-paced dating culture can leave us longing for something more. Deep down, we all yearn for those soulful connections that transcend the digital realm.How Soulmate Changes the Game.Soulmate recognizes the challenges of contemporary dating and is committed to changing the game. Our mission is simple yet profound: to help you find not just a partner but a soulful connection. We've crafted a platform that prioritizes meaningful interactions, compatibility, and shared values. Through personalized matching, in-depth compatibility tests, rich user profiles, and a user-friendly interface, we're creating an environment where connections flourish naturally.At Soulmate, we believe that finding your true partner is an enriching journey that should be filled with joy, not anxiety. By offering a range of events and activities to connect in person or virtually, we're encouraging users to step out of their comfort zones and experience the magic of real-world connections.Soulmate is not just another dating app; it's a revolution in how we approach relationships. Join us today, and together, we'll rediscover the joy of meaningful connections, one soulmate at a time.Contributing:We welcome contributions from developers, designers, and anyone passionate about creating meaningful connections. Get involved and help us make Soulmate even better!"
+      }
+    ]
+  },
+  {
+    "title": "Dream Start Chrome",
+    "num": "3",
+    "desc": "Dream Start is a simple yet powerful Chrome extension that aims to kickstart your day with inspiration.",
+    "date": "12 months ago",
+    "stack": "java,swift",
+    "image": "https://user-images.githubusercontent.com/74889517/182246804-279dc992-6078-49f3-a4a7-775fbb677c00.png",
+    "article": [
+      {
+        "type": "title",
+        "content": {
+          "subtitle": "Your Comprehensive",
+          "title": "MyHealth",
+          "projectUrl": "https://user-images.githubusercontent.com/74889517/175617827-24a21acd-9353-4131-bbf7-b633610f4609.png"
+        }
+      },
+
+      {
+        "type": "pictures",
+        "content": [
+          "https://private-user-images.githubusercontent.com/74889517/287500081-f8f21ee2-1035-4eb9-8f4d-dd628ab89d0a.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDUzMDA4MDEsIm5iZiI6MTcwNTMwMDUwMSwicGF0aCI6Ii83NDg4OTUxNy8yODc1MDAwODEtZjhmMjFlZTItMTAzNS00ZWI5LThmNGQtZGQ2MjhhYjg5ZDBhLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAxMTUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMTE1VDA2MzUwMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWUzNDExODI3NDQ4ZjI5NjBlZDdlMTE3YmRhYzVlNmU3OWJmODQ1NjE2OGMxOWU1ODNmY2Q0YTY1NzY2ODMzZjImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.PgTiGXHEJONmYwHYOTVoejGw0IG6uu8qeOkFTyEek3c"
+        ]
+      },
+      {
+        "type": "text",
+        "content": "A Beautiful New Tab Experience.Fusion: Dream Start is a simple yet powerful Chrome extension that aims to kickstart your day with inspiration. It provides a beautiful new tab experience, displaying the current date along with a custom background to set the mood for your daily tasks.Features: 🖼️ Stunning Backgrounds: Enjoy a curated collection of stunning backgrounds that change every time you open a new tab. 📅 Daily Inspiration: Start your day right with a beautiful visual backdrop and the current date right at your fingertips. 🎨 Minimalistic Design: A clean and minimalistic user interface that won't clutter your browsing experience. 🖌️ Customization: Personalize your new tab page with your favorite background images.Permissions.This extension requires the following permissions:'tabs': Allows access to information about browser tabs Enables querying and manipulation of tab states, including opening, closing, and updating tabs. 'activeTab': Grants temporary access to the currently active tab when the user invokes the extension. Used for interacting with the content of the current tab.'storage': Enables the use of the Chrome Storage API. Provides a key-value storage mechanism for storing and retrieving data locally, such as user preferences.'How to Use:\n1. Install the extension from the Chrome Web Store.\n2. Open a new tab to experience your daily dose of inspiration.\n3. Customize the background by choosing from a variety of images.\n\nContributing:\nWe welcome contributions from the open-source community. Feel free to fork this repository, make improvements, and submit pull requests. Let's make Fusion: Dream Start even better together!\n\nLicense:\nThis project is licensed under the MIT License.'"
+      }
+    ]
+  }
+]

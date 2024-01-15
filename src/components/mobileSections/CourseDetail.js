@@ -93,7 +93,6 @@ const Padding = styled.div`
 const Wrapper = styled.div`
   // Your styles here
   font-family: "Spline Sans Mono", sans-serif;
-  position: absolute;
   background-color: black;
   color: aliceblue;
   padding-top: 120px;

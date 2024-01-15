@@ -3,9 +3,9 @@ import styled, { createGlobalStyle, keyframes } from "styled-components";
 
 const Wrapper = styled.div`
   // Your styles here
-  height: 100%;
+  height: 100vh;
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: -1;
@@ -15,7 +15,7 @@ const Torch = styled.div`
   // Your styles here
   position: fixed;
   top: 0px;
-  background: radial-gradient(ellipse at bottom, #ff5c07e6 0%, #090a0f 100%);
+  background: radial-gradient(ellipse at bottom, #000000cc 0%, #000000 50%);
   width: 100%;
   height: 100vh;
   z-index: -2;

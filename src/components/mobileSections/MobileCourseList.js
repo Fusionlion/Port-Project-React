@@ -60,7 +60,9 @@ function MobileCourseList(props) {
             <NumberCourse
               subject={props.subject}
               count={props.count}
+              stack={print.stack}
               index={props.index}
+              reverseText={print.reverse}
               key={print.num}
               title={print.title}
               desc={print.desc}

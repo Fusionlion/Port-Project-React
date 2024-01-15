@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import topicData from "../../../data/projectDetailArticleData.json";
+import topicData from "../../../data/courseStore/BooksData.json";
 import { useState } from "react";
 import BookCard from "../Cards/BookCard";
 function BooksList(props) {
@@ -45,8 +45,9 @@ function BooksList(props) {
               key={print.num}
               title={print.title}
               desc={print.desc}
-              imageSrc={getRandomImageFromArray}
+              imageSrc={print.image}
               num={index}
+              buttonOff="off"
               article={print.article}
               click={() => handleCardClick(print)}
             />

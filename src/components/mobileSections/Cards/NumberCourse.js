@@ -8,6 +8,7 @@ import {
   FaPhp,
   FaPython,
   FaCss3,
+  FaComputer,
 } from "react-icons/fa";
 
 export default function NumberCourse(props) {
@@ -45,7 +46,7 @@ export default function NumberCourse(props) {
     // }
   };
   return (
-    <Wrapper src={props.imageSrc}>
+    <Wrapper src={props.imageSrc} reverseText={props.reverseText}>
       <Start>
         <FaPlaneDeparture />
         <NumberDesc>
@@ -53,14 +54,21 @@ export default function NumberCourse(props) {
             {props.desc ??
               "This course is tailored for aspiring developers who seek proficiency in Java-based technologies for building dynamic and interactive web applications. Covering key topics such as Java programming fundamentals, server-side development using frameworks like Spring Boot, database integration, and modern front-end frameworks like React, the Java Full Stack course ensures a holistic understanding of the entire web development process."}
           </div>
-          <Number>{props.subject ?? "Course"}</Number>
+          <Number reverseText={props.reverseText}>COURSE</Number>
         </NumberDesc>
       </Start>
 
       <StartButton onClick={handleStartClick}>
         <Column>
-          START
-          <FaPython />
+          {props.subject ?? "Course"}
+          {!props.stack && <FaPython />}
+          {props.stack === "java" && <FaJava />}
+          {props.stack === "html" && <FaHtml5 />}
+          {props.stack === "php" && <FaPhp />}
+          {props.stack === "python" && <FaPython />}
+          {props.stack === "css" && <FaCss3 />}
+          {props.stack === "salesforce" && <FaSalesforce />}
+          {props.stack === "it" && <FaComputer />}
         </Column>
       </StartButton>
       <svg width="500" height="50" xmlns="http://www.w3.org/2000/svg">
@@ -84,12 +92,14 @@ const Wrapper = styled.div`
   font-size: 17px;
   line-height: 1.2;
   width: 100%;
+  text-align: ${(props) => (props.reverseText ? "right" : "start")};
 `;
 const Column = styled.div`
   // Your styles here
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  line-height: 0.9;
 `;
 
 const Start = styled.div`
@@ -144,7 +154,7 @@ const Number = styled.span`
   position: relative;
   font-family: "NCL Sebgorq", sans-serif;
   font-size: 82px;
-  right: -174px;
+  right: ${(props) => (props.reverseText ? "102px" : "-174px")};
   text-wrap: no-wrap;
   bottom: -129px;
   background: aliceblue;

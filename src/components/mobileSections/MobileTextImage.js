@@ -96,12 +96,17 @@ const MobileTextImage = (props) => {
     setShowLess(true);
   };
   return (
-    <StyledContainer>
-      <StyledTextBold>{props.title1 ?? "CodeCraft Chronicles"}</StyledTextBold>
+    <StyledContainer key="container">
+      <StyledTextBold key="text-bold-1">
+        {props.title1 ?? "CodeCraft Chronicles"}
+      </StyledTextBold>
       {props.text1 &&
         (props.text1.split(".").length <= 5
           ? props.text1.split(".").map((sentence, index, array) => (
-              <StyledNormalText key={index} showMore={showMore}>
+              <StyledNormalText
+                key={`text165-${index + 98}`}
+                showMore={showMore}
+              >
                 {sentence}
                 {index !== array.length - 1 && "."}
               </StyledNormalText>
@@ -110,7 +115,10 @@ const MobileTextImage = (props) => {
               (sentence, index, array) =>
                 (showMore || index < 2) && (
                   <>
-                    <StyledNormalText key={index} showMore={showMore}>
+                    <StyledNormalText
+                      key={`text15-${index + 45}`}
+                      showMore={showMore}
+                    >
                       {sentence}
                       {index % 5 === 4 && index !== array.length - 1 && <br />}
                       {/* Add a line break every 5th period, but not after the last sentence */}
@@ -120,7 +128,7 @@ const MobileTextImage = (props) => {
                       <>
                         {showMore && (
                           <ShowMoreButton
-                            key={"showMorebButton" + index}
+                            key={`showMoreButton1-${index + 21}`}
                             onClick={toggleShowLess}
                           >
                             Show Less
@@ -131,7 +139,7 @@ const MobileTextImage = (props) => {
 
                     {!showMore && index === 1 && (
                       <ShowMoreButton
-                        key={"showLess-Button" + index}
+                        key={`showLessButton2-${index + 25}`}
                         onClick={toggleShowMore}
                       >
                         Show More
@@ -140,20 +148,23 @@ const MobileTextImage = (props) => {
                   </>
                 )
             ))}
-      {!showMore && <div className="bg-text"></div>}
+      {!showMore && <div className="bg-text" key="bg-text-145"></div>}
       <StyledRoundedImage
+        key="rounded-image"
         style={{
           backgroundImage: `url(${
             props.url ?? "images/my-svg/falling-rocks.svg"
           })`,
         }}
       ></StyledRoundedImage>
-      <StyledTitleBold>{props.title2 ?? "Full Scale Projects"}</StyledTitleBold>
+      <StyledTitleBold key="title-bold-20">
+        {props.title2 ?? "Full Scale Projects"}
+      </StyledTitleBold>
 
       {props.text2 &&
         (props.text2.split(".").length <= 5
           ? props.text2.split(".").map((sentence, index, array) => (
-              <StyledNormalText key={index} showMore={showMore}>
+              <StyledNormalText key={`text32-${index}`} showMore={showMore}>
                 {sentence}
                 {index !== array.length - 1 && "."}
               </StyledNormalText>
@@ -162,7 +173,10 @@ const MobileTextImage = (props) => {
               (sentence, index, array) =>
                 (showMore || index < 3) && (
                   <>
-                    <StyledNormalText key={index} showMore={showMore}>
+                    <StyledNormalText
+                      key={`text45-${index}`}
+                      showMore={showMore}
+                    >
                       {sentence}
                       {index !== array.length - 1 && "."}
                       {index % 5 === 4 && index !== array.length - 1 && <br />}
@@ -173,7 +187,7 @@ const MobileTextImage = (props) => {
                       <>
                         {showMore && (
                           <ShowMoreButton
-                            key={"showMorebButton" + index}
+                            key={`showMoreButton-${index + 89}`}
                             onClick={toggleShowLess}
                           >
                             Show Less
@@ -184,7 +198,7 @@ const MobileTextImage = (props) => {
 
                     {!showMore && index === 2 && (
                       <ShowMoreButton
-                        key={"showLess-Button" + index}
+                        key={`showLessButton-${index}` + "45"}
                         onClick={toggleShowMore}
                       >
                         Show More
@@ -193,9 +207,9 @@ const MobileTextImage = (props) => {
                   </>
                 )
             ))}
-      {!showMore && <div className="bg-text"></div>}
+      {!showMore && <div className="bg-text" key="bg-text-39"></div>}
 
-      <StyledBorderedText>
+      <StyledBorderedText key="bordered-text">
         {props.title3 ?? "CodeCraft Chronicles"}
       </StyledBorderedText>
     </StyledContainer>

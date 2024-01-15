@@ -56,8 +56,14 @@ const EmploymentHistoryComponent = () => {
       {jobData.map(
         (job, index) =>
           index < numberOfJobs && (
-            <JobEntry key={index} isOnRight={index % 2 === 0}>
-              <ContentWrapper isOnRight={index % 2 === 0}>
+            <JobEntry
+              key={`job-entry-${index}-${job.company}`}
+              isOnRight={index % 2 === 0}
+            >
+              <ContentWrapper
+                key={`content-wrapper-${index}-${job.company}`}
+                isOnRight={index % 2 === 0}
+              >
                 <EmploymentWrapper>
                   <FaPlaneDeparture />
                   <Position>{job.position}</Position>
@@ -66,7 +72,6 @@ const EmploymentHistoryComponent = () => {
                 </EmploymentWrapper>
                 <TechStackWrapper isOnRight={index % 2 === 0}>
                   {job.stack && <TechStack>Tech Stack</TechStack>}
-
                   <TechStackIcons>
                     {job.stack.split(",").includes("java") && <FaJava />}
                     {job.stack.split(",").includes("html") && <FaHtml5 />}
@@ -81,18 +86,23 @@ const EmploymentHistoryComponent = () => {
                 </TechStackWrapper>
               </ContentWrapper>
               {job.description.split(";").map((sentence, idx) => (
-                <>
-                  <ListIcon isOnRight={index % 2 === 0} />
-                  <Description isOnRight={index % 2 === 0} key={idx}>
+                <React.Fragment key={`description-fragment-${idx}`}>
+                  <ListIcon
+                    key={`list-icon-${idx}`}
+                    isOnRight={index % 2 === 0}
+                  />
+                  <Description key={`desc-${idx}`} isOnRight={index % 2 === 0}>
                     {sentence}
                   </Description>
-                </>
+                </React.Fragment>
               ))}
             </JobEntry>
           )
       )}
       {numberOfJobs < jobData.length && (
-        <Button onClick={handleHideEmployment}>Show More</Button>
+        <Button key="show-more-button" onClick={handleHideEmployment}>
+          Show More
+        </Button>
       )}
     </Wrapper>
   );

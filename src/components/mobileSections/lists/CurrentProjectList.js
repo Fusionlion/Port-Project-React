@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import topicData from "../../../data/projectDetailArticleData.json";
+import topicData from "../../../data/courseStore/CurrentProjects.json";
 import CurrentProject from "../Cards/CurrentProject";
 import { useState } from "react";
 
@@ -16,20 +16,7 @@ function CurrentProjectList(props) {
   const [clickedProjects, setClickedProjects] = useState([]);
 
   const handleCardClick = (cardPrints) => {
-    //  console.log("you clicked in project list > " + titlefromchild);
     props.theCardClicked(cardPrints);
-    // console.log("hahh " + articlefromchild + "from child articelll");
-    // setActiveCard(titlefromchild);
-    // Check if the project is already in the clickedProjects array
-    // const isClicked = clickedProjects.includes(titlefromchild);
-
-    // if (isClicked) {
-    //   // Remove the project from clickedProjects if it was previously clicked
-    //   //  setClickedProjects((prev) => prev.filter((project) => project !== num));
-    // } else {
-    //   // Add the project to clickedProjects if it was not previously clicked
-    //   //  setClickedProjects((prev) => [...prev, num]);
-    // }
   };
 
   const showMoreProjects = () => {
@@ -46,6 +33,8 @@ function CurrentProjectList(props) {
               key={print.num}
               title={print.title}
               desc={print.desc}
+              stack={print.stack}
+              date={print.date}
               subtitle={print.subtitle}
               imageSrc={print.image}
               num={index}
