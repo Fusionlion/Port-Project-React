@@ -12,7 +12,7 @@ function CurrentProjectList(props) {
   const data = topicData.map((record) => {
     return record;
   });
-  const [visibleProjects, setVisibleProjects] = useState(5);
+  const [visibleProjects, setVisibleProjects] = useState(2);
   const [clickedProjects, setClickedProjects] = useState([]);
 
   const handleCardClick = (cardPrints) => {
@@ -71,7 +71,7 @@ const ProjectMoreButton = styled.div`
   justify-content: center;
   align-items: center;
   font-family: "Spline Sans Mono", sans-serif;
-  width: 100%;
+
   margin: 10px 86px;
   font-size: 18px;
   background: linear-gradient(to right, rgb(255 255 255), rgb(146 73 107));

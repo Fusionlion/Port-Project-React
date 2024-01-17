@@ -44,7 +44,11 @@ function CourseLessonRow(props) {
     // console.log("Progress changed:", newProgress);
   };
   return (
-    <Card src={props.imageSrc} onClick={handleStartClick}>
+    <Card
+      src={props.imageSrc}
+      updateProgress={props.updateProgress}
+      onClick={handleStartClick}
+    >
       <div className="number">{props.num ?? 0}</div>
       <Text>
         <div className="row-title">{props.title}</div>
@@ -81,15 +85,16 @@ const Card = styled.div`
   background-position: center;
   text-align: start;
   position: relative;
-  border-radius: 17px;
-  background-color: ${(props) => (props.updateProgress > 0 ? "gray" : "none")};
+  border-radius: 12px;
+  background-color: ${(props) =>
+    props.updateProgress > 0 ? "#0c0c0c" : "none"};
   overflow: hidden;
   display: flex;
   justify-content: start;
   align-items: center;
   margin: 5px 20px;
-  border: 1px solid #0000006b;
-  padding: 17px 15px;
+  border: 1px solid #201e1ead;
+  padding: ${(props) => (props.updateProgress > 0 ? "12px 15px" : "17px 15px")};
   backdrop-filter: blur(33px);
   .number {
     font-size: xxx-large;
@@ -100,6 +105,7 @@ const Card = styled.div`
     align-items: center;
     /* background: blue; */
     height: 56px;
+    font-size: 40px;
   }
   .icon-and-title {
     display: flex;

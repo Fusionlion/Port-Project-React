@@ -4,6 +4,7 @@
     "num": "1",
     "desc": "Health-track : 'Your Comprehensive Health Companion', 'stack': 'java,salesforce'",
     "date": "3 months ago",
+    "stack": "html,swift",
     "image": "https://user-images.githubusercontent.com/74889517/182246804-279dc992-6078-49f3-a4a7-775fbb677c00.png",
     "article": [
       {
@@ -36,7 +37,7 @@
     "num": "2",
     "desc": "Your Path to Meaningful Connections",
     "date": "12 months ago",
-    "stack": "java,swift",
+    "stack": "swift",
     "image": "https://user-images.githubusercontent.com/74889517/182246804-279dc992-6078-49f3-a4a7-775fbb677c00.png",
     "article": [
       {
@@ -66,7 +67,7 @@
     "num": "3",
     "desc": "Dream Start is a simple yet powerful Chrome extension that aims to kickstart your day with inspiration.",
     "date": "12 months ago",
-    "stack": "java,swift",
+    "stack": "html,css",
     "image": "https://user-images.githubusercontent.com/74889517/182246804-279dc992-6078-49f3-a4a7-775fbb677c00.png",
     "article": [
       {

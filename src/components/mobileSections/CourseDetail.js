@@ -30,7 +30,7 @@ export default function CourseDetail(props) {
     // Scroll to the top when the component mounts
     window.scrollTo({
       top: 0,
-      behavior: "smooth", // Add this line for smooth scrolling
+      // behavior: "smooth", // Add this line for smooth scrolling
     });
   }, []);
   return (
@@ -93,7 +93,7 @@ const Padding = styled.div`
 const Wrapper = styled.div`
   // Your styles here
   font-family: "Spline Sans Mono", sans-serif;
-  background-color: black;
+  /* background-color: black; */
   color: aliceblue;
   padding-top: 120px;
   /* background-image: url(/images/my-svg/falling-stars.svg); */

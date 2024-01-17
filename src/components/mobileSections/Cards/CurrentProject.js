@@ -8,7 +8,9 @@ import {
   FaPhp,
   FaPython,
   FaCss3,
+  FaSwift,
 } from "react-icons/fa";
+import { GrSwift } from "react-icons/gr";
 
 const OuterContainer = styled.div`
   display: flex;
@@ -103,6 +105,7 @@ const SpaceBetween = styled.div`
 
   > :nth-child(2) {
     font-size: 49px;
+    mix-blend-mode: overlay;
   }
 `;
 
@@ -152,6 +155,7 @@ const CurrentProject = (props) => {
         {skillsArray[0] === "python" && <FaPython />}
         {skillsArray[0] === "css" && <FaCss3 />}
         {skillsArray[0] === "salesforce" && <FaSalesforce />}
+        {skillsArray[0] === "swift" && <GrSwift />}
       </SpaceBetween>
 
       <ButtonContainer>

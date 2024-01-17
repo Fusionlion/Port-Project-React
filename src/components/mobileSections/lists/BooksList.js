@@ -8,7 +8,7 @@ function BooksList(props) {
   const data = topicData.map((record) => {
     return record;
   });
-  const [visibleProjects, setVisibleProjects] = useState(5);
+  const [visibleProjects, setVisibleProjects] = useState(2);
 
   const handleCardClick = (cardPrints) => {
     props.theCardClicked(cardPrints);

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { FaAtom, FaBookReader, FaRProject, FaDove } from "react-icons/fa";
 import styled from "styled-components";
 import CardList from "../sections/CardList";
 import topicData from "../../data/courses.json";
@@ -100,17 +101,26 @@ function MobileCourses() {
               </div>
             </div>
 
-            <div className="cards-title"> Trending</div>
+            <div className="cards-title">
+              Trending
+              <FaAtom />
+            </div>
             <div className="cards-horizontal-list">
               <CategoryList theCardClicked={handleTabClick} />
             </div>
 
-            <div className="cards-title"> Books & Research</div>
+            <div className="cards-title">
+              {" "}
+              Books & Research <FaBookReader />
+            </div>
             <div className="cards-horizontal-list">
               <BooksList theCardClicked={handleTabClick} />
             </div>
 
-            <div className="cards-title"> Current Projects</div>
+            <div className="cards-title">
+              {" "}
+              Current Projects <FaRProject />
+            </div>
             <div className="cards-horizontal-list">
               <CurrentProjectList theCardClicked={handleTabClick} />
             </div>
@@ -126,9 +136,10 @@ function MobileCourses() {
                     className="subject-container"
                   >
                     {index < 1 && (
-                      <div className="course-title">
+                      <div className="cards-title">
                         {/* <div>{subject}</div> */}
-                        <div>Courses</div>
+                        Courses
+                        <FaDove />
                         {/* <div>
                       {topicData[subject].lesson ?? topicData[subject].length}
                     </div> */}
@@ -238,6 +249,8 @@ const BodyContain = styled.div`
     margin-bottom: 30px;
     color: white;
     padding: 0px 20px;
+    display: flex;
+    justify-content: space-between;
   }
   .course-title {
     font-size: 20px;
@@ -248,9 +261,10 @@ const BodyContain = styled.div`
   }
   .cards-horizontal-list {
     display: flex;
-    gap: 7px;
+    flex-direction: column;
+    gap: 12px;
     padding-left: 20px;
-    overflow: scroll;
+
     padding-right: 20px;
     padding-bottom: 20px;
   }

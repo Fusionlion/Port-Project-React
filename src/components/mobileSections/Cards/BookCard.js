@@ -48,7 +48,7 @@ function BookCard(props) {
           {props.desc ??
             "Explore the fundamentals of Java from a beginner's perspective."}
         </Desc2>
-        <div className="desc">Z.CHARLES</div>
+        {/* <div className="desc">Z.CHARLES</div> */}
 
         {!props.buttonOff && (
           <div className="start-btn" onClick={handleStartClick}>
@@ -56,16 +56,11 @@ function BookCard(props) {
           </div>
         )}
 
-        <ProgressBar
+        {/* <ProgressBar
           progressValue={props.updateProgress}
           onProgressChange={handleProgressChange}
           size={lessonLength}
-        />
-
-        <div className="start-and-end">
-          <div className="start">[{props.num ?? "0"}]</div>
-          <div className="start">|{lessonLength}|</div>
-        </div>
+        /> */}
       </Content>
     </Card>
   );
@@ -75,7 +70,6 @@ const Desc2 = styled.div`
   line-height: 1.2;
   font-size: x-small;
   position: relative;
-  top: -43px;
   text-align: center;
   display: -webkit-box;
   -webkit-line-clamp: 5;
@@ -90,7 +84,7 @@ const Content = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   height: 100%;
   overflow: hidden;
   border-radius: 12px;
@@ -181,7 +175,7 @@ const Card = styled.div`
     font-size: 52px;
     text-transform: uppercase;
     font-weight: bold;
-    margin: 20px 0;
+    margin: 20px 0px 0px 0px;
     font-family: ${(props) => props.cardFont};
     background: linear-gradient(to right, rgb(255 255 255), rgb(235 15 15));
     -webkit-background-clip: text;
@@ -224,18 +218,17 @@ const Title = styled.div`
   text-align: center;
   font-size: 32px;
   text-transform: uppercase;
-  margin: 20px 0;
+  margin: 20px 0px 0px 0px;
   font-family: "cisnero";
   background: linear-gradient(to right, rgb(255 255 255), rgb(235 15 15));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 1px -1px 0px #00000000, 1px -1px 0px #151417;
   margin-top: 10px;
-  padding-bottom: 25px;
 `;
 const ProjectCardStyle = styled.div`
   min-width: 172px;
-  height: 269px;
+  height: 169px;
 
   /* background-image: url("/images/my-svg/falling-rocks.svg"); */
 
