@@ -83,12 +83,23 @@ export default function MobileHome(props) {
 }
 const StartHomeButton = styled.div`
   // Your styles here
-  padding: 10px 44px;
-  text-align: center;
-  font-size: 17px;
-  background-color: black;
-  border-radius: 26px;
-  color: #dbc9c9;
+  width: 280px;
+  height: 70px;
+  padding: 12px;
+  background-color: #000000;
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: 53px auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  border: 1px #262323 solid;
 `;
 const BGroundBottom = styled.div`
   height: 800px;
