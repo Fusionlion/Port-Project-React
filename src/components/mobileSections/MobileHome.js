@@ -48,16 +48,15 @@ export default function MobileHome(props) {
         applications. Welcome to my personal slice of the internet.I'm glad
         you're here!
       </MobileDesc>
-      <GetStartedButton
-        clicked={() => {
+      <StartHomeButton
+        onClick={() => {
           props.page("courses");
         }}
       />
-      <div className="after-button-text">
-        <br />
+      <SmallText>
         Step into my digital realm, where technology meets innovation, and join
         me on a journey of coding, creativity, and continuous learning.
-      </div>
+      </SmallText>
       {/* <TypingText>
         <div className="font-sa">{text.substring(0, index)} !</div>
       </TypingText> */}
@@ -82,7 +81,15 @@ export default function MobileHome(props) {
     </Wrapper>
   );
 }
-
+const StartHomeButton = styled.div`
+  // Your styles here
+  padding: 10px 44px;
+  text-align: center;
+  font-size: 17px;
+  background-color: black;
+  border-radius: 26px;
+  color: #dbc9c9;
+`;
 const BGroundBottom = styled.div`
   height: 800px;
   width: 100vw;
@@ -112,6 +119,21 @@ const BGroundBlack = styled.div`
   position: absolute;
   z-index: -6;
 `;
+
+const SmallText = styled.div`
+  // Your styles here
+  text-align: center;
+  color: bisque;
+  font-size: 14px;
+  font-family: "Spline Sans Mono", sans-serif;
+  line-height: 1.2;
+  padding-bottom: 35px;
+  @media screen and (min-width: 999px) {
+    font-size: 18px;
+    max-width: 600px;
+  }
+`;
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -131,6 +153,8 @@ const Wrapper = styled.div`
     font-family: "Spline Sans Mono", sans-serif;
     line-height: 1.2;
     padding-bottom: 35px;
+    }
+   
   }
   .mobile-welcome-button {
     text-align: center;
@@ -185,6 +209,10 @@ const MobileWelcomeTitle = styled.div`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 5px 9px 11px #000000, 1px -1px 0px #151417;
+
+    @media screen and (min-width: 999px) {
+      font-size: 79px;
+    }
     /* text-shadow: 1px -1px #06022a; */
     /* font-family: "SF Pro Display", sans-serif; */
   }

@@ -11,6 +11,11 @@ const Title = styled.div`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 5px 9px 11px #000000, 1px -1px 0px #4f0000;
+
+  @media screen and (min-width: 999px) {
+    font-size: 79px;
+    line-height: 1.2;
+  }
 `;
 const StyledImageContainer = styled.div`
   display: flex;
@@ -37,6 +42,11 @@ const StyledImage = styled.div`
   flex: 1;
   position: relative;
   overflow: hidden;
+
+  @media screen and (min-width: 999px) {
+    height: 824px;
+    border-radius: 13px;
+  }
   .name {
     position: absolute;
     color: #070707;
@@ -67,6 +77,10 @@ const StyledText = styled.div`
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   text-align: justify;
   line-height: 1.5;
+  @media screen and (min-width: 999px) {
+    font-size: 17px;
+    line-height: 1.7;
+  }
 `;
 
 const StyledButton = styled.div`

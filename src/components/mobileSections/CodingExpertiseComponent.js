@@ -42,6 +42,10 @@ const Wrapper = styled.div`
   border-radius: 17px;
   font-family: "Spline Sans Mono", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  @media screen and (min-width: 999px) {
+    width: 100%;
+  }
 `;
 
 const TopSection = styled.div`
@@ -64,6 +68,10 @@ const Title = styled.h1`
 const Subtitle = styled.p`
   font-size: 14px;
   color: #888;
+  @media screen and (min-width: 999px) {
+    font-size: 18px;
+    padding-top: 10px;
+  }
 `;
 
 const TopRightButton = styled.a`

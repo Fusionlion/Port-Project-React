@@ -48,6 +48,7 @@ const CertificateComponent = () => {
         <div>Certificates</div>
         <div className="right-title">{certificatesData.length}</div>
       </TopTitle>
+
       {certificatesData
         .slice(0, visibleCertificates)
         .map((certificate, index) => (
@@ -68,6 +69,9 @@ const CertificateComponent = () => {
     </Wrapper>
   );
 };
+const Scroll = styled.div`
+  // Your styles here
+`;
 
 const Wrapper = styled.div`
   display: flex;
@@ -104,6 +108,10 @@ const CertificateCard = styled.div`
   background: url(/images/my-svg/falling-rocks.svg);
   background-repeat: no-repeat;
   background-position: center center;
+  @media screen and (min-width: 999px) {
+    min-width: 500px;
+    min-height: 289px;
+  }
 `;
 
 const TitleIconContainer = styled.div`
@@ -130,6 +138,9 @@ const Description = styled.p`
   -webkit-box-orient: vertical;
   overflow: hidden;
   display: -webkit-box;
+  @media screen and (min-width: 999px) {
+    font-size: 18px;
+  }
 `;
 
 const Date = styled.p`

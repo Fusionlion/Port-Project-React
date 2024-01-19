@@ -179,7 +179,10 @@ const Card = styled.div`
     line-height: 1.8;
     text-align: ${(props) =>
       (props.centerText = "center" ? "center" : "start")};
-  }
+   @media screen and (min-width: 999px) {
+   font-size: 17px;
+   line-height: 2;
+}
   .icon-and-desc {
     display: flex;
     gap: 10px;
@@ -203,6 +206,10 @@ const ProjectCardStyle = styled.div`
   transition: linear 0.2s;
   /* border-radius: 17px; */
   position: relative;
+
+  @media screen and (min-width: 999px) {
+    height: 709px;
+  }
 
   .number {
     display: flex;

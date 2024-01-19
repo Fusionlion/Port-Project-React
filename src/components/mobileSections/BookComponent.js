@@ -50,6 +50,10 @@ const Title = styled.div`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 5px 9px 11px #000000, 1px -1px 0px #151417;
+  @media screen and (min-width: 999px) {
+    font-size: 79px;
+    line-height: 1.2;
+  }
 `;
 
 const ThreeTexts = styled.div`
@@ -95,6 +99,10 @@ const NormalText = styled.div`
   -webkit-box-orient: vertical;
   overflow: hidden;
   position: relative;
+  @media screen and (min-width: 999px) {
+    font-size: 17px;
+    line-height: 1.7;
+  }
   .bg-text {
     position: absolute;
     background: linear-gradient(359deg, #000000ad, transparent, transparent);

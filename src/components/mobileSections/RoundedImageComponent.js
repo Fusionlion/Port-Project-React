@@ -30,6 +30,10 @@ const StyledNormalText = styled.div`
   -webkit-line-clamp: 9; /* Number of lines to show */
   -webkit-box-orient: vertical;
   overflow: hidden;
+  @media screen and (min-width: 999px) {
+    font-size: 17px;
+    line-height: 1.7;
+  }
 `;
 
 const ShowMoreButton = styled.button`
@@ -51,6 +55,9 @@ const StyledRoundedImage = styled.div`
   background-size: cover;
   margin-bottom: 10px;
   background-position: center;
+  @media screen and (min-width: 999px) {
+    height: 596px;
+  }
 `;
 
 const StyledTitleBold = styled.div`

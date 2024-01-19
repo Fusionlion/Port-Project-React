@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import CourseCard from "../buttons/CourseCard";
-import topicData from "../../data/projects.json";
+import topicData from "../../data/projectDetailArticleData.json";
 import { useState } from "react";
 import ProjectsCard from "../buttons/ProjectsCard";
 import BlackButton from "../buttons/BlackButton";

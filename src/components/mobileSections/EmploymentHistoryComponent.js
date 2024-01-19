@@ -159,6 +159,7 @@ const Wrapper = styled.div`
   font-family: "Spline Sans Mono", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: white;
+  width: 100%;
 `;
 const ListIcon = styled.li`
   list-style: cjk-earthly-branch;
@@ -214,6 +215,9 @@ const Description = styled.div`
   line-height: 1.3;
   margin-left: ${({ isOnRight }) => (isOnRight ? "20px" : "0")};
   text-align: ${({ isOnRight }) => (isOnRight ? "start" : "end")};
+  @media screen and (min-width: 999px) {
+    font-size: 18px;
+  }
 `;
 
 export default EmploymentHistoryComponent;

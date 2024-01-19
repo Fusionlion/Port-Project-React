@@ -28,6 +28,10 @@ const StyledComponent = styled.div`
     line-height: 1.2;
     gap: 18px;
     text-align: justify;
+    @media screen and (min-width: 999px) {
+      font-size: 18px;
+      line-height: 1.5;
+    }
   }
   .space {
     /* width: 100%;
@@ -72,6 +76,11 @@ const StyledComponent = styled.div`
     background-size: cover;
     border-radius: 12px;
     /* border: 1px solid #181616; */
+    @media screen and (min-width: 999px) {
+      height: 670px;
+      position: relative;
+      overflow: visible;
+    }
   }
   .section-svg {
     height: 492px;
@@ -87,6 +96,7 @@ const StyledComponent = styled.div`
     -ms-transform: scale(1.7);
     transform: scale(1.9);
     left: 27px;
+    top: 89px;
   }
   .flip-text-1 {
     transform: rotate(270deg);
@@ -95,6 +105,10 @@ const StyledComponent = styled.div`
     position: relative;
     font-size: 42px;
     font-family: "spline sans mono";
+    @media screen and (min-width: 999px) {
+      top: 54px;
+      right: -397px;
+    }
   }
   .flip-text-2 {
     transform: rotate(270deg);
@@ -107,6 +121,11 @@ const StyledComponent = styled.div`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 7px 7px 4px #000000, 1px -1px 0px #151417;
+    @media screen and (min-width: 999px) {
+      top: -33px;
+      right: -485px;
+      font-size: 122px;
+    }
   }
 `;
 

@@ -36,6 +36,10 @@ const Bar = styled.div`
   border-radius: 5px;
   /* overflow: hidden;
     */
+  @media screen and (min-width: 999px) {
+    width: 72px;
+    height: 198px;
+  }
 `;
 
 const Filler = styled.div`

@@ -31,6 +31,10 @@ const StyledNormalText = styled.div`
   -webkit-box-orient: vertical;
   overflow: hidden;
   position: relative;
+  @media screen and (min-width: 999px) {
+    font-size: 17px;
+    line-height: 1.7;
+  }
   .bg-text {
     position: absolute;
     background: linear-gradient(359deg, #000000ad, transparent, transparent);
@@ -59,6 +63,9 @@ const StyledRoundedImage = styled.div`
   background-position: center;
   border: 1px solid #191a1a;
   border-radius: 15px;
+  @media screen and (min-width: 999px) {
+    height: 856px;
+  }
 `;
 
 const StyledTitleBold = styled.div`

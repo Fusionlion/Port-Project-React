@@ -24,234 +24,176 @@ function WebApp() {
 
   return (
     <AboutMe>
-      {/* <SEO title="Fusion | Welcome to my portfolio" /> */}
-      <Bubbles />
-      <Lines />
+      <MaxWidth>
+        {/* <SEO title="Fusion | Welcome to my portfolio" /> */}
 
-      <Backdrop>
-        <div className="header">
-          <div className="left-section">
-            <div className="logo"></div>
-            <div className="title" onClick={() => handleTabClick("Portfolio")}>
-              Portfolio
+        <Lines />
+
+        <Backdrop>
+          <div className="header">
+            <div className="left-section">
+              <div className="logo"></div>
+              <div
+                className="title"
+                onClick={() => handleTabClick("Portfolio")}
+              >
+                Portfolio
+              </div>
+            </div>
+            <div className="middle-section">
+              {/* Tab bar for home starts here */}
+              <div
+                className={`tab ${activeTab === "Portfolio" ? "active" : ""}`}
+                onClick={() => handleTabClick("Portfolio")}
+              >
+                <div
+                  className={`tab ${
+                    activeTab === "Portfolio"
+                      ? "middle-btn"
+                      : "middle-btn-inactive"
+                  }`}
+                >
+                  {" "}
+                  Home
+                </div>
+              </div>
+              {/* Tab bar for home ends here */}
+              <div
+                className={`tab ${activeTab === "Projects" ? "active" : ""}`}
+                onClick={() => handleTabClick("Projects")}
+              >
+                <div
+                  className={`tab ${
+                    activeTab === "Projects"
+                      ? "middle-btn"
+                      : "middle-btn-inactive"
+                  }`}
+                >
+                  {" "}
+                  Projects
+                </div>
+              </div>
+
+              {/* Add more tabs here as needed */}
+              <div
+                className={`tab ${activeTab === "Course" ? "active" : ""}`}
+                onClick={() => handleTabClick("Course")}
+              >
+                <div
+                  className={`tab ${
+                    activeTab === "Course"
+                      ? "middle-btn"
+                      : "middle-btn-inactive"
+                  }`}
+                >
+                  {" "}
+                  Course
+                </div>
+              </div>
+
+              {/* the about me section */}
+              <div
+                className={`tab ${activeTab === "About" ? "active" : ""}`}
+                onClick={() => handleTabClick("About")}
+              >
+                <div
+                  className={`tab ${
+                    activeTab === "About" ? "middle-btn" : "middle-btn-inactive"
+                  }`}
+                >
+                  {" "}
+                  About
+                </div>
+              </div>
+            </div>
+            <div className="right-section">
+              <div className="right-section-icon"></div>
+              <div
+                className={`right-section-drop-down ${
+                  isToggled ? "right-section-drop-down-active" : ""
+                }`}
+                onClick={handleClick}
+              ></div>
             </div>
           </div>
-          <div className="middle-section">
-            {/* Tab bar for home starts here */}
-            <div
-              className={`tab ${activeTab === "Portfolio" ? "active" : ""}`}
-              onClick={() => handleTabClick("Portfolio")}
-            >
-              <div
-                className={`tab ${
-                  activeTab === "Portfolio"
-                    ? "middle-btn"
-                    : "middle-btn-inactive"
-                }`}
-              >
-                {" "}
-                Home
-              </div>
-            </div>
-            {/* Tab bar for home ends here */}
-            <div
-              className={`tab ${activeTab === "Projects" ? "active" : ""}`}
-              onClick={() => handleTabClick("Projects")}
-            >
-              <div
-                className={`tab ${
-                  activeTab === "Projects"
-                    ? "middle-btn"
-                    : "middle-btn-inactive"
-                }`}
-              >
-                {" "}
-                Projects
-              </div>
-            </div>
 
-            {/* Add more tabs here as needed */}
-            <div
-              className={`tab ${activeTab === "Course" ? "active" : ""}`}
-              onClick={() => handleTabClick("Course")}
-            >
-              <div
-                className={`tab ${
-                  activeTab === "Course" ? "middle-btn" : "middle-btn-inactive"
-                }`}
-              >
-                {" "}
-                Course
-              </div>
-            </div>
-
-            {/* the about me section */}
-            <div
-              className={`tab ${activeTab === "About" ? "active" : ""}`}
-              onClick={() => handleTabClick("About")}
-            >
-              <div
-                className={`tab ${
-                  activeTab === "About" ? "middle-btn" : "middle-btn-inactive"
-                }`}
-              >
-                {" "}
-                About
-              </div>
-            </div>
+          {/* Home content */}
+          <div
+            className={`tab-content-item ${
+              activeTab === "Home" ? "fade-in" : "fade-out"
+            }`}
+          >
+            <div className="character"></div>
           </div>
-          <div className="right-section">
-            <div className="right-section-icon"></div>
-            <div
-              className={`right-section-drop-down ${
-                isToggled ? "right-section-drop-down-active" : ""
-              }`}
-              onClick={handleClick}
-            ></div>
+          {/* Projects starts */}
+          <div
+            className={`tab-content-item ${
+              activeTab === "Projects" ? "fade-in" : "fade-out"
+            }`}
+          >
+            <ProjectBios />
           </div>
-        </div>
+          {/* content ends */}
 
-        {/* Home content */}
-        <div
-          className={`tab-content-item ${
-            activeTab === "Home" ? "fade-in" : "fade-out"
-          }`}
-        >
-          <div className="character"></div>
-          <div className="body-behind">
-            <div className="left-behind">
-              <div className="pt-and-title">
-                <SmallImage src="https://pngimg.com/d/robot_PNG40.png"></SmallImage>
-                <div className="pt-title">
-                  Software <br />
-                  Engineer
-                </div>
-              </div>
-
-              <SmallImage src="https://cdn.dribbble.com/userupload/4090463/file/original-a9e1688848511656a0ba71886a53665d.png?resize=1504x1128"></SmallImage>
-              <SmallImage src="https://cdn.dribbble.com/userupload/4087783/file/original-dbebf5699aad9099c9ce35e80a99b165.png?resize=1504x1128"></SmallImage>
-            </div>
-            <div className="right-social-behind">
-              <div className="social-text">
-                Read the <br />
-                biagraphy
-              </div>
-              <div className="social-app-1"></div>
-              <div className="social-app-2"></div>
-              <div className="social-app-3"></div>
-              <div className="social-app-4"></div>
-            </div>
+          {/* content starts */}
+          <div
+            className={`tab-content-item ${
+              activeTab === "Course" ? "fade-in" : "fade-out"
+            }`}
+          >
+            <Course />
           </div>
-          <ForeGround>
-            <div className="body-front">
-              {/* The name and the years */}
-              <div className="front-top">
-                <div className="front-left">
-                  <div className="front-left-name">
-                    Zablon <br /> Charles
-                  </div>
-                  <div className="front-left-years">
-                    <div className="front-start-year">
-                      <div className="front-left-born">Born</div>
-                      <div className="front-left-year">30 NOV 1830</div>
-                      <div className="front-left-born">
-                        FLorida, Missouri, U.S
-                      </div>
-                    </div>
-                    <div className="spacer"> </div>
-                    <div className="front-start-year">
-                      <div className="front-left-born">Born</div>
-                      <div className="front-left-year">30 NOV 1830</div>
-                      <div className="front-left-born">
-                        FLorida, Missouri, U.S
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {/* The cards are here */}
-              </div>
-              {/* The timeline  */}
-              <div className="bottom">
-                <div className="split-and-desc">
-                  <div class="split-year">2010 November</div>
-                  <div className="split"></div>
-                  <div className="split-desc">U.S.P.S</div>
-                </div>
-                <div className="split-and-desc">
-                  <div class="split-year">2112 November</div>
-                  <div className="split"></div>
-                  <div className="split-desc">Revature</div>
-                </div>
-                <div className="split-and-desc">
-                  <div class="split-year">2012 November</div>
-                  <div className="split"></div>
-                  <div className="split-desc">Emonic</div>
-                </div>
-              </div>
-            </div>
-          </ForeGround>
-        </div>
-        {/* Projects starts */}
-        <div
-          className={`tab-content-item ${
-            activeTab === "Projects" ? "fade-in" : "fade-out"
-          }`}
-        >
-          <ProjectBios />
-        </div>
-        {/* content ends */}
+          {/* content ends */}
 
-        {/* content starts */}
-        <div
-          className={`tab-content-item ${
-            activeTab === "Course" ? "fade-in" : "fade-out"
-          }`}
-        >
-          <Course />
-        </div>
-        {/* content ends */}
+          {/* content starts */}
+          <div
+            className={`tab-content-item ${
+              activeTab === "About" ? "fade-in" : "fade-out"
+            }`}
+          >
+            <AboutSection />
+          </div>
+          {/* content ends */}
+          {/* content starts */}
+          <div
+            className={`tab-content-item ${
+              activeTab === "Portfolio" ? "fade-in" : "fade-out"
+            }`}
+          >
+            <PortfolioHero tapped={() => handleTabClick("About")} />
+          </div>
+          {/* content ends */}
+        </Backdrop>
 
-        {/* content starts */}
-        <div
-          className={`tab-content-item ${
-            activeTab === "About" ? "fade-in" : "fade-out"
-          }`}
-        >
-          <AboutSection />
+        {/* Menu item shown here */}
+        <div className={`${isToggled ? "menu-appear" : "disappear"}`}>
+          <MenuOptions setActiveTab={handleTabClick} />
         </div>
-        {/* content ends */}
-        {/* content starts */}
-        <div
-          className={`tab-content-item ${
-            activeTab === "Portfolio" ? "fade-in" : "fade-out"
-          }`}
-        >
-          <PortfolioHero tapped={() => handleTabClick("About")} />
-        </div>
-        {/* content ends */}
-      </Backdrop>
-
-      {/* Menu item shown here */}
-      <div className={`${isToggled ? "menu-appear" : "disappear"}`}>
-        <MenuOptions setActiveTab={handleTabClick} />
-      </div>
-
-      {/* if we are on mobile */}
+      </MaxWidth>
     </AboutMe>
   );
 }
 
 export default WebApp;
 
+const MaxWidth = styled.div`
+  // Your styles here
+  max-width: 1234px;
+  width: 100%;
+`;
+
 const Lines = styled.div`
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   padding: 20px;
   background-image: url(/images/my-svg/lines.svg);
   background-size: contain;
   background-repeat: repeat-x;
   background-position: top right;
   position: absolute;
+  position: absolute;
+  top: 0;
+  left: 0;
   /* hide on mobile */
   @media (max-width: 1000px) {
     display: none;
@@ -259,7 +201,7 @@ const Lines = styled.div`
 `;
 const Bubbles = styled.div`
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   bottom: 10px;
   background-image: url(/images/my-svg/undersea.svg);
   background-size: contain;
@@ -272,29 +214,13 @@ const Bubbles = styled.div`
     display: none;
   }
 `;
-const SmallImage = styled.div`
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-  background-color: black;
-  height: 70px;
-  width: 70px;
-  border-radius: 60px;
-  background-image: url(${(props) => props.src});
-  cursor: pointer;
-  transition: linear 0.2s;
-  z-index: 999;
-  &:hover {
-    transition: linear 0.2s;
-    transform: scale(1.02);
-  }
-`;
 const AboutMe = styled.div`
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
+  width: 100%;
+
   background: linear-gradient(to top, #000000, #000, #000000);
   position: relative;
+  display: flex;
+  justify-content: center;
   @media screen and (max-width: 1000px) {
     display: none;
   } /* 
@@ -319,12 +245,11 @@ const AboutMe = styled.div`
   }
 `;
 const Backdrop = styled.div`
-  height: 100vh;
-  width: 100vw;
+  width: 100%;
   padding: 20px;
 
-  background-image: url(/images/my-svg/lines.svg);
-  background-image: url(/images/my-svg/bubbles.svg);
+  /* background-image: url(/images/my-svg/lines.svg);
+  background-image: url(/images/my-svg/bubbles.svg); */
   background-size: contain;
   background-repeat: repeat-x;
   background-position: top right;
@@ -362,6 +287,13 @@ const Backdrop = styled.div`
     border-bottom: 1px solid #14141b;
     align-items: baseline;
     background-image: url(/images/my-svg/header-stars.svg);
+    position: fixed;
+    top: 0;
+    /* height: 83px; */
+    z-index: 99;
+    padding: 20px 10px;
+    backdrop-filter: blur(44px);
+    max-width: 1234px;
   }
   .logo {
     height: 35px;
@@ -565,106 +497,5 @@ const Backdrop = styled.div`
     display: none;
   }
 `;
-const ForeGround = styled.div`
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  padding: 20px;
-  top: 0;
-  bottom: 0;
-  display: flex;
-  align-items: end;
 
-  overflow: hidden;
-
-  .body-front {
-    display: flex;
-    flex-direction: column;
-    margin-left: 232px;
-    width: 100%;
-    margin-bottom: 84px;
-  }
-  .front-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-  }
-  .front-left {
-    display: flex;
-    gap: 5px;
-    flex-direction: column;
-    min-width: 649px;
-  }
-  .front-left-name {
-    font-size: 72px;
-    text-transform: uppercase;
-    font-family: "Cisnero";
-    background: -webkit-linear-gradient(rgb(255 255 255), rgb(0 0 0));
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    padding-top: 12px;
-  }
-  .front-left-years {
-    display: flex;
-  }
-  .front-start-year {
-    display: flex;
-    flex-direction: column;
-    gap: 19px;
-  }
-  .front-left-year {
-    font-size: 33px;
-    color: white;
-    font-family: "Cisnero";
-  }
-  .front-left-born {
-    text-transform: uppercase;
-    color: gray;
-    margin-top: 7px;
-  }
-  .spacer {
-    width: 47px;
-    height: 1px;
-    margin: 57px;
-    background-color: white;
-  }
-  .front-right {
-    display: flex;
-    gap: 20px;
-    position: relative;
-    height: 450px;
-    overflow: scroll;
-  }
-  .bottom {
-    background: #31323a;
-    width: 100%;
-    height: 1px;
-    margin: 40px 0px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .split-and-desc {
-    display: flex;
-    gap: 10px;
-    color: white;
-  }
-  .split-year {
-    align-self: end;
-    color: #313139;
-    font-size: 12px;
-    text-transform: uppercase;
-  }
-  .split {
-    height: 40px;
-    width: 1px;
-    background-color: #313139;
-  }
-  .split-desc {
-    color: #313139;
-    font-size: 12px;
-    text-transform: uppercase;
-  }
-`;
 // gatsby develop

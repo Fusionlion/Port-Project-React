@@ -7,9 +7,7 @@ import PictureComponent from "./PictureComponent";
 export default function MobileProjectDetailArticle(props) {
   const datas =
     props.data?.article ||
-    require("../../data/projectDetailArticleData.json")[
-      "WHAT IS AN ALGORITHM?"
-    ];
+    require("../../data/projectDetailArticleData.json")[0];
   const bottomRef = useRef(null);
 
   const handleArrowClicked = () => {
@@ -152,6 +150,16 @@ const Wrapper = styled.div`
   /* z-index: 99; */
   overflow: scroll;
   z-index: 5;
+  @media screen and (min-width: 999px) {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: none;
+    width: 100%;
+    /* z-index: 99; */
+    overflow: none;
+    z-index: none;
+  }
   .content {
     > :nth-child(n + 1) {
       padding: 0px 20px;
@@ -174,6 +182,9 @@ const Wrapper = styled.div`
     left: 1px;
     cursor: pointer;
     z-index: 99;
+    @media screen and (min-width: 999px) {
+      display: none;
+    }
   }
   .projects-top-content {
     display: flex;

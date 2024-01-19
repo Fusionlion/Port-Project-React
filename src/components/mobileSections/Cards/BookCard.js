@@ -225,11 +225,16 @@ const Title = styled.div`
   -webkit-text-fill-color: transparent;
   text-shadow: 1px -1px 0px #00000000, 1px -1px 0px #151417;
   margin-top: 10px;
+  @media screen and (min-width: 999px) {
+    font-size: 122px;
+  }
 `;
 const ProjectCardStyle = styled.div`
   min-width: 172px;
   height: 169px;
-
+  @media screen and (min-width: 999px) {
+    height: 756px;
+  }
   /* background-image: url("/images/my-svg/falling-rocks.svg"); */
 
   .project-star-icon {
