@@ -48,24 +48,25 @@ const CertificateComponent = () => {
         <div>Certificates</div>
         <div className="right-title">{certificatesData.length}</div>
       </TopTitle>
-
-      {certificatesData
-        .slice(0, visibleCertificates)
-        .map((certificate, index) => (
-          <CertificateCard key={index}>
-            <TitleIconContainer>
-              <Title>{certificate.title}</Title>
-              <Icon src={certificate.icon} alt="Certificate Icon" />
-            </TitleIconContainer>
-            <Description>{certificate.description}</Description>
-            <Date>{certificate.date}</Date>
-          </CertificateCard>
-        ))}
-      {visibleCertificates < certificatesData.length && (
-        <ShowMoreButton onClick={showMoreCertificates}>
-          Show More
-        </ShowMoreButton>
-      )}
+      <div className="horizontal-certs">
+        {certificatesData
+          .slice(0, visibleCertificates)
+          .map((certificate, index) => (
+            <CertificateCard key={index}>
+              <TitleIconContainer>
+                <Title>{certificate.title}</Title>
+                <Icon src={certificate.icon} alt="Certificate Icon" />
+              </TitleIconContainer>
+              <Description>{certificate.description}</Description>
+              <Date>{certificate.date}</Date>
+            </CertificateCard>
+          ))}
+        {visibleCertificates < certificatesData.length && (
+          <ShowMoreButton onClick={showMoreCertificates}>
+            Show More
+          </ShowMoreButton>
+        )}
+      </div>
     </Wrapper>
   );
 };
@@ -80,6 +81,18 @@ const Wrapper = styled.div`
   color: white;
   padding: 20px 0px;
   justify-content: center;
+  @media screen and (min-width: 999px) {
+    flex-wrap: nowrap;
+    justify-content: start;
+    flex-direction: column;
+    width: 100%;
+    .horizontal-certs {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      overflow: scroll;
+    }
+  }
 `;
 
 const TopTitle = styled.div`
@@ -89,6 +102,9 @@ const TopTitle = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
+  @media screen and (min-width: 999px) {
+    font-size: 17px;
+  }
 `;
 
 const CertificateCard = styled.div`
@@ -175,6 +191,9 @@ const ShowMoreButton = styled.button`
   align-items: center;
   font-family: "Spline Sans Mono", sans-serif;
   margin: 0px 69px;
+  @media screen and (min-width: 999px) {
+    margin: 0;
+  }
 `;
 
 export default CertificateComponent;

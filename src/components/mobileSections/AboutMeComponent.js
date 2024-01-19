@@ -14,6 +14,9 @@ const StyledComponent = styled.div`
   .bold-text {
     font-family: "Spline Sans Mono", sans-serif;
     font-size: 14px;
+    @media screen and (min-width: 999px) {
+      font-size: 17px;
+    }
   }
   .bottom-border {
     border-bottom: 1px solid #3c3c3c;
@@ -48,6 +51,11 @@ const StyledComponent = styled.div`
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
+    @media screen and (min-width: 999px) {
+      min-height: 240px;
+      border-right: #211f1f solid 1px;
+      margin-right: 57px;
+    }
     /* border: solid #131111 1px; */
   }
   .title {

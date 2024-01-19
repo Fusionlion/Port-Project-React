@@ -63,6 +63,9 @@ const Title = styled.h1`
   font-family: "Spline Sans Mono", sans-serif;
   font-size: 14px;
   margin-bottom: 5px;
+  @media screen and (min-width: 999px) {
+    font-size: 17px;
+  }
 `;
 
 const Subtitle = styled.p`

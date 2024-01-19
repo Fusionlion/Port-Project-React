@@ -10,7 +10,7 @@ import EmploymentHistoryComponent from "./EmploymentHistoryComponent";
 import CodingExpertiseComponent from "./CodingExpertiseComponent";
 import CertificateComponent from "./CertificateComponent";
 import BookComponent from "./BookComponent";
-import GetStartedButton from "./GetStartedButton";
+import ParallaxStars from "./MobileBackgrounds.js/ParallaxStars";
 export default function MobileHome(props) {
   // const [text, setText] = useState("Let's get started :)");
   // const [index, setIndex] = useState(0);
@@ -280,6 +280,9 @@ const MobileWelcomeImage = styled.div`
     font-size: 82px;
     font-family: "cisnero";
     color: aliceblue;
+    @media screen and (min-width: 999px) {
+      font-size: 130px;
+    }
 
     > :nth-child(2) {
       position: absolute;

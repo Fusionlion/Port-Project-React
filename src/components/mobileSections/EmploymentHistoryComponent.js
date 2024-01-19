@@ -179,6 +179,9 @@ const JobEntry = styled.div`
   margin-bottom: 20px;
   overflow: scroll;
   position: relative;
+  @media screen and (min-width: 999px) {
+    min-height: 300px;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -193,6 +196,9 @@ const Position = styled.div`
   font-size: 18px;
   margin-bottom: 5px;
   line-height: 1.2;
+  @media screen and (min-width: 999px) {
+    font-size: 25px;
+  }
 `;
 
 const Company = styled.div`
