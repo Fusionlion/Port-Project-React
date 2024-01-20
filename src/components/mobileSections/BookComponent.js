@@ -180,7 +180,7 @@ const BookComponent = (props) => {
           cardFont="Grivas Personal Use"
           title="Java Eli5"
           desc="--- --- --- --- ----- ----"
-          imageSrc="https://cdn.dribbble.com/userupload/11257829/file/original-8b6ca0123beaa451549af484f351d354.jpg?resize=1504x1504"
+          imageSrc="https://w.wallha.com/ws/13/VhqCPnSi.png"
           num="1"
           buttonOff="off"
           centerText="center"

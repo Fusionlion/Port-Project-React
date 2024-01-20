@@ -9,6 +9,8 @@ import Course from "../components/sections/Course";
 import AboutSection from "../components/sections/AboutMeSection";
 import PortfolioHero from "../components/sections/PortfolioHero";
 import MenuOptions from "../components/buttons/MenuOptions";
+import DesktopCourseStore from "../components/sections/DesktopCourseStore";
+import ParallaxStars from "../components/mobileSections/MobileBackgrounds.js/ParallaxStars";
 
 function WebApp() {
   const [activeTab, setActiveTab] = useState("Portfolio");
@@ -26,7 +28,7 @@ function WebApp() {
     <AboutMe>
       <MaxWidth>
         {/* <SEO title="Fusion | Welcome to my portfolio" /> */}
-
+        <ParallaxStars />
         <Lines />
 
         <Backdrop>
@@ -141,7 +143,7 @@ function WebApp() {
               activeTab === "Course" ? "fade-in" : "fade-out"
             }`}
           >
-            <Course />
+            <DesktopCourseStore />
           </div>
           {/* content ends */}
 
@@ -286,14 +288,17 @@ const Backdrop = styled.div`
     font-size: 25px;
     border-bottom: 1px solid #14141b;
     align-items: baseline;
-    background-image: url(/images/my-svg/header-stars.svg);
+    /* background-image: url(/images/my-svg/header-stars.svg); */
     position: fixed;
-    top: 0;
+    top: 20px;
     /* height: 83px; */
     z-index: 99;
     padding: 20px 10px;
     backdrop-filter: blur(44px);
     max-width: 1234px;
+    border-radius: 60px;
+    overflow: hidden;
+    align-items: center;
   }
   .logo {
     height: 35px;
@@ -312,6 +317,8 @@ const Backdrop = styled.div`
     display: flex;
     gap: 10px;
     z-index: 999;
+    position: relative;
+    left: -89px;
     @media screen and (max-width: 1000px) {
       display: none;
     }
@@ -324,7 +331,7 @@ const Backdrop = styled.div`
   }
   .right-section {
     display: flex;
-    gap: 20px;
+    gap: 10px;
   }
   .right-section-icon {
     height: 34px;
@@ -334,6 +341,7 @@ const Backdrop = styled.div`
     background-size: cover;
     background-position: center;
     cursor: pointer;
+
     /* @media only screen and (min-width: 430px) {
       display: none;
     } */
@@ -348,6 +356,7 @@ const Backdrop = styled.div`
     opacity: 0.6;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
+    margin-right: 10px;
     /* @media only screen and (min-width: 430px) {
       background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1024px-Hamburger_icon.svg.png);
       filter: invert(8);
@@ -419,6 +428,7 @@ const Backdrop = styled.div`
     cursor: pointer;
     transition: linear 0.2s;
     z-index: 999;
+
     &:hover {
       transition: linear 0.2s;
       transform: scale(1.02);

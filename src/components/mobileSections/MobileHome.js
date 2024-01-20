@@ -30,7 +30,7 @@ export default function MobileHome(props) {
       {/* <BGroundBottom /> */}
       <MobileWelcomeTitle>
         <div className="mobile-title-big">welcome</div>
-        <div className="mobile-title-big">PORTFOLIO</div>
+        <HomePortfolioName>PORTFOLIO</HomePortfolioName>
       </MobileWelcomeTitle>
       <MobileWelcomeImage>
         <div className="my-name">
@@ -213,21 +213,29 @@ const MobileWelcomeTitle = styled.div`
     text-transform: uppercase;
     font-family: "SF Display Pro", sans-serif;
   }
-  > :nth-child(2) {
-    font-size: 52px;
+`;
+const HomePortfolioName = styled.div`
+  // Your styles here
+
+  font-size: 52px;
+  font-family: "accelerare", sans-serif;
+  background: linear-gradient(to right, rgb(255 255 255), rgb(249 146 84));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 5px 9px 11px #000000, 1px -1px 0px #151417;
+
+  @media screen and (min-width: 999px) {
+    font-size: 79px;
     font-family: "accelerare", sans-serif;
     background: linear-gradient(to right, rgb(255 255 255), rgb(249 146 84));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 5px 9px 11px #000000, 1px -1px 0px #151417;
-
-    @media screen and (min-width: 999px) {
-      font-size: 79px;
-    }
-    /* text-shadow: 1px -1px #06022a; */
-    /* font-family: "SF Pro Display", sans-serif; */
   }
+  /* text-shadow: 1px -1px #06022a; */
+  /* font-family: "SF Pro Display", sans-serif; */
 `;
+
 const MobileWelcomeImage = styled.div`
   /* position: relative;
   min-height: 326px;

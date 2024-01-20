@@ -24,9 +24,10 @@ const Wrapper = styled.div`
   width: 280px;
   height: 70px;
   padding: 12px;
-  background-color: #07091b;
+  background-color: #000000;
   /* box-shadow: 0px 1px 3px rgba(0,0,0,0.1), 0px 20px 40px rgba(23,0,102,0.2), inset 0px 0px 0px 0.5px rgba(255,255,255,0.5); */
-  border-radius: 12px;
+  /* border-radius: 12px; */
+  border-radius: 58px;
   display: grid;
   grid-template-columns: 53px auto;
   -webkit-align-items: center;
@@ -35,7 +36,8 @@ const Wrapper = styled.div`
   align-items: center;
   gap: 20px;
   cursor: pointer;
-
+  border: 1px solid #171616;
+  font-family: "Spline Sans Mono", sans-serif;
   *,
   & {
     transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);

@@ -83,11 +83,15 @@ const StyledComponent = styled.div`
     background-color: #0b0b0b;
     background-size: cover;
     border-radius: 12px;
+    position: relative;
+
     /* border: 1px solid #181616; */
     @media screen and (min-width: 999px) {
       height: 670px;
       position: relative;
       overflow: visible;
+      box-shadow: 0px 20px 0 0px #404040;
+      margin-bottom: 20px;
     }
   }
   .section-svg {
@@ -104,7 +108,11 @@ const StyledComponent = styled.div`
     -ms-transform: scale(1.7);
     transform: scale(1.9);
     left: 27px;
-    top: 89px;
+    top: 9px;
+    @media screen and (min-width: 999px) {
+      top: 92px;
+      height: 482px;
+    }
   }
   .flip-text-1 {
     transform: rotate(270deg);

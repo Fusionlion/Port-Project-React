@@ -65,7 +65,7 @@ const ProjectMoreButton = styled.div`
   -webkit-transition: all 0.7s, color 0.7s;
   -webkit-transition: all 0.7s, color 0.7s;
   transition: all 0.7s, color 0.7s;
-  cursor: pointer;
+
   border: #ffffff1f solid 1px;
   display: flex;
   justify-content: center;
@@ -79,8 +79,15 @@ const ProjectMoreButton = styled.div`
   -webkit-background-clip: text;
   color: transparent;
   text-transform: uppercase;
+  transition: all linear 0.2s;
   &:hover {
-    color: orange;
-    margin: 0px 40px;
+    cursor: pointer;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
+      0px 30px 60px rgba(23, 0, 102, 0.5),
+      inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
+    transform: translateY(-5px);
+  }
+  @media screen and (min-width: 999px) {
+    margin: 0;
   }
 `;

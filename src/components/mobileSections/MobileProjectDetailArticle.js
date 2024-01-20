@@ -152,13 +152,21 @@ const Wrapper = styled.div`
   z-index: 5;
   @media screen and (min-width: 999px) {
     position: relative;
-    top: 0;
-    left: 0;
+
     height: none;
     width: 100%;
     /* z-index: 99; */
-    overflow: none;
+
     z-index: none;
+    position: relative;
+    margin-top: 87px;
+    /* left: 0; */
+    height: none;
+    /* width: 100%; */
+    overflow: visible;
+    z-index: none;
+    width: 100%;
+    border-radius: 12px;
   }
   .content {
     > :nth-child(n + 1) {
@@ -178,13 +186,12 @@ const Wrapper = styled.div`
     padding: 20px;
     color: #ffffff;
     font-size: 34px;
-    top: 65px;
-    left: 1px;
+    top: 9px;
+    left: 14px;
     cursor: pointer;
-    z-index: 99;
-    @media screen and (min-width: 999px) {
-      display: none;
-    }
+    z-index: 9;
+    border-radius: 15px;
+    backdrop-filter: blur(13px);
   }
   .projects-top-content {
     display: flex;
@@ -198,6 +205,11 @@ const Wrapper = styled.div`
     background-position: left;
     flex-flow: row-reverse;
     text-align: end;
+    @media screen and (min-width: 999px) {
+      border-radius: 12px;
+      overflow: hidden;
+      height: 511px;
+    }
   }
   .blacked {
     position: absolute;
@@ -214,18 +226,30 @@ const Wrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     z-index: 1;
+
     text-align: center;
     padding: 20px;
     padding-bottom: 35px;
     padding-top: 144px;
 
+    @media screen and (min-width: 999px) {
+      width: 100%;
+      gap: 10px;
+    }
+
     > :nth-child(2) {
       font-size: 15px;
+      @media screen and (min-width: 999px) {
+        font-size: 16px;
+      }
     }
     > :nth-child(3) {
       font-size: 15px;
       line-height: initial;
       color: tan;
+      @media screen and (min-width: 999px) {
+        font-size: 17px;
+      }
     }
   }
   .project-title-pt {
@@ -236,6 +260,9 @@ const Wrapper = styled.div`
     -webkit-text-fill-color: transparent;
     text-shadow: 5px 9px 11px #00000000, 1px -1px 0px #000000;
     font-weight: normal;
+    @media screen and (min-width: 999px) {
+      font-size: 82px;
+    }
   }
   .project-top-right {
     color: #ffffff;
@@ -363,6 +390,11 @@ const Wrapper = styled.div`
     margin-top: 15px;
     color: white;
     text-align: justify;
+    @media screen and (min-width: 999px) {
+      font-size: 17px;
+      line-height: 1.9;
+      margin: 40px 0px;
+    }
   }
   .title {
     background: #000000;

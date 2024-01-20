@@ -21,13 +21,23 @@ const CardContainer = styled.div`
 
   border-radius: 9px;
   background: ${(props) => props.gradient};
-  transition: box-shadow 0.3s ease;
+  transition: all 0.3s ease;
   padding: 10px 16px;
+  @media screen and (min-width: 999px) {
+    padding: 24px 16px;
+    font-size: 20px;
+    flex: 1;
+    justify-content: center;
+  }
   > :nth-child(2) {
     width: max-content;
   }
+
   &:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
+      0px 30px 60px rgba(23, 0, 102, 0.5),
+      inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
+    transform: translateY(-5px);
   }
 `;
 

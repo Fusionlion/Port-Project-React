@@ -44,7 +44,7 @@ const StyledImage = styled.div`
   overflow: hidden;
 
   @media screen and (min-width: 999px) {
-    height: 824px;
+    height: 654px;
     border-radius: 13px;
   }
   .name {

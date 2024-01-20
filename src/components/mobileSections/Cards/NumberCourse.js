@@ -93,6 +93,20 @@ const Wrapper = styled.div`
   line-height: 1.2;
   width: 100%;
   text-align: ${(props) => (props.reverseText ? "right" : "start")};
+
+  transition: all linear 0.2s;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
+      0px 30px 60px rgba(23, 0, 102, 0.5),
+      inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
+    transform: scale(0.98);
+  }
+
+  @media screen and (min-width: 999px) {
+    min-width: 360px;
+    flex: 1;
+  }
 `;
 const Column = styled.div`
   // Your styles here
@@ -134,6 +148,9 @@ const NumberDesc = styled.p`
     overflow: hidden;
     height: 187px;
     mix-blend-mode: difference;
+    @media screen and (min-width: 999px) {
+      mix-blend-mode: color-dodge;
+    }
   }
 `;
 
@@ -166,4 +183,7 @@ const Number = styled.span`
   text-wrap: nowrap;
   width: 275px;
   text-shadow: -20px 9px 20px black;
+  @media screen and (min-width: 999px) {
+    right: -164px;
+  }
 `;

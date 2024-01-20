@@ -76,6 +76,10 @@ const Desc2 = styled.div`
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: hidden;
+  @media screen and (min-width: 999px) {
+    font-size: 14px;
+    line-height: 2;
+  }
 `;
 const Content = styled.div`
   padding: 10px 10px;
@@ -141,6 +145,13 @@ const Card = styled.div`
   transition: linear 0.2s;
   /* border-radius: 17px; */
   position: relative;
+  transition: all 0.3s ease;
+  &:hover {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
+      0px 30px 60px rgba(23, 0, 102, 0.5),
+      inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
+    transform: translateY(-5px);
+  }
   .linear {
     /* position: absolute;
     height: 100%;
@@ -206,6 +217,10 @@ const Card = styled.div`
     backdrop-filter: blur(6px);
     border-top: #646464 1px solid;
     border-bottom: #454749 1px solid;
+    @media screen and (min-width: 999px) {
+      font-size: 14px;
+      line-height: 2;
+    }
   }
   .icon-and-desc {
     display: flex;
@@ -226,14 +241,14 @@ const Title = styled.div`
   text-shadow: 1px -1px 0px #00000000, 1px -1px 0px #151417;
   margin-top: 10px;
   @media screen and (min-width: 999px) {
-    font-size: 122px;
+    font-size: 62px;
   }
 `;
 const ProjectCardStyle = styled.div`
   min-width: 172px;
   height: 169px;
   @media screen and (min-width: 999px) {
-    height: 756px;
+    height: 296px;
   }
   /* background-image: url("/images/my-svg/falling-rocks.svg"); */
 

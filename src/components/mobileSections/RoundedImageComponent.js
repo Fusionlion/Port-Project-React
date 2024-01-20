@@ -56,7 +56,7 @@ const StyledRoundedImage = styled.div`
   margin-bottom: 10px;
   background-position: center;
   @media screen and (min-width: 999px) {
-    height: 596px;
+    height: 656px;
   }
 `;
 

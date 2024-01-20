@@ -399,6 +399,10 @@ const Wrapper = styled.div`
   position: relative;
   border: 1px #3f3939 solid;
   position: relative;
+  @media screen and (min-width: 999px) {
+    height: 728px;
+    width: 100%;
+  }
 
   @media screen and (max-width: 768px) {
     height: 394px;

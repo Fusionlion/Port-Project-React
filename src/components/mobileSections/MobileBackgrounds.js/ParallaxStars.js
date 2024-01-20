@@ -9,6 +9,9 @@ const Wrapper = styled.div`
   top: 0;
   left: 0;
   z-index: -1;
+  @media screen and (min-width: 999px) {
+    z-index: 0;
+  }
 `;
 
 const Torch = styled.div`
@@ -90,18 +93,18 @@ const ParallaxStars = () => {
     <Wrapper>
       <StyledStarsContainer
         id="stars"
-        n={700}
-        speed={50}
+        n={70}
+        speed={500}
       ></StyledStarsContainer>
       <StyledStarsContainer
         id="stars2"
-        n={200}
-        speed={100}
+        n={20}
+        speed={200}
       ></StyledStarsContainer>
       <StyledStarsContainer
         id="stars3"
-        n={100}
-        speed={150}
+        n={710}
+        speed={850}
       ></StyledStarsContainer>
       <Torch />
     </Wrapper>

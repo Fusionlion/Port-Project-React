@@ -64,7 +64,7 @@ const StyledRoundedImage = styled.div`
   border: 1px solid #191a1a;
   border-radius: 15px;
   @media screen and (min-width: 999px) {
-    height: 856px;
+    height: 624px;
   }
 `;
 

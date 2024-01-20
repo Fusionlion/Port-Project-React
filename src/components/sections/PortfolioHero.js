@@ -187,6 +187,9 @@ const MobileWelcomeTitle = styled.div`
     text-shadow: 5px 9px 11px #000000, 1px -1px 0px #151417;
     /* text-shadow: 1px -1px #06022a; */
     /* font-family: "SF Pro Display", sans-serif; */
+    @media screen and (min-width: 999px) {
+      font-size: 92px;
+    }
   }
 `;
 const MobileWelcomeImage = styled.div`
@@ -241,6 +244,9 @@ const MobileWelcomeImage = styled.div`
     font-size: 82px;
     font-family: "cisnero";
     color: aliceblue;
+    @media screen and (min-width: 999px) {
+      font-size: 102px;
+    }
 
     > :nth-child(2) {
       position: absolute;
