@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: ${(props) => props.zIndex || -1};
   @media screen and (min-width: 999px) {
     z-index: 0;
   }
@@ -88,9 +88,9 @@ const StyledTitle = styled.div`
   }
 `;
 
-const ParallaxStars = () => {
+const ParallaxStars = (props) => {
   return (
-    <Wrapper>
+    <Wrapper zIndex={props.zIndex}>
       <StyledStarsContainer
         id="stars"
         n={70}

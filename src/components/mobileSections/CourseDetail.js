@@ -22,9 +22,18 @@ export default function CourseDetail(props) {
   const handleLessonClicked = (data) => {
     setCardData(data);
     setTopicClicked(data.title);
+    scrollUp();
   };
   const handleLineFromIde = (line) => {
     setCurrLineFromIde(line);
+  };
+
+  const scrollUp = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+      // behavior: "smooth", // Add this line for smooth scrolling
+    });
   };
   useEffect(() => {
     // Scroll to the top when the component mounts
@@ -64,7 +73,7 @@ export default function CourseDetail(props) {
         <CoursesComponent />
       </Padding>
       <FooterSection />
-      <ParallaxStars />
+      {/* <ParallaxStars zIndex="-30" /> */}
     </Wrapper>
   );
 }
@@ -74,6 +83,10 @@ const CardsTitle = styled.div`
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
+  @media screen and (min-width: 999px) {
+    margin-top: 20px;
+  }
+
   > :nth-child(2) {
     width: 40px;
     background: #35353599;
@@ -98,7 +111,11 @@ const Wrapper = styled.div`
   padding-top: 120px;
   /* background-image: url(/images/my-svg/falling-stars.svg); */
   width: 100%;
-  z-index: 5;
+  z-index: 50;
+  @media screen and (min-width: 999px) {
+    margin-top: -35px;
+  }
+
   .project-arrow {
     position: absolute;
     padding: 20px;
@@ -108,5 +125,14 @@ const Wrapper = styled.div`
     left: 1px;
     cursor: pointer;
     z-index: 99;
+    padding: 5px 30px;
+    margin-top: 22px;
+    background: blue;
+    border-radius: 12px;
+    @media screen and (min-width: 999px) {
+      top: 69px;
+      left: 1110px;
+      background: none;
+    }
   }
 `;

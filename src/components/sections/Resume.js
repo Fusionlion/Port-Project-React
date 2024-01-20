@@ -8,10 +8,12 @@ function Resume() {
           <div className="name">Zablon Charles</div>
           <div className="position">Software Engineer</div>
           <li className="career-summary">
-            As a seasoned developer, I bring over four years of experience
-            in designing,developing, and delivering user-centric software
-            applications using JAVA/J2EE and Salesforce CRM technologies.. My commitment is to
-            contribute valuable skills and experience to dynamic projects across full cycle development.
+            Certified Salesforce Administrator and Salesforce Developer with a
+            background in Software Development, Project Management, and Data
+            Analytics. An organized and result-driven individual with good
+            communication and analytical skills. Skilled in working with
+            Salesforce both declaratively and programmatically, and solving
+            business problems with an analytical approach.
           </li>
         </div>
         <div className="right-resume-header">
@@ -34,35 +36,37 @@ function Resume() {
             <div className="company">
               <div className="resume-info">
                 <div className="work-title">Emonics </div>
-                <div className="school">
-                  Software Developer - Java Full Stack Developer
-                </div>
+                <div className="school">Salesforce Developer</div>
                 <div className="resume-year">September 2022 - Current</div>
-                <div className="study">
-                  Bachelor of Science in Computer Science
-                </div>
               </div>
               <li>
-                Developed 2 high-quality software and web applications with 3
-                interns and a senior developer.
-              </li>
-              <li>Analyzed and maintained 4 existing software applications.</li>
-              <li>
-                Designed highly scalable, testable code with 96% positive
-                feedback from mentors.
-              </li>
-              <li>Discovered and fixed programming bugs.</li>
-              <li>
-                Collaborated with 3 designers, 2 managers, and other developers
-                across the project teams.
+                Designed and developed custom solutions and applications on the
+                Salesforce platform.
               </li>
               <li>
-                Worked with Quality Assurance team to determine if applications
-                fit specification and technical requirements.
+                Integrated Salesforce with other enterprise applications and
+                systems.
               </li>
               <li>
-                Maintained the security and integrity of software and web
+                Built and maintained Salesforce customizations, including but
+                not limited to custom fields, validation rules, workflows,
+                custom objects, and Apex code.
+              </li>
+              <li>
+                Performed data migrations and managed data quality in
+                Salesforce.
+              </li>
+              <li>
+                Provided technical guidance and support to team members and
+                end-users.
+              </li>
+              <li>
+                Conducted thorough testing and debugging of Salesforce
                 applications.
+              </li>
+              <li>
+                Collaborated with other developers to create effective solutions
+                for the business.
               </li>
             </div>
 
@@ -70,51 +74,96 @@ function Resume() {
             <div className="company">
               <div className="resume-info">
                 <div className="work-title">Revature</div>
-                <div className="school">
-                  Software Developer - Java Developer
-                </div>
+                <div className="school">Salesforce Developer/Administrator</div>
                 <div className="resume-year">
-                  November 2018 - September 2022
-                </div>
-                <div className="study">
-                  Bachelor of Science in Computer Science
+                  November 2020 - September 2022
                 </div>
               </div>
 
               <li>
-                Wrote, tested, and maintained high-quality, efficient code in
-                Java.
+                Designed and implemented custom Salesforce applications using
+                Apex, Visualforce, Lightning Components, and other Salesforce
+                development tools.
               </li>
               <li>
-                Designed and implemented software solutions based on specified
-                requirements.
+                Collaborated with business analysts, stakeholders, and other
+                technical team members to gather and analyze requirements for
+                Salesforce solutions.
               </li>
               <li>
-                Worked closely with team members to troubleshoot and debug code.
+                Developed and maintained integrations between Salesforce and
+                other systems using technologies such as REST/SOAP APIs and
+                middleware platforms.
               </li>
               <li>
-                Continuously improved software development skills and stayed
-                up-to-date with the latest technologies.
+                Customized and configured Salesforce features such as workflows,
+                process builder, and validation rules to meet business needs.
               </li>
               <li>
-                Collaborated with cross-functional teams to ensure smooth
-                deployment and operation of software.
+                Provided technical leadership and guidance to junior developers
+                and contributed to the overall technical architecture and design
+                of Salesforce solutions.
               </li>
               <li>
-                Participated in code reviews to ensure code quality and
-                adherence to standards.
+                Troubleshot and resolved issues related to Salesforce
+                customizations, integrations, and configurations.
               </li>
-              <li>Developed and maintained technical documentation.</li>
               <li>
-                Contributed to the development and execution of project plans.
-              </li>
-              <li>Met project deadlines and deliverables.</li>
-              <li>
-                Ensured that software met all requirements and was reliable,
-                scalable, and maintainable.
+                Kept abreast of Salesforce platform updates and new features and
+                evaluated their impact on existing solutions.
               </li>
             </div>
+            {/* indivdiual company */}
+            <div className="company">
+              <div className="resume-info">
+                <div className="work-title">SWISSPORT, LLC </div>
+                <div className="school">Salesforce Administrator</div>
+                <div className="resume-year">November 2018 - October 2020</div>
 
+                <li>
+                  Collaborated with cross-functional teams to comprehensively
+                  understand business requirements for the implementation of
+                  Salesforce Service Cloud and Field Service Lightning (FSL).
+                </li>
+                <li>
+                  Designed, developed, tested, and deployed tailored solutions
+                  and enhancements within the Salesforce platform, aligning with
+                  the specific needs of our solar services business.
+                </li>
+                <li>
+                  Customized and optimized Salesforce Service Cloud to address
+                  the unique requirements of our service-oriented operations.
+                </li>
+                <li>
+                  Implemented and maintained seamless integrations with other
+                  systems, ensuring data consistency and accuracy throughout our
+                  Salesforce environment.
+                </li>
+                <li>
+                  Developed and managed Visualforce pages, Apex classes,
+                  triggers, and Lightning components to enhance the
+                  functionality of our Salesforce instance.
+                </li>
+                <li>
+                  Monitored network performance and analyzed system logs to
+                  identify potential issues and implement solutions.
+                </li>
+                <li>
+                  Developed and maintained documentation and user manuals for IT
+                  systems and applications.
+                </li>
+                <li>
+                  Provided technical expertise and support to resolve issues,
+                  offering troubleshooting for system errors and ensuring the
+                  smooth operation of Salesforce solutions.
+                </li>
+                <li>
+                  Remained current with the latest advancements in Salesforce
+                  technologies and best practices, continuously assessing their
+                  impact on our existing Salesforce implementation.
+                </li>
+              </div>
+            </div>
             {/* indivdiual company */}
             <div className="company">
               <div className="resume-info">
@@ -181,18 +230,26 @@ function Resume() {
           <div className="resume-skills">
             Skills
             <li className="resume-skill">Java</li>
-            <li className="resume-skill">C++</li>
+            <li className="resume-skill">Apex</li>
+            <li className="resume-skill">Salesforce</li>
             <li className="resume-skill">Python</li>
+            <li className="resume-skill">Administration</li>
+            <li className="resume-skill">User Setup & Config</li>
+            <li className="resume-skill">Platform App Builder</li>
           </div>
           <div className="resume-social">
             LinkedIn
-            <li className="resume-social-link">LinkedIn</li>
+            <li className="resume-social-link">
+              https://www.linkedin.com/in/zablon-charles-a94530104/
+            </li>
           </div>
           <div className="resume-skills">
             Tech Stack
             <li className="resume-social-link">
               Spring, JMS, JSF, Struts, XML, Webservices, SOAP,J2EE Web
-              Services,AngularJS,SOAP,React,Tomcat,JQuery
+              Services,AngularJS,SOAP,React,Tomcat,JQuery,Java, Python,
+              Apex,React, Gatsby, Javascript, Visualforce, Lightning Web
+              Components, Sosl, Sql, Salesforce DX, and Salesforce APIs.
             </li>
             <li className="resume-social-link">
               Eclipse & IntelliJ IDEA, Maven, Spring, Hibernate, Tomcat, Git,
@@ -210,14 +267,16 @@ export default Resume;
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: #141414;
   font-family: "Spline Sans Mono", sans-serif;
   height: 100%;
   width: 100%;
   border-radius: 16px;
   padding: 0px 20px;
-  color: black !important;
+  margin-top: 20px;
+  color: white;
   padding-bottom: 50px;
+  border: 1px #272424 solid;
   .career-summary {
     font-size: medium;
   }
@@ -230,7 +289,7 @@ const Wrapper = styled.div`
   .left-resume-header {
     display: flex;
     flex-direction: column;
-    color: black;
+    color: white;
     line-height: 1.5;
     font-size: larger;
     .name {
@@ -256,7 +315,7 @@ const Wrapper = styled.div`
   .right-resume-header {
     display: flex;
     flex-direction: column;
-    color: black;
+    color: white;
     text-align: end;
     line-height: 1.5;
     .email {
@@ -294,7 +353,7 @@ const Wrapper = styled.div`
   .work-title {
     font-family: "ACCELERARE", sans-serif;
     font-size: 18px;
-    color: black;
+    color: white;
     text-transform: uppercase;
     margin-top: 10px;
   }

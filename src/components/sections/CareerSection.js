@@ -14,8 +14,6 @@ export default function CareerSection() {
 const Wrapper = styled.div`
   overflow: scroll;
   color: #03e903;
-  padding: 0px 50px;
-  height: 100%;
   width: 100%;
   padding-bottom: 50px;
 

@@ -96,6 +96,7 @@ const Card = styled.div`
   border: 1px solid #201e1ead;
   padding: ${(props) => (props.updateProgress > 0 ? "12px 15px" : "17px 15px")};
   backdrop-filter: blur(33px);
+  margin-bottom: 10px;
   .number {
     font-size: xxx-large;
     font-family: "ACCELERARE";
@@ -129,6 +130,9 @@ const Card = styled.div`
     overflow: hidden;
     text-overflow: ellipsis;
     line-height: 1.8;
+    @media screen and (min-width: 999px) {
+      font-size: 17px;
+    }
   }
   .icon-and-desc {
     display: flex;

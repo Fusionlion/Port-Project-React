@@ -11,6 +11,7 @@ import PortfolioHero from "../components/sections/PortfolioHero";
 import MenuOptions from "../components/buttons/MenuOptions";
 import DesktopCourseStore from "../components/sections/DesktopCourseStore";
 import ParallaxStars from "../components/mobileSections/MobileBackgrounds.js/ParallaxStars";
+import DesktopProjects from "../components/sections/DesktopProjects";
 
 function WebApp() {
   const [activeTab, setActiveTab] = useState("Portfolio");
@@ -133,7 +134,7 @@ function WebApp() {
               activeTab === "Projects" ? "fade-in" : "fade-out"
             }`}
           >
-            <ProjectBios />
+            <DesktopProjects />
           </div>
           {/* content ends */}
 
@@ -299,6 +300,8 @@ const Backdrop = styled.div`
     border-radius: 60px;
     overflow: hidden;
     align-items: center;
+    /* i said f it and aligned it myself */
+    left: 227px;
   }
   .logo {
     height: 35px;

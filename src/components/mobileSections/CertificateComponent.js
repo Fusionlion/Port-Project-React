@@ -76,6 +76,7 @@ const Scroll = styled.div`
 
 const Wrapper = styled.div`
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   gap: 20px;
   color: white;

@@ -53,188 +53,9 @@ function AboutMeSection() {
   return (
     <Wrapper>
       <Wave />
-      {/* <WaveBackground /> */}
 
-      <div className="left-and-right-box">
-        <div className="left-box">
-          <BoxWrapper>
-            <div className="left">
-              <div className="first-section">
-                <ContentWrapper>
-                  <TextWrapper>
-                    <Title>
-                      Welcome
-                      <br /> to my <span>World</span>
-                    </Title>
-                    <Description>
-                      What everyone said was true. You cannot learn how to code
-                      by reading, listening or watching someone else do it. You
-                      have to get your hands dirty! I am a software developer
-                      building interfaces and accessible applications. Welcome
-                      to my personal slice of the internet.I'm glad you're here!
-                    </Description>
+      <CareerSection />
 
-                    <div className="second-section">
-                      <div
-                        className="image-and-text"
-                        onClick={() => handleTabClick("AboutMe")}
-                      >
-                        <div className="image"></div>
-
-                        <div
-                          className={`image-text ${
-                            activeTab === "AboutMe" ? "image-text-active" : ""
-                          }`}
-                        >
-                          Zablon <br />
-                          Charles
-                        </div>
-                      </div>
-
-                      <div
-                        className="image-and-text"
-                        onClick={() => handleTabClick("Experience")}
-                      >
-                        <div className="image-3"></div>
-                        <div
-                          className={`image-text ${
-                            activeTab === "Experience"
-                              ? "image-text-active"
-                              : ""
-                          }`}
-                        >
-                          Professional <br />
-                          Experience
-                        </div>
-                      </div>
-
-                      {/* certs */}
-                      <div
-                        className="image-and-text"
-                        onClick={() => handleTabClick("Certifications")}
-                      >
-                        <div className="image-4"></div>
-                        <div
-                          className={`image-text ${
-                            activeTab === "Certifications"
-                              ? "image-text-active"
-                              : ""
-                          }`}
-                        >
-                          Certifications <br />
-                          Etc
-                        </div>
-                      </div>
-                    </div>
-                  </TextWrapper>
-                </ContentWrapper>
-              </div>
-
-              {/* Description starts here */}
-              <div className="third-section">
-                {/* Experience level */}
-
-                <div
-                  className={`tab-content-item ${
-                    activeTab === "Contact" ? "fade-in" : "fade-out"
-                  }`}
-                >
-                  <ContactMeSection />
-                </div>
-              </div>
-            </div>
-          </BoxWrapper>
-        </div>
-
-        <div className="right-box">
-          <FloatingTextRight>
-            <div className="right-text-and-line">
-              <div className="right-btn" onClick={() => handleTabClick("Data")}>
-                Data Structures
-              </div>
-              <div
-                className={
-                  activeCourse === "Data" ? "right-line" : "right-line-inactive"
-                }
-              ></div>
-            </div>
-
-            <div className="right-text-and-line">
-              <div
-                className="right-btn"
-                onClick={() => handleTabClick("React")}
-              >
-                React
-              </div>
-              <div
-                className={
-                  activeCourse === "React"
-                    ? "right-line"
-                    : "right-line-inactive"
-                }
-              ></div>
-            </div>
-
-            <div className="right-text-and-line">
-              <div className="right-btn" onClick={() => handleTabClick("Java")}>
-                Java
-              </div>
-              <div
-                className={`right-line-inactive ${
-                  activeCourse == "Java" ? "right-line" : ""
-                }`}
-              ></div>
-            </div>
-          </FloatingTextRight>
-          <FloatingDescRight>
-            What everyone said was true. You cannot learn how to code by
-            reading, listening or watching someone else do it. You have to get
-            your hands dirty! I am a software developer building interfaces and
-            accessible applications. Welcome to my personal slice of the
-            internet.I'm glad you're here!
-          </FloatingDescRight>
-        </div>
-      </div>
-
-      <div
-        className={`tab-content-item ${
-          activeTab === "AboutMe" ? "fade-in" : "fade-out"
-        }`}
-      >
-        {/* ABOUT ME: GETTING DATA FROM PROJECTCARD/TITLE */}
-        <AboutMeIde
-          noData={activeModal}
-          setActiveCardParent={handleCardClickChild}
-        />
-      </div>
-      {/* Education level */}
-      <div
-        className={`tab-content-item ${
-          activeTab === "Experience" ? "fade-in" : "fade-out"
-        }`}
-      >
-        <CareerSection />
-      </div>
-      {/* Education level */}
-      {/* Education level */}
-      <div
-        className={`tab-content-item ${
-          activeTab === "Certifications" ? "fade-in" : "fade-out"
-        }`}
-      >
-        <FourthSection />
-        <FifthSection />
-      </div>
-
-      {/* MODAL STARTS HERE */}
-      <Modal active={activeModal === "show"}>
-        <div className="background">
-          <div className="x" onClick={() => handleModalClose("close")}>
-            Close
-          </div>
-          <AboutArticle data={article} title={activeCard} />
-        </div>
-      </Modal>
       <FooterSection />
     </Wrapper>
   );
@@ -291,7 +112,6 @@ const Modal = styled.div`
   }
 `;
 const Wrapper = styled.div`
-  height: 93vh;
   overflow: scroll;
   background-color: #000;
   position: relative;
@@ -523,8 +343,6 @@ const FloatingTextRight = styled.div`
 `;
 
 const Wave = styled.div`
-  position: absolute;
-  height: 800px;
   background-image: url("/images/my-svg/falling-rocks.svg");
   background-repeat: repeat;
   background-size: contain;
