@@ -97,6 +97,20 @@ const Card = styled.div`
   padding: ${(props) => (props.updateProgress > 0 ? "12px 15px" : "17px 15px")};
   backdrop-filter: blur(33px);
   margin-bottom: 10px;
+
+  @media screen and (min-width: 999px) {
+    position: relative;
+    display: grid;
+    grid-template-columns: 46px auto;
+    gap: 10px;
+    width: 100%;
+    min-width: 485px;
+    min-height: 131px;
+    padding: 10px;
+    border-radius: 16px;
+    flex: 1;
+  }
+
   .number {
     font-size: xxx-large;
     font-family: "ACCELERARE";
@@ -107,6 +121,10 @@ const Card = styled.div`
     /* background: blue; */
     height: 56px;
     font-size: 40px;
+
+    @media screen and (min-width: 999px) {
+      font-size: 60px;
+    }
   }
   .icon-and-title {
     display: flex;
@@ -131,7 +149,16 @@ const Card = styled.div`
     text-overflow: ellipsis;
     line-height: 1.8;
     @media screen and (min-width: 999px) {
-      font-size: 17px;
+      font-style: normal;
+      font-size: 15px;
+      line-height: 18px;
+      font-weight: normal;
+      color: gray;
+      margin: 0px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
   }
   .icon-and-desc {

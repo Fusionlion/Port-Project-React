@@ -602,14 +602,16 @@ const Wrapper = styled.div`
     }
   }
   .old {
-    padding: 33px 16px;
+    padding: 15px 16px;
+
     color: #948f8f;
     line-height: 1.5;
     text-align: justify;
     text-transform: lowercase;
     font-size: medium;
     z-index: 5;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1000px) {
+      padding: 33px 16px;
       color: #4f4a4a;
       padding: 7px 5px;
       line-height: 1.2;

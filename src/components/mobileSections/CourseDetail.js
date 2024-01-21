@@ -61,14 +61,16 @@ export default function CourseDetail(props) {
         <h1>Lessons</h1>
         <div>{lessonCount}</div>
       </CardsTitle>
-      <LessonRowList
-        lessonCount={(count) => {
-          setLessonCout(count);
-        }}
-        subject={props.subject}
-        theCardClicked={handleLessonClicked}
-        lineChanged={currLineFromIde}
-      />
+      <AllLessons>
+        <LessonRowList
+          lessonCount={(count) => {
+            setLessonCout(count);
+          }}
+          subject={props.subject}
+          theCardClicked={handleLessonClicked}
+          lineChanged={currLineFromIde}
+        />
+      </AllLessons>
       <Padding>
         <CoursesComponent />
       </Padding>
@@ -77,6 +79,22 @@ export default function CourseDetail(props) {
     </Wrapper>
   );
 }
+const AllLessons = styled.div`
+  // Your styles here
+  display: grid;
+  margin: 0px auto;
+  /* grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); */
+  display: flex;
+  flex-wrap: wrap;
+  justify-self: stretch;
+  justify-items: left;
+  padding: 30px;
+  background: #080808;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 0.5px inset;
+  backdrop-filter: blur(40px);
+  border-radius: 20px;
+`;
+
 const CardsTitle = styled.div`
   // Your styles here
   font-size: 18px;

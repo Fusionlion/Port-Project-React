@@ -291,7 +291,7 @@ const Backdrop = styled.div`
     align-items: baseline;
     /* background-image: url(/images/my-svg/header-stars.svg); */
     position: fixed;
-    top: 20px;
+    top: 51px;
     /* height: 83px; */
     z-index: 99;
     padding: 20px 10px;
@@ -301,7 +301,9 @@ const Backdrop = styled.div`
     overflow: hidden;
     align-items: center;
     /* i said f it and aligned it myself */
-    left: 227px;
+
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   .logo {
     height: 35px;

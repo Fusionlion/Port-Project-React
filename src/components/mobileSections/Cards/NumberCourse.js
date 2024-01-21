@@ -46,7 +46,11 @@ export default function NumberCourse(props) {
     // }
   };
   return (
-    <Wrapper src={props.imageSrc} reverseText={props.reverseText}>
+    <Wrapper
+      src={props.imageSrc}
+      reverseText={props.reverseText}
+      onClick={handleStartClick}
+    >
       <Start>
         <FaPlaneDeparture />
         <NumberDesc>
@@ -58,7 +62,7 @@ export default function NumberCourse(props) {
         </NumberDesc>
       </Start>
 
-      <StartButton onClick={handleStartClick}>
+      <StartButton>
         <Column>
           {props.subject ?? "Course"}
           {!props.stack && <FaPython />}
