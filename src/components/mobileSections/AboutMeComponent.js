@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import { GiChewedHeart } from "react-icons/gi";
 const StyledComponent = styled.div`
   display: flex;
   flex-direction: column;
@@ -34,7 +34,20 @@ const StyledComponent = styled.div`
     @media screen and (min-width: 999px) {
       font-size: 18px;
       line-height: 1.5;
+      background: #141414;
+      padding-right: 18px;
+      border-radius: 12px;
     }
+  }
+  .section-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-family: "Spline Sans Mono", sans-serif;
+    line-height: 1.2;
+    gap: 18px;
+    text-align: justify;
   }
   .space {
     /* width: 100%;
@@ -94,6 +107,30 @@ const StyledComponent = styled.div`
       margin-bottom: 20px;
     }
   }
+  .image-intro {
+    display: none;
+    @media screen and (min-width: 999px) {
+      position: absolute;
+      color: #fffcfc;
+      font-size: 16px;
+      bottom: 40px;
+      left: 20px;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      > :nth-child(1) {
+        font-size: 38px;
+      }
+      > :nth-child(2) {
+        font-family: "Spline Sans Mono", sans-serif;
+        line-height: 1.5;
+        width: 300px;
+        border-left: white solid 1px;
+        padding-left: 10px;
+        text-wrap: balance;
+      }
+    }
+  }
   .section-svg {
     height: 492px;
     background-image: url(/images/my-svg/exploded_mockup.png);
@@ -150,19 +187,25 @@ const AboutMeComponent = () => {
     <StyledComponent>
       {/* Second Div */}
       <div className="section-image">
+        <div className="image-intro">
+          <GiChewedHeart />
+          <div>
+            I design and code beautifully simple things, and I love what I do.
+          </div>
+        </div>
         <div className="section-svg"></div>
         <div className="flip-text-1">software</div>
         <div className="flip-text-2">developer</div>
       </div>
 
       {/* Third Div */}
-      <div className="section bottom-border">
+      <div className="section-top bottom-border">
         <div className="bold-text">About Me</div>
         <div>S.E</div>
       </div>
 
       {/* Fourth Div */}
-      <div className="section ">
+      <div className="section">
         <div className="space"></div>
         <div>
           I have extensive experience in coding for all languages (Java,

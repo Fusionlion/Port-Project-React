@@ -16,14 +16,22 @@ const certificatesData = [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/2560px-Salesforce.com_logo.svg.png",
     description:
       "Achieved certification as a Salesforce Developer, demonstrating proficiency in Salesforce platform development.",
-    date: "Issued on February 28, 2022",
+    date: "Issued on February 28, 2020",
+  },
+  {
+    title: "Salesforce Admin Certification",
+    icon:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/2560px-Salesforce.com_logo.svg.png",
+    description:
+      "Achieved certification as a Salesforce Admin, demonstrating user managament and config in Salesforce sales cloud and service cloud platform development.",
+    date: "Issued on January 28, 2020",
   },
   {
     title: "Front-End Design Fundamentals",
     icon: "https://cdn-icons-png.flaticon.com/512/174/174854.png",
     description:
       "Completed a course in Front-End Design, mastering the principles of user interface and experience design.",
-    date: "Issued on March 10, 2022",
+    date: "Issued on March 10, 2019",
   },
   {
     title: "React.js Developer Certification",
@@ -31,11 +39,11 @@ const certificatesData = [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png",
     description:
       "Attained certification as a React.js Developer, showcasing expertise in building dynamic and responsive web applications.",
-    date: "Issued on April 5, 2022",
+    date: "Issued on April 5, 2021",
   },
 ];
 
-const CertificateComponent = () => {
+const CertificateComponent = (props) => {
   const [visibleCertificates, setVisibleCertificates] = useState(3);
 
   const showMoreCertificates = () => {
@@ -43,7 +51,7 @@ const CertificateComponent = () => {
   };
 
   return (
-    <Wrapper>
+    <Wrapper spread={props.spread}>
       <TopTitle>
         <div>Certificates</div>
         <div className="right-title">{certificatesData.length}</div>
@@ -89,6 +97,7 @@ const Wrapper = styled.div`
     width: 100%;
     .horizontal-certs {
       display: flex;
+      flex-direction: ${(props) => props.spread};
       gap: 10px;
       width: 100%;
       overflow: scroll;
@@ -125,9 +134,26 @@ const CertificateCard = styled.div`
   background: url(/images/my-svg/falling-rocks.svg);
   background-repeat: no-repeat;
   background-position: center center;
+  z-index: 1;
   @media screen and (min-width: 999px) {
     min-width: 500px;
     min-height: 289px;
+    width: 300px;
+    background: #141414;
+  }
+  @media screen and (min-width: 999px) {
+    & {
+      transition: all 0.2s linear;
+    }
+
+    :hover {
+      z-index: 0;
+      cursor: pointer;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
+        0px 30px 50px rgba(23, 0, 102, 0.5),
+        inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
+      transform: scale(0.98);
+    }
   }
 `;
 
@@ -141,6 +167,9 @@ const Title = styled.h2`
   font-family: "magisse";
   font-size: 18px;
   margin-bottom: 10px;
+  @media screen and (min-width: 999px) {
+    font-size: 21px;
+  }
 `;
 
 const Icon = styled.img`

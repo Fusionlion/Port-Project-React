@@ -139,6 +139,28 @@ const StyledButton = styled.div`
   align-items: center;
   font-family: "Spline Sans Mono", sans-serif;
   margin: 0px 69px;
+
+  @media screen and (min-width: 999px) {
+    padding: 20px 32px;
+    background-color: #000000;
+    border-radius: 58px;
+    /* display: grid; */
+    grid-template-columns: 53px auto;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    border: 1px solid #171616;
+    font-family: "Spline Sans Mono", sans-serif;
+    color: aliceblue;
+    margin: 5px 424px;
+    text-align: center;
+  }
 `;
 
 const CoursesComponent = (props) => {

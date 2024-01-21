@@ -111,12 +111,12 @@ function WebApp() {
             </div>
             <div className="right-section">
               <div className="right-section-icon"></div>
-              <div
+              {/* <div
                 className={`right-section-drop-down ${
                   isToggled ? "right-section-drop-down-active" : ""
                 }`}
                 onClick={handleClick}
-              ></div>
+              ></div> */}
             </div>
           </div>
 
@@ -287,7 +287,7 @@ const Backdrop = styled.div`
     height: 70px;
     color: white;
     font-size: 25px;
-    border-bottom: 1px solid #14141b;
+    border: 1px solid #14141b;
     align-items: baseline;
     /* background-image: url(/images/my-svg/header-stars.svg); */
     position: fixed;
@@ -321,7 +321,7 @@ const Backdrop = styled.div`
     gap: 10px;
     z-index: 999;
     position: relative;
-    left: -89px;
+    left: -59px;
     @media screen and (max-width: 1000px) {
       display: none;
     }
@@ -344,7 +344,7 @@ const Backdrop = styled.div`
     background-size: cover;
     background-position: center;
     cursor: pointer;
-
+    margin-right: 6px;
     /* @media only screen and (min-width: 430px) {
       display: none;
     } */

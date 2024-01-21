@@ -177,7 +177,8 @@ const Wrapper = styled.div`
   // Your styles here
   position: relative;
   overflow: scroll;
-  backdrop-filter: blur(18px);
+  /* backdrop-filter: blur(18px); */
+  background: repeating-linear-gradient(45deg, black, transparent 100px);
 `;
 const PaddingH = styled.div`
   // Your styles here
@@ -350,10 +351,10 @@ const BodyContain = styled.div`
       font-weight: normal;
       list-style: katakana-iroha;
       backdrop-filter: blur(42px);
-      border: 1px solid #323232;
+      border: 1px solid #28272745;
       border-radius: 11px;
       padding: 11px;
-      background: url(/images/my-svg/falling-rocks.svg);
+      background: #0a0a0a;
       @media screen and (min-width: 999px) {
         font-size: 16px;
       }

@@ -1,12 +1,23 @@
 import React from "react";
 import styled from "styled-components";
+import { MdEmail } from "react-icons/md";
+import { MdPhone } from "react-icons/md";
+import { BsPersonBadge } from "react-icons/bs";
+import { BsPersonWorkspace } from "react-icons/bs";
+import { IoSchoolOutline } from "react-icons/io5";
+import CertificateComponent from "../mobileSections/CertificateComponent";
 function Resume() {
   return (
     <Wrapper>
       <div className="resume-header">
         <div className="left-resume-header">
           <div className="name">Zablon Charles</div>
-          <div className="position">Software Engineer</div>
+          <div className="position">
+            <BsPersonBadge />
+            /Salesforce Developer | <MdEmail />
+            /ZablonCharles@gmail.com | <MdPhone />
+            /201-267-5068
+          </div>
           <li className="career-summary">
             Certified Salesforce Administrator and Salesforce Developer with a
             background in Software Development, Project Management, and Data
@@ -16,16 +27,16 @@ function Resume() {
             business problems with an analytical approach.
           </li>
         </div>
-        <div className="right-resume-header">
-          <div className="email">ZablonCharles@gmail.com</div>
-          <div className="phone">201.267.5068</div>
-        </div>
       </div>
       <div className="left-and-right-resume">
         <div className="resume-left">
-          <div className="edu-info">
-            <div className="work-title">Education</div>
-            <div className="school">Saint Peter's University</div>
+          <div className="school-section">
+            <div className="resume-info">
+              <div className="work-title">Education</div>
+              <div className="school">Saint Peter's University</div>
+              <div className="resume-year">November 2017 - October 2020</div>
+              <IoSchoolOutline />
+            </div>
             <li className="resume-year">
               Bachelor's Degree - Computer Science
             </li>
@@ -38,6 +49,7 @@ function Resume() {
                 <div className="work-title">Emonics </div>
                 <div className="school">Salesforce Developer</div>
                 <div className="resume-year">September 2022 - Current</div>
+                <BsPersonWorkspace />
               </div>
               <li>
                 Designed and developed custom solutions and applications on the
@@ -78,6 +90,7 @@ function Resume() {
                 <div className="resume-year">
                   November 2020 - September 2022
                 </div>
+                <BsPersonWorkspace />
               </div>
 
               <li>
@@ -119,50 +132,51 @@ function Resume() {
                 <div className="work-title">SWISSPORT, LLC </div>
                 <div className="school">Salesforce Administrator</div>
                 <div className="resume-year">November 2018 - October 2020</div>
-
-                <li>
-                  Collaborated with cross-functional teams to comprehensively
-                  understand business requirements for the implementation of
-                  Salesforce Service Cloud and Field Service Lightning (FSL).
-                </li>
-                <li>
-                  Designed, developed, tested, and deployed tailored solutions
-                  and enhancements within the Salesforce platform, aligning with
-                  the specific needs of our solar services business.
-                </li>
-                <li>
-                  Customized and optimized Salesforce Service Cloud to address
-                  the unique requirements of our service-oriented operations.
-                </li>
-                <li>
-                  Implemented and maintained seamless integrations with other
-                  systems, ensuring data consistency and accuracy throughout our
-                  Salesforce environment.
-                </li>
-                <li>
-                  Developed and managed Visualforce pages, Apex classes,
-                  triggers, and Lightning components to enhance the
-                  functionality of our Salesforce instance.
-                </li>
-                <li>
-                  Monitored network performance and analyzed system logs to
-                  identify potential issues and implement solutions.
-                </li>
-                <li>
-                  Developed and maintained documentation and user manuals for IT
-                  systems and applications.
-                </li>
-                <li>
-                  Provided technical expertise and support to resolve issues,
-                  offering troubleshooting for system errors and ensuring the
-                  smooth operation of Salesforce solutions.
-                </li>
-                <li>
-                  Remained current with the latest advancements in Salesforce
-                  technologies and best practices, continuously assessing their
-                  impact on our existing Salesforce implementation.
-                </li>
+                <BsPersonWorkspace />
               </div>
+
+              <li>
+                Collaborated with cross-functional teams to comprehensively
+                understand business requirements for the implementation of
+                Salesforce Service Cloud and Field Service Lightning (FSL).
+              </li>
+              <li>
+                Designed, developed, tested, and deployed tailored solutions and
+                enhancements within the Salesforce platform, aligning with the
+                specific needs of our solar services business.
+              </li>
+              <li>
+                Customized and optimized Salesforce Service Cloud to address the
+                unique requirements of our service-oriented operations.
+              </li>
+              <li>
+                Implemented and maintained seamless integrations with other
+                systems, ensuring data consistency and accuracy throughout our
+                Salesforce environment.
+              </li>
+              <li>
+                Developed and managed Visualforce pages, Apex classes, triggers,
+                and Lightning components to enhance the functionality of our
+                Salesforce instance.
+              </li>
+              <li>
+                Monitored network performance and analyzed system logs to
+                identify potential issues and implement solutions.
+              </li>
+              <li>
+                Developed and maintained documentation and user manuals for IT
+                systems and applications.
+              </li>
+              <li>
+                Provided technical expertise and support to resolve issues,
+                offering troubleshooting for system errors and ensuring the
+                smooth operation of Salesforce solutions.
+              </li>
+              <li>
+                Remained current with the latest advancements in Salesforce
+                technologies and best practices, continuously assessing their
+                impact on our existing Salesforce implementation.
+              </li>
             </div>
             {/* indivdiual company */}
             <div className="company">
@@ -170,54 +184,53 @@ function Resume() {
                 <div className="work-title">Saint Peter’s University </div>
                 <div className="school">IT Intern</div>
                 <div className="resume-year">January 2017 - June 2018</div>
-                <div className="study">
-                  Bachelor of Science in Computer Science
-                </div>
-                <li>
-                  Installed and configured hardware and software systems,
-                  including servers, workstations, and peripherals.
-                </li>
-                <li>
-                  Troubleshooted and resolved hardware and software issues for
-                  end-users, including diagnosing network and connectivity
-                  problems.
-                </li>
-                <li>
-                  Maintained and updated network security measures, including
-                  firewalls and anti-virus software.
-                </li>
-                <li>
-                  Conducted regular system backups and disaster recovery tests
-                  to ensure system integrity and data protection.
-                </li>
-                <li>
-                  Collaborated with cross-functional teams to implement new
-                  technologies and software applications.
-                </li>
-                <li>
-                  Monitored network performance and analyzed system logs to
-                  identify potential issues and implement solutions.
-                </li>
-                <li>
-                  Developed and maintained documentation and user manuals for IT
-                  systems and applications.
-                </li>
-                <li>
-                  Provided training and technical support to end-users to
-                  enhance their proficiency and productivity.
-                </li>
-                <li>
-                  Implemented IT policies and procedures to ensure compliance
-                  with industry standards and regulations.
-                </li>
-                <li>
-                  Managed and coordinated IT projects from conception to
-                  completion, ensuring timely and successful delivery.
-                </li>
+                <BsPersonWorkspace />
               </div>
+
+              <li>
+                Installed and configured hardware and software systems,
+                including servers, workstations, and peripherals.
+              </li>
+              <li>
+                Troubleshooted and resolved hardware and software issues for
+                end-users, including diagnosing network and connectivity
+                problems.
+              </li>
+              <li>
+                Maintained and updated network security measures, including
+                firewalls and anti-virus software.
+              </li>
+              <li>
+                Conducted regular system backups and disaster recovery tests to
+                ensure system integrity and data protection.
+              </li>
+              <li>
+                Collaborated with cross-functional teams to implement new
+                technologies and software applications.
+              </li>
+              <li>
+                Monitored network performance and analyzed system logs to
+                identify potential issues and implement solutions.
+              </li>
+              <li>
+                Developed and maintained documentation and user manuals for IT
+                systems and applications.
+              </li>
+              <li>
+                Provided training and technical support to end-users to enhance
+                their proficiency and productivity.
+              </li>
+              <li>
+                Implemented IT policies and procedures to ensure compliance with
+                industry standards and regulations.
+              </li>
+              <li>
+                Managed and coordinated IT projects from conception to
+                completion, ensuring timely and successful delivery.
+              </li>
             </div>
             <div className="resume-certifications">
-              <div className="resume-info">
+              <div className="resume-info-2">
                 <div className="work-title">Certifications</div>
                 <li className="study">Salesforce Administrator</li>
                 <li className="study">Salesforce Developer</li>
@@ -256,6 +269,8 @@ function Resume() {
               Jenkins, MySQL
             </li>
           </div>
+
+          <CertificateComponent spread="column" />
         </div>
       </div>
     </Wrapper>
@@ -285,6 +300,7 @@ const Wrapper = styled.div`
     justify-content: space-between;
     border-bottom: 2px black solid;
     padding: 30px 0px;
+    flex-direction: column;
   }
   .left-resume-header {
     display: flex;
@@ -292,9 +308,19 @@ const Wrapper = styled.div`
     color: white;
     line-height: 1.5;
     font-size: larger;
+    text-align: center;
+    align-items: center;
     .name {
+      font-family: "cisnero";
+      text-align: center;
+      background: linear-gradient(to right, rgb(0 228 255), rgb(253 255 255));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 5px 9px 11px #000000, 1px -1px 0px #4f0000;
+      font-size: 45px;
     }
     .position {
+      align-items: center;
     }
   }
   .edu-info {
@@ -307,6 +333,35 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     line-height: 1.5;
+    border-radius: 12px;
+    padding: 10px;
+    position: relative;
+    border: 1px solid #302e2e;
+    background: #141414;
+    box-shadow: 6px 6px 12px #111111, -2px -5px 9px #191717;
+    > :nth-child(4) {
+      position: absolute;
+      color: #302e2e;
+      top: 50%;
+      right: 0;
+      transform: translate(-50%, -50%);
+      font-size: 38px;
+    }
+    .resume-year {
+      color: #b90000;
+    }
+  }
+  .resume-info-2 {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+    border-radius: 12px;
+    padding: 10px;
+    position: relative;
+    border: 1px solid #302e2e;
+    background: #141414;
+    box-shadow: 6px 6px 12px #111111, -2px -5px 9px #191717;
+
     .resume-year {
       color: #b90000;
     }
@@ -315,8 +370,9 @@ const Wrapper = styled.div`
   .right-resume-header {
     display: flex;
     flex-direction: column;
+    text-align: center;
     color: white;
-    text-align: end;
+
     line-height: 1.5;
     .email {
     }
@@ -334,6 +390,9 @@ const Wrapper = styled.div`
     padding-right: 20px;
     border-right: solid black 1px;
     flex: 1;
+  }
+  .school-section {
+    padding: 20px 0px;
   }
   .education {
   }
@@ -355,7 +414,6 @@ const Wrapper = styled.div`
     font-size: 18px;
     color: white;
     text-transform: uppercase;
-    margin-top: 10px;
   }
   .resume-skills {
     gap: 20px;
@@ -371,5 +429,6 @@ const Wrapper = styled.div`
     padding-top: 15px;
     gap: 20px;
     list-style: hangul;
+    line-height: 1.5;
   }
 `;

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import BarChart from "./BarChart"; // Assuming you have a BarChart component
-
+import { FaCode } from "react-icons/fa";
 const CodingExpertiseComponent = () => {
   // Dummy data for expertise levels
   const expertiseData = [
@@ -12,26 +12,34 @@ const CodingExpertiseComponent = () => {
   ];
 
   return (
-    <Wrapper>
-      <TopSection>
-        <TopLeftText>
-          <Title>Coding Expertise</Title>
-          <Subtitle>Explore the languages I work with.</Subtitle>
-        </TopLeftText>
-        <TopRightButton
-          href="https://github.com/zabloncharles"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View Portfolio
-        </TopRightButton>
-      </TopSection>
-      <BottomSection>
-        {expertiseData.map((item, index) => (
-          <BarChart key={index} language={item.language} level={item.level} />
-        ))}
-      </BottomSection>
-    </Wrapper>
+    <>
+      <TopTitle>
+        <div>Languages</div>
+        <div className="right-title">
+          <FaCode />
+        </div>
+      </TopTitle>
+      <Wrapper>
+        <TopSection>
+          <TopLeftText>
+            <Title>Coding Expertise</Title>
+            <Subtitle>Explore the languages I work with.</Subtitle>
+          </TopLeftText>
+          <TopRightButton
+            href="https://github.com/zabloncharles"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Portfolio
+          </TopRightButton>
+        </TopSection>
+        <BottomSection>
+          {expertiseData.map((item, index) => (
+            <BarChart key={index} language={item.language} level={item.level} />
+          ))}
+        </BottomSection>
+      </Wrapper>
+    </>
   );
 };
 
@@ -45,9 +53,35 @@ const Wrapper = styled.div`
 
   @media screen and (min-width: 999px) {
     width: 100%;
+    background: #141414;
+  }
+  @media screen and (min-width: 999px) {
+    & {
+      transition: all 0.2s linear;
+    }
+
+    :hover {
+      cursor: pointer;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
+        0px 30px 60px rgba(23, 0, 102, 0.5),
+        inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
+      transform: translateY(-5px);
+    }
   }
 `;
-
+const TopTitle = styled.div`
+  font-family: "Spline Sans Mono", sans-serif;
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  color: white;
+  margin-bottom: 20px;
+  @media screen and (min-width: 999px) {
+    font-size: 17px;
+  }
+`;
 const TopSection = styled.div`
   display: flex;
   justify-content: space-between;

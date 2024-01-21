@@ -122,6 +122,25 @@ const Card = styled.div`
   min-width: 242px;
   overflow: hidden;
   border: 1px solid #7d7d7d30;
+
+  @media screen and (min-width: 999px) {
+    & {
+      transition: all 0.2s linear;
+    }
+
+    :hover {
+      z-index: 0;
+      cursor: pointer;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
+        0px 30px 50px rgba(23, 0, 102, 0.5),
+        inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
+      transform: scale(0.98);
+    }
+  }
+@media screen and (min-width:999px){
+    background: #141414;
+} 
+ 
   .linear {
     /* position: absolute;
     height: 100%;

@@ -24,7 +24,9 @@ function BookCard(props) {
   // WEHEN START IS CLICKED ON THE CARD
   const handleStartClick = () => {
     // SEND A MESSAGE UP THAT CARD START WAS CLICKED
-    props.click();
+    if (props.click) {
+      props.click();
+    }
   };
   const handleProgressChange = (newProgress) => {
     setProgress(newProgress);
@@ -79,6 +81,8 @@ const Desc2 = styled.div`
   @media screen and (min-width: 999px) {
     font-size: 14px;
     line-height: 2;
+    width: 300px;
+    align-self: center;
   }
 `;
 const Content = styled.div`
@@ -145,12 +149,19 @@ const Card = styled.div`
   transition: linear 0.2s;
   /* border-radius: 17px; */
   position: relative;
-  transition: all 0.3s ease;
-  &:hover {
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
-      0px 30px 60px rgba(23, 0, 102, 0.5),
-      inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
-    transform: translateY(-5px);
+  @media screen and (min-width: 999px) {
+    & {
+      transition: all 0.2s linear;
+    }
+
+    :hover {
+      z-index: 0;
+      cursor: pointer;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
+        0px 30px 50px rgba(23, 0, 102, 0.5),
+        inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
+      transform: scale(0.98);
+    }
   }
   .linear {
     /* position: absolute;

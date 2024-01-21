@@ -48,11 +48,16 @@ export default function PortfolioHero(props) {
         applications. Welcome to my personal slice of the internet.I'm glad
         you're here!
       </MobileDesc>
-      <GetStartedButton
-        clicked={() => {
-          props.page("courses");
-        }}
-      />
+      <ButtonLines>
+        <div></div>
+        <GetStartedButton
+          clicked={() => {
+            props.page("courses");
+          }}
+        />
+        <div></div>
+      </ButtonLines>
+
       <div className="after-button-text">
         <br />
         Step into my digital realm, where technology meets innovation, and join
@@ -105,6 +110,25 @@ const BGround = styled.div`
   background-repeat: no-repeat;
   top: 15px;
 `;
+
+const ButtonLines = styled.div`
+  // Your styles here
+  display: flex;
+  gap: 20px;
+  align-items: center;
+
+  > :nth-child(1) {
+    background-color: white;
+    height: 2px;
+    width: 90px;
+  }
+  > :nth-child(3) {
+    background-color: white;
+    height: 2px;
+    width: 90px;
+  }
+`;
+
 const BGroundBlack = styled.div`
   height: 800px;
   width: 100vw;
@@ -131,6 +155,11 @@ const Wrapper = styled.div`
     font-family: "Spline Sans Mono", sans-serif;
     line-height: 1.2;
     padding-bottom: 35px;
+
+    @media screen and (min-width: 999px) {
+      font-size: 16px;
+      width: 500px;
+    }
   }
   .mobile-welcome-button {
     text-align: center;

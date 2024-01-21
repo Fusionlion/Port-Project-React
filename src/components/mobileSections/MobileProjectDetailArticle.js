@@ -24,6 +24,11 @@ export default function MobileProjectDetailArticle(props) {
   };
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+      // behavior: "smooth", // Add this line for smooth scrolling
+    });
     const options = {
       root: null,
       rootMargin: "0px",
@@ -163,7 +168,7 @@ const Wrapper = styled.div`
     /* left: 0; */
     height: none;
     /* width: 100%; */
-    overflow: visible;
+    overflow: scroll;
     z-index: none;
     width: 100%;
     border-radius: 12px;
@@ -171,6 +176,9 @@ const Wrapper = styled.div`
   .content {
     > :nth-child(n + 1) {
       padding: 0px 20px;
+      @media screen and (min-width: 999px) {
+        padding: 0px 0px;
+      }
     }
 
     > :nth-child(2) {
@@ -221,20 +229,19 @@ const Wrapper = styled.div`
     z-index: 0;
   }
   .project-top-left {
-    /* height: 500px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     z-index: 1;
-
     text-align: center;
     padding: 20px;
     padding-bottom: 35px;
     padding-top: 144px;
-
     @media screen and (min-width: 999px) {
       width: 100%;
       gap: 10px;
+      align-items: center;
+      padding-top: 0px;
     }
 
     > :nth-child(2) {

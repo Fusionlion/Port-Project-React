@@ -44,6 +44,20 @@ const StyledImage = styled.div`
   overflow: hidden;
 
   @media screen and (min-width: 999px) {
+    & {
+      transition: all 0.2s linear;
+    }
+
+    :hover {
+      cursor: pointer;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
+        0px 30px 60px rgba(23, 0, 102, 0.5),
+        inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
+      transform: translateY(-5px);
+    }
+  }
+
+  @media screen and (min-width: 999px) {
     height: 654px;
     border-radius: 13px;
   }
@@ -101,6 +115,28 @@ const StyledButton = styled.div`
   align-items: center;
   font-family: "Spline Sans Mono", sans-serif;
   margin: 12px 69px;
+
+  @media screen and (min-width: 999px) {
+    padding: 20px 12px;
+    background-color: #000000;
+    border-radius: 58px;
+    /* display: grid; */
+    grid-template-columns: 53px auto;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    border: 1px solid #171616;
+    font-family: "Spline Sans Mono", sans-serif;
+    color: aliceblue;
+    margin: 5px 424px;
+    text-align: center;
+  }
 `;
 
 const ThreeImagesComponent = (props) => {
@@ -111,7 +147,6 @@ const ThreeImagesComponent = (props) => {
     "https://user-images.githubusercontent.com/74889517/182249026-b848efe2-f972-42e5-baad-fd9038d9caaf.png",
     "https://cdn.dribbble.com/userupload/5037487/file/original-d58fe78b48391be3883b852b2e5090a7.png?resize=2048x1536&vertical=center",
     "https://cdn.dribbble.com/userupload/10634461/file/original-c113412acf43e890dfba66921b388e8b.png?resize=1504x1128",
-    "https://cdn.dribbble.com/userupload/4304357/file/original-29a4c5a8f30db7aa64d03ef10b925e85.jpg?resize=2048x10352&vertical=center",
     "https://cdn.dribbble.com/userupload/2991686/file/original-70d4656dd207db0f5a8cbbe5089ac9b2.png?resize=2048x1536&vertical=center",
     "https://cdn.dribbble.com/users/14638622/screenshots/20547638/media/254f3a25105133ce6ea7546b373cfd18.png?resize=1600x1200&vertical=center",
     "https://cdn.dribbble.com/users/2387542/screenshots/11704764/media/f26d6ffe6823a8b34df7d5c18a9e907a.png?resize=1600x1200&vertical=center",

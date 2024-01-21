@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-
+import { GiBrokenHeartZone } from "react-icons/gi";
 import { useCallback, useState } from "react";
 
 import MobileProjectDetailArticle from "../mobileSections/MobileProjectDetailArticle";
@@ -64,7 +64,12 @@ export default function DesktopProjects() {
           </div>
 
           <ProjectCards>
-            <div className="cards-title"> My Projects</div>
+            <TopTitle>
+              <div>My Projects</div>
+              <div className="right-title">
+                <GiBrokenHeartZone />
+              </div>
+            </TopTitle>
             <div className="cards-horizontal-projects">
               <MobileProjectList theCardClicked={handleTabClick} />
             </div>
@@ -95,6 +100,17 @@ export default function DesktopProjects() {
 const Paddy = styled.div`
   padding: 20px 20px;
 `;
+const TopTitle = styled.div`
+  font-family: "Spline Sans Mono", sans-serif;
+  font-size: 17px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  color: white;
+  margin-bottom: 20px;
+  margin-top: 20px;
+`;
 const BackgroundProjects = styled.div`
   background-image: url("/images/my-svg/first.svg");
   background-size: cover;
@@ -112,7 +128,7 @@ const ProjectCards = styled.div`
   background-repeat: repeat;
   background-position-y: center;
   .cards-title {
-    font-size: 15px;
+    font-size: 16px;
     color: white;
     padding-top: 5px;
     padding-bottom: 10px;
@@ -152,16 +168,16 @@ const Wrapper = styled.div`
     background-position: left top;
   }
   .project-top-left {
-    height: 473px;
     display: flex;
     flex-direction: column;
     justify-content: end;
     padding: 20px;
-    margin-top: 26px;
+    margin-top: 122px;
 
     > :nth-child(1) {
       font-family: "cisnero";
-      font-size: 52px;
+      font-size: 72px;
+      max-width: 757px;
       background: linear-gradient(
         to left,
         rgb(218 47 47),
@@ -174,12 +190,12 @@ const Wrapper = styled.div`
       font-weight: normal;
     }
     > :nth-child(2) {
-      font-size: 15px;
+      font-size: 16px;
       color: gray;
       font-weight: normal;
     }
     > :nth-child(3) {
-      font-size: 13px;
+      font-size: 17px;
       color: white;
       padding-top: 5px;
       width: 100%;
@@ -190,6 +206,7 @@ const Wrapper = styled.div`
       text-overflow: ellipsis;
       line-height: 1.8;
       font-weight: normal;
+      max-width: 983px;
     }
   }
   .project-top-right {

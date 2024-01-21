@@ -17,7 +17,7 @@ const EmploymentHistoryComponent = () => {
       company: "EMONICS",
       year: "09/2022 - Present",
       description:
-        "Designing APIs, reviewing/debugging code, developing databases, coordinating large-scale deployments, utilizing NodeJS, ORM, and SQL/No-SQL, implementing/maintaining microservices architectures with Docker, Kubernetes, and OpenShift.",
+        "Designed and developed custom solutions and applications on the Salesforce platform;Integrated Salesforce with other enterprise applications and systems;Built and maintained Salesforce customizations, including but not limited to custom fields,validation rules, workflows, custom objects, and Apex code;Performed data migrations and managed data quality in Salesforce;Provided technical guidance and support to team members and end-users;Conducted thorough testing and debugging of Salesforce applications;Stayed up-to-date with the latest Salesforce releases and features;Worked closely with business stakeholders to understand their requirements and translated them into technical solutions;Collaborated with other developers to create effective solutions for the business;Wrote and maintained technical documentation related to Salesforce applications.",
       stack: "salesforce,html,css",
     },
     {
@@ -160,6 +160,9 @@ const Wrapper = styled.div`
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: white;
   width: 100%;
+  @media screen and (min-width: 999px) {
+    padding-top: 20px;
+  }
 `;
 const ListIcon = styled.li`
   list-style: cjk-earthly-branch;
@@ -181,6 +184,14 @@ const JobEntry = styled.div`
   position: relative;
   @media screen and (min-width: 999px) {
     min-height: 300px;
+
+    background: #141414;
+    padding-right: 18px;
+    border-radius: 12px;
+    border-left: ${({ isOnRight }) =>
+      isOnRight ? "1px dashed white" : "none"};
+    border-right: ${({ isOnRight }) =>
+      !isOnRight ? "1px dashed white" : "none"};
   }
 `;
 
@@ -222,7 +233,12 @@ const Description = styled.div`
   margin-left: ${({ isOnRight }) => (isOnRight ? "20px" : "0")};
   text-align: ${({ isOnRight }) => (isOnRight ? "start" : "end")};
   @media screen and (min-width: 999px) {
-    font-size: 18px;
+    font-size: 17px;
+    margin-bottom: 10px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+    display: -webkit-box;
   }
 `;
 
