@@ -10,7 +10,11 @@ const Wrapper = styled.div`
   left: 0;
   z-index: ${(props) => props.zIndex || -1};
   @media screen and (min-width: 999px) {
-    z-index: 0;
+    // Your styles here
+    z-index: ${(props) => props.zIndex || 0};
+    height: 100vh;
+    width: 100%;
+    position: fixed;
   }
 `;
 
@@ -106,7 +110,7 @@ const ParallaxStars = (props) => {
         n={710}
         speed={850}
       ></StyledStarsContainer>
-      <Torch />
+      {/* <Torch /> */}
     </Wrapper>
   );
 };

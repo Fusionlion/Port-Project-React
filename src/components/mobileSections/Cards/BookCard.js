@@ -81,7 +81,8 @@ const Desc2 = styled.div`
   @media screen and (min-width: 999px) {
     font-size: 14px;
     line-height: 2;
-    width: 300px;
+    -webkit-line-clamp: 3;
+    width: 350px;
     align-self: center;
   }
 `;
@@ -184,6 +185,14 @@ const Card = styled.div`
     border-radius: 17px;
     bottom: 0;
     z-index: 2; */
+    @media screen and (min-width: 999px) {
+      height: 65px;
+      width: 100%;
+      position: relative;
+      bottom: 0;
+      border-top: 1px solid white;
+      backdrop-filter: blur(15px);
+    }
   }
   .icon-and-title {
     display: flex;

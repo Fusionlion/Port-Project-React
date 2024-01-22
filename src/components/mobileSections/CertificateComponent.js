@@ -90,16 +90,20 @@ const Wrapper = styled.div`
   color: white;
   padding: 20px 0px;
   justify-content: center;
-  @media screen and (min-width: 999px) {
-    flex-wrap: nowrap;
-    justify-content: start;
+  width: 100%;
+
+  .horizontal-certs {
+    display: flex;
     flex-direction: column;
-    width: 100%;
-    .horizontal-certs {
+    gap: 10px;
+
+    @media screen and (min-width: 999px) {
       display: flex;
-      flex-direction: ${(props) => props.spread};
-      gap: 10px;
+      flex-wrap: nowrap;
+      justify-content: start;
       width: 100%;
+      flex-direction: ${(props) => props.spread ?? "row"};
+      gap: 10px;
       overflow: scroll;
     }
   }
@@ -133,6 +137,7 @@ const CertificateCard = styled.div`
   justify-content: space-between;
   background: url(/images/my-svg/falling-rocks.svg);
   background-repeat: no-repeat;
+  background-color: #141414;
   background-position: center center;
   z-index: 1;
   @media screen and (min-width: 999px) {

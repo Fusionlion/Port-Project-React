@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import FooterSection from "../sections/FooterSection";
 import { useState } from "react";
+import { IoArrowBackSharp } from "react-icons/io5";
+import { IoClose } from "react-icons/io5";
 import PictureComponent from "./PictureComponent";
 import Ide from "../sections/Ide";
 import CourseLessonRow from "./CourseLessonRow";
@@ -45,7 +47,11 @@ export default function CourseDetail(props) {
   return (
     <Wrapper>
       <div className="project-arrow" onClick={handleArrowClicked}>
-        &#8592;
+        <IoArrowBackSharp /> Back
+      </div>
+
+      <div className="project-arrow-desktop" onClick={handleArrowClicked}>
+        <IoClose /> Close
       </div>
       <Ide
         // innerRef={ideRef} // Assign the ref to the Ide component
@@ -81,18 +87,24 @@ export default function CourseDetail(props) {
 }
 const AllLessons = styled.div`
   // Your styles here
-  display: grid;
-  margin: 0px auto;
-  /* grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); */
-  display: flex;
-  flex-wrap: wrap;
-  justify-self: stretch;
-  justify-items: left;
-  padding: 30px;
-  background: #080808;
-  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 0.5px inset;
-  backdrop-filter: blur(40px);
-  border-radius: 20px;
+  @media screen and (min-width: 999px) {
+    display: grid;
+    margin: 0px auto;
+    /* grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); */
+    display: flex;
+    flex-wrap: wrap;
+    justify-self: stretch;
+    justify-items: left;
+    padding: 30px 0px;
+    background: #000000;
+    /* box-shadow: rgba(255,255,255,0.2) 0px 0px 0px 0.5px inset; */
+    -webkit-backdrop-filter: blur(40px);
+    backdrop-filter: blur(40px);
+    /* border-radius: 20px; */
+    border-top: 1px solid #3f3939;
+    border-bottom: 1px solid #3f3939;
+    margin-bottom: 20px;
+  }
 `;
 
 const CardsTitle = styled.div`
@@ -119,6 +131,10 @@ const CardsTitle = styled.div`
 const Padding = styled.div`
   // Your styles here
   padding: 0px 20px;
+  /* @media screen and (min-width: 999px) {
+    border-top: 1px #ffffff2b solid;
+    margin-top: 45px;
+  } */
 `;
 
 const Wrapper = styled.div`
@@ -136,21 +152,38 @@ const Wrapper = styled.div`
 
   .project-arrow {
     position: absolute;
-    padding: 20px;
     color: #ffffff;
-    font-size: 34px;
-    top: 65px;
-    left: 1px;
+    font-size: 20px;
+    top: 87px;
+    left: 18px;
     cursor: pointer;
     z-index: 99;
-    padding: 5px 30px;
-    margin-top: 22px;
-    background: blue;
-    border-radius: 12px;
+    display: flex;
+    gap: 5px;
+    background: #3c3198;
+    padding: 3px 9px;
+    border-radius: 15px;
+
     @media screen and (min-width: 999px) {
-      top: 69px;
-      left: 1110px;
-      background: none;
+      display: none;
+    }
+  }
+  .project-arrow-desktop {
+    display: none;
+
+    @media screen and (min-width: 999px) {
+      position: absolute;
+      color: #ffffff;
+      font-size: 20px;
+      top: 105px;
+      right: 26px;
+      cursor: pointer;
+      z-index: 99;
+      display: flex;
+      gap: 5px;
+      background: #460404;
+      padding: 7px 9px;
+      border-radius: 11px;
     }
   }
 `;

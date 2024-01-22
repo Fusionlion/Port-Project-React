@@ -196,6 +196,7 @@ export default MobileCourses;
 const Wrapper = styled.div`
   // Your styles here
   position: relative;
+  background: linear-gradient(to top, #000000, #000000, #000000, transparent);
 `;
 const PaddingH = styled.div`
   // Your styles here

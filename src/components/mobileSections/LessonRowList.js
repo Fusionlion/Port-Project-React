@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { PiCardsLight } from "react-icons/pi";
 import topicData from "../../data/courses.json";
 import { useState, useEffect } from "react";
 import BlackButton from "../../components/buttons/BlackButton";
@@ -74,7 +75,10 @@ function LessonRowList(props) {
           )
       )}
       {visibleProjects > 1 && visibleProjects < data.length && (
-        <MoreButton onClick={showMoreProjects}>Show More</MoreButton>
+        <MoreButton onClick={showMoreProjects}>
+          <PiCardsLight />
+          Show More
+        </MoreButton>
       )}
     </>
   );
@@ -98,4 +102,13 @@ const MoreButton = styled.div`
   margin: 0px 20px;
   margin-top: 17px;
   margin-bottom: 20px;
+  gap: 5px;
+  @media screen and (min-width: 999px) {
+    flex: 1;
+    gap: 5px;
+
+    > :nth-child(1) {
+      font-size: 19px;
+    }
+  }
 `;

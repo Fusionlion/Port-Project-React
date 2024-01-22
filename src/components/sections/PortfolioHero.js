@@ -51,7 +51,7 @@ export default function PortfolioHero(props) {
       <ButtonLines>
         <div></div>
         <GetStartedButton
-          clicked={() => {
+          tapped={() => {
             props.page("courses");
           }}
         />
@@ -100,15 +100,29 @@ const BGroundBottom = styled.div`
   bottom: -158px;
 `;
 const BGround = styled.div`
-  height: 800px;
+  height: 672px;
   width: 100vw;
-  /* background-image: url(/images/my-svg/sea-animals.svg); */
-  background-size: cover;
-  background-position: center top;
+  background-image: url(/images/my-svg/first.svg);
+  background-size: contain;
+  background-position: top;
   position: absolute;
-  left: 0;
+  left: 0px;
   background-repeat: no-repeat;
-  top: 15px;
+  top: 331px;
+  filter: hue-rotate(54deg);
+
+  @media screen and (min-width: 999px) {
+    display: none;
+    /* height: 800px;
+    width: 100vw; */
+    /* background-image: url(/images/my-svg/sea-animals.svg); */
+    /* background-size: cover;
+    background-position: center top;
+    position: absolute;
+    left: 0;
+    background-repeat: no-repeat;
+    top: 15px; */
+  }
 `;
 
 const ButtonLines = styled.div`

@@ -230,9 +230,11 @@ const Description = styled.div`
   font-size: 16px;
   margin-left: 0;
   line-height: 1.3;
+  min-width: 165px;
   margin-left: ${({ isOnRight }) => (isOnRight ? "20px" : "0")};
   text-align: ${({ isOnRight }) => (isOnRight ? "start" : "end")};
   @media screen and (min-width: 999px) {
+    min-width: auto;
     font-size: 17px;
     margin-bottom: 10px;
     -webkit-line-clamp: 3;

@@ -127,6 +127,9 @@ const ProjectCards = styled.div`
   background-size: cover;
   background-repeat: repeat;
   background-position-y: center;
+
+  border-bottom: 1px #ffffff2b solid;
+  padding-bottom: 45px;
   .cards-title {
     font-size: 16px;
     color: white;

@@ -194,12 +194,16 @@ const Wrapper = styled.div`
     padding: 20px;
     color: #ffffff;
     font-size: 34px;
-    top: 9px;
-    left: 14px;
     cursor: pointer;
     z-index: 9;
-    border-radius: 15px;
-    backdrop-filter: blur(13px);
+    top: 78px;
+    left: -1px;
+    @media screen and (min-width: 999px) {
+      top: 9px;
+      left: 14px;
+      border-radius: 15px;
+      backdrop-filter: blur(13px);
+    }
   }
   .projects-top-content {
     display: flex;

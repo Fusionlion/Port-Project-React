@@ -116,8 +116,7 @@ body {
   /* font-family: "Open Sans", sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(to top, #000000, #000, #1606cd);
-
+  background: linear-gradient(to top, #000000, #000000, #000000);
 }
 ol,
 ul {

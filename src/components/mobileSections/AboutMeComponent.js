@@ -24,6 +24,7 @@ const StyledComponent = styled.div`
   }
   .section {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     font-size: 14px;
@@ -31,7 +32,22 @@ const StyledComponent = styled.div`
     line-height: 1.2;
     gap: 18px;
     text-align: justify;
+    > :nth-child(1) {
+      display: none;
+      @media screen and (min-width: 999px) {
+        display: flex;
+      }
+    }
+    > :nth-child(2) {
+      line-height: 1.5;
+      text-align: justify;
+      background: #141414;
+      padding: 12px 10px;
+      border-top: 1px solid #323239;
+      border-bottom: 1px solid #323239;
+    }
     @media screen and (min-width: 999px) {
+      flex-direction: row;
       font-size: 18px;
       line-height: 1.5;
       background: #141414;
@@ -108,7 +124,26 @@ const StyledComponent = styled.div`
     }
   }
   .image-intro {
-    display: none;
+    position: absolute;
+    color: #fffcfc;
+    bottom: 20px;
+    left: 10px;
+    display: flex;
+    color: #7f7f7f;
+    gap: 5px;
+    align-items: center;
+    > :nth-child(1) {
+      font-size: 18px;
+      color: red;
+    }
+    > :nth-child(2) {
+      font-family: "Spline Sans Mono", sans-serif;
+      line-height: 1.5;
+      width: 256px;
+      font-size: 12px;
+      padding-left: 5px;
+      text-wrap: balance;
+    }
     @media screen and (min-width: 999px) {
       position: absolute;
       color: #fffcfc;

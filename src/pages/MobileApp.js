@@ -6,6 +6,7 @@ import "../components/styles/Font.css";
 import MobileHome from "../components/mobileSections/MobileHome";
 import MobileCourses from "../components/mobileSections/MobileCourses";
 import PrivacyComponent from "../components/mobileSections/PrivacyComponent";
+import ParallaxStars from "../components/mobileSections/MobileBackgrounds.js/ParallaxStars";
 
 export default function MobileApp() {
   const [switchPage, setSwitchPage] = useState("home");
@@ -31,6 +32,7 @@ export default function MobileApp() {
   return (
     <MobileLayout>
       {/* header only show */}
+      <ParallaxStars />
       <MobileHeader>
         <div className="mobile-header-left" onClick={handleShowMenu}>
           <div

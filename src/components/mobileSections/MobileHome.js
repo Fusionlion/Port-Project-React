@@ -11,6 +11,7 @@ import CodingExpertiseComponent from "./CodingExpertiseComponent";
 import CertificateComponent from "./CertificateComponent";
 import BookComponent from "./BookComponent";
 import ParallaxStars from "./MobileBackgrounds.js/ParallaxStars";
+import GetStartedButton from "../buttons/GetStartedButton";
 export default function MobileHome(props) {
   // const [text, setText] = useState("Let's get started :)");
   // const [index, setIndex] = useState(0);
@@ -48,11 +49,15 @@ export default function MobileHome(props) {
         applications. Welcome to my personal slice of the internet.I'm glad
         you're here!
       </MobileDesc>
-      <StartHomeButton
-        onClick={() => {
-          props.page("courses");
-        }}
-      />
+      <ButtonLines>
+        <div></div>
+        <GetStartedButton
+          tapped={() => {
+            props.page("courses");
+          }}
+        />
+        <div></div>
+      </ButtonLines>
       <SmallText>
         Step into my digital realm, where technology meets innovation, and join
         me on a journey of coding, creativity, and continuous learning.
@@ -81,6 +86,26 @@ export default function MobileHome(props) {
     </Wrapper>
   );
 }
+
+const ButtonLines = styled.div`
+  // Your styles here
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+  @media screen and (min-width: 999px) {
+  }
+  > :nth-child(1) {
+    background-color: white;
+    height: 2px;
+    width: 90px;
+  }
+  > :nth-child(3) {
+    background-color: white;
+    height: 2px;
+    width: 90px;
+  }
+`;
 const StartHomeButton = styled.div`
   // Your styles here
   width: 280px;
@@ -113,15 +138,20 @@ const BGroundBottom = styled.div`
   bottom: -158px;
 `;
 const BGround = styled.div`
-  height: 800px;
+  height: 672px;
   width: 100vw;
-  background-image: url(/images/my-svg/sea-animals.svg);
-  background-size: cover;
-  background-position: center top;
+  background-image: url(/images/my-svg/first.svg);
+  background-size: contain;
+  background-position: top;
   position: absolute;
-  left: 0;
+  left: 0px;
   background-repeat: no-repeat;
-  top: 15px;
+  top: 331px;
+  filter: hue-rotate(54deg);
+
+  @media screen and (min-width: 999px) {
+    display: none;
+  }
 `;
 const BGroundBlack = styled.div`
   height: 800px;
@@ -153,7 +183,7 @@ const Wrapper = styled.div`
   padding: 30px;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(to top, #000000, #000000, #000000);
+  background: linear-gradient(to top, #000000, #000000,#000000, transparent);
   .padding-default {
     padding: 0px 20px;
   }
@@ -276,7 +306,7 @@ const MobileWelcomeImage = styled.div`
   border-radius: 358px;
   /* box-shadow: 0px 90px 90px -60px rgb(142 33 33 / 70%); */
   position: relative;
-  background-image: url(/images/my-svg/falling-rocks.svg);
+  /* background-image: url(/images/my-svg/falling-rocks.svg); */
   background-size: cover;
   background-position: center center;
 

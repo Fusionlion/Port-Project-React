@@ -89,5 +89,11 @@ const ProjectMoreButton = styled.div`
   }
   @media screen and (min-width: 999px) {
     margin: 0;
+    border-radius: 12px;
+    background-color: #080878;
+    color: white;
+    background-image: url(/images/my-svg/falling-rocks.svg);
+    background-size: cover;
+    background-clip: unset;
   }
 `;
