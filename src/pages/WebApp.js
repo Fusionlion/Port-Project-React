@@ -13,7 +13,8 @@ import DesktopCourseStore from "../components/sections/DesktopCourseStore";
 import ParallaxStars from "../components/mobileSections/MobileBackgrounds.js/ParallaxStars";
 import DesktopProjects from "../components/sections/DesktopProjects";
 
-function WebApp() {
+function WebApp(props) {
+  const [switchPage, setSwitchPage] = useState("home");
   const [activeTab, setActiveTab] = useState("Portfolio");
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);
