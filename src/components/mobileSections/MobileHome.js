@@ -148,6 +148,8 @@ const BGround = styled.div`
   background-repeat: no-repeat;
   top: 331px;
   filter: hue-rotate(54deg);
+  background-color: black;
+  z-index: -1;
 
   @media screen and (min-width: 999px) {
     display: none;

@@ -110,6 +110,7 @@ const ProjectCards = styled.div`
   background-size: cover;
   background-repeat: repeat;
   background-position-y: center;
+  background-color: black;
   .cards-title {
     font-size: 15px;
     color: white;
@@ -138,7 +139,7 @@ const Wrapper = styled.div`
   font-family: "Spline Sans Mono", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: white;
-  background-color: black;
+  background: linear-gradient(to top, #000000, #000000, transparent);
   position: relative;
 
   .projects-top-content {

@@ -116,14 +116,16 @@ const Card = styled.div`
   text-align: start;
   gap: 10px;
   position: relative;
-  border-radius: 17px;
+ border-radius: 17px;
   flex: 1;
   /* min-width: 172px; */
   min-width: 242px;
   overflow: hidden;
   border: 1px solid #7d7d7d30;
-
+min-height:625px ;
   @media screen and (min-width: 999px) {
+    min-height:none ;
+     
     & {
       transition: all 0.2s linear;
     }
@@ -180,13 +182,13 @@ const Card = styled.div`
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     margin-top: 10px;
     text-align: ${(props) =>
       (props.centerText = "center" ? "center" : "start")};
   }
   .desc {
-    font-size: 10px;
+    font-size: 14px;
     color: white;
     padding-top: 5px;
     width: 100%;
@@ -212,8 +214,7 @@ const Card = styled.div`
 const ProjectCardStyle = styled.div`
   background-color: black;
   width: 100%;
-  height: 210px;
-  border-radius: 17px;
+  height: 346px;
 
   background-image: url(${(props) =>
     props.src || "/images/my-svg/falling-rocks.svg"});
@@ -228,6 +229,7 @@ const ProjectCardStyle = styled.div`
 
   @media screen and (min-width: 999px) {
     height: 709px;
+    border-radius: 17px;
   }
 
   .number {

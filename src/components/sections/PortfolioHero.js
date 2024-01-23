@@ -96,6 +96,7 @@ const BGroundBottom = styled.div`
   background-position: center top;
   position: absolute;
   left: 0;
+  background: linear-gradient(to top, #000000, #000000, #000000);
   background-repeat: no-repeat;
   bottom: -158px;
 `;
