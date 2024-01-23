@@ -28,7 +28,7 @@ const StyledPic = styled.div`
     display: block;
     width: 100%;
     height: auto;
-    opacity: ${({ loading }) => (loading ? 0 : 1)};
+    opacity: ${({ loading }) => (loading == "true" ? 0 : 1)};
     transition: opacity 0.5s ease;
     border-radius: 11px;
 
@@ -56,16 +56,23 @@ const StyledPic = styled.div`
 `;
 
 const PictureComponent = (props) => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState("true");
 
   const handleImageLoad = () => {
-    setLoading(false);
+    setLoading("false");
+    if (props.count) {
+      props.count();
+    }
   };
 
   return (
     <StyledPic loading={loading}>
-      <img src={props.url} alt="Project Image" onLoad={handleImageLoad} />
-      {loading && (
+      <img
+        src={props.url}
+        alt={props.alt ?? "Project Image"}
+        onLoad={handleImageLoad}
+      />
+      {loading == "true" && (
         <div className="loading-text">
           <StyledLoading />
         </div>

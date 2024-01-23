@@ -42,7 +42,7 @@ function BooksList(props) {
           print.article && (
             <BookCard
               cardFont={index % 2 === 0 ? "Grivas Personal Use" : "Nasi Podeng"}
-              key={print.num}
+              key={print.num + index}
               title={print.title}
               desc={print.desc}
               imageSrc={print.image}

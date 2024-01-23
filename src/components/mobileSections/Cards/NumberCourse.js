@@ -139,7 +139,7 @@ const StartButton = styled.div`
   font-size: 73px;
 `;
 
-const NumberDesc = styled.p`
+const NumberDesc = styled.div`
   // Your styles here
   font-size: 20px;
   display: flex;

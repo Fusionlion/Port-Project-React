@@ -116,7 +116,7 @@ const MobileTextImage = (props) => {
     setShowLess(true);
   };
   return (
-    <StyledContainer key="container">
+    <StyledContainer key={props.title1}>
       <StyledTextBold key="text-bold-1">
         {props.title1 ?? "CodeCraft Chronicles"}
       </StyledTextBold>
@@ -134,7 +134,7 @@ const MobileTextImage = (props) => {
           : props.text1.split(".").map(
               (sentence, index, array) =>
                 (showMore || index < 2) && (
-                  <>
+                  <div key={index + 23}>
                     <StyledNormalText
                       key={`text15-${index + 45}`}
                       showMore={showMore}
@@ -145,7 +145,7 @@ const MobileTextImage = (props) => {
                     </StyledNormalText>
 
                     {index === props.text1.split(".").length - 1 && (
-                      <>
+                      <div key={index + "h" + 7}>
                         {showMore && (
                           <ShowMoreButton
                             key={`showMoreButton1-${index + 21}`}
@@ -154,7 +154,7 @@ const MobileTextImage = (props) => {
                             Show Less
                           </ShowMoreButton>
                         )}
-                      </>
+                      </div>
                     )}
 
                     {!showMore && index === 1 && (
@@ -165,12 +165,12 @@ const MobileTextImage = (props) => {
                         Show More
                       </ShowMoreButton>
                     )}
-                  </>
+                  </div>
                 )
             ))}
       {!showMore && <div className="bg-text" key="bg-text-145"></div>}
       <StyledRoundedImage
-        key="rounded-image"
+        key={"rounded-image${e}"}
         style={{
           backgroundImage: `url(${
             props.url ?? "images/my-svg/falling-rocks.svg"
@@ -192,7 +192,7 @@ const MobileTextImage = (props) => {
           : props.text2.split(".").map(
               (sentence, index, array) =>
                 (showMore || index < 3) && (
-                  <>
+                  <div key={index + index + "key"}>
                     <StyledNormalText
                       key={`text45-${index}`}
                       showMore={showMore}
@@ -224,7 +224,7 @@ const MobileTextImage = (props) => {
                         Show More
                       </ShowMoreButton>
                     )}
-                  </>
+                  </div>
                 )
             ))}
       {!showMore && <div className="bg-text" key="bg-text-39"></div>}

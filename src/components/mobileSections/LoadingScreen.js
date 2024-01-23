@@ -6,7 +6,7 @@ export default function LoadingScreen() {
   return (
     <Wrapper>
       <StyledLoading />
-      <ParallaxStars />
+      {/* <ParallaxStars /> */}
     </Wrapper>
   );
 }

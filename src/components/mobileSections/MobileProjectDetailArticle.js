@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, keyframes, useRef } from "react";
 import styled from "styled-components";
 import FooterSection from "../sections/FooterSection";
 import { useState } from "react";
 import PictureComponent from "./PictureComponent";
+import LoadingScreen from "./LoadingScreen";
 
 export default function MobileProjectDetailArticle(props) {
   const datas =
@@ -61,6 +62,11 @@ export default function MobileProjectDetailArticle(props) {
   let isFirstItemEncountered = false;
   let sentencesCount = 0;
   let imageList = [];
+  const [imagesThatLoaded, setImagesThatLoaded] = useState(0);
+  const imagesLoaded = () => {
+    setImagesThatLoaded(imagesThatLoaded + 1);
+  };
+
   const renderContent = () => {
     return datas.map((item, index) => {
       switch (item.type) {
@@ -97,7 +103,7 @@ export default function MobileProjectDetailArticle(props) {
           }
 
           return (
-            <>
+            <div key={index + "div-key"}>
               {sentences.map((sentence, sentenceIndex) => (
                 <React.Fragment key={`sentence-${index}-${sentenceIndex}`}>
                   <p>
@@ -111,11 +117,14 @@ export default function MobileProjectDetailArticle(props) {
                       key={`image-${index}-${sentenceIndex}`}
                       url={imageList[sentenceIndex]}
                       alt={`Image ${index}-${sentenceIndex}`}
+                      count={imagesLoaded}
                     />
                   )}
+                  {console.log("images loaded " + imagesThatLoaded)}
+                  {console.log("images total " + imageList.length)}
                 </React.Fragment>
               ))}
-            </>
+            </div>
           );
 
         default:
@@ -137,6 +146,13 @@ export default function MobileProjectDetailArticle(props) {
       <div ref={bottomRef} style={{ height: "1px", marginBottom: "-1px" }} />
 
       <FooterSection />
+      {/* {imagesThatLoaded == 0 && imageList.length != 0 && ( */}
+      {imagesThatLoaded < 1 && (
+        <ImagesLoading>
+          <LoadingScreen />
+          <div>Loading</div>
+        </ImagesLoading>
+      )}
     </Wrapper>
   );
 }
@@ -482,5 +498,27 @@ const Wrapper = styled.div`
     padding-right: 8px;
     padding-left: 3px;
     font-family: "Source Sans Pro", sans-serif;
+  }
+`;
+
+const ImagesLoading = styled.div`
+  // Your styles here
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  backdrop-filter: blur(9px);
+  > :nth-child(2) {
+    font-size: 15px;
+    color: white;
+  }
+
+  @media screen and (min-width: 999px) {
+    display: none;
   }
 `;

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
+import PictureComponent from "../mobileSections/PictureComponent";
 
 // ... (other imports and declarations)
 
@@ -30,7 +31,7 @@ const Ide = (props) => {
   const [displayedQuestions, setDisplayedQuestions] = useState([]);
 
   const [shouldShake, setShouldShake] = useState(false);
-
+  const [emptyData, setEmptyData] = useState(false);
   const [allQuestionsTyped, setAllQuestionsTyped] = useState(false);
   const [allPickedAnswers, setPickedAnswers] = useState([]);
   const [allRightPickedAnswers, setRightPickedAnswers] = useState([]);
@@ -142,8 +143,10 @@ const Ide = (props) => {
 
   //for lesson
   const handleNextClick = () => {
-    setDisplayedItems((prevItems) => [...prevItems, items[currentIndex]]);
-    setCurrentIndex((prevIndex) => prevIndex + 1);
+    if (!emptyData) {
+      setDisplayedItems((prevItems) => [...prevItems, items[currentIndex]]);
+      setCurrentIndex((prevIndex) => prevIndex + 1);
+    }
   };
 
   // for the lesson
@@ -200,12 +203,14 @@ const Ide = (props) => {
       currentText = text[line];
 
       if (currentText !== undefined) {
+        setEmptyData(false);
         if (currentText.trimStart().startsWith("('")) {
           currentText = "Refer to the following image!";
         }
       } else {
         // Handle the case when currentText is undefined
-        currentText = "pick a subject to start :)";
+        currentText = "pick a lesson to start :)";
+        setEmptyData(true);
       }
     }
 
@@ -262,16 +267,24 @@ const Ide = (props) => {
               return (
                 <div key={index} className={url ? "" : "old"}>
                   {url ? (
-                    <div
-                      className="ide-image"
-                      style={{
-                        backgroundImage: `url("${
-                          url.includes("/")
-                            ? url
-                            : `"/images/my-svg/falling-rocks.svg")`
-                        }")`,
-                      }}
-                      placeholder={url}
+                    // <div
+                    //   className="ide-image"
+                    //   style={{
+                    //     backgroundImage: `url("${
+                    //       url.includes("/")
+                    //         ? url
+                    //         : `"/images/my-svg/falling-rocks.svg")`
+                    //     }")`,
+                    //   }}
+                    //   placeholder={url}
+                    // />
+                    <PictureComponent
+                      url={
+                        url.includes("/")
+                          ? url
+                          : `"/images/my-svg/falling-rocks.svg")`
+                      }
+                      alt={url}
                     />
                   ) : (
                     <>{item.length < 4 ? "//Refer to the image above" : item}</>
@@ -330,7 +343,7 @@ const Ide = (props) => {
 
         {!quiz ? (
           <div className="flex-gap-10">
-            {!isTyping && (
+            {!isTyping && !emptyData && (
               <div className={blinkClass} onClick={handleClick}>
                 <span>{ideButton}</span>
               </div>

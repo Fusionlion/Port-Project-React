@@ -10,6 +10,7 @@ import CourseLessonRow from "./CourseLessonRow";
 import LessonRowList from "./LessonRowList";
 import CoursesComponent from "./CoursesComponent";
 import ParallaxStars from "./MobileBackgrounds.js/ParallaxStars";
+import LoadingScreen from "./LoadingScreen";
 
 export default function CourseDetail(props) {
   // const datafake = require("../../data/courses.json"); // Import your
@@ -81,10 +82,12 @@ export default function CourseDetail(props) {
         <CoursesComponent />
       </Padding>
       <FooterSection />
+
       {/* <ParallaxStars zIndex="-30" /> */}
     </Wrapper>
   );
 }
+
 const AllLessons = styled.div`
   // Your styles here
   @media screen and (min-width: 999px) {
@@ -154,7 +157,7 @@ const Wrapper = styled.div`
     position: absolute;
     color: #ffffff;
     font-size: 20px;
-    top: 87px;
+    top: 93px;
     left: 18px;
     cursor: pointer;
     z-index: 99;
