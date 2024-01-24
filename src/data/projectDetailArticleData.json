@@ -1,5 +1,35 @@
 [
   {
+    "title": "Soulmate",
+    "num": "0",
+    "desc": "Your Path to Meaningful Connections.Soulmate is not just another dating app; it's a revolution in how we approach relationships. Join us today, and together, we'll rediscover the joy of meaningful connections, one soulmate at a time.",
+    "image": "https://user-images.githubusercontent.com/74889517/182246804-279dc992-6078-49f3-a4a7-775fbb677c00.png",
+    "article": [
+      {
+        "type": "title",
+        "content": {
+          "subtitle": "IosApp",
+          "title": "Soulmate",
+          "projectUrl": "https://user-images.githubusercontent.com/74889517/175617827-24a21acd-9353-4131-bbf7-b633610f4609.png"
+        }
+      },
+
+      {
+        "type": "pictures",
+        "content": [
+          "https://cdn.dribbble.com/userupload/6794632/file/original-f9de4e9845ac5f4ef268278d49e8332a.png",
+          "https://cdn.dribbble.com/userupload/6794636/file/original-d107adf4d2307c2fab3f7cac5c001fb1.png?resize=2048x1536&vertical=center",
+          "https://cdn.dribbble.com/userupload/6794635/file/original-2421f442db6acbf0945ad8e16b32c644.png?resize=2048x1536&vertical=center",
+          "https://cdn.dribbble.com/userupload/6794634/file/original-04e7ca18a838a66294f4b10d15550cf3.png?resize=2048x1536&vertical=center"
+        ]
+      },
+      {
+        "type": "text",
+        "content": "In an era dominated by swipes, likes, and instant gratification, making genuine, meaningful connections has become increasingly challenging. The digital age has given us countless ways to interact, yet finding a soulful connection has never felt more elusive. Enter Soulmate, an app designed to revolutionize the way we connect with others, bringing authenticity and depth back into the world of dating and relationships.The Challenge of Connection in the Digital Age.The paradox of modern dating is that while we have more tools than ever to connect, we often find ourselves feeling more disconnected. Shallow interactions, superficial judgments based on profile pictures, and the pressure to keep up with a fast-paced dating culture can leave us longing for something more. Deep down, we all yearn for those soulful connections that transcend the digital realm.How Soulmate Changes the Game.Soulmate recognizes the challenges of contemporary dating and is committed to changing the game. Our mission is simple yet profound: to help you find not just a partner but a soulful connection. We've crafted a platform that prioritizes meaningful interactions, compatibility, and shared values. Through personalized matching, in-depth compatibility tests, rich user profiles, and a user-friendly interface, we're creating an environment where connections flourish naturally.At Soulmate, we believe that finding your true partner is an enriching journey that should be filled with joy, not anxiety. By offering a range of events and activities to connect in person or virtually, we're encouraging users to step out of their comfort zones and experience the magic of real-world connections.Soulmate is not just another dating app; it's a revolution in how we approach relationships. Join us today, and together, we'll rediscover the joy of meaningful connections, one soulmate at a time."
+      }
+    ]
+  },
+  {
     "title": "MyHealth",
     "num": "1",
     "desc": "Data structure is a storage that is used to store and organize data. It is a way of arranging data on a computer so that it can be accessed and updated efficiently.",
@@ -78,6 +108,86 @@
       {
         "type": "text",
         "content": "The University Student Portal is a Salesforce-based web application built using Visualforce. It provides a platform for students to manage their academic information conveniently. This portal allows students to sign in, sign up, and access their personalized dashboard, which includes information about their exams, schedules, and any missed assignments or announcements.Features User Registration: New students can sign up for an account by providing their details and creating a username/password.User Authentication: Registered students can sign in using their credentials securely.Personalized Dashboard: Upon signing in, students are greeted with a personalized dashboard displaying their upcoming exams and any missed assignments or announcements.Exam Details: Students can view detailed information about upcoming exams, including date, time, location, and subject.Notifications: Automated notifications for missed assignments and important announcements keep students informed.User-Friendly Interface: The portal offers an intuitive and user-friendly interface for ease of navigation."
+      }
+    ]
+  },
+  {
+    "title": "Aperture",
+    "num": "4",
+    "desc": "APERTURE , est. 2533, is part of the Helghast federation and is licensed by the Board of Scientific Research.Dragons are cool, but they're not real. They don't exist. Unicorns aren't real either. But Droids... Droids are a way of life.",
+    "image": "https://cdn.dribbble.com/userupload/7724019/file/original-4853578a2b5ba1e804265f7ee878875f.png?resize=1504x1504",
+    "article": [
+      {
+        "type": "title",
+        "content": {
+          "subtitle": "Experience Cloud & Visualforce",
+          "title": "Aperture"
+        }
+      },
+      {
+        "type": "pictures",
+        "content": [
+          "https://user-images.githubusercontent.com/74889517/172876964-b144cbcb-6ad1-45ff-a57f-52a0f924a222.jpg",
+          "https://user-images.githubusercontent.com/74889517/172879274-f382a757-98eb-4ec5-945f-0567ad9f114e.jpg"
+        ]
+      },
+      {
+        "type": "text",
+        "content": "In developing APERTURE, I leveraged Salesforce Apex and Visualforce technologies to create a robust and scalable platform for managing the production and deployment of humanoid robots. Salesforce Apex, a powerful and object-oriented programming language, allowed me to implement complex business logic and seamlessly integrate it into the Salesforce platform. This was particularly crucial for handling intricate manufacturing processes, ensuring quality control, and managing the diverse range of robot models we produce.Visualforce, Salesforce's web development framework, played a pivotal role in designing the user interface for APERTURE. Using Visualforce pages, I crafted a user-friendly and intuitive interface that facilitated efficient interaction with the manufacturing and deployment workflows. This not only enhanced the overall user experience but also contributed to increased productivity by streamlining the monitoring and control of robot production at various stages.Furthermore, the integration capabilities of Salesforce allowed APERTURE to connect seamlessly with other enterprise systems and databases. This facilitated real-time data exchange and synchronization, ensuring that all relevant stakeholders, from engineers to management, had access to up-to-date information on manufacturing progress, inventory levels, and deployment schedules. The synergy between Salesforce Apex and Visualforce empowered me to create a comprehensive solution that met the diverse needs of APERTURE, from intricate manufacturing processes to streamlined deployment strategies in both military and domestic sectors."
+      }
+    ]
+  },
+  {
+    "title": "AlgoLearningApp",
+    "num": "5",
+    "desc": "APERTURE , est. 2533, is part of the Helghast federation and is licensed by the Board of Scientific Research.Dragons are cool, but they're not real. They don't exist. Unicorns aren't real either. But Droids... Droids are a way of life.",
+    "image": "https://cdn.dribbble.com/userupload/9196488/file/original-21934d99898c632354403490a2b210ea.png?resize=2048x1536",
+    "article": [
+      {
+        "type": "title",
+        "content": {
+          "subtitle": "Experience Cloud & Visualforce",
+          "title": "Aperture"
+        }
+      },
+      {
+        "type": "pictures",
+        "content": [
+          "https://cdn.dribbble.com/userupload/2505361/file/original-720458cfe0a5a3639a67dfbe49547545.png?resize=2048x1536",
+          "https://cdn.dribbble.com/userupload/9169649/file/original-2a0a92ef91f9d2bf865dc8c836b61359.png?resize=2048x1536",
+          "https://cdn.dribbble.com/users/713533/screenshots/7115870/media/cdada5509ad28745d8bd83fa2373f5a4.jpg?resize=1600x1200&vertical=center"
+        ]
+      },
+      {
+        "type": "text",
+        "content": "In my SwiftUI project focused on teaching data structures and algorithms, I created a dynamic and engaging learning platform that harnesses the capabilities of SwiftUI to deliver a seamless and intuitive user experience. SwiftUI, Apple's declarative UI framework, played a central role in crafting a visually appealing and interactive educational app. Leveraging SwiftUI's declarative syntax, I designed a user interface that not only presents complex concepts in a clear manner but also adapts to various screen sizes and orientations, ensuring a consistent learning experience across different Apple devices.The project utilized SwiftUI's powerful and native components to implement interactive visualizations of data structures and algorithms. Through the integration of SwiftUI's animations and transitions, I enhanced the educational content by providing dynamic representations of algorithmic processes. This not only made the learning experience more engaging but also helped users grasp abstract concepts by visualizing how data structures evolve and algorithms operate step by step.One of the key advantages of SwiftUI in this educational project was its ability to handle user interactions seamlessly. SwiftUI's built-in gestures and event-handling mechanisms allowed me to implement interactive features such as tapping, swiping, and dragging, enabling users to actively participate in the learning process. Whether it was navigating through lessons or interacting with live algorithmic demonstrations, SwiftUI's responsiveness and flexibility contributed significantly to creating an immersive and effective educational tool for learning data structures and algorithms."
+      }
+    ]
+  },
+  {
+    "title": "SwiftUI-Api-Call",
+    "num": "6",
+    "desc": "Make an easy Api call using swiftUI",
+    "image": "https://cdn.dribbble.com/userupload/6933556/file/original-0f13ba1389f064e0c1b146e1b52cf837.png?resize=2048x1536",
+    "article": [
+      {
+        "type": "title",
+        "content": {
+          "subtitle": "Java & Swift App",
+          "title": "SwiftUI-Api-Call"
+        }
+      },
+      {
+        "type": "pictures",
+        "content": [
+          "https://cdn.dribbble.com/userupload/3226378/file/original-b912b5b41e199f8cf5393520f1b56a28.jpg",
+          "https://cdn.dribbble.com/userupload/3226379/file/original-d756cabd7732afd5de29517a56035957.jpg?resize=2048x1324&vertical=center",
+          "https://cdn.dribbble.com/userupload/3226380/file/original-d83c613e26db78cb65b873eaa042baaf.jpg?resize=2048x1324&vertical=center"
+        ]
+      },
+      {
+        "type": "text",
+        "content": "In my SwiftUI project, I leveraged the MongoDB API to build a robust and dynamic application that seamlessly integrates with a MongoDB database. MongoDB, a NoSQL database, offers a flexible and scalable data storage solution, and by utilizing its API in conjunction with SwiftUI, I was able to create a versatile application that interacts with a backend MongoDB server. This integration allowed for efficient data retrieval, storage, and manipulation within the SwiftUI app, ensuring a smooth user experience.The project involved setting up a connection between the SwiftUI application and the MongoDB database using the MongoDB API. This connection facilitated the retrieval of real-time data from the database, enabling the SwiftUI app to display up-to-date information to users. Whether it was fetching and displaying user profiles, managing dynamic content, or updating data in real-time, the seamless communication between SwiftUI and MongoDB API played a pivotal role in enhancing the overall functionality and responsiveness of the application.Furthermore, SwiftUI's declarative syntax complemented the MongoDB API integration, enabling the creation of a user-friendly interface. The app utilized SwiftUI's native components to represent MongoDB data in a visually appealing manner, making it easy for users to navigate and interact with the application. SwiftUI's data binding capabilities also streamlined the process of updating the UI in response to changes in the MongoDB database, ensuring that the app's interface remained synchronized with the underlying data. This cohesive integration of SwiftUI and MongoDB API resulted in an efficient and user-centric application for a wide range of use cases."
       }
     ]
   }
