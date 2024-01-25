@@ -94,24 +94,25 @@ const StyledTitle = styled.div`
 
 const ParallaxStars = (props) => {
   return (
-    <Wrapper zIndex={props.zIndex}>
-      <StyledStarsContainer
-        id="stars"
-        n={70}
-        speed={500}
-      ></StyledStarsContainer>
-      <StyledStarsContainer
-        id="stars2"
-        n={20}
-        speed={200}
-      ></StyledStarsContainer>
-      <StyledStarsContainer
-        id="stars3"
-        n={710}
-        speed={850}
-      ></StyledStarsContainer>
-      {/* <Torch /> */}
-    </Wrapper>
+    // <Wrapper zIndex={props.zIndex}>
+    //   <StyledStarsContainer
+    //     id="stars"
+    //     n={70}
+    //     speed={500}
+    //   ></StyledStarsContainer>
+    //   <StyledStarsContainer
+    //     id="stars2"
+    //     n={20}
+    //     speed={200}
+    //   ></StyledStarsContainer>
+    //   <StyledStarsContainer
+    //     id="stars3"
+    //     n={710}
+    //     speed={850}
+    //   ></StyledStarsContainer>
+    //   {/* <Torch /> */}
+    // </Wrapper>
+    <>nothing</>
   );
 };
 
