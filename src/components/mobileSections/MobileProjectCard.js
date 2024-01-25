@@ -214,8 +214,8 @@ min-height:625px ;
 const ProjectCardStyle = styled.div`
   background-color: black;
   width: 100%;
-  height: 346px;
-
+  min-height: 346px;
+  border-radius: 17px;
   background-image: url(${(props) =>
     props.src || "/images/my-svg/falling-rocks.svg"});
   background-size: cover;

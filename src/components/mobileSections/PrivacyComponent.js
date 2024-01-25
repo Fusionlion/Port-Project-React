@@ -2,7 +2,6 @@ import React from "react";
 import MobileTextImage from "./MobileTextImage";
 import styled from "styled-components";
 import FooterSection from "../sections/FooterSection";
-import Resume from "../sections/Resume";
 
 export default function PrivacyComponent() {
   return (
@@ -10,7 +9,7 @@ export default function PrivacyComponent() {
       <Wrapper>
         <Bg />
         <Title>Privacy Assurance:Data Security and Cookie-Free Browsing</Title>
-        {/* <MobileTextImage
+        <MobileTextImage
           title1="Privacy Policy"
           text1="I prioritize your privacy and are committed to maintaining the confidentiality of your personal information. We want you to feel secure when navigating our site, and thus, we want to clarify our stance on data collection and the use of cookies.Firstly, i do not collect any personal data from visitors unless explicitly provided by them through contact forms or other direct communication channels. We respect your anonymity, and your visit to our site remains entirely anonymous unless you choose to share information with us voluntarily. We assure you that we do not engage in any form of data tracking or profiling without your explicit consent."
           text2="Secondly, our website does not utilize cookies for storing user
@@ -24,8 +23,7 @@ export default function PrivacyComponent() {
       visitors."
           title3="Privacy-Centric"
           url="https://cdn.dribbble.com/users/1629266/screenshots/16033151/media/e34500638dc7819f39b0dc589baf6894.jpg?resize=1600x1200&vertical=center"
-        /> */}
-        <Resume />
+        />
       </Wrapper>
       <FooterSection />
     </>
