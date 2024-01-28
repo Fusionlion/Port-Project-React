@@ -1,7 +1,7 @@
 import React from "react";
 import SEO from "../components/layout/seo";
 import { Link } from "gatsby";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import "../components/styles/Font.css";
 import { useState } from "react";
 import ProjectBios from "../components/sections/ProjectBios";
@@ -12,11 +12,23 @@ import MenuOptions from "../components/buttons/MenuOptions";
 import DesktopCourseStore from "../components/sections/DesktopCourseStore";
 import ParallaxStars from "../components/mobileSections/MobileBackgrounds.js/ParallaxStars";
 import DesktopProjects from "../components/sections/DesktopProjects";
+import BirdsLottie from "../components/sections/BirdsLottie";
 
 function WebApp(props) {
   const [switchPage, setSwitchPage] = useState("home");
   const [activeTab, setActiveTab] = useState("Portfolio");
+  const [isFaded, setFaded] = useState(false);
+
+  const toggleFade = () => {
+    setFaded((prev) => !prev);
+  };
   const handleTabClick = (tabName) => {
+    if (tabName === "Portfolio") {
+      setFaded(false);
+    } else {
+      setFaded(true);
+    }
+
     setActiveTab(tabName);
   };
 
@@ -31,8 +43,18 @@ function WebApp(props) {
       <MaxWidth>
         {/* <SEO title="Fusion | Welcome to my portfolio" /> */}
         <ParallaxStars />
+
         <Lines />
 
+        <FadeContent faded={isFaded}>
+          <HeroImage />
+        </FadeContent>
+
+        <FadeContent faded={isFaded}>
+          <BirdsLottie />
+        </FadeContent>
+
+        {/* </div> */}
         <Backdrop>
           <div className="header">
             <div className="left-section">
@@ -180,6 +202,35 @@ function WebApp(props) {
 
 export default WebApp;
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    
+  }
+  to {
+    opacity: 1;
+   
+  }
+`;
+
+const fadeOut = keyframes`
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+`;
+
+const FadeContent = styled.div`
+  opacity: ${({ faded }) => (faded ? 0 : 1)};
+  /* display: ${({ faded }) => (faded ? "none" : "block")}; */
+  mix-blend-mode: ${({ faded }) => (faded ? "hard-light" : "inherit")};
+  transition: all 0.9s ease-in-out;
+  animation: ${({ faded }) => (faded ? fadeOut : fadeIn)}
+    ${({ faded }) => (faded ? "0.9s" : "3.5s")} ease-in-out;
+`;
+
 const MaxWidth = styled.div`
   // Your styles here
   max-width: 1234px;
@@ -203,6 +254,21 @@ const Lines = styled.div`
     display: none;
   }
 `;
+
+const HeroImage = styled.div`
+  // Your styles here
+  background-image: url(/images/my-svg/first.svg);
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  padding: 20px;
+  background-size: contain;
+  background-position: center right;
+  position: absolute;
+  top: 0;
+  left: 0;
+`;
+
 const Bubbles = styled.div`
   height: 100vh;
   width: 100%;
@@ -246,6 +312,16 @@ const AboutMe = styled.div`
   .disappear {
     display: none;
     transition: opacity 0.3s ease-in-out;
+  }
+  .fade-out {
+    opacity: 0;
+    display: none;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
   }
 `;
 const Backdrop = styled.div`

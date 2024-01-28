@@ -141,6 +141,7 @@ min-height:625px ;
   }
 @media screen and (min-width:999px){
     background: #141414;
+     min-width: 329px;
 } 
  
   .linear {

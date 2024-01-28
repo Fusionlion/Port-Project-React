@@ -23,6 +23,7 @@ export default function MobileHome(props) {
 
   //   return () => clearInterval(interval);
   // }, [text]);
+  const [romeLoaded, setRomeLoaded] = useState(true);
   return (
     <Wrapper>
       <BGroundBlack />
@@ -33,10 +34,16 @@ export default function MobileHome(props) {
         <div className="mobile-title-big">welcome</div>
         <HomePortfolioName>PORTFOLIO</HomePortfolioName>
       </MobileWelcomeTitle>
-      <MobileWelcomeImage>
+      <MobileWelcomeImage romeLoaded={romeLoaded}>
         <div className="my-name">
           <div>CHARLES</div>
-          <div></div>
+          <div
+            onLoad={() => {
+              setRomeLoaded(true);
+            }}
+          >
+            <div></div>
+          </div>
         </div>
         <div className="curved-text-container">
           <p className="curved-text">ZABLON</p>
@@ -337,6 +344,17 @@ const MobileWelcomeImage = styled.div`
       width: 243px;
       border: 1px #7c7973fc solid;
       border-radius: 244px;
+
+      > :nth-child(1) {
+        height: ${({ romeLoaded }) => (!romeLoaded ? "329px" : "43px")};
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        border-top: 1px solid #65602f;
+        backdrop-filter: blur(15px);
+        transition: height 15.9s ease-in-out;
+        animation: height 15.9s ease-in-out;
+      }
     }
   }
   .curved-text-container {

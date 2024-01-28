@@ -8,8 +8,11 @@ function BirdsLottie(props) {
   useEffect(() => {
     const fetchAnimationData = async () => {
       try {
+        // const response = await fetch(
+        //   "https://lottie.host/47a076d2-308c-4d8c-9eca-ffeeb000d4cc/8Rt4nFGTwo.json"
+        // );
         const response = await fetch(
-          "https://lottie.host/47a076d2-308c-4d8c-9eca-ffeeb000d4cc/8Rt4nFGTwo.json"
+          "https://assets7.lottiefiles.com/packages/lf20_Kqzytj.json"
         );
         const data = await response.json();
         setAnimationData(data);
@@ -32,7 +35,6 @@ function BirdsLottie(props) {
 
   return (
     <Wrapper>
-      <div className="circle"></div>
       {animationData ? (
         <Lottie options={defaultOptions} />
       ) : (
@@ -45,20 +47,12 @@ function BirdsLottie(props) {
 export default BirdsLottie;
 
 const Wrapper = styled.div`
-  width: 500px;
+  width: 100vw;
   height: 500px;
   position: absolute;
   right: 320px;
-  top: 350px;
+  top: 50px;
+  /* filter: invert(1); */
+  filter: hue-rotate(44deg);
   /* bottom:90px; */
-
-  .circle {
-    background-color: #44464c;
-    width: 392px;
-    height: 394px;
-    left: 55px;
-    top: 55px;
-    border-radius: 400px;
-    position: absolute;
-  }
 `;

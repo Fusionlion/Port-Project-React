@@ -4,6 +4,7 @@ import FooterSection from "../sections/FooterSection";
 import { useState } from "react";
 import PictureComponent from "./PictureComponent";
 import LoadingScreen from "./LoadingScreen";
+import { IoClose } from "react-icons/io5";
 
 export default function MobileProjectDetailArticle(props) {
   const datas =
@@ -136,7 +137,7 @@ export default function MobileProjectDetailArticle(props) {
   return (
     <Wrapper>
       <div className="project-arrow" onClick={handleArrowClicked}>
-        &#8592;
+        <IoClose /> <span>Close</span>
       </div>
 
       <div className="content">{renderContent()}</div>
@@ -194,6 +195,9 @@ const Wrapper = styled.div`
       padding: 0px 20px;
       @media screen and (min-width: 999px) {
         padding: 0px 0px;
+        background: white;
+        color: black;
+        padding: 10px 20px;
       }
     }
 
@@ -214,11 +218,30 @@ const Wrapper = styled.div`
     z-index: 9;
     top: 78px;
     left: -1px;
+
+    > :nth-child(2) {
+      display: none;
+    }
     @media screen and (min-width: 999px) {
-      top: 9px;
-      left: 14px;
-      border-radius: 15px;
-      backdrop-filter: blur(13px);
+      font-size: 20px;
+      top: 19px;
+      right: 14px;
+      left: auto;
+      padding: 4px 10px;
+      border-radius: 22px;
+      backdrop-filter: blur(40px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      > :nth-child(2) {
+        display: block;
+        font-size: 15px;
+      }
+
+      :hover {
+        background-color: #141414;
+      }
     }
   }
   .projects-top-content {
@@ -236,7 +259,7 @@ const Wrapper = styled.div`
     @media screen and (min-width: 999px) {
       border-radius: 12px;
       overflow: hidden;
-      height: 511px;
+      height: 611px;
     }
   }
   .blacked {
@@ -276,6 +299,7 @@ const Wrapper = styled.div`
       color: tan;
       @media screen and (min-width: 999px) {
         font-size: 17px;
+        width: 80%;
       }
     }
   }
@@ -421,6 +445,7 @@ const Wrapper = styled.div`
       font-size: 17px;
       line-height: 1.9;
       margin: 40px 0px;
+      color: black;
     }
   }
   .title {
