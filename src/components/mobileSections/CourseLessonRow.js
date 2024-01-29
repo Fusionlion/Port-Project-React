@@ -97,6 +97,7 @@ const Card = styled.div`
   padding: ${(props) => (props.updateProgress > 0 ? "12px 15px" : "17px 15px")};
   backdrop-filter: blur(33px);
   margin-bottom: 10px;
+  cursor: pointer;
 
   @media screen and (min-width: 999px) {
     position: relative;

@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MobileTextImage from "./MobileTextImage";
 import styled from "styled-components";
 import FooterSection from "../sections/FooterSection";
 
 export default function PrivacyComponent() {
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo({
+      top: 0,
+      // behavior: "smooth", // Add this line for smooth scrolling
+    });
+  }, []);
   return (
     <>
       <Wrapper>
@@ -11,16 +18,8 @@ export default function PrivacyComponent() {
         <Title>Privacy Assurance:Data Security and Cookie-Free Browsing</Title>
         <MobileTextImage
           title1="Privacy Policy"
-          text1="I prioritize your privacy and are committed to maintaining the confidentiality of your personal information. We want you to feel secure when navigating our site, and thus, we want to clarify our stance on data collection and the use of cookies.Firstly, i do not collect any personal data from visitors unless explicitly provided by them through contact forms or other direct communication channels. We respect your anonymity, and your visit to our site remains entirely anonymous unless you choose to share information with us voluntarily. We assure you that we do not engage in any form of data tracking or profiling without your explicit consent."
-          text2="Secondly, our website does not utilize cookies for storing user
-      information. Cookies are small files that are commonly used by websites to
-      enhance user experience, but we have intentionally designed our site to
-      function without the need for them. This means that your browsing
-      experience on this site remains free from cookie-related
-      tracking or data storage, contributing to a more privacy-centric online
-      experience. Your trust is essential to us, and we are dedicated to
-      maintaining a transparent and secure digital environment for all our
-      visitors."
+          text1="I prioritize your privacy and am committed to maintaining the confidentiality of your personal information. I want you to feel secure when navigating my site, and thus, I want to clarify my stance on data collection and the use of cookies. Firstly, I do not collect any personal data from visitors unless explicitly provided by them through contact forms or other direct communication channels. I respect your anonymity, and your visit to my site remains entirely anonymous unless you choose to share information with me voluntarily. I assure you that I do not engage in any form of data tracking or profiling without your explicit consent."
+          text2="Secondly, I do not utilize cookies on my website to store user information. I have intentionally designed the site to function without the need for them, ensuring that your browsing experience remains free from cookie-related tracking or data storage. This contributes to a more privacy-centric online experience. Your trust is essential to me, and I am dedicated to maintaining a transparent and secure digital environment for all my visitors."
           title3="Privacy-Centric"
           url="https://cdn.dribbble.com/users/1629266/screenshots/16033151/media/e34500638dc7819f39b0dc589baf6894.jpg?resize=1600x1200&vertical=center"
         />

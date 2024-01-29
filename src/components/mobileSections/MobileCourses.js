@@ -170,7 +170,6 @@ function MobileCourses() {
           </PaddingH>
           {/* end */}
           <FooterSection />
-          {console.log(" down" + subjectCurr)}
         </BodyContain>
       )}
       {showIde && (
@@ -197,6 +196,10 @@ const Wrapper = styled.div`
   // Your styles here
   position: relative;
   background: linear-gradient(to top, #000000, #000000, #000000, transparent);
+  background: url(/images/my-svg/first.svg);
+  background-repeat: repeat-x;
+  background-position-y: 536px;
+  background-attachment: fixed;
 `;
 const PaddingH = styled.div`
   // Your styles here

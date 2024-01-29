@@ -168,13 +168,15 @@ const MobileHeader = styled.div`
     gap: 5px;
   }
   .mobile-name {
-    font-size: 26px;
-    font-family: "cisnero";
+    font-size: 23px;
     color: white;
     position: relative;
-    top: 3px;
-    left: -2px;
-    text-transform: uppercase;
+    top: 1px;
+    left: -4px;
+    background: linear-gradient(to right, rgb(222 222 222), rgb(86 112 211));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Spline Sans Mono", sans-serif;
   }
   .burger-line {
     width: 27px;

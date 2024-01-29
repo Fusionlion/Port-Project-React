@@ -10,13 +10,15 @@ function ProjectBioCard(props) {
       </ProjectCardStyle>
       <div className="linear"></div>
       <Content>
-        <div className="title">{props.title}</div>
+        <div className="project-bio-card-title">{props.title}</div>
 
         <div className="desc">{props.desc}</div>
 
-        <div className="start-btn" onClick={props.tapped}>
-          START
-        </div>
+        {!props.hideStartButton && (
+          <div className="start-btn" onClick={props.tapped}>
+            START
+          </div>
+        )}
         <ProgressBar />
         <div className="start-and-end">
           <div className="start">[Swift]</div>
@@ -28,7 +30,7 @@ function ProjectBioCard(props) {
 }
 export default ProjectBioCard;
 const Content = styled.div`
-  padding: 0px 10px;
+  padding: 0px 20px;
   z-index: 3;
 
   .start-btn {
@@ -53,10 +55,11 @@ const Content = styled.div`
     display: flex;
     justify-content: space-between;
     font-family: "Spline Sans Mono", sans-serif;
+    padding: 0px 0px 13px 0px;
   }
   .start {
     color: white;
-    padding: 10px;
+    padding: 10px 0px;
     transition: linear 0.2s;
     font-family: "Spline Sans Mono", sans-serif;
   }
@@ -75,7 +78,7 @@ const Card = styled.div`
     height: 100%;
     width: 100%;
     z-index: 2;
-    background-image: linear-gradient(#ff000000, #000000, #242420);
+    background-image: linear-gradient(#ff000000, #000000, #0d0d0d);
     border-radius: 17px;
   }
   .icon-and-title {
@@ -85,7 +88,7 @@ const Card = styled.div`
     align-items: center;
   }
 
-  .title {
+  .project-bio-card-title {
     font-size: 18px;
     background: linear-gradient(to right, rgb(91 161 207), rgb(255 255 255));
     background-clip: text;
@@ -106,6 +109,10 @@ const Card = styled.div`
     overflow: hidden;
     text-overflow: ellipsis;
     font-family: "Spline Sans Mono", sans-serif;
+    line-height: 1.5;
+    @media screen and (min-width: 999px) {
+      font-size: 16px;
+    }
   }
   .icon-and-desc {
     display: flex;

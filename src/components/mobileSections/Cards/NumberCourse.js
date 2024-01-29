@@ -51,6 +51,7 @@ export default function NumberCourse(props) {
       reverseText={props.reverseText}
       onClick={handleStartClick}
     >
+      <Linear />
       <Start>
         <FaPlaneDeparture />
         <NumberDesc>
@@ -63,7 +64,7 @@ export default function NumberCourse(props) {
       </Start>
 
       <StartButton>
-        <Column>
+        <Column reverseText={props.reverseText}>
           {props.subject ?? "Course"}
           {!props.stack && <FaPython />}
           {props.stack === "java" && <FaJava />}
@@ -75,12 +76,21 @@ export default function NumberCourse(props) {
           {props.stack === "it" && <FaComputer />}
         </Column>
       </StartButton>
-      <svg width="500" height="50" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10 30 Q40 20, 70 30 T130 30" fill="none" stroke="black" />
-      </svg>
     </Wrapper>
   );
 }
+
+const Linear = styled.div`
+  // Your styles here
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  background-image: linear-gradient(#85696900, #0000006e, #000000, #0d0d0d);
+  border-radius: 17px;
+  left: 0;
+  top: 0px;
+`;
 
 const Wrapper = styled.div`
   // Your styles here
@@ -118,6 +128,10 @@ const Column = styled.div`
   justify-content: space-between;
   flex-direction: column;
   line-height: 0.9;
+
+  @media screen and (min-width: 999px) {
+    /* flex-wrap: nowrap; */
+  }
 `;
 
 const Start = styled.div`
@@ -133,10 +147,10 @@ const StartButton = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
-  font-weight: bold;
   padding: 20px;
   font-family: "NCL Sebgorq";
-  font-size: 73px;
+  font-size: 63px;
+  line-height: 1.5;
 `;
 
 const NumberDesc = styled.div`
@@ -173,11 +187,12 @@ const Number = styled.span`
   rotate: 270deg;
   mix-blend-mode: overlay; */
   position: relative;
-  font-family: "NCL Sebgorq", sans-serif;
-  font-size: 82px;
+  font-family: "NCL Sebgorq";
+  font-size: 63px;
+  line-height: 1.5;
   right: ${(props) => (props.reverseText ? "102px" : "-174px")};
   text-wrap: no-wrap;
-  bottom: -129px;
+  bottom: ${(props) => (props.reverseText ? "-266px" : "-129px")};
   background: aliceblue;
   background-size: cover;
   -webkit-background-clip: text;
@@ -188,6 +203,7 @@ const Number = styled.span`
   width: 275px;
   text-shadow: -20px 9px 20px black;
   @media screen and (min-width: 999px) {
-    right: -164px;
+    right: ${(props) => (props.reverseText ? "112px" : "-174px")};
+    bottom: ${(props) => (props.reverseText ? "-266px" : "-129px")};
   }
 `;

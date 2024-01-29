@@ -39,12 +39,16 @@ const Footer = styled.div`
   text-align: center;
   justify-content: end;
   gap: 11px;
-  background-color: black;
+  /* background-color: black; */
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-bottom: 20px;
   font-family: "Spline Sans Mono", sans-serif;
+
+  @media screen and (min-width: 999px) {
+    background-color: black;
+  }
   .info {
     font-size: 12px;
     color: gray;
@@ -101,6 +105,7 @@ const Apps = styled.div`
   display: flex;
   border: 1px #353232 solid;
   text-align: -webkit-center;
+  align-items: center;
 `;
 
 const FooterIcon = styled.img`

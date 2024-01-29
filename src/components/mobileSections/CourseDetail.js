@@ -78,9 +78,9 @@ export default function CourseDetail(props) {
           lineChanged={currLineFromIde}
         />
       </AllLessons>
-      <Padding>
+      {/* <Padding>
         <CoursesComponent />
-      </Padding>
+      </Padding> */}
       <FooterSection />
 
       {/* <ParallaxStars zIndex="-30" /> */}
@@ -99,13 +99,14 @@ const AllLessons = styled.div`
     justify-self: stretch;
     justify-items: left;
     padding: 30px 0px;
-    background: #000000;
+    background: #0f112c4a;
+    border-radius: 27px;
     /* box-shadow: rgba(255,255,255,0.2) 0px 0px 0px 0.5px inset; */
     -webkit-backdrop-filter: blur(40px);
     backdrop-filter: blur(40px);
     /* border-radius: 20px; */
-    border-top: 1px solid #3f3939;
-    border-bottom: 1px solid #3f3939;
+    /* border-top: 1px solid #3f3939; */
+    /* border-bottom: 1px solid #3f3939; */
     margin-bottom: 20px;
   }
 `;
@@ -145,7 +146,7 @@ const Wrapper = styled.div`
   font-family: "Spline Sans Mono", sans-serif;
   /* background-color: black; */
   color: aliceblue;
-  padding-top: 120px;
+  padding-top: 98px;
   /* background-image: url(/images/my-svg/falling-stars.svg); */
   width: 100%;
   z-index: 50;
@@ -157,7 +158,7 @@ const Wrapper = styled.div`
     position: absolute;
     color: #ffffff;
     font-size: 20px;
-    top: 93px;
+    top: 75px;
     left: 18px;
     cursor: pointer;
     z-index: 99;

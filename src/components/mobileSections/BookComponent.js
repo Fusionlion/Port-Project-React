@@ -7,6 +7,7 @@ import { useState } from "react";
 import MobileTextImage from "./MobileTextImage";
 import topicData from "../../data/courses.json";
 import BookCard from "./Cards/BookCard";
+import ProjectBioCard from "../buttons/ProjectBioCard";
 
 const Container = styled.div`
   display: flex;
@@ -24,6 +25,10 @@ const Container = styled.div`
     overflow: hidden;
     width: 100%;
     flex-wrap: wrap;
+
+    @media screen and (min-width: 999px) {
+      flex-wrap: nowrap;
+    }
   }
   .center-text {
     text-align: center;
@@ -175,22 +180,24 @@ const BookComponent = (props) => {
       )}
       <LastImage />
       <div className="horixontal">
-        <BookCard
+        <ProjectBioCard
           key="1"
+          hideStartButton="true"
           cardFont="Grivas Personal Use"
           title="Java Eli5"
-          desc="--- --- --- --- ----- ----"
+          desc="In this first lesson we lesrn what java is and why we should learn this popoluar coding language."
           imageSrc="https://w.wallha.com/ws/13/VhqCPnSi.png"
           num="1"
-          buttonOff="off"
           centerText="center"
         />
-        <BookCard
+        <ProjectBioCard
+          key="2"
+          num="2"
           title="Learn Apex"
           cardFont="Nasi Podeng"
+          hideStartButton="true"
           titleSize="42px"
-          desc2="Discover the essentials of Apex programming language, embracing a beginner-friendly approach to delve into its key concepts."
-          buttonOff="off"
+          desc="Discover the essentials of Apex programming language, embracing a beginner-friendly approach to delve into its key concepts."
           imageSrc="https://cdn.dribbble.com/users/989466/screenshots/16399861/media/572262fa76666110b568574f826acd31.png?resize=1600x1200&vertical=center"
         />
       </div>

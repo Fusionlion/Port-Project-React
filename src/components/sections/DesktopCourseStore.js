@@ -193,7 +193,8 @@ const ProjectCards = styled.div`
   background-position-y: center;
 
   @media screen and (min-width: 999px) {
-    padding: 0px 20px 20px 20px;
+    padding: 0px 20px 60px 20px;
+    border-bottom: 1px #ffffff2b solid;
   }
   .cards-title {
     font-size: 20px;

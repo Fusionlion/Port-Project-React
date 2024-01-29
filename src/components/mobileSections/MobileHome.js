@@ -344,6 +344,7 @@ const MobileWelcomeImage = styled.div`
       width: 243px;
       border: 1px #7c7973fc solid;
       border-radius: 244px;
+      overflow: hidden;
 
       > :nth-child(1) {
         height: ${({ romeLoaded }) => (!romeLoaded ? "329px" : "43px")};
