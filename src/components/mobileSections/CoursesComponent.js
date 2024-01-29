@@ -6,6 +6,7 @@ import MobileProjectCard from "./MobileProjectCard";
 import { useState } from "react";
 import MobileTextImage from "./MobileTextImage";
 import topicData from "../../data/courses.json";
+import ProjectBioCard from "../buttons/ProjectBioCard";
 
 const Container = styled.div`
   display: flex;
@@ -207,7 +208,7 @@ const CoursesComponent = (props) => {
         {data.slice(0, visibleProjects).map((print, index, array) => (
           // Check if print.lesson exists and is truthy before rendering the card
 
-          <MobileProjectCard
+          <ProjectBioCard
             key={print.num}
             title={print.title}
             desc={print.desc}

@@ -23,6 +23,7 @@ function WebApp(props) {
     setFaded((prev) => !prev);
   };
   const handleTabClick = (tabName) => {
+    console.log(tabName + " was clicked ++");
     if (tabName === "Portfolio") {
       setFaded(false);
     } else {
@@ -186,7 +187,7 @@ function WebApp(props) {
               activeTab === "Portfolio" ? "fade-in" : "fade-out"
             }`}
           >
-            <PortfolioHero tapped={() => handleTabClick("About")} />
+            <PortfolioHero tapped={handleTabClick} />
           </div>
           {/* content ends */}
         </Backdrop>
@@ -288,6 +289,7 @@ const AboutMe = styled.div`
   width: 100%;
 
   background: linear-gradient(to top, #000000, #000, #000000);
+
   position: relative;
   display: flex;
   justify-content: center;

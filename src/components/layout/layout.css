@@ -117,6 +117,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(to top, #000000, #000000, #000000);
+  background-color: black;
 }
 ol,
 ul {

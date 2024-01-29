@@ -58,7 +58,7 @@ const StyledImage = styled.div`
   }
 
   @media screen and (min-width: 999px) {
-    height: 654px;
+    height: 804px;
     border-radius: 13px;
   }
   .name {
@@ -141,6 +141,7 @@ const StyledButton = styled.div`
 
 const ThreeImagesComponent = (props) => {
   const images = [
+    "https://cdn.dribbble.com/userupload/4468779/file/original-3f14fe5382d3dc561a57af692a5b97cb.jpg?resize=2400x1800",
     "https://cdn.dribbble.com/userupload/9177759/file/original-d57495d059eb995d8515f3c27f37c2df.jpg?resize=2048x1536",
     "https://cdn.dribbble.com/userupload/5037488/file/original-cc1c543e24796eaaad7df4c8c607aaeb.png?resize=2048x1536&vertical=center",
     "https://user-images.githubusercontent.com/74889517/182240184-175f842b-08bf-448a-bb24-60e7589b37c0.png",

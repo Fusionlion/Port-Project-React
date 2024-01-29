@@ -59,7 +59,7 @@ export default function PortfolioHero(props) {
         <div></div>
         <GetStartedButton
           tapped={() => {
-            props.tapped("courses");
+            props.tapped("Course");
           }}
         />
         <div></div>
@@ -80,13 +80,13 @@ export default function PortfolioHero(props) {
       <ThreeImagesComponent
         title="Projects"
         buttonClicked={() => {
-          props.page("projects");
+          props.tapped("Projects");
         }}
       />
       <RoundedImageComponent />
       <CoursesComponent
         buttonClicked={() => {
-          props.page("courses");
+          props.tapped("Course");
         }}
       />
       <BookComponent />
