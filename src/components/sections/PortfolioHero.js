@@ -59,7 +59,7 @@ export default function PortfolioHero(props) {
         <div></div>
         <GetStartedButton
           tapped={() => {
-            props.tapped("Course");
+            props.tapped("About");
           }}
         />
         <div></div>
