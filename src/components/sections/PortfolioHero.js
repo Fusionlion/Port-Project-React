@@ -115,7 +115,7 @@ const BGround = styled.div`
   background-position: top;
   position: absolute;
   left: 0px;
-  background-repeat: no-repeat;
+  background-repeat: repeat-x;
   top: 331px;
   filter: hue-rotate(54deg);
 
