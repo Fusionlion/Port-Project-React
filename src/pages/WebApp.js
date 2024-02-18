@@ -259,7 +259,7 @@ const Lines = styled.div`
 const HeroImage = styled.div`
   // Your styles here
   background-image: url(/images/my-svg/first.svg);
-  background-repeat: no-repeat;
+  background-repeat: repeat-x;
   height: 100vh;
   width: 100%;
   padding: 20px;
