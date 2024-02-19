@@ -150,6 +150,16 @@ const Wrapper = styled.div`
     background-size: cover;
     background-repeat: repeat-y;
     background-position: left top;
+
+    @media screen and (max-width: 999px) {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      background-image: url(/images/my-svg/lines.svg);
+      background-size: cover;
+      background-repeat: repeat-y;
+      background-position: left top;
+    }
   }
   .project-top-left {
     height: 473px;

@@ -193,7 +193,7 @@ const ProjectCards = styled.div`
   background-position-y: center;
 
   @media screen and (min-width: 999px) {
-    padding: 0px 20px 60px 20px;
+    padding: 0px 20px 30px 20px;
     border-bottom: 1px #ffffff2b solid;
   }
   .cards-title {
@@ -215,8 +215,9 @@ const ProjectCards = styled.div`
 
     @media screen and (min-width: 999px) {
       flex-direction: row;
-      overflow: scroll;
+      /* overflow: scroll; */
       flex-wrap: wrap;
+      padding-bottom: 30px;
     }
   }
   .subject-container {
@@ -275,6 +276,7 @@ const BodyContain = styled.div`
     padding-bottom: 30px;
     @media screen and (min-width: 999px) {
       flex-direction: row;
+      flex-wrap: wrap;
     }
   }
   .projects-top-content {

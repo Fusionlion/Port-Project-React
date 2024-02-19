@@ -150,6 +150,7 @@ const Wrapper = styled.div`
   /* background-image: url(/images/my-svg/falling-stars.svg); */
   width: 100%;
   z-index: 50;
+
   @media screen and (min-width: 999px) {
     margin-top: -35px;
   }
@@ -179,7 +180,7 @@ const Wrapper = styled.div`
       position: absolute;
       color: #ffffff;
       font-size: 20px;
-      top: 105px;
+      top: 80px;
       right: 26px;
       cursor: pointer;
       z-index: 99;

@@ -158,17 +158,31 @@ const Wrapper = styled.div`
   font-family: "Spline Sans Mono", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: white;
-  background-color: black;
+  /* background-color: black; */
   position: relative;
+
+  @media screen and (max-width: 999px) {
+    background-color: black;
+  }
 
   .projects-top-content {
     display: flex;
     justify-content: space-between;
     position: relative;
-    background-image: url(/images/my-svg/lines.svg);
+    /* background-image: url(/images/my-svg/lines.svg);
     background-size: cover;
     background-repeat: repeat-y;
-    background-position: left top;
+    background-position: left top; */
+
+    @media screen and (max-width: 999px) {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      background-image: url(/images/my-svg/lines.svg);
+      background-size: cover;
+      background-repeat: repeat-y;
+      background-position: left top;
+    }
   }
   .project-top-left {
     display: flex;

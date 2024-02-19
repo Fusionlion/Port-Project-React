@@ -34,6 +34,7 @@ const OuterContainer = styled.div`
   }
   @media screen and (min-width: 999px) {
     flex: 1;
+    min-width: 423px;
   }
 `;
 

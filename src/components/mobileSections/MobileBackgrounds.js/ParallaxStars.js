@@ -1,20 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled, { createGlobalStyle, keyframes } from "styled-components";
 
 const Wrapper = styled.div`
   // Your styles here
-  height: 100vh;
+  /* height: 100vh;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: ${(props) => props.zIndex || -1};
+  z-index: ${(props) => props.zIndex || -1}; */
+  display: none;
   @media screen and (min-width: 999px) {
     // Your styles here
+
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: ${(props) => props.zIndex || 0};
     height: 100vh;
     width: 100%;
-    position: fixed;
   }
 `;
 
@@ -59,12 +64,14 @@ const StyledStarsContainer = styled.div`
   background: transparent;
   box-shadow: ${(props) => multipleBoxShadow(props.n)};
   animation: ${animStar} ${(props) => props.speed}s linear infinite;
-
+  transition: opacity ease-in-out 1s;
+  opacity:${(props) => (props.animateStars ? 0.5 : 0)};
+  
   &:after {
     content: " ";
     position: absolute;
     top: 2000px;
-    width: 1px;
+    width: 1px};
     height: 1px;
     background: transparent;
     box-shadow: ${(props) => multipleBoxShadow(props.n)};
@@ -93,26 +100,34 @@ const StyledTitle = styled.div`
 `;
 
 const ParallaxStars = (props) => {
+  const [animateStars, setAnimateStars] = useState(false);
+  useEffect(() => {
+    setAnimateStars(true); // Trigger animation when component mounts
+  }, []); // Empty dependency array to ensure it runs only once
+
   return (
+    <></>
     // <Wrapper zIndex={props.zIndex}>
     //   <StyledStarsContainer
     //     id="stars"
     //     n={70}
     //     speed={500}
+    //     animateStars={animateStars}
     //   ></StyledStarsContainer>
     //   <StyledStarsContainer
     //     id="stars2"
     //     n={20}
     //     speed={200}
+    //     animateStars={animateStars}
     //   ></StyledStarsContainer>
     //   <StyledStarsContainer
     //     id="stars3"
     //     n={710}
     //     speed={850}
+    //     animateStars={animateStars}
     //   ></StyledStarsContainer>
     //   {/* <Torch /> */}
     // </Wrapper>
-    <>nothing</>
   );
 };
 

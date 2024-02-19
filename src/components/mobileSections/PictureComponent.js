@@ -18,6 +18,11 @@ const StyledLoading = styled.div`
   width: 24px;
   height: 24px;
   animation: ${rotate} 1s linear infinite;
+
+  @media screen and (min-width: 999px) {
+    width: 64px;
+    height: 64px;
+  }
 `;
 
 const StyledPic = styled.div`
@@ -29,7 +34,7 @@ const StyledPic = styled.div`
     width: 100%;
     height: auto;
     opacity: ${({ loading }) => (loading == "true" ? 0 : 1)};
-    transition: opacity 0.5s ease;
+    transition: opacity 1s ease-in-out;
     border-radius: 11px;
 
     @media screen and (min-width: 999px) {

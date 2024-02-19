@@ -8,12 +8,14 @@ const Ide = (props) => {
   const [line, setLine] = useState(0);
   const [quiz, setQuiz] = useState(false);
   const [alreadyTypedText, setAlreadyTypedText] = useState("");
-  const [displayText, setDisplayText] = useState("Click to begin");
+  const [displayText, setDisplayText] = useState(
+    "Select a lesson below to begin :)"
+  );
   const [ideButton, setIdeButton] = useState("Click Me!");
   const [isTyping, setIsTyping] = useState(false);
   const lessonRef = useRef(null);
 
-  const sample = [props.text ?? "nothing to see here"];
+  const sample = [props.text ?? "hmm! looks like there's nothing to see here"];
   const message = sample[0].toString();
   const text = message.split(/\.(?![^()]*\))/);
 
@@ -172,9 +174,10 @@ const Ide = (props) => {
     }
     setDisplayText("");
   };
-
+  const [animateVideo, setanimateVideo] = useState(false);
   // when the cards below are clicked
   useEffect(() => {
+    setanimateVideo(true);
     if (parentCardClicked === previousParentCardClickedRef.current) {
       setBlinkClass("button-blink next-ide-btn");
     } else {
@@ -204,7 +207,7 @@ const Ide = (props) => {
 
       if (currentText !== undefined) {
         setEmptyData(false);
-        if (currentText.trimStart().startsWith("('")) {
+        if (currentText.trimStart().startsWith("((")) {
           currentText = "Refer to the following image!";
         }
       } else {
@@ -267,17 +270,6 @@ const Ide = (props) => {
               return (
                 <div key={index} className={url ? "" : "old"}>
                   {url ? (
-                    // <div
-                    //   className="ide-image"
-                    //   style={{
-                    //     backgroundImage: `url("${
-                    //       url.includes("/")
-                    //         ? url
-                    //         : `"/images/my-svg/falling-rocks.svg")`
-                    //     }")`,
-                    //   }}
-                    //   placeholder={url}
-                    // />
                     <PictureComponent
                       url={
                         url.includes("/")
@@ -292,7 +284,11 @@ const Ide = (props) => {
                 </div>
               );
             })}
-            <div className="typing">{displayText}</div>
+            <div className="typing">
+              {displayText.includes("((")
+                ? "> refer to the following image"
+                : displayText}
+            </div>
           </div>
         ) : (
           // QUESYIONS TYPER
@@ -364,8 +360,8 @@ const Ide = (props) => {
       </div>
 
       {/* ide background video ------------------------- */}
-      {line === 0 && (
-        <Video autoPlay loop muted>
+      {line != 60 && (
+        <Video animateVideo={animateVideo} autoPlay loop muted>
           <source src="/images/my-svg/backvideo.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </Video>
@@ -385,17 +381,20 @@ const Video = styled.video`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 4;
+  z-index: 1;
   /* filter: blur(5px); */
   border-radius: 24px;
-  @media screen and (max-width: 768px) {
+  transition: opacity 1s ease-in-out;
+  opacity: ${(props) => (props.animateVideo ? 1 : 0)};
+  @media screen and (max-width: 1000px) {
     border: #1c1b1b 1px solid;
   }
 `;
 
 const Wrapper = styled.div`
-  background-color: ${(props) =>
-    props.ideType === "blurry" ? "none" : "#000"};
+  /* background-color: ${(props) =>
+    props.ideType === "blurry" ? "none" : "none"}; */
+  background-color: black;
   z-index: 6;
   color: white;
   border-radius: 24px;
@@ -407,7 +406,7 @@ const Wrapper = styled.div`
   width: 658px;
   padding: 20px;
   font-size: 20px;
-  backdrop-filter: ${(props) => (props.ideType === "blurry" ? "33px" : "none")};
+  backdrop-filter: ${(props) => (props.ideType === "blurry" ? "33px" : "33px")};
   font-family: "Spline Sans Mono", sans-serif;
   position: relative;
   border: 1px #3f3939 solid;
@@ -415,9 +414,10 @@ const Wrapper = styled.div`
   @media screen and (min-width: 999px) {
     height: 728px;
     width: 100%;
+    border: 1px #2f2c6e solid;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1000px) {
     height: 394px;
     width: 100%;
     font-size: 16px;
@@ -431,7 +431,7 @@ const Wrapper = styled.div`
   }
   #console-prompt {
     padding-bottom: 20px;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1000px) {
       padding-bottom: 10px;
       text-align: center;
     }
@@ -443,10 +443,11 @@ const Wrapper = styled.div`
     width: 100%;
     height: 100%;
     background-color: ${(props) =>
-      props.ideType === "blurry" ? "none" : "#000"};
+      props.ideType === "blurry" ? "none" : "none"};
     border-radius: 24px;
     backdrop-filter: ${(props) =>
-      props.ideType === "blurry" ? "33px" : "none"};
+      props.ideType === "blurry" ? "blur(8px)" : "blur(8px)"};
+    z-index: 2;
     @media screen and (max-width: 768px) {
       /* background: url(/images/my-svg/falling-rocks.svg); */
       /* background-size: cover; */
@@ -474,12 +475,12 @@ const Wrapper = styled.div`
   }
   .lesson {
     flex: 1;
-    margin-bottom: 38px;
+    margin-bottom: 48px;
     padding: 5px 2px;
     border-radius: 10px;
     overflow: scroll;
     z-index: 5;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1000px) {
       margin-bottom: 42px;
       padding: 5px 0px;
     }
@@ -494,7 +495,8 @@ const Wrapper = styled.div`
     line-height: 1.2;
     text-transform: lowercase;
     z-index: 5;
-    @media screen and (max-width: 768px) {
+    margin-bottom: 12px;
+    @media screen and (max-width: 1000px) {
       background-color: black;
       border: none;
       border-top: 1px solid #292929;

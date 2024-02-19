@@ -3,6 +3,7 @@ import styled from "styled-components";
 // import ProgressBar from "./ProgressBar";
 import { useState } from "react";
 import ProgressBar from "../buttons/ProgressBar";
+import { IoCheckmarkCircleOutline } from "react-icons/io5";
 import RowProgress from "./RowProgress";
 function CourseLessonRow(props) {
   const [progressValue, setProgressValue] = useState(false);
@@ -51,7 +52,10 @@ function CourseLessonRow(props) {
     >
       <div className="number">{props.num ?? 0}</div>
       <Text>
-        <div className="row-title">{props.title}</div>
+        <div className="row-title">
+          {props.title}{" "}
+          {props.updateProgress > 10 ? <IoCheckmarkCircleOutline /> : ""}
+        </div>
 
         <div className="row-desc ">
           {props.desc ?? "This is some placejolder text"}
@@ -137,6 +141,9 @@ const Card = styled.div`
   .row-title {
     font-size: 18px;
     color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
   .row-desc {
     font-size: 10px;
