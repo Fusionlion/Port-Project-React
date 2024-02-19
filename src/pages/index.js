@@ -18,6 +18,7 @@ function Index() {
     <Wrapper>
       <MobileWrapper>
         <MobileApp />
+        {!value && <WelcomeMessage value={value} setValue={setValue} />}
       </MobileWrapper>
 
       <WebWrapper>
