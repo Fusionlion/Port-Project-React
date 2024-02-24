@@ -38,7 +38,7 @@ const WelcomeMessage = (props) => {
           // Start deletion after 3 seconds
 
           setTimeout(() => {
-            setText("I'm glad you're here");
+            setText("I'm glad you're here!");
           }, 1000);
 
           setTimeout(() => {
@@ -46,7 +46,7 @@ const WelcomeMessage = (props) => {
           }, 3000);
 
           setTimeout(() => {
-            props.setValue(true);
+            // props.setValue(true);
           }, 5000);
         } else {
           setTimeout(type, 100); // Adjust typing and deleting speed here (in milliseconds)
@@ -79,7 +79,7 @@ const WelcomeMessage = (props) => {
 export default WelcomeMessage;
 
 const Container = styled.div`
-  z-index: 99;
+  z-index: 105;
   display: flex;
   /* background-color: black; */
   backdrop-filter: ${({ opacityView }) =>
@@ -95,13 +95,19 @@ const Container = styled.div`
   opacity: ${(opacityView) => (opacityView ? "1" : "0")};
   transition: all ease-in-out 1s;
   display: (${(value) => (value ? "none" : "block")});
+  position: fixed;
 `;
 
 const TypingText = styled.div`
-  font-family: "Spline Sans Mono", sans-serif;
-  font-size: 16px;
+  /* font-family: "Spline Sans Mono", sans-serif; */
+  opacity: ${(opacityView) => (opacityView ? "1" : "0")};
   margin-top: 10px;
-  color: white;
+  font-size: 15px;
+  position: relative;
+  background: linear-gradient(to right, rgb(244 133 133), rgb(86 112 211));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Spline Sans Mono", sans-serif;
 `;
 
 const IconWrapper = styled.div`
