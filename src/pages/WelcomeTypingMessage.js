@@ -46,7 +46,7 @@ const WelcomeMessage = (props) => {
           }, 3000);
 
           setTimeout(() => {
-            // props.setValue(true);
+            props.setValue(true);
           }, 5000);
         } else {
           setTimeout(type, 100); // Adjust typing and deleting speed here (in milliseconds)
