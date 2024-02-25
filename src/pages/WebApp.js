@@ -23,7 +23,6 @@ function WebApp(props) {
     setFaded((prev) => !prev);
   };
   const handleTabClick = (tabName) => {
-    console.log(tabName + " was clicked ++");
     if (tabName === "Portfolio") {
       setFaded(false);
     } else {

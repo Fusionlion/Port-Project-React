@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import MobileProjects from "../components/mobileSections/MobileProjects";
 import MobileProjectDetail from "../components/mobileSections/MobileProjectDetail";
 import "../components/styles/Font.css";
@@ -7,10 +7,12 @@ import MobileHome from "../components/mobileSections/MobileHome";
 import MobileCourses from "../components/mobileSections/MobileCourses";
 import PrivacyComponent from "../components/mobileSections/PrivacyComponent";
 import ParallaxStars from "../components/mobileSections/MobileBackgrounds.js/ParallaxStars";
+import BirdsLottie from "../components/sections/BirdsLottie";
 
 export default function MobileApp() {
   const [switchPage, setSwitchPage] = useState("home");
   const [showMenu, setShowMenu] = useState(false);
+  const [isFaded, setFaded] = useState(false);
   const handleHomeButton = (page) => {
     setSwitchPage("home");
     setShowMenu(false);
@@ -28,11 +30,19 @@ export default function MobileApp() {
       setSwitchPage(page);
       setShowMenu(false);
     }
+    if (page === "Portfolio") {
+      setFaded(false);
+    } else {
+      setFaded(true);
+    }
   };
   return (
     <MobileLayout>
       {/* header only show */}
       <ParallaxStars />
+      <FadeContent faded={isFaded}>
+        <BirdsLottie />
+      </FadeContent>
       <MobileHeader>
         <div className="mobile-header-left" onClick={handleShowMenu}>
           <div
@@ -88,6 +98,35 @@ export default function MobileApp() {
     </MobileLayout>
   );
 }
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    
+  }
+  to {
+    opacity: 1;
+   
+  }
+`;
+
+const fadeOut = keyframes`
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+`;
+
+const FadeContent = styled.div`
+  opacity: ${({ faded }) => (faded ? 0 : 1)};
+  /* display: ${({ faded }) => (faded ? "none" : "block")}; */
+  mix-blend-mode: ${({ faded }) => (faded ? "hard-light" : "inherit")};
+  transition: all 0.9s ease-in-out;
+  animation: ${({ faded }) => (faded ? fadeOut : fadeIn)}
+    ${({ faded }) => (faded ? "0.9s" : "3.5s")} ease-in-out;
+`;
 const MobileMenu = styled.div`
   display: -webkit-box;
   display: -webkit-flex;

@@ -146,20 +146,21 @@ const Wrapper = styled.div`
   font-family: "Spline Sans Mono", sans-serif;
   /* background-color: black; */
   color: aliceblue;
-  padding-top: 98px;
+  padding-top: 113px;
   /* background-image: url(/images/my-svg/falling-stars.svg); */
   width: 100%;
   z-index: 50;
 
   @media screen and (min-width: 999px) {
     margin-top: -35px;
+    padding-top: 98px;
   }
 
   .project-arrow {
     position: absolute;
     color: #ffffff;
     font-size: 20px;
-    top: 75px;
+    top: 90px;
     left: 18px;
     cursor: pointer;
     z-index: 99;
@@ -171,6 +172,7 @@ const Wrapper = styled.div`
 
     @media screen and (min-width: 999px) {
       display: none;
+      top: 78px;
     }
   }
   .project-arrow-desktop {

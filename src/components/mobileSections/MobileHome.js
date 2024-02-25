@@ -327,6 +327,7 @@ const MobileWelcomeImage = styled.div`
     font-size: 82px;
     font-family: "cisnero";
     color: aliceblue;
+    text-shadow: 4px 1px 1px #030303;
     @media screen and (min-width: 999px) {
       font-size: 130px;
     }

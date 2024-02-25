@@ -81,9 +81,9 @@ export default WelcomeMessage;
 const Container = styled.div`
   z-index: 105;
   display: flex;
-  /* background-color: black; */
+  background-color: #0000007d;
   backdrop-filter: ${({ opacityView }) =>
-    opacityView ? "blur(0px)" : "blur(18px)"};
+    opacityView ? "blur(0px)" : "blur(38px)"};
   position: absolute;
   flex-direction: column;
   align-items: center;
