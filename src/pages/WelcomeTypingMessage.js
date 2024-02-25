@@ -47,7 +47,7 @@ const WelcomeMessage = (props) => {
 
           setTimeout(() => {
             props.setValue(true);
-          }, 5000);
+          }, 4000);
         } else {
           setTimeout(type, 100); // Adjust typing and deleting speed here (in milliseconds)
         }
@@ -68,7 +68,7 @@ const WelcomeMessage = (props) => {
         <VscFlame />
       </IconWrapper>
 
-      <TypingText>
+      <TypingText opacityView={opacityView}>
         {text}
         <Cursor>|</Cursor>
       </TypingText>
