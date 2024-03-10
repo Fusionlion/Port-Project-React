@@ -79,7 +79,11 @@ const ProjectMoreButton = styled.div`
   align-items: center;
   font-family: "Spline Sans Mono", sans-serif;
   width: 100%;
-  margin: 10px 86px;
+
+  @media screen and (min-width: 999px) {
+    margin: 10px 86px;
+  }
+
   font-size: 18px;
   background: linear-gradient(to right, rgb(255 255 255), rgb(146 73 107));
   background-clip: text;
