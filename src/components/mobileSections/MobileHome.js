@@ -192,7 +192,7 @@ const Wrapper = styled.div`
   padding: 30px;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(to top, #000000, #000000,#000000, transparent);
+  background: linear-gradient(to top, #000000, #000000, #000000, transparent);
   .padding-default {
     padding: 0px 20px;
   }
@@ -203,9 +203,8 @@ const Wrapper = styled.div`
     font-family: "Spline Sans Mono", sans-serif;
     line-height: 1.2;
     padding-bottom: 35px;
-    }
-   
   }
+
   .mobile-welcome-button {
     text-align: center;
     font-size: 20px;
