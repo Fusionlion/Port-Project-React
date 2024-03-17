@@ -30,7 +30,7 @@
   },
   {
     "title": "Soulmate",
-    "num": "0",
+    "num": "1",
     "desc": "Your Path to Meaningful Connections.Soulmate is not just another dating app; it's a revolution in how we approach relationships. Join us today, and together, we'll rediscover the joy of meaningful connections, one soulmate at a time.",
     "image": "https://cdn.dribbble.com/userupload/4468779/file/original-3f14fe5382d3dc561a57af692a5b97cb.jpg?resize=2400x1800",
     "article": [
@@ -60,7 +60,7 @@
   },
   {
     "title": "MyHealth",
-    "num": "1",
+    "num": "2",
     "desc": "Data structure is a storage that is used to store and organize data. It is a way of arranging data on a computer so that it can be accessed and updated efficiently.",
     "image": "https://user-images.githubusercontent.com/74889517/182246804-279dc992-6078-49f3-a4a7-775fbb677c00.png",
     "article": [
@@ -90,7 +90,7 @@
   },
   {
     "title": "Fusion 'Dream' Extension",
-    "num": "2",
+    "num": "3",
     "desc": "Fusion: Dream Start is a simple yet powerful Chrome extension that aims to kickstart your day with inspiration. It provides a beautiful new tab experience, displaying the current date along with a custom background to set the mood for your daily tasks.",
     "image": "https://github.com/zabloncharles/Fusion-Chrome-Extension/assets/74889517/f8f21ee2-1035-4eb9-8f4d-dd628ab89d0a",
     "article": [
@@ -116,7 +116,7 @@
   },
   {
     "title": "ExamForce",
-    "num": "3",
+    "num": "4",
     "desc": "The University Student Portal is a Salesforce-based web application built using Visualforce. It provides a platform for students to manage their academic information conveniently. This portal allows students to sign in, sign up, and access their personalized dashboard, which includes information about their exams, schedules, and any missed assignme",
     "image": "https://cdn.dribbble.com/userupload/11165238/file/original-973c3fb9fb487ff0d90155ecf644e096.png?resize=1504x1128",
     "article": [
@@ -142,7 +142,7 @@
   },
   {
     "title": "Aperture",
-    "num": "4",
+    "num": "5",
     "desc": "APERTURE , est. 2533, is part of the Helghast federation and is licensed by the Board of Scientific Research.Dragons are cool, but they're not real. They don't exist. Unicorns aren't real either. But Droids... Droids are a way of life.",
     "image": "https://cdn.dribbble.com/userupload/7724019/file/original-4853578a2b5ba1e804265f7ee878875f.png?resize=1504x1504",
     "article": [
@@ -168,7 +168,7 @@
   },
   {
     "title": "AlgoLearningApp",
-    "num": "5",
+    "num": "6",
     "desc": "APERTURE , est. 2533, is part of the Helghast federation and is licensed by the Board of Scientific Research.Dragons are cool, but they're not real. They don't exist. Unicorns aren't real either. But Droids... Droids are a way of life.",
     "image": "https://cdn.dribbble.com/userupload/9196488/file/original-21934d99898c632354403490a2b210ea.png?resize=2048x1536",
     "article": [
@@ -195,7 +195,7 @@
   },
   {
     "title": "SwiftUI-Api-Call",
-    "num": "6",
+    "num": "7",
     "desc": "Make an easy Api call using swiftUI",
     "image": "https://cdn.dribbble.com/userupload/6933556/file/original-0f13ba1389f064e0c1b146e1b52cf837.png?resize=2048x1536",
     "article": [
