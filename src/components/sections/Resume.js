@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { MdEmail } from "react-icons/md";
 import { MdPhone } from "react-icons/md";
@@ -6,9 +6,20 @@ import { BsPersonBadge } from "react-icons/bs";
 import { BsPersonWorkspace } from "react-icons/bs";
 import { IoSchoolOutline } from "react-icons/io5";
 import CertificateComponent from "../mobileSections/CertificateComponent";
+import DownloadButton from "../mobileSections/ResumeDownloader";
+import { FaToggleOff } from "react-icons/fa6";
+import { FaToggleOn } from "react-icons/fa";
+
 function Resume() {
+  // State to track the current mode (light or dark)
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Function to toggle between light and dark mode
+  const toggleDarkMode = () => {
+    setIsDarkMode((prevMode) => !prevMode);
+  };
   return (
-    <Wrapper>
+    <Wrapper isDarkMode={isDarkMode}>
       <div className="resume-header">
         <div className="left-resume-header">
           <div className="name">Zablon Charles</div>
@@ -26,6 +37,13 @@ function Resume() {
             Salesforce both declaratively and programmatically, and solving
             business problems with an analytical approach.
           </li>
+          <DownloadButton isDarkMode={isDarkMode} />
+
+          <ResumeDark onClick={toggleDarkMode} isDarkMode={isDarkMode}>
+            <p>{isDarkMode === true ? "Dark" : "Light"} Mode</p>
+            {isDarkMode && <FaToggleOff />}
+            {!isDarkMode && <FaToggleOn />}
+          </ResumeDark>
         </div>
       </div>
       <div className="left-and-right-resume">
@@ -278,18 +296,40 @@ function Resume() {
 }
 
 export default Resume;
+const ResumeDark = styled.div`
+  // Your styles here
+  position: absolute;
+  right: 50px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 19px;
+  border: 1px solid ${(props) => (props.isDarkMode ? "#272424" : "#141414")};
+  padding: 10px 15px;
+  border-radius: 26px;
+  & :hover {
+    border: 1px solid #302e2e;
+    padding: 10px 15px;
+    background: #58626240;
+    cursor: pointer;
+  }
+  > :nth-child(2) {
+    color: aquamarine;
+  }
+`;
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #141414;
+  background-color: ${(props) => (props.isDarkMode ? "#141414" : "aliceblue")};
+
   font-family: "Spline Sans Mono", sans-serif;
   height: 100%;
   width: 100%;
   border-radius: 16px;
   padding: 0px 20px;
   margin-top: 20px;
-  color: white;
+  color: ${(props) => (props.isDarkMode ? "white" : "black")};
   padding-bottom: 50px;
   border: 1px #272424 solid;
   .career-summary {
@@ -305,7 +345,7 @@ const Wrapper = styled.div`
   .left-resume-header {
     display: flex;
     flex-direction: column;
-    color: white;
+    color: ${(props) => (props.isDarkMode ? "white" : "black")};
     line-height: 1.5;
     font-size: larger;
     text-align: center;
@@ -337,8 +377,10 @@ const Wrapper = styled.div`
     padding: 10px;
     position: relative;
     border: 1px solid #302e2e;
-    background: #141414;
-    box-shadow: 6px 6px 12px #111111, -2px -5px 9px #191717;
+    background: ${(props) => (!props.isDarkMode ? "aliceblue" : "#141414")};
+    box-shadow: 6px 6px 12px
+        ${(props) => (!props.isDarkMode ? "aliceblue" : "#111111")},
+      -2px -5px 9px ${(props) => (!props.isDarkMode ? "aliceblue" : "#191717")};
     > :nth-child(4) {
       position: absolute;
       color: #302e2e;
@@ -359,8 +401,10 @@ const Wrapper = styled.div`
     padding: 10px;
     position: relative;
     border: 1px solid #302e2e;
-    background: #141414;
-    box-shadow: 6px 6px 12px #111111, -2px -5px 9px #191717;
+    background: ${(props) => (!props.isDarkMode ? "aliceblue" : "#141414")};
+    box-shadow: 6px 6px 12px
+        ${(props) => (!props.isDarkMode ? "aliceblue" : "#111111")},
+      -2px -5px 9px ${(props) => (!props.isDarkMode ? "aliceblue" : "#191717")};
 
     .resume-year {
       color: #b90000;
@@ -371,7 +415,7 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     text-align: center;
-    color: white;
+    color: ${(props) => (props.isDarkMode ? "white" : "black")};
 
     line-height: 1.5;
     .email {
@@ -412,7 +456,7 @@ const Wrapper = styled.div`
   .work-title {
     font-family: "ACCELERARE", sans-serif;
     font-size: 18px;
-    color: white;
+    color: ${(props) => (props.isDarkMode ? "white" : "black")};
     text-transform: uppercase;
   }
   .resume-skills {

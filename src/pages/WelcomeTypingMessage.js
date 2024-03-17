@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { VscFlame } from "react-icons/vsc"; // Replace 'VscFlame' with your actual icon component
 import BirdsLottie from "../components/sections/BirdsLottie";
+import Birds from "../components/lottie/Birds";
 
 const cursorAnimation = keyframes`
   from {
@@ -18,6 +19,7 @@ const Cursor = styled.span`
 `;
 
 const WelcomeMessage = (props) => {
+  const [animateVideo, setanimateVideo] = useState(false);
   const [text, setText] = useState("");
   const [opacityView, setOpacityView] = useState(false);
   let greetingText = "Welcome to my portfolio :)";
@@ -63,9 +65,21 @@ const WelcomeMessage = (props) => {
 
   return (
     <Container value={props.value} opacityView={opacityView}>
-      <BirdsLottie />
+      {/* <BirdsCustom /> */}
+      {/* <BirdsCustom /> */}
       <IconWrapper fontColor={getRandomColor()}>
-        <VscFlame />
+        {/* <VscFlame /> */}
+        {/* <RomeHead></RomeHead> */}
+        <Video
+          opacityView={opacityView}
+          animateVideo={animateVideo}
+          autoPlay
+          loop
+          muted
+        >
+          <source src="/images/my-svg/backvideo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </Video>
       </IconWrapper>
 
       <TypingText opacityView={opacityView}>
@@ -78,10 +92,47 @@ const WelcomeMessage = (props) => {
 
 export default WelcomeMessage;
 
+const Video = styled.video`
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+
+  /* filter: blur(5px); */
+  border-radius: 60px;
+  transition: opacity 1s ease-in-out;
+  opacity: ${(props) => (props.animateVideo ? 1 : 1)};
+  filter: hue-rotate(339deg);
+  opacity: ${(opacityView) => (opacityView ? "1" : "0")};
+  @media screen and (max-width: 1000px) {
+    border: #3b262600 1px solid;
+    width: 80px;
+    height: 80px;
+  }
+`;
+
+const RomeHead = styled.div`
+  // Your styles here
+  width: 87px;
+  height: 87px;
+  background-image: url(/images/my-svg/merilios.png);
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: 1px solid #552f1047;
+  border-radius: 62px;
+  padding: 29px;
+`;
+
+const BirdsCustom = styled(Birds)`
+  // Your styles here
+  opacity: 0 !important;
+`;
+
 const Container = styled.div`
   z-index: 105;
   display: flex;
-  background-color: #0000007d;
+  background-color: ${({ opacityView }) =>
+    opacityView ? "#eae0e000" : "#000000"};
   backdrop-filter: ${({ opacityView }) =>
     opacityView ? "blur(0px)" : "blur(38px)"};
   position: absolute;
@@ -104,10 +155,16 @@ const TypingText = styled.div`
   margin-top: 10px;
   font-size: 15px;
   position: relative;
-  background: linear-gradient(to right, rgb(244 133 133), rgb(86 112 211));
+  background: linear-gradient(
+    to right,
+    rgb(206 216 222),
+    #ba991d,
+    rgb(126 172 206)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "Spline Sans Mono", sans-serif;
+  opacity: ${(opacityView) => (opacityView ? "1" : "0")};
 `;
 
 const IconWrapper = styled.div`

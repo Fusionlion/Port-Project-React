@@ -5,6 +5,7 @@ import { useState } from "react";
 import PictureComponent from "./PictureComponent";
 import LoadingScreen from "./LoadingScreen";
 import { IoClose } from "react-icons/io5";
+import LiveLinkComponent from "./LiveLinkComponent";
 
 export default function MobileProjectDetailArticle(props) {
   const datas =
@@ -139,13 +140,13 @@ export default function MobileProjectDetailArticle(props) {
       <div className="project-arrow" onClick={handleArrowClicked}>
         <IoClose /> <span>Close</span>
       </div>
-
       <div className="content">{renderContent()}</div>
-
       <br />
       <br />
       <div ref={bottomRef} style={{ height: "1px", marginBottom: "-1px" }} />
-
+      {props.data.link && (
+        <LiveLinkComponent title2={props.data.title} link={props.data.link} />
+      )}
       <FooterSection />
       {/* {imagesThatLoaded == 0 && imageList.length != 0 && ( */}
       {imagesThatLoaded < 1 && (

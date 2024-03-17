@@ -11,7 +11,6 @@ export default function MobileProjectDetail(props) {
     props.data && props.data.article.length > 0
       ? props.data.article
       : datafake["WHAT IS AN ALGORITHM?"];
-  console.log("Botthe data in detail " + props.data);
   const bottomRef = useRef(null);
 
   const handleArrowClicked = () => {
@@ -56,7 +55,14 @@ export default function MobileProjectDetail(props) {
   const handleImageLoad = () => {
     setImageLoaded(true);
   };
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setImageLoaded(true); // Set isImageLoaded to true after 5 seconds
+    }, 5000); // Change 5000 to the desired timeout in milliseconds (5 seconds in this example)
 
+    // Cleanup function to clear the timeout if the component unmounts or if the image loads
+    return () => clearTimeout(timeout);
+  }, []); // Empty dependency array ensures this effect runs only once
   const handleImageError = () => {
     setImageLoaded(true); // Handle image loading error
   };
@@ -217,11 +223,10 @@ export default function MobileProjectDetail(props) {
       <div className="project-arrow" onClick={handleArrowClicked}>
         &#8592;
       </div>
-
       <div className="content">{renderContent()}</div>
+      <br />
+      <br />
 
-      <br />
-      <br />
       <div ref={bottomRef} style={{ height: "1px", marginBottom: "-1px" }} />
 
       <FooterSection />
