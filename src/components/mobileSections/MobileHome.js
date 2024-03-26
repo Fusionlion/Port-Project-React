@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+import React, { useEffect, useRef, useState } from "react";
+import styled, { keyframes } from "styled-components";
 import FooterSection from "../sections/FooterSection";
 import ThreeImagesComponent from "./ThreeImagesComponent";
 import RoundedImageComponent from "./RoundedImageComponent";
@@ -23,7 +23,14 @@ export default function MobileHome(props) {
 
   //   return () => clearInterval(interval);
   // }, [text]);
+
   const [romeLoaded, setRomeLoaded] = useState(true);
+  const targetRef = useRef(null);
+
+  const scrollToTarget = () => {
+    targetRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <Wrapper>
       <BGroundBlack />
@@ -34,21 +41,21 @@ export default function MobileHome(props) {
         <div className="mobile-title-big">welcome</div>
         <HomePortfolioName>PORTFOLIO</HomePortfolioName>
       </MobileWelcomeTitle>
+
       <MobileWelcomeImage romeLoaded={romeLoaded}>
         <div className="my-name">
           <div>CHARLES</div>
-          <div
-            onLoad={() => {
-              setRomeLoaded(true);
-            }}
-          >
-            <div></div>
-          </div>
+
+          <Video autoPlay loop muted>
+            <source src="/images/my-svg/backvideo.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </Video>
         </div>
         <div className="curved-text-container">
           <p className="curved-text">ZABLON</p>
         </div>
       </MobileWelcomeImage>
+
       <MobileDesc>
         What everyone said was true. You cannot learn how to code by reading,
         listening or watching someone else do it. You have to get your hands
@@ -60,12 +67,13 @@ export default function MobileHome(props) {
         <div></div>
         <GetStartedButton
           tapped={() => {
-            props.page("courses");
+            // props.page("courses");
+            scrollToTarget();
           }}
         />
         <div></div>
       </ButtonLines>
-      <SmallText>
+      <SmallText ref={targetRef}>
         Step into my digital realm, where technology meets innovation, and join
         me on a journey of coding, creativity, and continuous learning.
       </SmallText>
@@ -93,7 +101,21 @@ export default function MobileHome(props) {
     </Wrapper>
   );
 }
+const Video = styled.video`
+  width: 300px;
 
+  object-fit: cover;
+  border: #4e382c 1px solid;
+  align-self: center;
+  /* filter: blur(5px); */
+  border-radius: 600px;
+  transition: opacity 1s ease-in-out;
+  z-index: 2;
+  filter: hue-rotate(339deg);
+
+  @media screen and (max-width: 1000px) {
+  }
+`;
 const ButtonLines = styled.div`
   // Your styles here
   display: flex;
@@ -145,18 +167,18 @@ const BGroundBottom = styled.div`
   bottom: -158px;
 `;
 const BGround = styled.div`
-  height: 672px;
+  height: 472px;
   width: 100vw;
   background-image: url(/images/my-svg/first.svg);
   background-size: contain;
-  background-position: top;
+  background-position: center center;
   position: absolute;
   left: 0px;
   background-repeat: no-repeat;
-  top: 331px;
+  top: 288px;
   filter: hue-rotate(54deg);
-  background-color: black;
-  z-index: -1;
+
+  z-index: 3;
 
   @media screen and (min-width: 999px) {
     display: none;
@@ -274,6 +296,28 @@ const HomePortfolioName = styled.div`
   /* font-family: "SF Pro Display", sans-serif; */
 `;
 
+const shadowAnimation = keyframes`
+   0% {
+    box-shadow: 0px -1px 0px white;
+    
+  }
+  25% {
+    box-shadow: 1px 0px 0px white;
+    
+  }
+  50% {
+    box-shadow: 0px 1px 0px white;
+    
+  }
+  75% {
+    box-shadow: -1px 0px 0px white;
+    
+  }
+  100% {
+    box-shadow: 0px -1px 0px white;
+ 
+  }
+`;
 const MobileWelcomeImage = styled.div`
   /* position: relative;
   min-height: 326px;
@@ -327,6 +371,7 @@ const MobileWelcomeImage = styled.div`
     font-family: "cisnero";
     color: aliceblue;
     text-shadow: 4px 1px 1px #030303;
+
     @media screen and (min-width: 999px) {
       font-size: 130px;
     }
@@ -345,6 +390,10 @@ const MobileWelcomeImage = styled.div`
       border: 1px #7c7973fc solid;
       border-radius: 244px;
       overflow: hidden;
+      box-shadow: inset 20px 20px -1px 0px white;
+      animation: ${shadowAnimation} 0.3s 15 linear;
+
+      /* Adjust the animation duration and timing */
 
       > :nth-child(1) {
         height: ${({ romeLoaded }) => (!romeLoaded ? "329px" : "43px")};

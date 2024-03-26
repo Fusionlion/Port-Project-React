@@ -44,10 +44,10 @@ const certificatesData = [
 ];
 
 const CertificateComponent = (props) => {
-  const [visibleCertificates, setVisibleCertificates] = useState(3);
+  const [visibleCertificates, setVisibleCertificates] = useState(2);
 
   const showMoreCertificates = () => {
-    setVisibleCertificates(visibleCertificates + 3);
+    setVisibleCertificates(visibleCertificates + 2);
   };
 
   return (
@@ -137,14 +137,14 @@ const CertificateCard = styled.div`
   justify-content: space-between;
   background: url(/images/my-svg/falling-rocks.svg);
   background-repeat: no-repeat;
-  background-color: #141414;
+  background-color: black;
   background-position: center center;
   z-index: 1;
   @media screen and (min-width: 999px) {
     min-width: 500px;
     min-height: 289px;
     width: 300px;
-    background: #141414;
+    background: black;
   }
   @media screen and (min-width: 999px) {
     & {

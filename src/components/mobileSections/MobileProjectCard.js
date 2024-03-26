@@ -227,7 +227,7 @@ const ProjectCardStyle = styled.div`
   transition: linear 0.2s;
   /* border-radius: 17px; */
   position: relative;
-
+  border: 1px solid #342222;
   @media screen and (min-width: 999px) {
     height: 709px;
     border-radius: 17px;

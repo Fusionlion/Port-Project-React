@@ -42,7 +42,7 @@ const StyledImage = styled.div`
   flex: 1;
   position: relative;
   overflow: hidden;
-
+  border: 1px solid #ffffff1f;
   @media screen and (min-width: 999px) {
     & {
       transition: all 0.2s linear;
@@ -76,6 +76,7 @@ const StyledImage = styled.div`
     border-top: 1px solid #20202005;
     backdrop-filter: blur(7px);
     display: flex;
+    color: white;
   }
 `;
 
@@ -138,6 +139,12 @@ const StyledButton = styled.div`
     text-align: center;
   }
 `;
+const CarImages = styled.div`
+  // Your styles here
+
+  display: flex;
+  overflow: scroll;
+`;
 
 const ThreeImagesComponent = (props) => {
   const images = [
@@ -186,13 +193,25 @@ const ThreeImagesComponent = (props) => {
         {index % 4 === 3 && (
           <>
             <div style={{ padding: "5px" }} />
-            <StyledImage src={getRandomImage()} isMiddle={"center"}>
-              <div className="name">1</div>
-            </StyledImage>
-            <div style={{ padding: "10px" }} />
-            <StyledImage src={getRandomImage()} isMiddle={"center"}>
-              <div className="name">1</div>
-            </StyledImage>
+
+            <CarImages>
+              <StyledImage src={getRandomImage()} isMiddle={"center"}>
+                <div className="name">1/3</div>
+              </StyledImage>
+
+              <div style={{ padding: "10px" }} />
+              <StyledImage src={getRandomImage()} isMiddle={"center"}>
+                <div className="name">2/3</div>
+              </StyledImage>
+
+              <div style={{ padding: "10px" }} />
+              <StyledImage src={getRandomImage()} isMiddle={"center"}>
+                <div className="name">3/3</div>
+              </StyledImage>
+
+              <div className="pic-arrow"></div>
+            </CarImages>
+
             <div style={{ padding: "10px" }} />
           </>
         )}

@@ -30,7 +30,7 @@ const CodingExpertiseComponent = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            View Portfolio
+            View Github
           </TopRightButton>
         </TopSection>
         <BottomSection>

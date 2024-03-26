@@ -3,6 +3,7 @@ import styled, { keyframes } from "styled-components";
 import { VscFlame } from "react-icons/vsc"; // Replace 'VscFlame' with your actual icon component
 import BirdsLottie from "../components/sections/BirdsLottie";
 import Birds from "../components/lottie/Birds";
+import RainMatrix from "../components/mobileSections/RainMatrix";
 
 const cursorAnimation = keyframes`
   from {
@@ -70,7 +71,7 @@ const WelcomeMessage = (props) => {
       <IconWrapper fontColor={getRandomColor()}>
         {/* <VscFlame /> */}
         {/* <RomeHead></RomeHead> */}
-        <Video
+        {/* <Video
           opacityView={opacityView}
           animateVideo={animateVideo}
           autoPlay
@@ -79,13 +80,16 @@ const WelcomeMessage = (props) => {
         >
           <source src="/images/my-svg/backvideo.mp4" type="video/mp4" />
           Your browser does not support the video tag.
-        </Video>
+        </Video> */}
+
+        <SpinningHead />
       </IconWrapper>
 
       <TypingText opacityView={opacityView}>
         {text}
         <Cursor>|</Cursor>
       </TypingText>
+      <RainMatrix />
     </Container>
   );
 };
@@ -109,6 +113,45 @@ const Video = styled.video`
     height: 80px;
   }
 `;
+const shadowAnimation = keyframes`
+   0% {
+    box-shadow: 0px -1px 0px white;
+    filter: hue-rotate(250deg);
+  }
+  25% {
+    box-shadow: 1px 0px 0px white;
+    filter: hue-rotate(255deg);
+  }
+  50% {
+    box-shadow: 0px 1px 0px blue;
+    filter: hue-rotate(360deg);
+  }
+  75% {
+    box-shadow: -1px 0px 0px green;
+    filter: hue-rotate(365deg);
+  }
+  100% {
+    box-shadow: 0px -1px 0px purple;
+ filter: hue-rotate(370deg);
+  }
+`;
+const SpinningHead = styled.div`
+  // Your styles here
+
+  background-image: url(/images/my-svg/punk.png);
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 60px;
+  width: 60px;
+  border: 1px gray solid;
+  border-radius: 244px;
+  z-index: 99;
+  overflow: hidden;
+  box-shadow: inset 20px 20px -1px 0px white;
+  animation: ${shadowAnimation} 0.8s infinite linear;
+  filter: opacity(0.856);
+`;
 
 const RomeHead = styled.div`
   // Your styles here
@@ -123,29 +166,26 @@ const RomeHead = styled.div`
   padding: 29px;
 `;
 
-const BirdsCustom = styled(Birds)`
-  // Your styles here
-  opacity: 0 !important;
-`;
-
 const Container = styled.div`
   z-index: 105;
-  display: flex;
+  display: ${(opacityView) => (opacityView ? "flex" : "none")};
+
   background-color: ${({ opacityView }) =>
     opacityView ? "#eae0e000" : "#000000"};
-  backdrop-filter: ${({ opacityView }) =>
-    opacityView ? "blur(0px)" : "blur(38px)"};
+  /* backdrop-filter: ${({ opacityView }) =>
+    opacityView ? "blur(0px)" : "blur(38px)"}; */
+  background-color: black;
   position: absolute;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  top: 0;
+  top: ${({ opacityView }) => (!opacityView ? "0" : "100vh")};
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  opacity: ${(opacityView) => (opacityView ? "1" : "0")};
+  /* opacity: ${(opacityView) => (opacityView ? "1" : "0")}; */
   transition: all ease-in-out 1s;
-  display: (${(value) => (value ? "none" : "block")});
+  /* display: (${(value) => (value ? "none" : "block")}); */
   position: fixed;
 `;
 
@@ -155,6 +195,7 @@ const TypingText = styled.div`
   margin-top: 10px;
   font-size: 15px;
   position: relative;
+  z-index: 99;
   background: linear-gradient(
     to right,
     rgb(206 216 222),
@@ -173,4 +214,5 @@ const IconWrapper = styled.div`
     fontColor || "white"}; /* Default to white if no color provided */
   transition: color 1s ease-in-out;
   font-size: 50px;
+  z-index: 99;
 `;

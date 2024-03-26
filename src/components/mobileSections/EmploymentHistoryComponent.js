@@ -37,8 +37,8 @@ const EmploymentHistoryComponent = () => {
       stack: "salesforce",
     },
     {
-      position: "IT Junior Specialist",
-      company: "UNITED PARCEL SERVICE",
+      position: "IT Specialist",
+      company: "Saint Peter's University",
       year: "July 2016 - Feb 2018",
       description:
         "Diagnosing/resolving hardware and software issues; configuring/maintaining computer networks; managing server infrastructure; implementing cybersecurity best practices; providing technical support to end-users; planning/executing software deployments, updates, and patches; maintaining comprehensive documentation of IT systems; collaborating with cross-functional teams to assess technology needs and contribute to IT strategy and planning.",
