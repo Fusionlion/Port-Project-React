@@ -83,14 +83,12 @@ const StyledRoundedImage = styled.div`
 
 const StyledTitleBold = styled.div`
   font-weight: bold;
-  margin-bottom: 10px;
-  border: 1px solid #191a1a;
-  border-radius: 319px;
-  padding: 19px 89px;
-  border-radius: 50% 50%;
+  padding: 19px 59px;
+  border-radius: 12px;
   margin-bottom: 10px;
   text-align: center;
   line-height: 1.2;
+  background: #0f98ab;
 `;
 
 const StyledBorderedText = styled.div`
