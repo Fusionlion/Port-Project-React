@@ -168,7 +168,7 @@ const StyledComponent = styled.div`
   }
   .section-svg {
     height: 492px;
-    background-image: url(/images/my-svg/exploded_linkedin.png);
+    background-image: url(/images/my-svg/exploded.png);
     background-size: contain;
     position: absolute;
     width: 100%;
