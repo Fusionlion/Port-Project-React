@@ -26,8 +26,7 @@ function Resume() {
           <div className="position">
             <BsPersonBadge />
             /Salesforce Developer | <MdEmail />
-            /ZablonCharles@gmail.com | <MdPhone />
-            /201-267-5068
+            /ZablonCharles@gmail.com
           </div>
           <li className="career-summary">
             Certified Salesforce Administrator and Salesforce Developer with a
@@ -148,7 +147,7 @@ function Resume() {
             <div className="company">
               <div className="resume-info">
                 <div className="work-title">SWISSPORT, LLC </div>
-                <div className="school">Salesforce Administrator</div>
+                <div className="school">Salesforce Developer</div>
                 <div className="resume-year">November 2018 - October 2020</div>
                 <BsPersonWorkspace />
               </div>
