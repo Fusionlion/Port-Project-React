@@ -168,7 +168,7 @@ const StyledComponent = styled.div`
   }
   .section-svg {
     height: 492px;
-    background-image: url("https://github.com/zabloncharles/Port-Project-React/blob/main/public/images/my-svg/exploded.png");
+    background-image: url("https://raw.githubusercontent.com/zabloncharles/Port-Project-React/main/public/images/my-svg/exploded.png");
     background-size: contain;
     position: absolute;
     width: 100%;

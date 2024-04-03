@@ -24,6 +24,7 @@ function WebApp(props) {
     setFaded((prev) => !prev);
   };
   const handleTabClick = (tabName) => {
+    window.scrollTo(0, 0);
     if (tabName === "Portfolio") {
       setFaded(false);
     } else {
@@ -368,7 +369,7 @@ const Backdrop = styled.div`
   } */
 
   .character {
-    background-image: url("https://github.com/zabloncharles/Port-Project-React/blob/main/public/images/my-svg/exploded.png");
+    background-image: url("https://raw.githubusercontent.com/zabloncharles/Port-Project-React/main/public/images/my-svg/exploded.png");
     top: -125px;
     bottom: 230px;
     left: -22px;
@@ -445,7 +446,7 @@ const Backdrop = styled.div`
     height: 34px;
     width: 34px;
     border-radius: 60px;
-    background-image: url(https://ei7cr2pn3uw.exactdn.com/wp-content/uploads/2019/04/Mark-Twain-Portrait.jpg?strip=all&lossy=1&ssl=1);
+    background-image: url(/images/my-svg/boy_punk.png);
     background-size: cover;
     background-position: center;
     cursor: pointer;

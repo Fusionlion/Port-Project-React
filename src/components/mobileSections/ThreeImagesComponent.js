@@ -102,9 +102,8 @@ const StyledButton = styled.div`
   padding: 10px 60px;
   text-align: center;
   font-size: 17px;
-  background-color: black;
-
-  border-radius: 26px;
+  background-color: rgb(46 0 101);
+  border-radius: 12px;
   color: #dbc9c9;
   -webkit-transition: all 0.7s, color 0.7s;
   -webkit-transition: all 0.7s, color 0.7s;
@@ -119,8 +118,8 @@ const StyledButton = styled.div`
 
   @media screen and (min-width: 999px) {
     padding: 20px 12px;
-    background-color: #000000;
-    border-radius: 58px;
+    background-color: rgb(46 0 101);
+    border-radius: 12px;
     /* display: grid; */
     grid-template-columns: 53px auto;
     -webkit-align-items: center;

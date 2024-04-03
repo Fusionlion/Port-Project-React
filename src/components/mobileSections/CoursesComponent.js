@@ -23,7 +23,10 @@ const Container = styled.div`
     padding-bottom: 23px;
     overflow: hidden;
     width: 100%;
-    flex-wrap: wrap;
+
+    @media screen and (max-width: 1000px) {
+      flex-wrap: wrap;
+    }
   }
   .center-text {
     text-align: center;
@@ -126,9 +129,8 @@ const StyledButton = styled.div`
   padding: 10px 60px;
   text-align: center;
   font-size: 17px;
-  background-color: black;
-
-  border-radius: 26px;
+  background-color: rgb(46 0 101);
+  border-radius: 12px;
   color: #dbc9c9;
   -webkit-transition: all 0.7s, color 0.7s;
   -webkit-transition: all 0.7s, color 0.7s;
@@ -143,8 +145,8 @@ const StyledButton = styled.div`
 
   @media screen and (min-width: 999px) {
     padding: 20px 32px;
-    background-color: #000000;
-    border-radius: 58px;
+    background-color: rgb(46 0 101);
+    border-radius: 12px;
     /* display: grid; */
     grid-template-columns: 53px auto;
     -webkit-align-items: center;
@@ -234,12 +236,13 @@ const CoursesComponent = (props) => {
       {!props.linksOff && (
         <StyledButton onClick={props.buttonClicked}>courses.</StyledButton>
       )}
-      <MobileTextImage
+      {/* <MobileTextImage
+        onClick={props.buttonClicked}
         title2="More Courses"
         title3="Empowering Learning "
         text2="I've successfully tailored CRM solutions to meet specific business needs, integrating third-party services and crafting custom components. In the realm of Java development, I've contributed to diverse projects, implementing best practices to build robust and scalable applications. My passion for algorithms and data structures is evident in my ability to design optimized solutions for complex problems. Through my courses, learners not only gain theoretical knowledge but also dive into hands-on experiences. From building customized Salesforce applications to developing Java solutions and mastering fundamental data structures, my courses empower individuals to apply their skills in real-world scenarios, fostering a dynamic and immersive learning experience."
         url="https://cdn.dribbble.com/userupload/12073929/file/original-516b8de983e2bde467a7ffe521953d10.png?resize=2048x1536"
-      />
+      /> */}
     </Container>
   );
 };

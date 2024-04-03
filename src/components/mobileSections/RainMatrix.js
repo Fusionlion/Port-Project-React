@@ -27,7 +27,7 @@ const RainMatrix = () => {
       ctx.fillStyle = "rgba(0, 0, 0, 0.09)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      ctx.fillStyle = "#fff";
+      ctx.fillStyle = "#008000";
       ctx.font = `${font_size}px arial`;
 
       for (let i = 0; i < drops.length; i++) {

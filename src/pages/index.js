@@ -17,12 +17,18 @@ function Index() {
   return (
     <Wrapper>
       <MobileWrapper>
-        <MobileApp />
+        <HideWeb value={value}>
+          <MobileApp />
+        </HideWeb>
+
         {!value && <WelcomeMessage value={value} setValue={setValue} />}
       </MobileWrapper>
 
       <WebWrapper>
-        <WebApp />
+        <HideWeb value={value}>
+          <WebApp value={value} />
+        </HideWeb>
+
         {!value && <WelcomeMessage value={value} setValue={setValue} />}
       </WebWrapper>
     </Wrapper>
@@ -45,7 +51,8 @@ const WebWrapper = styled.div`
 `;
 const HideWeb = styled.div`
   // Your styles here
-  opacity: (${(value) => (value ? 1 : 0)});
+  transition: opacity 3s ease-in-out;
+  opacity: ${(props) => (props.value ? 1 : 0)};
 `;
 
 const MobileWrapper = styled.div`

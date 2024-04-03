@@ -381,7 +381,7 @@ const MobileWelcomeImage = styled.div`
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
-      background-image: url(/images/my-svg/merilios.png);
+      background-image: url(/images/my-svg/merilio.png);
       background-size: contain;
       background-position: center center;
       background-repeat: no-repeat;

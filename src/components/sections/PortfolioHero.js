@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import ThreeImagesComponent from "../mobileSections/ThreeImagesComponent";
 import RoundedImageComponent from "../mobileSections/RoundedImageComponent";
 import CoursesComponent from "../mobileSections/CoursesComponent";
@@ -243,6 +243,28 @@ const MobileWelcomeTitle = styled.div`
     }
   }
 `;
+const shadowAnimation = keyframes`
+   0% {
+    box-shadow: 0px -1px 0px white;
+    
+  }
+  25% {
+    box-shadow: 1px 0px 0px white;
+    
+  }
+  50% {
+    box-shadow: 0px 1px 0px white;
+    
+  }
+  75% {
+    box-shadow: -1px 0px 0px white;
+    
+  }
+  100% {
+    box-shadow: 0px -1px 0px white;
+ 
+  }
+`;
 const MobileWelcomeImage = styled.div`
   /* position: relative;
   min-height: 326px;
@@ -313,6 +335,8 @@ const MobileWelcomeImage = styled.div`
       border: 1px #7c7973fc solid;
       border-radius: 244px;
       overflow: hidden;
+      box-shadow: inset 20px 20px -1px 0px white;
+      animation: ${shadowAnimation} 0.3s 5 linear;
 
       > :nth-child(1) {
         height: ${({ romeLoaded }) => (!romeLoaded ? "329px" : "43px")};
@@ -321,8 +345,6 @@ const MobileWelcomeImage = styled.div`
         bottom: 0;
         border-top: 1px solid #65602f;
         backdrop-filter: blur(15px);
-        transition: height 10.9s ease-in-out;
-        animation: height 10.9s ease-in-out;
       }
     }
   }

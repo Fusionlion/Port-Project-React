@@ -170,6 +170,7 @@ const MobileTextImage = (props) => {
             ))}
       {!showMore && <div className="bg-text" key="bg-text-145"></div>}
       <StyledRoundedImage
+        onClick={props.buttonClicked}
         key={"rounded-image${e}"}
         style={{
           backgroundImage: `url(${
