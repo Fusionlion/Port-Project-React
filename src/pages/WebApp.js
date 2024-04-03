@@ -368,7 +368,7 @@ const Backdrop = styled.div`
   } */
 
   .character {
-    background-image: url(/images/my-svg/exploded.png);
+    background-image: url("https://raw.githubusercontent.com/zabloncharles/Port-Project-React/bb37e82a25070a064f642ea666d6d595413bcd37/public/images/my-svg/exploded_linkedin.png");
     top: -125px;
     bottom: 230px;
     left: -22px;
