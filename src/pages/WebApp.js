@@ -13,6 +13,7 @@ import DesktopCourseStore from "../components/sections/DesktopCourseStore";
 import ParallaxStars from "../components/mobileSections/MobileBackgrounds.js/ParallaxStars";
 import DesktopProjects from "../components/sections/DesktopProjects";
 import BirdsLottie from "../components/sections/BirdsLottie";
+import DesktopDribble from "../components/sections/DesktopDribble";
 
 function WebApp(props) {
   const [switchPage, setSwitchPage] = useState("home");
@@ -117,6 +118,20 @@ function WebApp(props) {
                 </div>
               </div>
 
+              {/* the ux section */}
+              <div
+                className={`tab ${activeTab === "Ui/ux" ? "active" : ""}`}
+                onClick={() => handleTabClick("Ui/ux")}
+              >
+                <div
+                  className={`tab ${
+                    activeTab === "Ui/ux" ? "middle-btn" : "middle-btn-inactive"
+                  }`}
+                >
+                  {" "}
+                  UI/UX
+                </div>
+              </div>
               {/* the about me section */}
               <div
                 className={`tab ${activeTab === "About" ? "active" : ""}`}
@@ -168,6 +183,16 @@ function WebApp(props) {
             }`}
           >
             <DesktopCourseStore />
+          </div>
+          {/* content ends */}
+
+          {/* content starts */}
+          <div
+            className={`tab-content-item ${
+              activeTab === "Ui/ux" ? "fade-in" : "fade-out"
+            }`}
+          >
+            <DesktopDribble />
           </div>
           {/* content ends */}
 

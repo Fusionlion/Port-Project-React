@@ -8,6 +8,7 @@ import MobileCourses from "../components/mobileSections/MobileCourses";
 import PrivacyComponent from "../components/mobileSections/PrivacyComponent";
 import ParallaxStars from "../components/mobileSections/MobileBackgrounds.js/ParallaxStars";
 import BirdsLottie from "../components/sections/BirdsLottie";
+import MobileDribble from "../components/mobileSections/MobileDribble";
 
 export default function MobileApp() {
   const [switchPage, setSwitchPage] = useState("home");
@@ -81,7 +82,12 @@ export default function MobileApp() {
           >
             COURSES
           </li>
-
+          <li
+            className="mobile-menu-item"
+            onClick={() => handleMenuButton("ui/ux")}
+          >
+            UI/UX
+          </li>
           <li
             className="mobile-menu-item"
             onClick={() => handleMenuButton("privacy")}
@@ -95,6 +101,7 @@ export default function MobileApp() {
       {switchPage == "projects" && <MobileProjects />}
       {switchPage == "courses" && <MobileCourses />}
       {switchPage == "privacy" && <PrivacyComponent />}
+      {switchPage == "ui/ux" && <MobileDribble />}
     </MobileLayout>
   );
 }
