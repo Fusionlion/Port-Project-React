@@ -368,7 +368,7 @@ const Backdrop = styled.div`
   } */
 
   .character {
-    background-image: url(/images/my-svg/exploded_mockup.png);
+    background-image: url(/images/my-svg/exploded_linkedin.png);
     top: -125px;
     bottom: 230px;
     left: -22px;
