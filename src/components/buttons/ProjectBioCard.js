@@ -21,8 +21,8 @@ function ProjectBioCard(props) {
         )}
         <ProgressBar />
         <div className="start-and-end">
-          <div className="start">[Swift]</div>
-          <div className="start">|SwiftUI|</div>
+          <div className="start">[Language]</div>
+          <div className="start">|Content|</div>
         </div>
       </Content>
     </Card>
@@ -72,13 +72,13 @@ const Card = styled.div`
   gap: 10px;
   position: relative;
   border-radius: 17px;
-
+  border: 1px solid #222020;
   .linear {
     position: absolute;
     height: 100%;
     width: 100%;
     z-index: 2;
-    background-image: linear-gradient(#ff000000, #000000, #0d0d0d);
+    /* background-image: linear-gradient(#ff000000, #000000, #0d0d0d); */
     border-radius: 17px;
   }
   .icon-and-title {

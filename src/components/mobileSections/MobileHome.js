@@ -214,7 +214,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   height: 100%;
   width: 100%;
-  padding: 30px;
+  padding: 20px;
   overflow: hidden;
   position: relative;
   background: linear-gradient(to top, #000000, #000000, #000000, transparent);

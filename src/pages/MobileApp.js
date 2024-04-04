@@ -56,16 +56,12 @@ export default function MobileApp() {
             className={showMenu ? "burger-line-clicked" : "burger-line"}
           ></div>
         </div>
-        <div className="mobile-header-right">
-          {/* <div className="columns">
+
+        {/* <div className="columns">
             <div className="mobile-email">zab.charles@gmail.com</div>
             <div className="mobile-phone">201-267-5068</div>
           </div> */}
-          <div className="right-header-icon"></div>
-          <div className="mobile-name" onClick={handleHomeButton}>
-            Portfolio
-          </div>
-        </div>
+        <div className="right-header-icon" onClick={handleHomeButton}></div>
       </MobileHeader>
       {/* show menu when menu button is clicked */}
       {showMenu && (
@@ -157,11 +153,11 @@ const MobileMenu = styled.div`
   border-radius: 12px;
   color: white;
   /* background: #000000; */
-  padding: 20px;
-  padding-left: 20px;
-  text-align-last: right;
+  /* padding: 20px;
+  padding-left: 20px; */
+  text-align-last: start;
   position: fixed;
-  top: 68px;
+  top: 18px;
   width: 100%;
   background-color: black;
   border-radius: 12px;
@@ -195,7 +191,7 @@ const MobileHeader = styled.div`
   justify-content: space-between;
   color: white;
   align-items: center;
-  height: 80px;
+  height: 60px;
   z-index: 100;
   flex-direction: row-reverse;
   border-bottom: solid 1px #2325235c;
@@ -212,19 +208,9 @@ const MobileHeader = styled.div`
   .mobile-header-left {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 7px;
   }
-  .mobile-name {
-    font-size: 23px;
-    color: white;
-    position: relative;
-    top: 1px;
-    left: -4px;
-    background: linear-gradient(to right, rgb(222 222 222), rgb(86 112 211));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-family: "Spline Sans Mono", sans-serif;
-  }
+
   .burger-line {
     width: 27px;
     height: 2px;
@@ -235,26 +221,14 @@ const MobileHeader = styled.div`
     height: 2px;
     background-color: #ec9bff;
   }
-  .mobile-header-right {
-    display: flex;
-    font-size: 45px;
-    align-items: center;
-    color: #2c94ea;
-    border-radius: 14px;
-    /* background: #d1d1d1; */
-    text-align: end;
-    gap: 5px;
 
-    /* border: #95434333 solid 1px; */
-  }
   .right-header-icon {
-    background-image: url(/images/my-svg/icon.png);
+    background-image: url(/images/my-svg/logo.webp);
     height: 30px;
-    width: 30px;
+    width: 170px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    filter: hue-rotate(292deg);
   }
   .mobile-email,
   .mobile-phone {

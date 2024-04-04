@@ -113,7 +113,9 @@ const StyledComponent = styled.div`
     background-size: cover;
     border-radius: 12px;
     position: relative;
-
+    @media screen and (max-width: 1000px) {
+      border: 1px solid #323239;
+    }
     /* border: 1px solid #181616; */
     @media screen and (min-width: 999px) {
       height: 670px;
@@ -180,7 +182,11 @@ const StyledComponent = styled.div`
     -ms-transform: scale(1.7);
     transform: scale(1.9);
     left: 27px;
-    top: 9px;
+
+    @media screen and (max-width: 1000px) {
+      background-image: url(/images/my-svg/falling-rocks.svg);
+      bottom: 69px;
+    }
     @media screen and (min-width: 999px) {
       top: 92px;
       height: 482px;
@@ -201,7 +207,7 @@ const StyledComponent = styled.div`
   }
   .flip-text-2 {
     transform: rotate(270deg);
-    top: 139px;
+    top: 169px;
     right: -128px;
     position: relative;
     font-size: 82px;
@@ -209,11 +215,11 @@ const StyledComponent = styled.div`
     background: linear-gradient(to right, rgb(255 255 255), rgb(249 146 84));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 7px 7px 4px #000000, 1px -1px 0px #151417;
+
     @media screen and (min-width: 999px) {
-      top: -33px;
+      top: -13px;
       right: -485px;
-      font-size: 122px;
+      font-size: 112px;
     }
   }
 `;
