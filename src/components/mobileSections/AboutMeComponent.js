@@ -168,7 +168,7 @@ const StyledComponent = styled.div`
   }
   .section-svg {
     height: 492px;
-    background-image: url("https://raw.githubusercontent.com/zabloncharles/Port-Project-React/main/public/images/my-svg/exploded.png");
+    background-image: url("/images/my-svg/undersea.svg");
     background-size: contain;
     position: absolute;
     width: 100%;
@@ -184,6 +184,7 @@ const StyledComponent = styled.div`
     @media screen and (min-width: 999px) {
       top: 92px;
       height: 482px;
+      background-image: url("/images/my-svg/exploded.png");
     }
   }
   .flip-text-1 {

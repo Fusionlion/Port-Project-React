@@ -179,11 +179,11 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  top: ${({ opacityView }) => (!opacityView ? "0" : "100vh")};
+  /* top: ${({ opacityView }) => (!opacityView ? "0" : "100vh")}; */
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  /* opacity: ${(opacityView) => (opacityView ? "1" : "0")}; */
+  opacity: ${(opacityView) => (opacityView ? "1" : "0")};
   transition: all ease-in-out 1s;
   /* display: (${(value) => (value ? "none" : "block")}); */
   position: fixed;
@@ -206,6 +206,7 @@ const TypingText = styled.div`
   /* -webkit-text-fill-color: transparent; */
   background: black;
   padding: 5px 10px;
+  color: white;
   font-family: "Spline Sans Mono", sans-serif;
   opacity: ${(opacityView) => (opacityView ? "1" : "0")};
 `;
