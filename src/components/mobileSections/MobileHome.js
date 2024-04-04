@@ -425,7 +425,7 @@ const MobileDesc = styled.div`
   padding-bottom: 20px;
   /* padding-top: 30px; */
   text-align: justify;
-  margin-top: 400px;
+  margin-top: 410px;
   color: #d1d1d1;
   text-align: center;
   text-align: justify;
