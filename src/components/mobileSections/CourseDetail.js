@@ -3,6 +3,7 @@ import styled from "styled-components";
 import FooterSection from "../sections/FooterSection";
 import { useState } from "react";
 import { IoArrowBackSharp } from "react-icons/io5";
+import { IoMdClose } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
 import PictureComponent from "./PictureComponent";
 import Ide from "../sections/Ide";
@@ -46,9 +47,9 @@ export default function CourseDetail(props) {
     });
   }, []);
   return (
-    <Wrapper>
+    <Wrapper lessonCount={lessonCount}>
       <div className="project-arrow" onClick={handleArrowClicked}>
-        <IoArrowBackSharp /> Back
+        <IoMdClose />
       </div>
 
       <div className="project-arrow-desktop" onClick={handleArrowClicked}>
@@ -146,7 +147,7 @@ const Wrapper = styled.div`
   font-family: "Spline Sans Mono", sans-serif;
   /* background-color: black; */
   color: aliceblue;
-  padding-top: 113px;
+  padding-top: 63px;
   /* background-image: url(/images/my-svg/falling-stars.svg); */
   width: 100%;
   z-index: 50;
@@ -158,17 +159,20 @@ const Wrapper = styled.div`
 
   .project-arrow {
     position: absolute;
-    color: #ffffff;
+    color: rgb(255, 255, 255);
     font-size: 20px;
-    top: 90px;
-    left: 18px;
+    top: 70px;
+    right: 8px;
     cursor: pointer;
     z-index: 99;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     gap: 5px;
-    background: #3c3198;
-    padding: 3px 9px;
-    border-radius: 15px;
+    padding: 5px 5px;
+    border-radius: 60px;
+    background-color: black;
 
     @media screen and (min-width: 999px) {
       display: none;
