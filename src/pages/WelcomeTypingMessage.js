@@ -196,14 +196,16 @@ const TypingText = styled.div`
   font-size: 15px;
   position: relative;
   z-index: 99;
-  background: linear-gradient(
+  /* background: linear-gradient(
     to right,
     rgb(206 216 222),
     #ba991d,
     rgb(126 172 206)
   );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+  background: black;
+  padding: 5px 10px;
   font-family: "Spline Sans Mono", sans-serif;
   opacity: ${(opacityView) => (opacityView ? "1" : "0")};
 `;

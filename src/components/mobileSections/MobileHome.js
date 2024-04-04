@@ -12,6 +12,7 @@ import CertificateComponent from "./CertificateComponent";
 import BookComponent from "./BookComponent";
 import ParallaxStars from "./MobileBackgrounds.js/ParallaxStars";
 import GetStartedButton from "../buttons/GetStartedButton";
+
 export default function MobileHome(props) {
   // const [text, setText] = useState("Let's get started :)");
   // const [index, setIndex] = useState(0);
@@ -39,7 +40,7 @@ export default function MobileHome(props) {
       {/* <BGroundBottom /> */}
       <MobileWelcomeTitle>
         <div className="mobile-title-big">welcome</div>
-        <HomePortfolioName>PORTFOLIO</HomePortfolioName>
+        <HomePortfolioName>포트폴리오</HomePortfolioName>
       </MobileWelcomeTitle>
 
       <MobileWelcomeImage romeLoaded={romeLoaded}>
@@ -169,14 +170,15 @@ const BGroundBottom = styled.div`
 const BGround = styled.div`
   height: 472px;
   width: 100vw;
-  background-image: url(/images/my-svg/first.svg);
+  /* background-image: url(/images/my-svg/first.svg); */
+  background-image: url(/images/my-svg/hero.png);
   background-size: contain;
   background-position: center center;
   position: absolute;
   left: 0px;
   background-repeat: no-repeat;
-  top: 288px;
-  filter: hue-rotate(54deg);
+  top: 188px;
+  /* filter: hue-rotate(54deg); */
 
   z-index: 3;
 
@@ -190,6 +192,7 @@ const BGroundBlack = styled.div`
   background-color: black;
   position: absolute;
   z-index: -6;
+  background-image: url(/images/my-svg/falling-stars.svg);
 `;
 
 const SmallText = styled.div`
@@ -319,22 +322,7 @@ const shadowAnimation = keyframes`
   }
 `;
 const MobileWelcomeImage = styled.div`
-  /* position: relative;
-  min-height: 326px;
-  width: 243px;
-  overflow: visible;
-  border: 1px #633e00fc solid;
-  align-self: center;
-  background-color: black;
-  margin: 20px auto; /* Adjust margin as needed */
-  /* background-image: url(/images/my-svg/merilios.png);
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat;
-  align-self: center;
-  border-radius: 244px;
-  box-shadow: 0px 90px 90px -60px rgba(255, 165, 0, 0.7);
-  position: relative; */
+  display: none;
   min-height: 354px;
   width: 100%;
   overflow: visible;
@@ -363,6 +351,7 @@ const MobileWelcomeImage = styled.div`
   background-position: center center;
 
   .my-name {
+    display: none;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -381,7 +370,7 @@ const MobileWelcomeImage = styled.div`
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
-      background-image: url(/images/my-svg/merilio.png);
+      background-image: url(/images/my-svg/merilios.png);
       background-size: contain;
       background-position: center center;
       background-repeat: no-repeat;
@@ -436,10 +425,9 @@ const MobileDesc = styled.div`
   padding-bottom: 20px;
   /* padding-top: 30px; */
   text-align: justify;
-
+  margin-top: 400px;
   color: #d1d1d1;
   text-align: center;
-  margin-top: 20px;
   text-align: justify;
   text-align-last: center;
   font-family: "Lavire Personal Use", sans-serif;

@@ -17,7 +17,8 @@ const RainMatrix = () => {
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
-    let matrix = "PAULSICCHADGKDGDFFFGFFGFG";
+    let matrix =
+      "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
     matrix = matrix.split("");
     const font_size = 2;
     const columns = canvas.width / font_size;

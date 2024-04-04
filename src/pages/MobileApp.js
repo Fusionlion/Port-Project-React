@@ -163,7 +163,7 @@ const MobileMenu = styled.div`
   position: fixed;
   top: 68px;
   width: 100%;
-  backdrop-filter: blur(6px);
+  background-color: black;
   border-radius: 12px;
   border-bottom: 1px solid #111010;
   text-transform: lowercase;
@@ -202,11 +202,12 @@ const MobileHeader = styled.div`
   padding: 0px 15px;
   position: fixed;
   width: 100%;
-  backdrop-filter: blur(9px);
-  background-image: url(/images/my-svg/header-stars.svg);
+  background-color: black;
+  /* background-image: url(/images/my-svg/header-stars.svg); */
   background-position: center;
   background-position: bottom center;
   background-size: cover;
+  border-bottom: 1px solid #2b2929;
 
   .mobile-header-left {
     display: flex;
