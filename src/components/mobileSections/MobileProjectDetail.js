@@ -50,7 +50,7 @@ export default function MobileProjectDetail(props) {
       }
     };
   }, []);
-  const [isImageLoaded, setImageLoaded] = useState(false);
+  const [isImageLoaded, setImageLoaded] = useState(true);
 
   const handleImageLoad = () => {
     setImageLoaded(true);
@@ -58,7 +58,7 @@ export default function MobileProjectDetail(props) {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setImageLoaded(true); // Set isImageLoaded to true after 5 seconds
-    }, 5000); // Change 5000 to the desired timeout in milliseconds (5 seconds in this example)
+    }, 2000); // Change 5000 to the desired timeout in milliseconds (5 seconds in this example)
 
     // Cleanup function to clear the timeout if the component unmounts or if the image loads
     return () => clearTimeout(timeout);
@@ -177,11 +177,11 @@ export default function MobileProjectDetail(props) {
         case "image":
           return (
             <ArticleImageWrapper>
-              {!isImageLoaded && <LoadingCircle>Loading...</LoadingCircle>}
+              {/* {!isImageLoaded && <LoadingCircle>Loading...</LoadingCircle>} */}
               <ArticleImage
                 src={item.content}
-                onLoad={handleImageLoad}
-                onError={handleImageError}
+                // onLoad={handleImageLoad}
+                // onError={handleImageError}
               />
             </ArticleImageWrapper>
           );
