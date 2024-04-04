@@ -139,12 +139,11 @@ const SpinningHead = styled.div`
   // Your styles here
 
   background-image: url(/images/my-svg/punk.png);
-  background: url(/images/my-svg/punk.png);
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
-  min-height: 70px;
-  width: 70px;
+  min-height: 60px;
+  width: 60px;
   border: 1px gray solid;
   border-radius: 244px;
   z-index: 99;
@@ -180,11 +179,11 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* top: ${({ opacityView }) => (!opacityView ? "0" : "100vh")}; */
+  top: ${({ opacityView }) => (!opacityView ? "0" : "100vh")};
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  opacity: ${(opacityView) => (opacityView ? "1" : "0")};
+  /* opacity: ${(opacityView) => (opacityView ? "1" : "0")}; */
   transition: all ease-in-out 1s;
   /* display: (${(value) => (value ? "none" : "block")}); */
   position: fixed;
@@ -197,14 +196,14 @@ const TypingText = styled.div`
   font-size: 15px;
   position: relative;
   z-index: 99;
-  background-color: black;
-  color: white;
-  padding: 5px 10px;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  border: 1px solid #122411;
-  border-radius: 8px;
+  background: linear-gradient(
+    to right,
+    rgb(206 216 222),
+    #ba991d,
+    rgb(126 172 206)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-family: "Spline Sans Mono", sans-serif;
   opacity: ${(opacityView) => (opacityView ? "1" : "0")};
 `;
