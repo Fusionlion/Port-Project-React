@@ -171,7 +171,7 @@ const BGround = styled.div`
   height: 472px;
   width: 100vw;
   /* background-image: url(/images/my-svg/first.svg); */
-  background-image: url(/images/my-svg/hero.png);
+  background-image: url(https://raw.githubusercontent.com/zabloncharles/Port-Project-React/f151fb37a01611d34d6560f508dec6aa8e7b2762/public/images/my-svg/hero.png);
   background-size: contain;
   background-position: center center;
   position: absolute;
