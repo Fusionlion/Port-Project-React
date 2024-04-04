@@ -184,7 +184,7 @@ const StyledComponent = styled.div`
     @media screen and (min-width: 999px) {
       top: 92px;
       height: 482px;
-      background-image: url("/images/my-svg/exploded.png");
+      background-image: url("/images/my-svg/exploded-hero.png");
     }
   }
   .flip-text-1 {
