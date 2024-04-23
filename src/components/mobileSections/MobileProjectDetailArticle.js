@@ -51,7 +51,7 @@ export default function MobileProjectDetailArticle(props) {
     };
   }, []);
 
-  const [isImageLoaded, setImageLoaded] = useState(false);
+  const [isImageLoaded, setImageLoaded] = useState(true);
 
   const handleImageLoad = () => {
     setImageLoaded(true);
@@ -122,8 +122,7 @@ export default function MobileProjectDetailArticle(props) {
                       count={imagesLoaded}
                     />
                   )}
-                  {console.log("images loaded " + imagesThatLoaded)}
-                  {console.log("images total " + imageList.length)}
+             
                 </React.Fragment>
               ))}
             </div>
@@ -149,12 +148,12 @@ export default function MobileProjectDetailArticle(props) {
       )}
       <FooterSection />
       {/* {imagesThatLoaded == 0 && imageList.length != 0 && ( */}
-      {imagesThatLoaded < 1 && (
+      {/* {imagesThatLoaded < 1 && (
         <ImagesLoading>
           <LoadingScreen />
           <div>Loading</div>
         </ImagesLoading>
-      )}
+      )} */}
     </Wrapper>
   );
 }
