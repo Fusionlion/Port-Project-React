@@ -1,5 +1,36 @@
 [
   {
+    "title": "Fumble App",
+    "num": "01",
+    "desc": "Fumble is a user-friendly dating app designed for those who may feel uncertain or inexperienced in the world of dating. It provides a supportive platform where users can connect, explore, and form meaningful relationships with ease.",
+    "image": "https://cdn.dribbble.com/userupload/14015538/file/original-42a2c7c5baa4e4f4d99ebb222d84465b.jpg?resize=2400x3072",
+    "link": "https://github.com/zabloncharles/Fumble",
+    "article": [
+      {
+        "type": "title",
+        "content": {
+          "subtitle": "Passion Project",
+          "title": "Fumble App"
+        }
+      },
+      {
+        "type": "pictures",
+        "content": [
+          "https://cdn.dribbble.com/userupload/14234230/file/original-1ba18499a5710ddf8fdf64f3ef8eba91.png?resize=2400x1601",
+          "https://cdn.dribbble.com/userupload/14234175/file/original-d6959c1f94a1fd012bc792a8c23046ca.png?resize=2400x1600",
+          "https://cdn.dribbble.com/userupload/14234117/file/original-c9ade4266037eda871079919d685ca76.png?resize=2400x1600",
+          "https://cdn.dribbble.com/userupload/14234089/file/original-84e24afe4cca1260550fd43753da7b35.png?resize=2400x1600",
+          "https://cdn.dribbble.com/userupload/14234189/file/original-2ecd408173e052478a9759069b0d0529.png?resize=2400x1600",
+          "https://cdn.dribbble.com/userupload/14234089/file/original-84e24afe4cca1260550fd43753da7b35.png?resize=2400x1600"
+        ]
+      },
+      {
+        "type": "text",
+        "content": "As the founder of Fumble, I've always been fascinated by the complexities of human relationships. However, my own journey through the dating world was far from smooth sailing. I stumbled through awkward conversations, misread signals, and endured my fair share of heartaches. It became clear to me that many others were experiencing similar struggles, often feeling overwhelmed and discouraged by the traditional dating scene.One day, after yet another disastrous date, I found myself reflecting on the challenges of modern dating. I realized that there was a gap in the market for a platform that catered to individuals who, like myself, were navigating the dating landscape with little to no guidance. That's when the idea for Fumble was born.I envisioned Fumble as more than just a dating app—it would be a supportive community where users could embrace their imperfections and learn from their mistakes. I wanted to create a space where authenticity and vulnerability were celebrated, and where users could connect on a deeper level beyond surface appearances.My passion for helping others find love and companionship, coupled with my own experiences of fumbling through the dating world, inspired me to bring Fumble to life. I knew that if given the opportunity, Fumble could revolutionize the way people approached dating, fostering meaningful connections and empowering individuals to embrace their journey to finding love.The idea for Fumble came to me during a particularly frustrating period in my own dating life. After yet another failed attempt at finding love through traditional dating apps, I realized that there had to be a better way. I started reflecting on my own experiences and those of my friends, and it became clear that many of us were struggling with similar issues—miscommunication, unrealistic expectations, and a lack of genuine connections.I knew that I wanted to create a dating app that addressed these pain points and provided a solution for people like me who were feeling lost in the world of modern dating. Armed with this vision, I began researching and brainstorming ideas for what would eventually become Fumble.I reached out to friends, family, and experts in the field to gather insights and feedback on what features and functionalities would be most valuable in a dating app. I also conducted surveys and interviews to better understand the needs and preferences of potential users.As I delved deeper into the development process, I remained committed to creating a platform that prioritized authenticity, empathy, and inclusivity. I wanted Fumble to be a safe space where users could be themselves without fear of judgment, and where genuine connections could flourish.When designing the UI of Fumble, I used SwiftUI, Apple's modern framework for building user interfaces across all Apple platforms. SwiftUI provides a declarative syntax that makes it easy to create and maintain complex user interfaces with less code.Using SwiftUI allowed me to design the UI for Fumble with efficiency and flexibility. I was able to create visually appealing layouts, animations, and interactive elements while also ensuring a seamless user experience across different Apple devices.In terms of the design process, I started by sketching out wireframes and mockups to visualize the layout and flow of the app. Once I had a clear understanding of the user interface structure, I began implementing the designs using SwiftUI.Throughout the development process, I iterated on the designs based on feedback from usability testing and user research. SwiftUI's live preview feature was incredibly helpful in quickly iterating and fine-tuning the UI elements until I achieved the desired look and feel for Fumble.Overall, SwiftUI proved to be a powerful tool for designing the UI of Fumble, enabling me to create a modern and intuitive dating app experience for our users."
+      }
+    ]
+  },
+  {
     "title": "AstroTrack",
     "num": "0",
     "desc": "This is a front-end application to explore space launches by nasa and space x. It's fully responsive application, can be fit to any screen size.I'm creating the ultimate hub for space geeks! ",
