@@ -49,8 +49,8 @@ export default function MobileProjects() {
               <div className="project-title">Hands-on experience</div>
               <div className="project-title">
                 I've successfully completed numerous projects, showcasing my
-                expertise in crafting robust and efficient software solutions. I
-                take pride in my ability to seamlessly collaborate with back-end
+                expertise in crafting efficient software solutions. I take pride
+                in my ability to seamlessly collaborate with back-end
                 developers, design APIs, and deploy large-scale software with
                 precision.
               </div>
