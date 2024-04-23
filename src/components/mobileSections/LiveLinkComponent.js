@@ -89,6 +89,11 @@ const StyledTitleBold = styled.div`
   text-align: center;
   line-height: 1.2;
   background: #0f98ab;
+  cursor: pointer;
+
+  &:hover {
+    background: purple; /* Change background color to purple on hover */
+  }
 `;
 
 const StyledBorderedText = styled.div`
