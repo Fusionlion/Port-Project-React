@@ -11,7 +11,7 @@ function DribbleCardList(props) {
   const data = topicData.map((record) => {
     return record;
   });
-  const [visibleProjects, setVisibleProjects] = useState(5);
+  const [visibleProjects, setVisibleProjects] = useState(10);
   const [clickedProjects, setClickedProjects] = useState([]);
 
   const handleCardClick = (cardPrints) => {
