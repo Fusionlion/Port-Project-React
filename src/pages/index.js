@@ -7,6 +7,7 @@ import MobileApp from "./MobileApp";
 import WebApp from "./WebApp";
 
 import WelcomeMessage from "./WelcomeTypingMessage";
+import { GiMetalHand } from "react-icons/gi";
 
 function Index() {
   const [value, setValue] = useState(false);
@@ -17,8 +18,8 @@ function Index() {
   return (
     <Wrapper>
       <MobileWrapper>
+        {!value && <WelcomeMessage value={value} setValue={setValue} />}
         <MobileApp />
-        {/* <WelcomeMessage value={value} setValue={setValue} /> */}
       </MobileWrapper>
 
       <WebWrapper>

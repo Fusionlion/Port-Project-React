@@ -184,8 +184,9 @@ const StyledComponent = styled.div`
     left: 27px;
 
     @media screen and (max-width: 1000px) {
-      background-image: url(/images/my-svg/falling-rocks.svg);
-      bottom: 69px;
+      /* the soft dev card in home screen */
+      /* background-image: url(/images/my-svg/falling-rocks.svg); */
+      /* bottom: 69px; */
     }
     @media screen and (min-width: 999px) {
       top: 92px;

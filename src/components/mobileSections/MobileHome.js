@@ -12,6 +12,7 @@ import CertificateComponent from "./CertificateComponent";
 import BookComponent from "./BookComponent";
 import ParallaxStars from "./MobileBackgrounds.js/ParallaxStars";
 import GetStartedButton from "../buttons/GetStartedButton";
+import SolarSystem from "./SolarSystemComponent";
 
 export default function MobileHome(props) {
   // const [text, setText] = useState("Let's get started :)");
@@ -34,16 +35,14 @@ export default function MobileHome(props) {
 
   return (
     <Wrapper>
-      <BGroundBlack />
-
-      <BGround />
+      {/* <BGround /> this is the me picture */}
       {/* <BGroundBottom /> */}
       <MobileWelcomeTitle>
         <div className="mobile-title-big">welcome</div>
         <HomePortfolioName>포트폴리오</HomePortfolioName>
       </MobileWelcomeTitle>
 
-      <MobileWelcomeImage romeLoaded={romeLoaded}>
+      {/* <MobileWelcomeImage romeLoaded={romeLoaded}>
         <div className="my-name">
           <div>CHARLES</div>
 
@@ -55,8 +54,9 @@ export default function MobileHome(props) {
         <div className="curved-text-container">
           <p className="curved-text">ZABLON</p>
         </div>
-      </MobileWelcomeImage>
-
+      </MobileWelcomeImage> */}
+      <SolarSystem />
+      <BGroundBlack />
       <MobileDesc>
         What everyone said was true. You cannot learn how to code by reading,
         listening or watching someone else do it. You have to get your hands
@@ -189,10 +189,14 @@ const BGround = styled.div`
 const BGroundBlack = styled.div`
   height: 800px;
   width: 100vw;
-  background-color: black;
+  /* background-color: black; */
   position: absolute;
-  z-index: -6;
-  background-image: url(/images/my-svg/falling-stars.svg);
+  /* z-index: -6; */
+  /* the background with c */
+  background-image: url(/images/my-svg/first.svg);
+  background-repeat: no-repeat;
+  left: 0px;
+  top: 430px;
 `;
 
 const SmallText = styled.div`
@@ -434,6 +438,7 @@ const MobileDesc = styled.div`
   background: linear-gradient(to top, rgb(86 86 86), rgb(255 255 255));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  z-index: 2;
   .first-character {
     font-weight: 400;
     float: left;
